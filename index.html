@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>การงานอาชีพ ม.3 | โรงเรียนสารคามพิทยาคม</title>
+  <meta name="description" content="บทเรียนออนไลน์ วิชาการงานอาชีพ ม.3 ครูผู้สอน นางปัญจรัศม์ แซ่ตัง โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --blue-900:#0d47a1; --blue-700:#1565c0; --blue-500:#1976d2;
+      --yellow-500:#ffc107; --yellow-400:#ffd54f;
+      --bg:#f6f8ff; --card:#ffffff; --text:#1f2937; --muted:#6b7280; --border:#e6eefc; --ring: rgba(13,71,161,.15);
+    }
+    html,body{height:100%}
+    body{
+      font-family:"Prompt",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 110% -10%, rgba(255,193,7,.15), transparent 60%),
+        radial-gradient(900px 500px at -10% 110%, rgba(25,118,210,.10), transparent 60%),
+        var(--bg);
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar-blue{
+      background: linear-gradient(90deg,var(--blue-900),var(--blue-700));
+      border-bottom:4px solid var(--yellow-500);
+    }
+    .navbar-brand{font-weight:700}
+    .navbar .nav-link{color:#eaf2ff}
+    .navbar .nav-link:hover,.navbar .nav-link:focus{color:#fff}
+    .dropdown-menu{border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,.15)}
+    .dropdown-menu .dropdown-item{border-radius:8px}
+    .dropdown-menu .dropdown-item:hover{background:#f0f6ff}
+
+    /* ===== HERO ===== */
+    .hero{
+      position:relative;
+      background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 50%, var(--blue-500) 100%);
+      color:#fff; overflow:hidden;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:auto -10% -6rem -10%;
+      height:10rem;
+      background: linear-gradient(90deg, var(--yellow-400), var(--yellow-500));
+      transform:skewY(-6deg); box-shadow:0 -10px 30px rgba(0,0,0,.15);
+    }
+    .hero-inner{padding:5rem 1rem 8rem;}
+    .hero h1{font-weight:700; font-size:2.6rem}
+
+    /* ===== CONTENT ===== */
+    section{padding:3rem 0}
+    .unit-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.25rem; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+    .unit-card:hover{transform:translateY(-6px); box-shadow:0 14px 34px var(--ring); border-color:#d6e5ff}
+    .unit-ribbon{display:inline-flex; align-items:center; gap:.5rem; font-weight:700; color:var(--blue-900); background:linear-gradient(90deg,var(--yellow-400),var(--yellow-500)); padding:.35rem .7rem; border-radius:999px; margin-bottom:.6rem;}
+    .unit-title{font-size:1.05rem; margin:0}
+    .unit-desc{color:var(--muted); margin:.25rem 0 .5rem}
+    .sub-links details{border:1px dashed #ffe08a; background:#fffceb; border-radius:12px; padding:.6rem .8rem}
+    .sub-links summary{cursor:pointer; font-weight:600; color:#7a5800; list-style:none}
+    .sub-links summary::-webkit-details-marker{display:none}
+    .sub-links ul{margin:.6rem 0 0; padding-left:1rem}
+    .sub-links a{color:var(--blue-700); text-decoration:none}
+    .sub-links a:hover{text-decoration:underline}
+
+    /* ===== FOOTER ===== */
+    footer{background:var(--blue-900); color:#e9f2ff; padding:1.5rem 0}
+    a.link-light-underline{color:#fff; text-decoration-color:rgba(255,255,255,.5); text-underline-offset:3px}
+    a.link-light-underline:hover{color:#fff; text-decoration-color:#fff}
+
+    /* Buttons */
+    .btn-primary{--bs-btn-bg:var(--blue-700);--bs-btn-border-color:var(--blue-700);--bs-btn-hover-bg:var(--blue-500);--bs-btn-hover-border-color:var(--blue-500);--bs-btn-focus-shadow-rgb:13,71,161}
+    .btn-warning{--bs-btn-bg:var(--yellow-500);--bs-btn-border-color:var(--yellow-500);--bs-btn-hover-bg:#ffb300;--bs-btn-hover-border-color:#ffb300;color:#1a1a1a}
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR: แยกหน่วยชัดเจน ไม่มีลิงก์ภาพรวม ===== -->
+  <nav class="navbar navbar-expand-lg navbar-blue navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">การงานอาชีพ ม.3</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topnav" aria-controls="topnav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="topnav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <!-- หน่วยที่ 1 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="u1" role="button" data-bs-toggle="dropdown" aria-expanded="false">หน่วยที่ 1</a>
+            <ul class="dropdown-menu" aria-labelledby="u1">
+              <li><h6 class="dropdown-header">หลักการทำงานเพื่อการดำรงชีพ</h6></li>
+              <li><a class="dropdown-item" href="unit1-1.html">1.1 ทักษะการทำงานร่วมกัน และทักษะการจัดการ</a></li>
+              <li><a class="dropdown-item" href="unit1-2.html">1.2 คุณธรรมและจริยธรรมในการทำงาน</a></li>
+              <li><a class="dropdown-item" href="unit1-3.html">1.3 การใช้ทรัพยากรในการปฏิบัติงาน</a></li>
+            </ul>
+          </li>
+
+          <!-- หน่วยที่ 2 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="u2" role="button" data-bs-toggle="dropdown" aria-expanded="false">หน่วยที่ 2</a>
+            <ul class="dropdown-menu" aria-labelledby="u2">
+              <li><h6 class="dropdown-header">ผ้าและการตัดเย็บ</h6></li>
+              <li><a class="dropdown-item" href="unit2-1.html">2.1 การดูแลรักษาเสื้อผ้าและเครื่องประกอบการแต่งกาย</a></li>
+              <li><a class="dropdown-item" href="unit2-2.html">2.2 การซ่อมแซมเสื้อผ้า</a></li>
+              <li><a class="dropdown-item" href="unit2-3.html">2.3 การตกแต่งเสื้อผ้า</a></li>
+              <li><a class="dropdown-item" href="unit2-4.html">2.4 การดัดแปลงเสื้อผ้า</a></li>
+              <li><a class="dropdown-item" href="unit2-5.html">2.5 การตัดเย็บ</a></li>
+            </ul>
+          </li>
+
+          <!-- หน่วยที่ 3 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="u3" role="button" data-bs-toggle="dropdown" aria-expanded="false">หน่วยที่ 3</a>
+            <ul class="dropdown-menu" aria-labelledby="u3">
+              <li><h6 class="dropdown-header">อาหารประเภทสำรับ</h6></li>
+              <li><a class="dropdown-item" href="unit3-1.html">3.1 อาหารประเภทสำรับ</a></li>
+              <li><a class="dropdown-item" href="unit3-2.html">3.2 การจัดตกแต่งอาหารประเภทสำรับ</a></li>
+            </ul>
+          </li>
+
+          <!-- หน่วยที่ 4 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="u4" role="button" data-bs-toggle="dropdown" aria-expanded="false">หน่วยที่ 4</a>
+            <ul class="dropdown-menu" aria-labelledby="u4">
+              <li><h6 class="dropdown-header">การปฏิบัติงานช่างในบ้าน</h6></li>
+              <li><a class="dropdown-item" href="unit4-1.html">4.1 งานช่างในบ้าน</a></li>
+              <li><a class="dropdown-item" href="unit4-2.html">4.2 การติดตั้งและประกอบผลิตภัณฑ์</a></li>
+            </ul>
+          </li>
+
+          <!-- หน่วยที่ 5 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="u5" role="button" data-bs-toggle="dropdown" aria-expanded="false">หน่วยที่ 5</a>
+            <ul class="dropdown-menu" aria-labelledby="u5">
+              <li><h6 class="dropdown-header">การประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ</h6></li>
+              <li><a class="dropdown-item" href="unit5-1.html">5.1 การบรรจุภัณฑ์</a></li>
+              <li><a class="dropdown-item" href="unit5-2.html">5.2 การประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ</a></li>
+              <li><a class="dropdown-item" href="unit5-3.html">5.3 ตัวอย่างการประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ</a></li>
+            </ul>
+          </li>
+
+          <!-- หน่วยที่ 6 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="u6" role="button" data-bs-toggle="dropdown" aria-expanded="false">หน่วยที่ 6</a>
+            <ul class="dropdown-menu" aria-labelledby="u6">
+              <li><h6 class="dropdown-header">การขยายพันธุ์พืช</h6></li>
+              <li><a class="dropdown-item" href="unit6-1.html">6.1 การขยายพันธุ์พืช</a></li>
+              <li><a class="dropdown-item" href="unit6-2.html">6.2 วิธีการขยายพันธุ์พืช</a></li>
+              <li><a class="dropdown-item" href="unit6-3.html">6.3 ตัวอย่างการขยายพันธุ์พืช</a></li>
+            </ul>
+          </li>
+
+          <!-- หน่วยที่ 7 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="u7" role="button" data-bs-toggle="dropdown" aria-expanded="false">หน่วยที่ 7</a>
+            <ul class="dropdown-menu" aria-labelledby="u7">
+              <li><h6 class="dropdown-header">การดำเนินงานธุรกิจ</h6></li>
+              <li><a class="dropdown-item" href="unit7-1.html">7.1 งานธุรกิจ</a></li>
+              <li><a class="dropdown-item" href="unit7-2.html">7.2 การดำเนินงานธุรกิจ</a></li>
+              <li><a class="dropdown-item" href="unit7-3.html">7.3 การวางแผนธุรกิจ</a></li>
+            </ul>
+          </li>
+
+          <!-- หน่วยที่ 8 -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="u8" role="button" data-bs-toggle="dropdown" aria-expanded="false">หน่วยที่ 8</a>
+            <ul class="dropdown-menu" aria-labelledby="u8">
+              <li><h6 class="dropdown-header">แนวทางการเข้าสู่อาชีพ</h6></li>
+              <li><a class="dropdown-item" href="unit8-1.html">8.1 แนวทางการประกอบอาชีพ</a></li>
+              <li><a class="dropdown-item" href="unit8-2.html">8.2 การศึกษาต่อเพื่อเข้าสู่อาชีพ</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <!-- ปุ่มลัดไปส่วนต่าง ๆ ในหน้า -->
+        <div class="d-flex gap-2">
+          <a href="#units" class="btn btn-warning btn-sm"><i class="bi bi-play-circle me-1"></i>เริ่มเรียน</a>
+          <a href="#about" class="btn btn-primary btn-sm"><i class="bi bi-info-circle me-1"></i>เกี่ยวกับรายวิชา</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h1>บทเรียนออนไลน์ วิชาการงานอาชีพ ม.3</h1>
+          <p class="lead mb-3">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+          <p class="mb-4"><i class="bi bi-person-badge-fill me-2"></i>ครูผู้สอน: <strong>นางปัญจรัศม์ แซ่ตัง</strong></p>
+          <div class="d-flex gap-2">
+            <a href="#units" class="btn btn-warning btn-lg"><i class="bi bi-play-circle-fill me-1"></i>เริ่มเรียน</a>
+            <a href="#about" class="btn btn-primary btn-lg"><i class="bi bi-journal-text me-1"></i>ข้อมูลรายวิชา</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="p-3 rounded-3" style="background:#fffceb;border:1px dashed #ffe08a;color:#7a5800">
+          <i class="bi bi-info-circle-fill me-2"></i>
+          รายวิชาพื้นฐาน “การงานอาชีพ ม.3” รวมเวลาเรียนประมาณ <strong>40 ชั่วโมง</strong> ครอบคลุม 8 หน่วยการเรียนรู้
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== UNITS (การ์ดครบ 1–8) ===== -->
+  <section id="units" class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold" style="color:var(--blue-900)">หน่วยการเรียนรู้</h2>
+      <p class="text-muted mb-0">เลือกหัวข้อ หรือใช้เมนูด้านบนเพื่อเข้าถึงเนื้อเรื่องย่อยได้ทันที</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Unit 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="unit-card h-100">
+          <div class="unit-ribbon"><i class="bi bi-gear-fill"></i> หน่วยที่ 1</div>
+          <h3 class="unit-title">หลักการทำงานเพื่อการดำรงชีพ</h3>
+          <p class="unit-desc">ทักษะการทำงานร่วมกัน การจัดการ และการแก้ปัญหา</p>
+          <div class="sub-links">
+            <details>
+              <summary>เนื้อเรื่องย่อย</summary>
+              <ul class="small">
+                <li><a href="unit1-1.html">1.1 ทักษะการทำงานร่วมกัน และทักษะการจัดการ</a></li>
+                <li><a href="unit1-2.html">1.2 คุณธรรมและจริยธรรมในการทำงาน</a></li>
+                <li><a href="unit1-3.html">1.3 การใช้ทรัพยากรในการปฏิบัติงาน</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="unit-card h-100">
+          <div class="unit-ribbon"><i class="bi bi-scissors"></i> หน่วยที่ 2</div>
+          <h3 class="unit-title">ผ้าและการตัดเย็บ</h3>
+          <p class="unit-desc">ดูแล–ซ่อมแซม–ตกแต่ง–ดัดแปลง และตัดเย็บเสื้อผ้า</p>
+          <div class="sub-links">
+            <details>
+              <summary>เนื้อเรื่องย่อย</summary>
+              <ul class="small">
+                <li><a href="unit2-1.html">2.1 การดูแลรักษาเสื้อผ้าและเครื่องประกอบการแต่งกาย</a></li>
+                <li><a href="unit2-2.html">2.2 การซ่อมแซมเสื้อผ้า</a></li>
+                <li><a href="unit2-3.html">2.3 การตกแต่งเสื้อผ้า</a></li>
+                <li><a href="unit2-4.html">2.4 การดัดแปลงเสื้อผ้า</a></li>
+                <li><a href="unit2-5.html">2.5 การตัดเย็บ</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="unit-card h-100">
+          <div class="unit-ribbon"><i class="bi bi-egg-fried"></i> หน่วยที่ 3</div>
+          <h3 class="unit-title">อาหารประเภทสำรับ</h3>
+          <p class="unit-desc">การเตรียม–ประกอบ–จัด–ตกแต่งอาหารสำรับ</p>
+          <div class="sub-links">
+            <details>
+              <summary>เนื้อเรื่องย่อย</summary>
+              <ul class="small">
+                <li><a href="unit3-1.html">3.1 อาหารประเภทสำรับ</a></li>
+                <li><a href="unit3-2.html">3.2 การจัดตกแต่งอาหารประเภทสำรับ</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="unit-card h-100">
+          <div class="unit-ribbon"><i class="bi bi-tools"></i> หน่วยที่ 4</div>
+          <h3 class="unit-title">การปฏิบัติงานช่างในบ้าน</h3>
+          <p class="unit-desc">งานช่างพื้นฐาน การติดตั้งและประกอบผลิตภัณฑ์</p>
+          <div class="sub-links">
+            <details>
+              <summary>เนื้อเรื่องย่อย</summary>
+              <ul class="small">
+                <li><a href="unit4-1.html">4.1 งานช่างในบ้าน</a></li>
+                <li><a href="unit4-2.html">4.2 การติดตั้งและประกอบผลิตภัณฑ์</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="unit-card h-100">
+          <div class="unit-ribbon"><i class="bi bi-box-seam"></i> หน่วยที่ 5</div>
+          <h3 class="unit-title">การประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ</h3>
+          <p class="unit-desc">แนวคิดบรรจุภัณฑ์–ประดิษฐ์งานจริง–ตัวอย่างชิ้นงาน</p>
+          <div class="sub-links">
+            <details>
+              <summary>เนื้อเรื่องย่อย</summary>
+              <ul class="small">
+                <li><a href="unit5-1.html">5.1 การบรรจุภัณฑ์</a></li>
+                <li><a href="unit5-2.html">5.2 การประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ</a></li>
+                <li><a href="unit5-3.html">5.3 ตัวอย่างการประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="unit-card h-100">
+          <div class="unit-ribbon"><i class="bi bi-flower1"></i> หน่วยที่ 6</div>
+          <h3 class="unit-title">การขยายพันธุ์พืช</h3>
+          <p class="unit-desc">หลักการ วิธีการ และตัวอย่างการขยายพันธุ์พืช</p>
+          <div class="sub-links">
+            <details>
+              <summary>เนื้อเรื่องย่อย</summary>
+              <ul class="small">
+                <li><a href="unit6-1.html">6.1 การขยายพันธุ์พืช</a></li>
+                <li><a href="unit6-2.html">6.2 วิธีการขยายพันธุ์พืช</a></li>
+                <li><a href="unit6-3.html">6.3 ตัวอย่างการขยายพันธุ์พืช</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 7 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="unit-card h-100">
+          <div class="unit-ribbon"><i class="bi bi-briefcase-fill"></i> หน่วยที่ 7</div>
+          <h3 class="unit-title">การดำเนินงานธุรกิจ</h3>
+          <p class="unit-desc">งานธุรกิจ–การดำเนินงาน–การวางแผนธุรกิจ</p>
+          <div class="sub-links">
+            <details>
+              <summary>เนื้อเรื่องย่อย</summary>
+              <ul class="small">
+                <li><a href="unit7-1.html">7.1 งานธุรกิจ</a></li>
+                <li><a href="unit7-2.html">7.2 การดำเนินงานธุรกิจ</a></li>
+                <li><a href="unit7-3.html">7.3 การวางแผนธุรกิจ</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 8 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="unit-card h-100">
+          <div class="unit-ribbon"><i class="bi bi-person-workspace"></i> หน่วยที่ 8</div>
+          <h3 class="unit-title">แนวทางการเข้าสู่อาชีพ</h3>
+          <p class="unit-desc">การประกอบอาชีพและการศึกษาต่อ</p>
+          <div class="sub-links">
+            <details>
+              <summary>เนื้อเรื่องย่อย</summary>
+              <ul class="small">
+                <li><a href="unit8-1.html">8.1 แนวทางการประกอบอาชีพ</a></li>
+                <li><a href="unit8-2.html">8.2 การศึกษาต่อเพื่อเข้าสู่อาชีพ</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container text-center small">
+      © 2025 การงานอาชีพ ม.3 — โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม
+      · จัดทำโดย <a class="link-light-underline" href="#" onclick="return false;">นางปัญจรัศม์ แซ่ตัง</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

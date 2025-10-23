@@ -1,0 +1,2006 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คุณธรรมและจริยธรรมในการทำงาน - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+            min-height: 100%;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: var(--white);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .progress-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .progress {
+            width: 100%;
+            height: 8px;
+            background: #E0E0E0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: var(--white);
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: var(--text-dark);
+        }
+
+        .btn-warning:hover {
+            background: var(--accent-dark);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .lesson-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .section-header:hover {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        }
+
+        .section-header.locked {
+            background: #9E9E9E;
+            cursor: not-allowed;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .section-content {
+            padding: 2rem;
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .value-card {
+            background: var(--white);
+            border: 2px solid var(--primary-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Activity Styles */
+        .activity-container {
+            background: #F8F9FA;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px dashed var(--accent);
+        }
+
+        .activity-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Drag and Drop Activity */
+        .drag-drop-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .drag-source, .drop-zone {
+            min-height: 200px;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .drag-source {
+            background: var(--white);
+            border: 2px solid var(--primary-light);
+        }
+
+        .drop-zone {
+            background: #E8F5E8;
+            border: 2px dashed var(--success);
+        }
+
+        .drag-item {
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            cursor: grab;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .drag-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .drag-item.dragging {
+            opacity: 0.5;
+            cursor: grabbing;
+        }
+
+        /* Case Study Styles */
+        .case-study {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .case-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .case-options {
+            display: grid;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .case-option {
+            padding: 1rem;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .case-option:hover {
+            border-color: var(--primary-light);
+            background: #F3E5F5;
+        }
+
+        .case-option.selected {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            color: var(--white);
+        }
+
+        .case-option.correct {
+            border-color: var(--success);
+            background: #E8F5E8;
+            color: var(--success);
+        }
+
+        .case-option.incorrect {
+            border-color: var(--danger);
+            background: #FFEBEE;
+            color: var(--danger);
+        }
+
+        /* Self Assessment */
+        .assessment-container {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .assessment-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .assessment-item:last-child {
+            border-bottom: none;
+        }
+
+        .rating-scale {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .rating-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary-light);
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .rating-btn:hover {
+            background: var(--primary-light);
+            color: var(--white);
+        }
+
+        .rating-btn.selected {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Ethics Contract */
+        .ethics-contract {
+            background: linear-gradient(135deg, #FFF9C4 0%, #F0F4C3 100%);
+            border: 2px solid var(--accent);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contract-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contract-content {
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .contract-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 0.5rem 0;
+        }
+
+        .contract-item::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .signature-area {
+            border-top: 2px dashed var(--accent);
+            padding-top: 1rem;
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .signature-field {
+            text-align: center;
+        }
+
+        .signature-line {
+            border-bottom: 2px solid var(--primary);
+            margin: 1rem 0;
+            height: 2rem;
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .quiz-question {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-option {
+            padding: 1rem;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary-light);
+            background: #F3E5F5;
+        }
+
+        .quiz-option.selected {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            color: var(--white);
+        }
+
+        .quiz-option.correct {
+            border-color: var(--success);
+            background: #E8F5E8;
+            color: var(--success);
+        }
+
+        .quiz-option.incorrect {
+            border-color: var(--danger);
+            background: #FFEBEE;
+            color: var(--danger);
+        }
+
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .quiz-feedback.show {
+            display: block;
+        }
+
+        .quiz-feedback.correct {
+            background: #E8F5E8;
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+
+        .quiz-feedback.incorrect {
+            background: #FFEBEE;
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .quiz-progress {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Score Display */
+        .score-display {
+            background: linear-gradient(135deg, var(--success) 0%, #66BB6A 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .drag-drop-container {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .signature-area {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        .btn:focus,
+        .quiz-option:focus,
+        .case-option:focus,
+        .drag-item:focus,
+        .rating-btn:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Animation for completed activities */
+        .completed-activity {
+            border-color: var(--success);
+            background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+        }
+
+        .completed-activity .activity-title::after {
+            content: " ✓";
+            color: var(--success);
+        }
+
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="เมนูหลัก">
+   <div class="nav-container">
+    <div class="logo">
+     การงานอาชีพ ม.3
+    </div>
+    <div class="nav-actions"><button class="btn btn-secondary" onclick="resetProgress()" aria-label="รีเซ็ตความคืบหน้า"> 🔄 รีเซ็ต </button> <button class="btn btn-secondary" onclick="printResults()" aria-label="พิมพ์ผลการเรียน"> 🖨️ พิมพ์ผล </button> <button class="btn btn-warning" onclick="downloadContract()" aria-label="ดาวน์โหลดสัญญาคุณธรรม"> 📄 สัญญาคุณธรรม </button>
+     <div class="score-badge" id="currentScore" aria-live="polite">
+      คะแนน: <span id="scoreValue">0</span>%
+     </div>
+    </div>
+   </div>
+  </nav><!-- Progress Bar -->
+  <div class="progress-container">
+   <div class="progress-bar">
+    <div class="progress">
+     <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text" id="progressText">
+     ความคืบหน้า: 0%
+    </div>
+   </div>
+  </div><!-- Hero Section -->
+  <header class="hero">
+   <div class="hero-container">
+    <h1 id="lessonTitle">คุณธรรมและจริยธรรมในการทำงาน</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">เรียนรู้คุณธรรมและจริยธรรมที่จำเป็นในการทำงานและการใช้ชีวิต</p><button class="btn btn-primary" onclick="startLesson()" aria-label="เริ่มเรียนบทเรียน"> 🚀 เริ่มเรียน </button>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Section 1: ความหมายและความสำคัญ -->
+   <section class="lesson-section" id="section1">
+    <div class="section-header" onclick="toggleSection(1)" role="button" tabindex="0" aria-expanded="false">
+     <h2 class="section-title">1. ความหมายและความสำคัญของคุณธรรมจริยธรรม</h2><span class="section-icon">🎯</span>
+    </div>
+    <div class="section-content" id="content1">
+     <div class="content-text">
+      <p><strong>คุณธรรม</strong> หมายถึง คุณสมบัติอันดีงามที่ฝังอยู่ในจิตใจของบุคคล ทำให้เกิดความประพฤติที่ดีงาม</p>
+      <p><strong>จริยธรรม</strong> หมายถึง หลักการและแนวทางในการปฏิบัติตนที่ถูกต้องเหมาะสม เป็นที่ยอมรับของสังคม</p>
+     </div>
+     <div class="highlight-box">
+      <div class="highlight-title">
+       ความสำคัญของคุณธรรมจริยธรรมในการทำงาน
+      </div>
+      <ul>
+       <li>สร้างความน่าเชื่อถือและไว้วางใจ</li>
+       <li>เพิ่มประสิทธิภาพในการทำงานร่วมกัน</li>
+       <li>ลดข้อขัดแย้งและปัญหาในองค์กร</li>
+       <li>สร้างชื่อเสียงและภาพลักษณ์ที่ดี</li>
+       <li>นำไปสู่ความก้าวหน้าในอาชีพ</li>
+      </ul>
+     </div><!-- กิจกรรมประเมินตนเองก่อนเรียน -->
+     <div class="activity-container" id="activity1">
+      <div class="activity-title">
+       📊 กิจกรรม: ประเมินตนเองก่อนเรียน
+      </div>
+      <p>ให้คะแนนตนเองในแต่ละด้าน (1 = น้อยที่สุด, 5 = มากที่สุด)</p>
+      <div class="assessment-container">
+       <div class="assessment-item"><span>ความซื่อสัตย์ในการทำงาน</span>
+        <div class="rating-scale"><button class="rating-btn" onclick="setRating('honesty', 1)">1</button> <button class="rating-btn" onclick="setRating('honesty', 2)">2</button> <button class="rating-btn" onclick="setRating('honesty', 3)">3</button> <button class="rating-btn" onclick="setRating('honesty', 4)">4</button> <button class="rating-btn" onclick="setRating('honesty', 5)">5</button>
+        </div>
+       </div>
+       <div class="assessment-item"><span>ความรับผิดชอบต่อหน้าที่</span>
+        <div class="rating-scale"><button class="rating-btn" onclick="setRating('responsibility', 1)">1</button> <button class="rating-btn" onclick="setRating('responsibility', 2)">2</button> <button class="rating-btn" onclick="setRating('responsibility', 3)">3</button> <button class="rating-btn" onclick="setRating('responsibility', 4)">4</button> <button class="rating-btn" onclick="setRating('responsibility', 5)">5</button>
+        </div>
+       </div>
+       <div class="assessment-item"><span>การเคารพผู้อื่น</span>
+        <div class="rating-scale"><button class="rating-btn" onclick="setRating('respect', 1)">1</button> <button class="rating-btn" onclick="setRating('respect', 2)">2</button> <button class="rating-btn" onclick="setRating('respect', 3)">3</button> <button class="rating-btn" onclick="setRating('respect', 4)">4</button> <button class="rating-btn" onclick="setRating('respect', 5)">5</button>
+        </div>
+       </div>
+       <div class="assessment-item"><span>วินัยในการทำงาน</span>
+        <div class="rating-scale"><button class="rating-btn" onclick="setRating('discipline', 1)">1</button> <button class="rating-btn" onclick="setRating('discipline', 2)">2</button> <button class="rating-btn" onclick="setRating('discipline', 3)">3</button> <button class="rating-btn" onclick="setRating('discipline', 4)">4</button> <button class="rating-btn" onclick="setRating('discipline', 5)">5</button>
+        </div>
+       </div>
+      </div><button class="btn btn-success" onclick="completePreAssessment()" style="margin-top: 1rem;"> ✅ บันทึกการประเมิน </button>
+     </div>
+    </div>
+   </section><!-- Section 2: ค่านิยมหลัก -->
+   <section class="lesson-section" id="section2">
+    <div class="section-header locked" onclick="toggleSection(2)" role="button" tabindex="0" aria-expanded="false">
+     <h2 class="section-title">2. ค่านิยมหลักในการทำงาน</h2><span class="section-icon">🔒</span>
+    </div>
+    <div class="section-content" id="content2">
+     <div class="content-text">
+      <p>ค่านิยมหลักที่จำเป็นสำหรับการทำงานที่มีประสิทธิภาพและเป็นที่ยอมรับ</p>
+     </div>
+     <div class="values-grid">
+      <div class="value-card">
+       <div class="value-icon">
+        🤝
+       </div>
+       <div class="value-title">
+        ซื่อสัตย์
+       </div>
+       <p>พูดความจริง ไม่โกหก ไม่หลอกลวง ทำงานด้วยความจริงใจ</p>
+      </div>
+      <div class="value-card">
+       <div class="value-icon">
+        💪
+       </div>
+       <div class="value-title">
+        รับผิดชอบ
+       </div>
+       <p>ทำหน้าที่ให้สำเร็จ รับผิดชอบผลงาน ไม่ผลักภาระให้ผู้อื่น</p>
+      </div>
+      <div class="value-card">
+       <div class="value-icon">
+        ⏰
+       </div>
+       <div class="value-title">
+        มีวินัย
+       </div>
+       <p>ตรงต่อเวลา ปฏิบัติตามกฎระเบียบ มีระเบียบในการทำงาน</p>
+      </div>
+      <div class="value-card">
+       <div class="value-icon">
+        🙏
+       </div>
+       <div class="value-title">
+        เคารพผู้อื่น
+       </div>
+       <p>ให้เกียรติเพื่อนร่วมงาน ฟังความคิดเห็น ไม่ดูถูกผู้อื่น</p>
+      </div>
+      <div class="value-card">
+       <div class="value-icon">
+        🔥
+       </div>
+       <div class="value-title">
+        ขยัน
+       </div>
+       <p>ทำงานอย่างเต็มความสามารถ ไม่เกียจคร้าน มุ่งมั่นในงาน</p>
+      </div>
+      <div class="value-card">
+       <div class="value-icon">
+        🎯
+       </div>
+       <div class="value-title">
+        อดทน
+       </div>
+       <p>ไม่ย่อท้อต่ออุปสรรค เพียรพยายาม มีความอดกลั้น</p>
+      </div>
+     </div><!-- กิจกรรมจับคู่ค่านิยมกับพฤติกรรม -->
+     <div class="activity-container" id="activity2">
+      <div class="activity-title">
+       🎯 กิจกรรม: จับคู่ค่านิยมกับพฤติกรรม
+      </div>
+      <p>ลากพฤติกรรมไปจับคู่กับค่านิยมที่เหมาะสม</p>
+      <div class="drag-drop-container">
+       <div class="drag-source">
+        <h4>พฤติกรรม</h4>
+        <div class="drag-item" draggable="true" data-behavior="punctual">
+         มาทำงานตรงเวลาทุกวัน
+        </div>
+        <div class="drag-item" draggable="true" data-behavior="admit-mistake">
+         ยอมรับเมื่อทำผิดพลาด
+        </div>
+        <div class="drag-item" draggable="true" data-behavior="help-others">
+         ช่วยเหลือเพื่อนร่วมงาน
+        </div>
+        <div class="drag-item" draggable="true" data-behavior="finish-work">
+         ทำงานให้เสร็จตามกำหนด
+        </div>
+        <div class="drag-item" draggable="true" data-behavior="keep-trying">
+         ไม่ย่อท้อเมื่อเจอปัญหา
+        </div>
+        <div class="drag-item" draggable="true" data-behavior="work-hard">
+         ทำงานอย่างเต็มที่
+        </div>
+       </div>
+       <div class="drop-zone" id="valuesDropZone">
+        <h4>ค่านิยมที่เหมาะสม</h4>
+        <p>วางพฤติกรรมที่แสดงถึงค่านิยมที่ดี</p>
+       </div>
+      </div><button class="btn btn-success" onclick="checkValuesActivity()" style="margin-top: 1rem;"> ✅ ตรวจคำตอบ </button>
+     </div>
+    </div>
+   </section><!-- Section 3: จริยธรรมดิจิทัล -->
+   <section class="lesson-section" id="section3">
+    <div class="section-header locked" onclick="toggleSection(3)" role="button" tabindex="0" aria-expanded="false">
+     <h2 class="section-title">3. จริยธรรมดิจิทัลในการทำงาน</h2><span class="section-icon">🔒</span>
+    </div>
+    <div class="section-content" id="content3">
+     <div class="content-text">
+      <p>ในยุคดิจิทัล การทำงานผ่านเทคโนโลยีต้องมีจริยธรรมที่เหมาะสม</p>
+     </div>
+     <div class="highlight-box">
+      <div class="highlight-title">
+       หลักจริยธรรมดิจิทัล
+      </div>
+      <ul>
+       <li><strong>การอ้างอิงแหล่งข้อมูล</strong> - ระบุที่มาของข้อมูลที่นำมาใช้</li>
+       <li><strong>ไม่ละเมิดลิขสิทธิ์</strong> - ไม่ลอกเลียนผลงานผู้อื่น</li>
+       <li><strong>เคารพความเป็นส่วนตัว</strong> - ไม่เปิดเผยข้อมูลส่วนบุคคล</li>
+       <li><strong>ใช้เทคโนโลยีอย่างสร้างสรรค์</strong> - ไม่ใช้เพื่อทำลายหรือก่อกวน</li>
+       <li><strong>ตรวจสอบความถูกต้อง</strong> - ไม่แชร์ข่าวปลอมหรือข้อมูลเท็จ</li>
+      </ul>
+     </div><!-- กิจกรรมสถานการณ์จริยธรรมดิจิทัล -->
+     <div class="activity-container" id="activity3">
+      <div class="activity-title">
+       💻 กิจกรรม: สถานการณ์จริยธรรมดิจิทัล
+      </div>
+      <div class="case-study">
+       <div class="case-title">
+        สถานการณ์ที่ 1: การทำรายงาน
+       </div>
+       <p>นักเรียนคนหนึ่งเจอบทความดีๆ ในอินเทอร์เน็ต อยากนำมาใส่ในรายงานของตนเอง ควรทำอย่างไร?</p>
+       <div class="case-options">
+        <div class="case-option" onclick="selectDigitalCase(1, 1)" data-case="1" data-option="1">
+         คัดลอกมาใส่โดยไม่ต้องบอกที่มา
+        </div>
+        <div class="case-option" onclick="selectDigitalCase(1, 2)" data-case="1" data-option="2">
+         นำมาใช้และระบุแหล่งที่มาอย่างชัดเจน
+        </div>
+        <div class="case-option" onclick="selectDigitalCase(1, 3)" data-case="1" data-option="3">
+         เปลี่ยนคำศัพท์บางคำแล้วอ้างว่าเป็นความคิดของตนเอง
+        </div>
+       </div>
+      </div>
+      <div class="case-study">
+       <div class="case-title">
+        สถานการณ์ที่ 2: การแชร์ข้อมูล
+       </div>
+       <p>เพื่อนส่งข่าวที่น่าสนใจมาให้ แต่ไม่แน่ใจว่าเป็นความจริงหรือไม่ ควรทำอย่างไร?</p>
+       <div class="case-options">
+        <div class="case-option" onclick="selectDigitalCase(2, 1)" data-case="2" data-option="1">
+         แชร์ต่อทันทีเพราะน่าสนใจ
+        </div>
+        <div class="case-option" onclick="selectDigitalCase(2, 2)" data-case="2" data-option="2">
+         ตรวจสอบความถูกต้องก่อนแชร์
+        </div>
+        <div class="case-option" onclick="selectDigitalCase(2, 3)" data-case="2" data-option="3">
+         แชร์พร้อมเขียนว่า "ไม่แน่ใจว่าจริงหรือไม่"
+        </div>
+       </div>
+      </div><button class="btn btn-success" onclick="checkDigitalEthics()" style="margin-top: 1rem;"> ✅ ตรวจคำตอบ </button>
+     </div>
+    </div>
+   </section><!-- Section 4: จรรยาบรรณการทำงานเป็นทีม -->
+   <section class="lesson-section" id="section4">
+    <div class="section-header locked" onclick="toggleSection(4)" role="button" tabindex="0" aria-expanded="false">
+     <h2 class="section-title">4. จรรยาบรรณการทำงานเป็นทีม</h2><span class="section-icon">🔒</span>
+    </div>
+    <div class="section-content" id="content4">
+     <div class="content-text">
+      <p>การทำงานเป็นทีมต้องมีจรรยาบรรณที่ทุกคนยึดถือร่วมกัน</p>
+     </div>
+     <div class="highlight-box">
+      <div class="highlight-title">
+       หลักจรรยาบรรณการทำงานเป็นทีม
+      </div>
+      <ul>
+       <li><strong>ความยุติธรรม</strong> - ปฏิบัติต่อสมาชิกอย่างเท่าเทียม</li>
+       <li><strong>การแบ่งงานอย่างเหมาะสม</strong> - แบ่งหน้าที่ตามความสามารถ</li>
+       <li><strong>ไม่เอาเปรียบ</strong> - ไม่ผลักงานให้ผู้อื่นทำแทน</li>
+       <li><strong>ตรงต่อเวลา</strong> - มาประชุมและส่งงานตามกำหนด</li>
+       <li><strong>รับฟังความคิดเห็น</strong> - เปิดใจรับฟังและให้ความเห็น</li>
+       <li><strong>ช่วยเหลือกัน</strong> - พร้อมช่วยเหลือเมื่อเพื่อนต้องการ</li>
+      </ul>
+     </div><!-- กิจกรรมสถานการณ์การทำงานเป็นทีม -->
+     <div class="activity-container" id="activity4">
+      <div class="activity-title">
+       👥 กิจกรรม: สถานการณ์การทำงานเป็นทีม
+      </div>
+      <div class="case-study">
+       <div class="case-title">
+        สถานการณ์ที่ 3: การแบ่งงานในกลุ่ม
+       </div>
+       <p>ในการทำโครงงานกลุ่ม มีสมาชิกคนหนึ่งไม่ค่อยมีเวลา แต่อยากได้คะแนนเท่ากัน ควรทำอย่างไร?</p>
+       <div class="case-options">
+        <div class="case-option" onclick="selectTeamCase(3, 1)" data-case="3" data-option="1">
+         ให้งานง่ายๆ และลดคะแนนให้เหมาะสม
+        </div>
+        <div class="case-option" onclick="selectTeamCase(3, 2)" data-case="3" data-option="2">
+         คุยกันเพื่อหาวิธีที่ทุกคนยอมรับได้
+        </div>
+        <div class="case-option" onclick="selectTeamCase(3, 3)" data-case="3" data-option="3">
+         ไล่ออกจากกลุ่มทันที
+        </div>
+       </div>
+      </div>
+      <div class="case-study">
+       <div class="case-title">
+        สถานการณ์ที่ 4: ความขัดแย้งในทีม
+       </div>
+       <p>สมาชิกในทีมมีความเห็นไม่ตรงกันเรื่องแนวทางการทำงาน ควรจัดการอย่างไร?</p>
+       <div class="case-options">
+        <div class="case-option" onclick="selectTeamCase(4, 1)" data-case="4" data-option="1">
+         ให้คนที่เก่งที่สุดตัดสินใจ
+        </div>
+        <div class="case-option" onclick="selectTeamCase(4, 2)" data-case="4" data-option="2">
+         นั่งคุยกันอย่างสร้างสรรค์เพื่อหาทางออก
+        </div>
+        <div class="case-option" onclick="selectTeamCase(4, 3)" data-case="4" data-option="3">
+         แยกทำงานคนละส่วน
+        </div>
+       </div>
+      </div><button class="btn btn-success" onclick="checkTeamEthics()" style="margin-top: 1rem;"> ✅ ตรวจคำตอบ </button>
+     </div>
+    </div>
+   </section><!-- Section 5: การตัดสินใจเชิงจริยธรรม -->
+   <section class="lesson-section" id="section5">
+    <div class="section-header locked" onclick="toggleSection(5)" role="button" tabindex="0" aria-expanded="false">
+     <h2 class="section-title">5. การตัดสินใจเชิงจริยธรรม</h2><span class="section-icon">🔒</span>
+    </div>
+    <div class="section-content" id="content5">
+     <div class="content-text">
+      <p>การตัดสินใจที่ดีต้องพิจารณาด้านจริยธรรมและผลกระทบต่อทุกฝ่าย</p>
+     </div>
+     <div class="highlight-box">
+      <div class="highlight-title">
+       4 ขั้นตอนการตัดสินใจเชิงจริยธรรม
+      </div>
+      <ol>
+       <li><strong>ระบุปัญหา</strong> - วิเคราะห์สถานการณ์และปัญหาที่แท้จริง</li>
+       <li><strong>หาทางเลือก</strong> - คิดหาทางเลือกที่เป็นไปได้หลายๆ ทาง</li>
+       <li><strong>ประเมินผลกระทบ</strong> - พิจารณาผลดีผลเสียของแต่ละทางเลือก</li>
+       <li><strong>ตัดสินใจและรับผิดชอบ</strong> - เลือกทางที่ดีที่สุดและรับผิดชอบผลที่ตามมา</li>
+      </ol>
+     </div><!-- กิจกรรมการตัดสินใจเชิงจริยธรรม -->
+     <div class="activity-container" id="activity5">
+      <div class="activity-title">
+       🤔 กิจกรรม: การตัดสินใจเชิงจริยธรรม
+      </div>
+      <div class="case-study">
+       <div class="case-title">
+        สถานการณ์ที่ 5: การสอบ
+       </div>
+       <p>ระหว่างสอบ เพื่อนขอดูคำตอบ หากไม่ให้ดู เพื่อนอาจสอบตก แต่หากให้ดูก็เป็นการโกง ควรทำอย่างไร?</p>
+       <div class="case-options">
+        <div class="case-option" onclick="selectDecisionCase(5, 1)" data-case="5" data-option="1">
+         ให้ดูเพราะเป็นเพื่อน
+        </div>
+        <div class="case-option" onclick="selectDecisionCase(5, 2)" data-case="5" data-option="2">
+         ไม่ให้ดูและอธิบายเหตุผลหลังสอบ
+        </div>
+        <div class="case-option" onclick="selectDecisionCase(5, 3)" data-case="5" data-option="3">
+         แกล้งทำเป็นไม่เห็น
+        </div>
+       </div>
+      </div><button class="btn btn-success" onclick="checkDecisionEthics()" style="margin-top: 1rem;"> ✅ ตรวจคำตอบ </button>
+     </div>
+    </div>
+   </section><!-- Section 6: สัญญาคุณธรรม -->
+   <section class="lesson-section" id="section6">
+    <div class="section-header locked" onclick="toggleSection(6)" role="button" tabindex="0" aria-expanded="false">
+     <h2 class="section-title">6. สัญญาคุณธรรมของกลุ่ม</h2><span class="section-icon">🔒</span>
+    </div>
+    <div class="section-content" id="content6">
+     <div class="content-text">
+      <p>การสร้างสัญญาคุณธรรมร่วมกันช่วยให้ทีมงานมีแนวทางปฏิบัติที่ชัดเจน</p>
+     </div><!-- สัญญาคุณธรรม -->
+     <div class="ethics-contract">
+      <div class="contract-title">
+       📜 สัญญาคุณธรรมของกลุ่ม
+      </div>
+      <div class="contract-content">
+       <p><strong>เราทุกคนในกลุ่มสัญญาว่าจะ:</strong></p>
+       <div class="contract-item">
+        ทำงานด้วยความซื่อสัตย์และไม่โกหก
+       </div>
+       <div class="contract-item">
+        รับผิดชอบงานที่ได้รับมอบหมาย
+       </div>
+       <div class="contract-item">
+        เคารพความคิดเห็นของสมาชิกทุกคน
+       </div>
+       <div class="contract-item">
+        มาประชุมตรงเวลาและส่งงานตามกำหนด
+       </div>
+       <div class="contract-item">
+        ช่วยเหลือกันเมื่อมีปัญหา
+       </div>
+       <div class="contract-item">
+        ไม่เอาเปรียบหรือผลักภาระให้ผู้อื่น
+       </div>
+       <div class="contract-item">
+        ใช้เทคโนโลยีอย่างมีจริยธรรม
+       </div>
+       <div class="contract-item">
+        ตัดสินใจด้วยความยุติธรรม
+       </div>
+      </div>
+      <div class="signature-area">
+       <div class="signature-field">
+        <p>ลงชื่อสมาชิกกลุ่ม</p>
+        <div class="signature-line"></div>
+        <p>วันที่ ........................</p>
+       </div>
+       <div class="signature-field">
+        <p>ลงชื่อครูที่ปรึกษา</p>
+        <div class="signature-line"></div>
+        <p>วันที่ ........................</p>
+       </div>
+      </div>
+     </div><!-- กิจกรรมประเมินตนเองหลังเรียน -->
+     <div class="activity-container" id="activity6">
+      <div class="activity-title">
+       📊 กิจกรรม: ประเมินตนเองหลังเรียน
+      </div>
+      <p>ให้คะแนนตนเองอีกครั้งหลังจากเรียนจบ</p>
+      <div class="assessment-container">
+       <div class="assessment-item"><span>ความซื่อสัตย์ในการทำงาน</span>
+        <div class="rating-scale"><button class="rating-btn" onclick="setPostRating('honesty', 1)">1</button> <button class="rating-btn" onclick="setPostRating('honesty', 2)">2</button> <button class="rating-btn" onclick="setPostRating('honesty', 3)">3</button> <button class="rating-btn" onclick="setPostRating('honesty', 4)">4</button> <button class="rating-btn" onclick="setPostRating('honesty', 5)">5</button>
+        </div>
+       </div>
+       <div class="assessment-item"><span>ความรับผิดชอบต่อหน้าที่</span>
+        <div class="rating-scale"><button class="rating-btn" onclick="setPostRating('responsibility', 1)">1</button> <button class="rating-btn" onclick="setPostRating('responsibility', 2)">2</button> <button class="rating-btn" onclick="setPostRating('responsibility', 3)">3</button> <button class="rating-btn" onclick="setPostRating('responsibility', 4)">4</button> <button class="rating-btn" onclick="setPostRating('responsibility', 5)">5</button>
+        </div>
+       </div>
+       <div class="assessment-item"><span>การเคารพผู้อื่น</span>
+        <div class="rating-scale"><button class="rating-btn" onclick="setPostRating('respect', 1)">1</button> <button class="rating-btn" onclick="setPostRating('respect', 2)">2</button> <button class="rating-btn" onclick="setPostRating('respect', 3)">3</button> <button class="rating-btn" onclick="setPostRating('respect', 4)">4</button> <button class="rating-btn" onclick="setPostRating('respect', 5)">5</button>
+        </div>
+       </div>
+       <div class="assessment-item"><span>วินัยในการทำงาน</span>
+        <div class="rating-scale"><button class="rating-btn" onclick="setPostRating('discipline', 1)">1</button> <button class="rating-btn" onclick="setPostRating('discipline', 2)">2</button> <button class="rating-btn" onclick="setPostRating('discipline', 3)">3</button> <button class="rating-btn" onclick="setPostRating('discipline', 4)">4</button> <button class="rating-btn" onclick="setPostRating('discipline', 5)">5</button>
+        </div>
+       </div>
+      </div><button class="btn btn-success" onclick="completePostAssessment()" style="margin-top: 1rem;"> ✅ บันทึกการประเมิน </button>
+     </div>
+    </div>
+   </section><!-- Quiz Section -->
+   <section class="lesson-section" id="quizSection">
+    <div class="section-header locked" onclick="startQuiz()" role="button" tabindex="0" aria-expanded="false">
+     <h2 class="section-title">🎯 แบบทดสอบท้ายบทเรียน</h2><span class="section-icon">🔒</span>
+    </div>
+    <div class="section-content" id="quizContent">
+     <div class="quiz-container">
+      <div class="quiz-question" id="quizQuestion"></div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+      <div class="quiz-navigation"><button class="btn btn-secondary" onclick="previousQuestion()" id="prevBtn" disabled> ← ก่อนหน้า </button>
+       <div class="quiz-progress" id="quizProgress"></div><button class="btn btn-primary" onclick="nextQuestion()" id="nextBtn"> ถัดไป → </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Results Section -->
+   <div class="score-display" id="finalResults" style="display: none;">
+    <div class="score-number" id="finalScore">
+     0%
+    </div>
+    <div class="score-text" id="finalMessage">
+     ยินดีด้วย! คุณผ่านการทดสอบแล้ว
+    </div><button class="btn btn-primary" onclick="restartLesson()" style="margin-top: 1rem;"> 🔄 เรียนใหม่ </button>
+   </div>
+  </main><!-- Footer -->
+  <footer class="footer">
+   <div class="footer-content">
+    <p>© โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p>ครูผู้สอน: นางปัญจรัศม์ แซ่ตัง</p>
+    <p>เวอร์ชันบทเรียน 1.0 | พัฒนาเพื่อการศึกษา</p>
+   </div>
+  </footer>
+  <script>
+        // ตัวแปรสำหรับจัดการสถานะ
+        let currentSection = 0;
+        let completedActivities = [];
+        let currentQuizQuestion = 0;
+        let quizAnswers = [];
+        let totalScore = 0;
+        
+        // ตัวแปรสำหรับการประเมิน
+        let preAssessment = {};
+        let postAssessment = {};
+        
+        // ตัวแปรสำหรับกิจกรรม
+        let digitalEthicsAnswers = {};
+        let teamEthicsAnswers = {};
+        let decisionEthicsAnswers = {};
+
+        // ข้อมูลแบบทดสอบ
+        const quizData = [
+            {
+                question: "คุณธรรมหมายถึงอะไร?",
+                options: [
+                    "คุณสมบัติอันดีงามที่ฝังอยู่ในจิตใจ",
+                    "กฎหมายที่ต้องปฏิบัติตาม",
+                    "ความสามารถในการทำงาน",
+                    "การมีเงินทองมากมาย"
+                ],
+                correct: 0,
+                explanation: "คุณธรรมคือคุณสมบัติอันดีงามที่ฝังอยู่ในจิตใจของบุคคล"
+            },
+            {
+                question: "ข้อใดแสดงถึงความซื่อสัตย์ในการทำงาน?",
+                options: [
+                    "ทำงานเฉพาะเมื่อมีคนดู",
+                    "รายงานผลงานตามความเป็นจริง",
+                    "ปกปิดข้อผิดพลาดของตนเอง",
+                    "โทษผู้อื่นเมื่อทำงานผิดพลาด"
+                ],
+                correct: 1,
+                explanation: "ความซื่อสัตย์คือการรายงานผลงานตามความเป็นจริง ไม่ปกปิดหรือบิดเบือน"
+            },
+            {
+                question: "การอ้างอิงแหล่งข้อมูลในงานเขียนมีความสำคัญอย่างไร?",
+                options: [
+                    "ทำให้งานดูยาวขึ้น",
+                    "แสดงความเคารพต่อผู้เขียนต้นฉบับ",
+                    "ทำให้อ่านยากขึ้น",
+                    "ไม่มีความสำคัญ"
+                ],
+                correct: 1,
+                explanation: "การอ้างอิงแหล่งข้อมูลแสดงความเคารพต่อผู้เขียนและป้องกันการลอกเลียน"
+            },
+            {
+                question: "เมื่อเจอข่าวที่ไม่แน่ใจว่าจริงหรือไม่ ควรทำอย่างไร?",
+                options: [
+                    "แชร์ทันทีเพราะน่าสนใจ",
+                    "ตรวจสอบความถูกต้องก่อนแชร์",
+                    "แชร์พร้อมเขียนว่าไม่แน่ใจ",
+                    "เพิกเฉยไม่สนใจ"
+                ],
+                correct: 1,
+                explanation: "ควรตรวจสอบความถูกต้องก่อนแชร์เพื่อป้องกันการแพร่กระจายข้อมูลเท็จ"
+            },
+            {
+                question: "หลักการสำคัญในการทำงานเป็นทีมคืออะไร?",
+                options: [
+                    "ให้คนเก่งทำงานทั้งหมด",
+                    "แบ่งงานตามความสามารถอย่างยุติธรรม",
+                    "ทำงานแยกกันไม่ต้องประสานงาน",
+                    "ให้คนที่มีเวลามากทำงานทั้งหมด"
+                ],
+                correct: 1,
+                explanation: "การทำงานเป็นทีมต้องแบ่งงานตามความสามารถอย่างยุติธรรม"
+            },
+            {
+                question: "เมื่อมีความขัดแย้งในทีม วิธีแก้ไขที่ดีที่สุดคือ?",
+                options: [
+                    "ให้หัวหน้าทีมตัดสินใจเอง",
+                    "นั่งคุยกันอย่างสร้างสรรค์",
+                    "แยกทำงานคนละส่วน",
+                    "ให้ฝ่ายที่เก่งกว่าชนะ"
+                ],
+                correct: 1,
+                explanation: "การนั่งคุยกันอย่างสร้างสรรค์จะช่วยหาทางออกที่ทุกฝ่ายยอมรับได้"
+            },
+            {
+                question: "ขั้นตอนแรกของการตัดสินใจเชิงจริยธรรมคืออะไร?",
+                options: [
+                    "หาทางเลือก",
+                    "ระบุปัญหา",
+                    "ประเมินผลกระทบ",
+                    "ตัดสินใจ"
+                ],
+                correct: 1,
+                explanation: "ขั้นตอนแรกคือการระบุปัญหาให้ชัดเจนก่อนหาทางแก้ไข"
+            },
+            {
+                question: "ความรับผิดชอบในการทำงานหมายถึงอะไร?",
+                options: [
+                    "ทำงานเฉพาะที่ชอบ",
+                    "ทำหน้าที่ให้สำเร็จและรับผิดชอบผลงาน",
+                    "ผลักงานให้ผู้อื่นทำ",
+                    "ทำงานเมื่อมีคนบังคับ"
+                ],
+                correct: 1,
+                explanation: "ความรับผิดชอบคือการทำหน้าที่ให้สำเร็จและรับผิดชอบต่อผลงาน"
+            },
+            {
+                question: "การเคารพผู้อื่นในการทำงานแสดงออกอย่างไร?",
+                options: [
+                    "ทำตามใจตนเองเท่านั้น",
+                    "ฟังความคิดเห็นและให้เกียรติผู้อื่น",
+                    "วิพากษ์วิจารณ์ผู้อื่นเสมอ",
+                    "เพิกเฉยต่อผู้อื่น"
+                ],
+                correct: 1,
+                explanation: "การเคารพผู้อื่นคือการฟังความคิดเห็นและให้เกียรติผู้อื่น"
+            },
+            {
+                question: "วินัยในการทำงานมีความสำคัญอย่างไร?",
+                options: [
+                    "ทำให้งานเสร็จช้า",
+                    "สร้างความเป็นระเบียบและประสิทธิภาพ",
+                    "ทำให้เครียด",
+                    "ไม่มีความสำคัญ"
+                ],
+                correct: 1,
+                explanation: "วินัยช่วยสร้างความเป็นระเบียบและเพิ่มประสิทธิภาพในการทำงาน"
+            },
+            {
+                question: "สัญญาคุณธรรมของกลุ่มมีประโยชน์อย่างไร?",
+                options: [
+                    "ทำให้มีกฎเยอะขึ้น",
+                    "สร้างแนวทางปฏิบัติที่ชัดเจนร่วมกัน",
+                    "ทำให้ทำงานยากขึ้น",
+                    "ไม่มีประโยชน์"
+                ],
+                correct: 1,
+                explanation: "สัญญาคุณธรรมช่วยสร้างแนวทางปฏิบัติที่ชัดเจนและเป็นที่ยอมรับร่วมกัน"
+            },
+            {
+                question: "การใช้เทคโนโลยีอย่างมีจริยธรรมหมายถึงอะไร?",
+                options: [
+                    "ใช้เทคโนโลยีเพื่อประโยชน์ส่วนตัวเท่านั้น",
+                    "ใช้อย่างสร้างสรรค์และไม่ละเมิดสิทธิผู้อื่น",
+                    "ใช้เทคโนโลยีให้มากที่สุด",
+                    "หลีกเลี่ยงการใช้เทคโนโลยี"
+                ],
+                correct: 1,
+                explanation: "การใช้เทคโนโลยีอย่างมีจริยธรรมคือการใช้อย่างสร้างสรรค์และไม่ละเมิดสิทธิผู้อื่น"
+            }
+        ];
+
+        // ฟังก์ชันเริ่มบทเรียน
+        function startLesson() {
+            document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
+            toggleSection(1);
+        }
+
+        // ฟังก์ชันเปิด/ปิดส่วนเนื้อหา
+        function toggleSection(sectionNum) {
+            const section = document.getElementById(`section${sectionNum}`);
+            const content = document.getElementById(`content${sectionNum}`);
+            const header = section.querySelector('.section-header');
+            const icon = header.querySelector('.section-icon');
+
+            // ตรวจสอบว่าส่วนนี้ปลดล็อกแล้วหรือไม่
+            if (sectionNum > 1 && !completedActivities.includes(sectionNum - 1)) {
+                showToast('กรุณาทำกิจกรรมในส่วนก่อนหน้าให้เสร็จก่อน', 'warning');
+                return;
+            }
+
+            // เปิด/ปิดเนื้อหา
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.textContent = header.classList.contains('locked') ? '🔒' : '🎯';
+                header.setAttribute('aria-expanded', 'false');
+            } else {
+                // ปิดส่วนอื่นๆ
+                document.querySelectorAll('.section-content').forEach(c => {
+                    c.classList.remove('active');
+                });
+                document.querySelectorAll('.section-header').forEach(h => {
+                    h.setAttribute('aria-expanded', 'false');
+                    const i = h.querySelector('.section-icon');
+                    if (h.classList.contains('locked')) {
+                        i.textContent = '🔒';
+                    } else {
+                        i.textContent = '🎯';
+                    }
+                });
+
+                content.classList.add('active');
+                icon.textContent = '📖';
+                header.setAttribute('aria-expanded', 'true');
+                currentSection = sectionNum;
+            }
+
+            updateProgress();
+        }
+
+        // ฟังก์ชันปลดล็อกส่วนถัดไป
+        function unlockNextSection(completedSection) {
+            completedActivities.push(completedSection);
+            
+            const nextSectionNum = completedSection + 1;
+            const nextSection = document.getElementById(`section${nextSectionNum}`) || document.getElementById('quizSection');
+            
+            if (nextSection) {
+                const header = nextSection.querySelector('.section-header');
+                const icon = header.querySelector('.section-icon');
+                
+                header.classList.remove('locked');
+                
+                if (nextSectionNum <= 6) {
+                    icon.textContent = '🎯';
+                } else {
+                    icon.textContent = '📝';
+                }
+                
+                showToast(`ปลดล็อกส่วนที่ ${nextSectionNum} แล้ว!`, 'success');
+            }
+
+            updateProgress();
+            saveProgress();
+        }
+
+        // ฟังก์ชันอัพเดทความคืบหน้า
+        function updateProgress() {
+            const totalSections = 7; // 6 sections + quiz
+            const progress = (completedActivities.length / totalSections) * 100;
+            
+            document.getElementById('progressFill').style.width = `${progress}%`;
+            document.getElementById('progressText').textContent = `ความคืบหน้า: ${Math.round(progress)}%`;
+        }
+
+        // ฟังก์ชันแสดงข้อความแจ้งเตือน
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `toast`;
+            toast.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? 'var(--success)' : type === 'warning' ? 'var(--warning)' : 'var(--primary)'};
+                color: ${type === 'warning' ? 'var(--text-dark)' : 'white'};
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: var(--shadow-lg);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            toast.textContent = message;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // ฟังก์ชันการประเมินตนเอง
+        function setRating(category, rating) {
+            preAssessment[category] = rating;
+            
+            // อัพเดท UI
+            const buttons = document.querySelectorAll(`[onclick="setRating('${category}', ${rating})"]`).forEach(btn => {
+                btn.parentElement.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            });
+        }
+
+        function setPostRating(category, rating) {
+            postAssessment[category] = rating;
+            
+            // อัพเดท UI
+            const buttons = document.querySelectorAll(`[onclick="setPostRating('${category}', ${rating})"]`).forEach(btn => {
+                btn.parentElement.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            });
+        }
+
+        function completePreAssessment() {
+            const requiredCategories = ['honesty', 'responsibility', 'respect', 'discipline'];
+            const completed = requiredCategories.every(cat => preAssessment[cat]);
+            
+            if (completed) {
+                showToast('บันทึกการประเมินก่อนเรียนเรียบร้อย', 'success');
+                document.getElementById('activity1').classList.add('completed-activity');
+                unlockNextSection(1);
+            } else {
+                showToast('กรุณาให้คะแนนครบทุกข้อ', 'warning');
+            }
+        }
+
+        function completePostAssessment() {
+            const requiredCategories = ['honesty', 'responsibility', 'respect', 'discipline'];
+            const completed = requiredCategories.every(cat => postAssessment[cat]);
+            
+            if (completed) {
+                showToast('บันทึกการประเมินหลังเรียนเรียบร้อย', 'success');
+                document.getElementById('activity6').classList.add('completed-activity');
+                unlockNextSection(6);
+                showAssessmentComparison();
+            } else {
+                showToast('กรุณาให้คะแนนครบทุกข้อ', 'warning');
+            }
+        }
+
+        function showAssessmentComparison() {
+            const categories = ['honesty', 'responsibility', 'respect', 'discipline'];
+            const categoryNames = {
+                'honesty': 'ความซื่อสัตย์',
+                'responsibility': 'ความรับผิดชอบ',
+                'respect': 'การเคารพผู้อื่น',
+                'discipline': 'วินัยในการทำงาน'
+            };
+            
+            let comparison = '<h3>เปรียบเทียบการประเมินก่อน-หลังเรียน</h3>';
+            categories.forEach(cat => {
+                const pre = preAssessment[cat] || 0;
+                const post = postAssessment[cat] || 0;
+                const change = post - pre;
+                const changeText = change > 0 ? `+${change}` : change.toString();
+                comparison += `<p>${categoryNames[cat]}: ${pre} → ${post} (${changeText})</p>`;
+            });
+            
+            showToast('ดูการเปรียบเทียบในผลการเรียน', 'success');
+        }
+
+        // ฟังก์ชัน Drag and Drop
+        function setupDragAndDrop() {
+            const dragItems = document.querySelectorAll('.drag-item');
+            const dropZones = document.querySelectorAll('.drop-zone');
+
+            dragItems.forEach(item => {
+                item.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', e.target.dataset.behavior || e.target.textContent);
+                    e.target.classList.add('dragging');
+                });
+
+                item.addEventListener('dragend', (e) => {
+                    e.target.classList.remove('dragging');
+                });
+            });
+
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    zone.style.background = '#E8F5E8';
+                });
+
+                zone.addEventListener('dragleave', (e) => {
+                    zone.style.background = '';
+                });
+
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    const data = e.dataTransfer.getData('text/plain');
+                    const draggedElement = Array.from(document.querySelectorAll('.drag-item')).find(el => 
+                        el.dataset.behavior === data || el.textContent === data
+                    );
+                    
+                    if (draggedElement) {
+                        zone.appendChild(draggedElement);
+                        zone.style.background = '';
+                    }
+                });
+            });
+        }
+
+        function checkValuesActivity() {
+            const dropZone = document.getElementById('valuesDropZone');
+            const droppedItems = dropZone.querySelectorAll('.drag-item');
+            
+            if (droppedItems.length >= 3) {
+                showToast('ยอดเยี่ยม! คุณเข้าใจค่านิยมและพฤติกรรมที่ดี', 'success');
+                document.getElementById('activity2').classList.add('completed-activity');
+                unlockNextSection(2);
+            } else {
+                showToast('ลองลากพฤติกรรมที่ดีมาใส่ในกล่องให้มากขึ้น', 'warning');
+            }
+        }
+
+        // ฟังก์ชันสำหรับกิจกรรมสถานการณ์
+        function selectDigitalCase(caseNum, optionNum) {
+            digitalEthicsAnswers[caseNum] = optionNum;
+            
+            // อัพเดท UI
+            document.querySelectorAll(`[data-case="${caseNum}"]`).forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelector(`[data-case="${caseNum}"][data-option="${optionNum}"]`).classList.add('selected');
+        }
+
+        function checkDigitalEthics() {
+            const correctAnswers = { 1: 2, 2: 2 }; // คำตอบที่ถูกต้อง
+            let correctCount = 0;
+            
+            Object.keys(correctAnswers).forEach(caseNum => {
+                if (digitalEthicsAnswers[caseNum] === correctAnswers[caseNum]) {
+                    correctCount++;
+                }
+            });
+            
+            if (correctCount === Object.keys(correctAnswers).length) {
+                showToast('ถูกต้อง! คุณเข้าใจจริยธรรมดิจิทัลเป็นอย่างดี', 'success');
+                document.getElementById('activity3').classList.add('completed-activity');
+                unlockNextSection(3);
+            } else {
+                showToast(`ถูกต้อง ${correctCount}/${Object.keys(correctAnswers).length} ข้อ ลองคิดใหม่`, 'warning');
+            }
+        }
+
+        function selectTeamCase(caseNum, optionNum) {
+            teamEthicsAnswers[caseNum] = optionNum;
+            
+            // อัพเดท UI
+            document.querySelectorAll(`[data-case="${caseNum}"]`).forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelector(`[data-case="${caseNum}"][data-option="${optionNum}"]`).classList.add('selected');
+        }
+
+        function checkTeamEthics() {
+            const correctAnswers = { 3: 2, 4: 2 }; // คำตอบที่ถูกต้อง
+            let correctCount = 0;
+            
+            Object.keys(correctAnswers).forEach(caseNum => {
+                if (teamEthicsAnswers[caseNum] === correctAnswers[caseNum]) {
+                    correctCount++;
+                }
+            });
+            
+            if (correctCount === Object.keys(correctAnswers).length) {
+                showToast('เยี่ยมมาก! คุณเข้าใจจรรยาบรรณการทำงานเป็นทีม', 'success');
+                document.getElementById('activity4').classList.add('completed-activity');
+                unlockNextSection(4);
+            } else {
+                showToast(`ถูกต้อง ${correctCount}/${Object.keys(correctAnswers).length} ข้อ ลองคิดใหม่`, 'warning');
+            }
+        }
+
+        function selectDecisionCase(caseNum, optionNum) {
+            decisionEthicsAnswers[caseNum] = optionNum;
+            
+            // อัพเดท UI
+            document.querySelectorAll(`[data-case="${caseNum}"]`).forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelector(`[data-case="${caseNum}"][data-option="${optionNum}"]`).classList.add('selected');
+        }
+
+        function checkDecisionEthics() {
+            const correctAnswers = { 5: 2 }; // คำตอบที่ถูกต้อง
+            
+            if (decisionEthicsAnswers[5] === correctAnswers[5]) {
+                showToast('ถูกต้อง! การตัดสินใจด้วยหลักจริยธรรมเป็นสิ่งสำคัญ', 'success');
+                document.getElementById('activity5').classList.add('completed-activity');
+                unlockNextSection(5);
+            } else {
+                showToast('ลองคิดดูว่าทางเลือกไหนถูกต้องตามหลักจริยธรรม', 'warning');
+            }
+        }
+
+        // ฟังก์ชัน Quiz
+        function startQuiz() {
+            if (!completedActivities.includes(6)) {
+                showToast('กรุณาทำกิจกรรมทั้งหมดให้เสร็จก่อน', 'warning');
+                return;
+            }
+
+            document.getElementById('quizContent').style.display = 'block';
+            currentQuizQuestion = 0;
+            quizAnswers = [];
+            
+            // สุ่มคำถาม
+            quizData.sort(() => Math.random() - 0.5);
+            
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            const question = quizData[currentQuizQuestion];
+            document.getElementById('quizQuestion').textContent = `${currentQuizQuestion + 1}. ${question.question}`;
+            
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+            
+            // สุ่มตัวเลือก
+            const shuffledOptions = question.options.map((option, index) => ({ option, index }));
+            shuffledOptions.sort(() => Math.random() - 0.5);
+            
+            shuffledOptions.forEach(({ option, index }) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quiz-option';
+                optionDiv.textContent = option;
+                optionDiv.onclick = () => selectQuizOption(index, optionDiv);
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            document.getElementById('quizProgress').textContent = `คำถามที่ ${currentQuizQuestion + 1} จาก ${quizData.length}`;
+            document.getElementById('prevBtn').disabled = currentQuizQuestion === 0;
+            document.getElementById('nextBtn').textContent = currentQuizQuestion === quizData.length - 1 ? 'ดูผล' : 'ถัดไป →';
+            
+            // ซ่อน feedback
+            document.getElementById('quizFeedback').classList.remove('show');
+        }
+
+        function selectQuizOption(answerIndex, optionElement) {
+            document.querySelectorAll('#quizOptions .quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            optionElement.classList.add('selected');
+            quizAnswers[currentQuizQuestion] = answerIndex;
+        }
+
+        function nextQuestion() {
+            if (quizAnswers[currentQuizQuestion] === undefined) {
+                showToast('กรุณาเลือกคำตอบก่อน', 'warning');
+                return;
+            }
+
+            if (currentQuizQuestion === quizData.length - 1) {
+                showQuizResults();
+            } else {
+                currentQuizQuestion++;
+                showQuizQuestion();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuizQuestion > 0) {
+                currentQuizQuestion--;
+                showQuizQuestion();
+            }
+        }
+
+        function showQuizResults() {
+            let correctAnswers = 0;
+            
+            quizAnswers.forEach((answer, index) => {
+                if (answer === quizData[index].correct) {
+                    correctAnswers++;
+                }
+            });
+
+            const percentage = Math.round((correctAnswers / quizData.length) * 100);
+            totalScore = percentage;
+
+            document.getElementById('quizContent').style.display = 'none';
+            document.getElementById('finalResults').style.display = 'block';
+            document.getElementById('finalScore').textContent = `${percentage}%`;
+            
+            let message = '';
+            if (percentage >= 80) {
+                message = 'ยอดเยี่ยม! คุณมีความรู้ด้านจริยธรรมเป็นอย่างดี';
+            } else if (percentage >= 60) {
+                message = 'ดีมาก! คุณผ่านการทดสอบแล้ว';
+            } else {
+                message = 'ควรทบทวนบทเรียนอีกครั้ง';
+            }
+            
+            document.getElementById('finalMessage').textContent = message;
+            document.getElementById('scoreValue').textContent = percentage;
+
+            // บันทึกคะแนน
+            saveProgress();
+            
+            if (percentage >= 60) {
+                completedActivities.push(7); // Quiz completed
+                updateProgress();
+            }
+        }
+
+        // ฟังก์ชันจัดการข้อมูล
+        function saveProgress() {
+            const progressData = {
+                completedActivities: completedActivities,
+                totalScore: totalScore,
+                preAssessment: preAssessment,
+                postAssessment: postAssessment,
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('ethicsLessonProgress', JSON.stringify(progressData));
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('ethicsLessonProgress');
+            if (saved) {
+                const data = JSON.parse(saved);
+                completedActivities = data.completedActivities || [];
+                totalScore = data.totalScore || 0;
+                preAssessment = data.preAssessment || {};
+                postAssessment = data.postAssessment || {};
+                
+                // ปลดล็อกส่วนที่เสร็จแล้ว
+                completedActivities.forEach(sectionNum => {
+                    if (sectionNum <= 6) {
+                        const nextSection = document.getElementById(`section${sectionNum + 1}`) || document.getElementById('quizSection');
+                        if (nextSection) {
+                            const header = nextSection.querySelector('.section-header');
+                            header.classList.remove('locked');
+                            const icon = header.querySelector('.section-icon');
+                            icon.textContent = sectionNum + 1 <= 6 ? '🎯' : '📝';
+                        }
+                    }
+                });
+
+                document.getElementById('scoreValue').textContent = totalScore;
+                updateProgress();
+            }
+        }
+
+        function resetProgress() {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; max-width: 400px;">
+                    <h3>ยืนยันการรีเซ็ต</h3>
+                    <p>คุณต้องการรีเซ็ตความคืบหน้าทั้งหมดหรือไม่?</p>
+                    <div style="margin-top: 1rem;">
+                        <button class="btn btn-danger" onclick="confirmReset()" style="margin-right: 1rem;">รีเซ็ต</button>
+                        <button class="btn btn-secondary" onclick="cancelReset()">ยกเลิก</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            window.confirmReset = () => {
+                localStorage.removeItem('ethicsLessonProgress');
+                location.reload();
+            };
+            
+            window.cancelReset = () => {
+                modal.remove();
+            };
+        }
+
+        function restartLesson() {
+            document.getElementById('finalResults').style.display = 'none';
+            document.getElementById('quizContent').style.display = 'none';
+            document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function printResults() {
+            const categories = ['honesty', 'responsibility', 'respect', 'discipline'];
+            const categoryNames = {
+                'honesty': 'ความซื่อสัตย์',
+                'responsibility': 'ความรับผิดชอบ',
+                'respect': 'การเคารพผู้อื่น',
+                'discipline': 'วินัยในการทำงาน'
+            };
+            
+            let assessmentComparison = '';
+            if (Object.keys(preAssessment).length > 0 && Object.keys(postAssessment).length > 0) {
+                assessmentComparison = '<h2>การเปรียบเทียบการประเมินตนเอง</h2><table border="1" style="width:100%; border-collapse: collapse;"><tr><th>หัวข้อ</th><th>ก่อนเรียน</th><th>หลังเรียน</th><th>การเปลี่ยนแปลง</th></tr>';
+                categories.forEach(cat => {
+                    const pre = preAssessment[cat] || 0;
+                    const post = postAssessment[cat] || 0;
+                    const change = post - pre;
+                    const changeText = change > 0 ? `+${change}` : change.toString();
+                    assessmentComparison += `<tr><td>${categoryNames[cat]}</td><td>${pre}</td><td>${post}</td><td>${changeText}</td></tr>`;
+                });
+                assessmentComparison += '</table>';
+            }
+            
+            const printContent = `
+                <h1>ผลการเรียน: คุณธรรมและจริยธรรมในการทำงาน</h1>
+                <p><strong>โรงเรียน:</strong> โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+                <p><strong>ครูผู้สอน:</strong> นางปัญจรัศม์ แซ่ตัง</p>
+                <p><strong>คะแนนรวม:</strong> ${totalScore}%</p>
+                <p><strong>กิจกรรมที่เสร็จสิ้น:</strong> ${completedActivities.length}/7</p>
+                <p><strong>วันที่:</strong> ${new Date().toLocaleDateString('th-TH')}</p>
+                <hr>
+                ${assessmentComparison}
+                <h2>สรุปการเรียนรู้</h2>
+                <ul>
+                    <li>ความหมายและความสำคัญของคุณธรรมจริยธรรม</li>
+                    <li>ค่านิยมหลักในการทำงาน: ซื่อสัตย์ รับผิดชอบ มีวินัย เคารพผู้อื่น ขยัน อดทน</li>
+                    <li>จริยธรรมดิจิทัลในการทำงาน</li>
+                    <li>จรรยาบรรณการทำงานเป็นทีม</li>
+                    <li>การตัดสินใจเชิงจริยธรรม 4 ขั้นตอน</li>
+                    <li>สัญญาคุณธรรมของกลุ่ม</li>
+                </ul>
+            `;
+            
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>ผลการเรียน</title>
+                        <style>
+                            body { font-family: 'Prompt', sans-serif; padding: 20px; }
+                            h1 { color: #1565C0; }
+                            h2 { color: #333; margin-top: 2rem; }
+                            table { margin: 1rem 0; }
+                            th, td { padding: 0.5rem; text-align: center; }
+                            th { background: #f0f0f0; }
+                        </style>
+                    </head>
+                    <body>${printContent}</body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        function downloadContract() {
+            const contractContent = `
+สัญญาคุณธรรมของกลุ่ม
+โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม
+
+เราทุกคนในกลุ่มสัญญาว่าจะ:
+
+✓ ทำงานด้วยความซื่อสัตย์และไม่โกหก
+✓ รับผิดชอบงานที่ได้รับมอบหมาย
+✓ เคารพความคิดเห็นของสมาชิกทุกคน
+✓ มาประชุมตรงเวลาและส่งงานตามกำหนด
+✓ ช่วยเหลือกันเมื่อมีปัญหา
+✓ ไม่เอาเปรียบหรือผลักภาระให้ผู้อื่น
+✓ ใช้เทคโนโลยีอย่างมีจริยธรรม
+✓ ตัดสินใจด้วยความยุติธรรม
+
+ลงชื่อสมาชิกกลุ่ม: _________________________
+วันที่: _________________________
+
+ลงชื่อครูที่ปรึกษา: _________________________
+วันที่: _________________________
+
+สร้างโดย: ระบบบทเรียนคุณธรรมและจริยธรรมในการทำงาน
+วันที่สร้าง: ${new Date().toLocaleDateString('th-TH')}
+            `;
+            
+            const blob = new Blob([contractContent], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'สัญญาคุณธรรมของกลุ่ม.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showToast('ดาวน์โหลดสัญญาคุณธรรมเรียบร้อย', 'success');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            setupDragAndDrop();
+            
+            // เพิ่ม CSS animations
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Accessibility: Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                if (e.target.classList.contains('section-header')) {
+                    e.preventDefault();
+                    e.target.click();
+                }
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'991ebe0ce4c2678e',t:'MTc2MTAyODYwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

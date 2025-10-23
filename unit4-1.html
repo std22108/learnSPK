@@ -1,0 +1,1685 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>งานช่างในบ้าน - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Safety Grid */
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .safety-card {
+            background: var(--white);
+            border: 2px solid var(--danger);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .safety-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--danger) 0%, var(--warning) 100%);
+        }
+
+        .safety-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--danger);
+        }
+
+        .safety-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .safety-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 1rem;
+        }
+
+        .safety-details {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .tool-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .tool-details {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Materials Grid */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .material-card {
+            background: var(--white);
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .material-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .material-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .material-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .material-uses {
+            background: #E8F5E8;
+            padding: 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .material-tips {
+            background: #FFF8E1;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .step-description {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .data-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        .table-icon {
+            font-size: 1.5rem;
+            text-align: center;
+            width: 60px;
+        }
+
+        /* Tip Boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .tip-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--danger);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-title {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .warning-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .checklist-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            color: var(--success);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+        }
+
+        .checklist-text {
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        /* Common Tasks Grid */
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .task-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .task-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .task-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .task-icon {
+            font-size: 2.5rem;
+        }
+
+        .task-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .task-description {
+            background: #E3F2FD;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .task-steps {
+            background: #FFF8E1;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .task-steps strong {
+            color: var(--primary);
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tasks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives {
+                grid-template-columns: 1fr;
+            }
+
+            .data-table {
+                font-size: 0.9rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .tip-box,
+            .warning-box {
+                padding: 1rem;
+            }
+
+            .tip-title,
+            .warning-title,
+            .tip-content,
+            .warning-content {
+                margin-left: 2rem;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🔧</span>
+    <h1 id="lessonTitle">งานช่างในบ้าน</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">ทักษะการซ่อมบำรุงเล็ก ๆ น้อย ๆ อย่างปลอดภัยและคุ้มค่า เพื่อการดูแลบ้านที่ยั่งยืน</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจหลักความปลอดภัยในงานช่าง รู้จักเครื่องมือและวัสดุพื้นฐาน และเทคนิคการซ่อมบำรุงง่าย ๆ</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถใช้เครื่องมือช่างอย่างถูกต้อง ปฏิบัติงานซ่อมบำรุงเบื้องต้นได้อย่างปลอดภัย</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>มีความระมัดระวัง รับผิดชอบ และเห็นคุณค่าของการดูแลรักษาทรัพย์สินอย่างยั่งยืน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Safety First -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛡️</span>
+     <h2 class="section-title">ความปลอดภัยก่อนทำงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p><strong>ความปลอดภัยเป็นสิ่งสำคัญที่สุด</strong> ก่อนเริ่มงานช่างใด ๆ ต้องเตรียมความพร้อมและป้องกันอันตรายที่อาจเกิดขึ้น</p>
+     </div>
+     <div class="safety-grid">
+      <div class="safety-card"><span class="safety-icon" aria-hidden="true">⚡</span>
+       <div class="safety-title">
+        ตัดไฟ/ปิดวาล์วน้ำ
+       </div>
+       <div class="safety-details"><strong>ไฟฟ้า:</strong> ปิดเบรกเกอร์หลัก<br><strong>น้ำ:</strong> ปิดวาล์วหลักก่อนซ่อม<br><strong>แก๊ส:</strong> ปิดวาล์วแก๊สทุกครั้ง<br><strong>ตรวจสอบ:</strong> ใช้เครื่องมือวัดแรงดัน
+       </div>
+      </div>
+      <div class="safety-card"><span class="safety-icon" aria-hidden="true">🥽</span>
+       <div class="safety-title">
+        อุปกรณ์ป้องกัน
+       </div>
+       <div class="safety-details"><strong>ถุงมือ:</strong> ป้องกันบาดเจ็บ<br><strong>แว่นตา:</strong> ป้องกันเศษวัสดุ<br><strong>รองเท้า:</strong> ปลายเหล็ก กันลื่น<br><strong>หน้ากาก:</strong> ป้องกันฝุ่นละออง
+       </div>
+      </div>
+      <div class="safety-card"><span class="safety-icon" aria-hidden="true">🚧</span>
+       <div class="safety-title">
+        ป้ายเตือน
+       </div>
+       <div class="safety-details"><strong>กำลังซ่อม:</strong> ติดป้ายชัดเจน<br><strong>อันตราย:</strong> เตือนคนอื่น<br><strong>ห้ามใช้:</strong> ปิดกั้นพื้นที่<br><strong>ฉุกเฉิน:</strong> เตรียมเบอร์โทร
+       </div>
+      </div>
+      <div class="safety-card"><span class="safety-icon" aria-hidden="true">💨</span>
+       <div class="safety-title">
+        การระบายอากาศ
+       </div>
+       <div class="safety-details"><strong>เปิดหน้าต่าง:</strong> ให้อากาศถ่ายเท<br><strong>พัดลม:</strong> ช่วยระบายอากาศ<br><strong>หลีกเลี่ยง:</strong> ควันสี กาว<br><strong>พักบ่อย:</strong> ออกไปหายใจอากาศบริสุทธิ์
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ห้ามทำงานเสี่ยงอันตราย
+      </div>
+      <div class="warning-content">
+       <p><strong>ไฟฟ้าแรงดันสูง:</strong> เรียกช่างผู้เชี่ยวชาญ | <strong>โครงสร้างเสี่ยง:</strong> เสาเข็ม คาน หลังคา | <strong>สารเคมีอันตราย:</strong> กรด ด่าง สารพิษ | <strong>เครื่องจักรหนัก:</strong> ปั้นจั่น เครื่องตัด</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Basic Tools -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔨</span>
+     <h2 class="section-title">เครื่องมือพื้นฐานและการใช้</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การเลือกใช้เครื่องมือที่เหมาะสมกับงานจะช่วยให้ทำงานได้อย่างมีประสิทธิภาพและปลอดภัย</p>
+     </div>
+     <div class="tools-grid">
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">🪛</span>
+       <div class="tool-name">
+        ไขควง
+       </div>
+       <div class="tool-details"><strong>ชนิด:</strong> หัวแบน หัวแฉก<br><strong>ขนาด:</strong> เล็ก กลาง ใหญ่<br><strong>งาน:</strong> ขันสกรู บานพับ<br><strong>ระวัง:</strong> ใช้ขนาดที่พอดี
+       </div>
+      </div>
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">🔨</span>
+       <div class="tool-name">
+        ค้อน
+       </div>
+       <div class="tool-details"><strong>ชนิด:</strong> หัวเหล็ก หัวยาง<br><strong>น้ำหนัก:</strong> 200-500 กรัม<br><strong>งาน:</strong> ตอกตะปู รื้อถอน<br><strong>ระวัง:</strong> จับด้ามแน่น ตีตรง
+       </div>
+      </div>
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">🔧</span>
+       <div class="tool-name">
+        คีม
+       </div>
+       <div class="tool-details"><strong>ชนิด:</strong> คีมจับ คีมตัด<br><strong>ขนาด:</strong> 6-8 นิ้ว<br><strong>งาน:</strong> จับ บิด ตัดลวด<br><strong>ระวัง:</strong> ไม่ใช้กับไฟฟ้า
+       </div>
+      </div>
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">🪚</span>
+       <div class="tool-name">
+        เลื่อย
+       </div>
+       <div class="tool-details"><strong>ชนิด:</strong> เลื่อยไม้ เลื่อยเหล็ก<br><strong>ฟัน:</strong> หยาบ ละเอียด<br><strong>งาน:</strong> ตัดไม้ ตัดท่อ<br><strong>ระวัง:</strong> ใช้แรงสม่ำเสมอ
+       </div>
+      </div>
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">🔪</span>
+       <div class="tool-name">
+        มีดคัตเตอร์
+       </div>
+       <div class="tool-details"><strong>ชนิด:</strong> ใบเล็ก ใบใหญ่<br><strong>ใบมีด:</strong> เปลี่ยนได้<br><strong>งาน:</strong> ตัดกระดาษ พลาสติก<br><strong>ระวัง:</strong> เก็บใบมีดเข้า
+       </div>
+      </div>
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">📏</span>
+       <div class="tool-name">
+        ตลับเมตร
+       </div>
+       <div class="tool-details"><strong>ความยาว:</strong> 3-5 เมตร<br><strong>หน่วย:</strong> เซนติเมตร นิ้ว<br><strong>งาน:</strong> วัดระยะ ทำเครื่องหมาย<br><strong>ระวัง:</strong> เก็บเข้าช้า ๆ
+       </div>
+      </div>
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">📐</span>
+       <div class="tool-name">
+        ระดับน้ำ
+       </div>
+       <div class="tool-details"><strong>ขนาด:</strong> 30-60 ซม.<br><strong>ฟองอากาศ:</strong> 2-3 ฟอง<br><strong>งาน:</strong> ตรวจระดับ แนวตั้ง<br><strong>ระวัง:</strong> ไม่ให้ตก กระแทก
+       </div>
+      </div>
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">🔧</span>
+       <div class="tool-name">
+        ประแจ
+       </div>
+       <div class="tool-details"><strong>ชนิด:</strong> ปากตาย ปากเปิด<br><strong>ขนาด:</strong> 8-19 มม.<br><strong>งาน:</strong> ขันน็อต โบลท์<br><strong>ระวัง:</strong> ใช้ขนาดที่พอดี
+       </div>
+      </div>
+      <div class="tool-card"><span class="tool-icon" aria-hidden="true">🔩</span>
+       <div class="tool-name">
+        สว่าน
+       </div>
+       <div class="tool-details"><strong>ชนิด:</strong> สว่านมือ สว่านไฟฟ้า<br><strong>ดอกสว่าน:</strong> ไม้ ปูน เหล็ก<br><strong>งาน:</strong> เจาะรู ขันสกรู<br><strong>ระวัง:</strong> จับแน่น ใส่แว่น
+       </div>
+      </div>
+     </div>
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>เครื่องมือ</th>
+        <th>งานที่เหมาะ</th>
+        <th>ข้อควรระวัง</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="table-icon" aria-label="ไขควง">🪛</td>
+        <td><strong>ไขควง</strong><br>
+         ขันสกรู บานพับ สวิตช์ไฟ</td>
+        <td>ใช้ขนาดที่พอดีกับหัวสกรู ไม่ใช้แทนสิ่ว</td>
+       </tr>
+       <tr>
+        <td class="table-icon" aria-label="ค้อน">🔨</td>
+        <td><strong>ค้อน</strong><br>
+         ตอกตะปู รื้อถอน ปรับรูปร่าง</td>
+        <td>จับด้ามแน่น ตีให้ตรงเป้า ระวังนิ้วมือ</td>
+       </tr>
+       <tr>
+        <td class="table-icon" aria-label="เลื่อย">🪚</td>
+        <td><strong>เลื่อย</strong><br>
+         ตัดไม้ ตัดท่อ ตัดแผ่นบาง</td>
+        <td>ใช้แรงสม่ำเสมอ ยึดชิ้นงานให้แน่น</td>
+       </tr>
+       <tr>
+        <td class="table-icon" aria-label="สว่าน">🔩</td>
+        <td><strong>สว่าน</strong><br>
+         เจาะรูในไม้ ปูน เหล็กบาง</td>
+        <td>ใส่แว่นป้องกัน เริ่มเจาะช้า ๆ</td>
+       </tr>
+       <tr>
+        <td class="table-icon" aria-label="ระดับน้ำ">📐</td>
+        <td><strong>ระดับน้ำ</strong><br>
+         ตรวจระดับ วางท่อ แขวนภาพ</td>
+        <td>วางบนพื้นผิวเรียบ อ่านฟองอากาศตรงกลาง</td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="tip-box">
+      <div class="tip-title">
+       การดูแลเครื่องมือ
+      </div>
+      <div class="tip-content">
+       <p>ทำความสะอาดหลังใช้งาน เช็ดแห้ง ทาน้ำมันกันสนิม เก็บในที่แห้ง และตรวจสอบความคมของใบมีด ดอกสว่าน เป็นประจำ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Materials and Fasteners -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔩</span>
+     <h2 class="section-title">วัสดุและตัวยึด</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การเลือกวัสดุและตัวยึดที่เหมาะสมกับประเภทของพื้นผิวและน้ำหนักของสิ่งที่จะติดตั้ง</p>
+     </div>
+     <div class="materials-grid">
+      <div class="material-card"><span class="material-icon" aria-hidden="true">📌</span>
+       <div class="material-name">
+        ตะปู
+       </div>
+       <div class="material-uses"><strong>เหมาะสำหรับ:</strong> ไม้ แผ่นยิปซั่ม<br><strong>ขนาด:</strong> 1-4 นิ้ว<br><strong>ชนิด:</strong> หัวแบน หัวกลม
+       </div>
+       <div class="material-tips"><strong>เคล็ดลับ:</strong> เลือกความยาว 2.5 เท่าของความหนาแผ่น
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">🔩</span>
+       <div class="material-name">
+        สกรู
+       </div>
+       <div class="material-uses"><strong>เหมาะสำหรับ:</strong> ไม้ เหล็ก พลาสติก<br><strong>หัว:</strong> แฉก แบน หกเหลี่ยม<br><strong>เกลียว:</strong> หยาบ ละเอียด
+       </div>
+       <div class="material-tips"><strong>เคล็ดลับ:</strong> เจาะรูนำก่อนในไม้แข็ง
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">⚓</span>
+       <div class="material-name">
+        พุก (Anchor)
+       </div>
+       <div class="material-uses"><strong>เหมาะสำหรับ:</strong> ผนังปูน คอนกรีต<br><strong>ชนิด:</strong> พุกพลาสติก พุกเหล็ก<br><strong>ขนาด:</strong> 6-12 มม.
+       </div>
+       <div class="material-tips"><strong>เคล็ดลับ:</strong> เจาะรูให้ลึกเท่าความยาวพุก
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">🧴</span>
+       <div class="material-name">
+        กาว
+       </div>
+       <div class="material-uses"><strong>ชนิด:</strong> กาวไม้ กาวอีพ็อกซี่<br><strong>เหมาะสำหรับ:</strong> ไม้ พลาสติก เซรามิก<br><strong>เวลาแห้ง:</strong> 30 นาที - 24 ชั่วโมง
+       </div>
+       <div class="material-tips"><strong>เคล็ดลับ:</strong> ทำความสะอาดพื้นผิวก่อนใช้
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">🔧</span>
+       <div class="material-name">
+        ซิลิโคน
+       </div>
+       <div class="material-uses"><strong>เหมาะสำหรับ:</strong> อุดรอยแตก กันน้ำ<br><strong>สี:</strong> ใส ขาว สีต่าง ๆ<br><strong>ทนต่อ:</strong> น้ำ ความร้อน UV
+       </div>
+       <div class="material-tips"><strong>เคล็ดลับ:</strong> ใช้สบู่น้ำเปียกนิ้วเกลี่ย
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">⭕</span>
+       <div class="material-name">
+        ปะเก็น
+       </div>
+       <div class="material-uses"><strong>วัสดุ:</strong> ยาง ไฟเบอร์ โลหะ<br><strong>เหมาะสำหรับ:</strong> ข้อต่อท่อ ก๊อกน้ำ<br><strong>รูปร่าง:</strong> วงกลม แบน
+       </div>
+       <div class="material-tips"><strong>เคล็ดลับ:</strong> เปลี่ยนเมื่อแข็งหรือแตก
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">🎗️</span>
+       <div class="material-name">
+        เทปพันเกลียว (PTFE)
+       </div>
+       <div class="material-uses"><strong>สี:</strong> ขาว (น้ำ) เหลือง (แก๊ส)<br><strong>เหมาะสำหรับ:</strong> ข้อต่อเกลียว<br><strong>ความหนา:</strong> 0.1 มม.
+       </div>
+       <div class="material-tips"><strong>เคล็ดลับ:</strong> พันตามทิศทางเกลียว 3-5 รอบ
+       </div>
+      </div>
+     </div>
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>พื้นผิว</th>
+        <th>ตัวยึดที่เหมาะ</th>
+        <th>ข้อควรระวัง</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td><strong>ไม้</strong></td>
+        <td>ตะปู สกรูไม้ กาวไม้</td>
+        <td>เจาะรูนำในไม้แข็ง ระวังไม้แตก</td>
+       </tr>
+       <tr>
+        <td><strong>ผนังปูน</strong></td>
+        <td>พุกพลาสติก + สกรู</td>
+        <td>ใช้ดอกสว่านปูน เจาะช้า ๆ</td>
+       </tr>
+       <tr>
+        <td><strong>โลหะ</strong></td>
+        <td>สกรูเหล็ก โบลท์ + นัท</td>
+        <td>ใช้น้ำมันหล่อลื่น ระวังเศษโลหะ</td>
+       </tr>
+       <tr>
+        <td><strong>พลาสติก</strong></td>
+        <td>สกรูพลาสติก กาวพิเศษ</td>
+        <td>ไม่ขันแน่นเกินไป อาจแตก</td>
+       </tr>
+       <tr>
+        <td><strong>กระเบื้อง</strong></td>
+        <td>พุกเซรามิก + สกรู</td>
+        <td>ใช้ดอกสว่านเซรามิก เจาะช้า</td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </section><!-- Common Repair Tasks -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔧</span>
+     <h2 class="section-title">งานช่างง่าย ๆ ที่พบบ่อย</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>งานซ่อมบำรุงเบื้องต้นที่สามารถทำเองได้ในบ้าน ช่วยประหยัดค่าใช้จ่ายและเพิ่มทักษะ</p>
+     </div>
+     <div class="tasks-grid">
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">🚪</span>
+        <div class="task-title">
+         ขันสกรูบานพับหลวม
+        </div>
+       </div>
+       <div class="task-description"><strong>อาการ:</strong> ประตูหรือหน้าต่างปิดไม่สนิท เสียงดัง หรือบานพับหลวม
+       </div>
+       <div class="task-steps"><strong>ขั้นตอน:</strong><br>
+         1. ตรวจสอบสกรูที่หลวม<br>
+         2. ใช้ไขควงขนาดที่เหมาะสม<br>
+         3. ขันสกรูให้แน่น แต่ไม่เกินไป<br>
+         4. ทดสอบการเปิด-ปิด<br>
+         5. หยดน้ำมันหล่อลื่นที่บานพับ
+       </div>
+      </div>
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">🖼️</span>
+        <div class="task-title">
+         ติดพุกแขวนของบนผนัง
+        </div>
+       </div>
+       <div class="task-description"><strong>งาน:</strong> แขวนภาพ นาฬิกา ชั้นวางของ หรือตะขอแขวนเสื้อผ้า
+       </div>
+       <div class="task-steps"><strong>ขั้นตอน:</strong><br>
+         1. วัดและทำเครื่องหมายตำแหน่ง<br>
+         2. เลือกดอกสว่านและพุกให้เหมาะสม<br>
+         3. เจาะรูลึกเท่าความยาวพุก<br>
+         4. ใส่พุกและขันสกรู<br>
+         5. ทดสอบความแข็งแรง
+       </div>
+      </div>
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">🧱</span>
+        <div class="task-title">
+         อุดรอยร้าวบนผนัง
+        </div>
+       </div>
+       <div class="task-description"><strong>ปัญหา:</strong> รอยแตกเล็ก ๆ บนผนัง หรือรอยต่อระหว่างผนังกับเพดาน
+       </div>
+       <div class="task-steps"><strong>ขั้นตอน:</strong><br>
+         1. ทำความสะอาดรอยแตก<br>
+         2. ใช้ซิลิโคนหรือยาแนวอุดรอยแตก<br>
+         3. เกลี่ยให้เรียบด้วยนิ้วเปียก<br>
+         4. รอให้แห้ง 24 ชั่วโมง<br>
+         5. ทาสีทับให้เข้ากับผนัง
+       </div>
+      </div>
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">🚰</span>
+        <div class="task-title">
+         เปลี่ยนยางซีลก๊อกน้ำ
+        </div>
+       </div>
+       <div class="task-description"><strong>อาการ:</strong> ก๊อกน้ำหยดหรือรั่ว น้ำไหลไม่หยุด แม้ปิดแน้น
+       </div>
+       <div class="task-steps"><strong>ขั้นตอน:</strong><br>
+         1. ปิดวาล์วน้ำหลักก่อน<br>
+         2. ถอดหัวก๊อกออก<br>
+         3. เปลี่ยนยางซีลเก่าเป็นใหม่<br>
+         4. พันเทป PTFE ที่เกลียว<br>
+         5. ประกอบกลับและทดสอบ
+       </div>
+      </div>
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">🚽</span>
+        <div class="task-title">
+         เปิดท่ออุดตัน
+        </div>
+       </div>
+       <div class="task-description"><strong>ปัญหา:</strong> อ่างล้างหน้า อ่างล้างจาน หรือโถส้วมน้ำไหลช้าหรือไม่ไหล
+       </div>
+       <div class="task-steps"><strong>ขั้นตอน:</strong><br>
+         1. ใช้ที่ปั๊ม (plunger) กดปล่อยหลายครั้ง<br>
+         2. เทน้ำร้อนลงท่อ<br>
+         3. ใช้โซดาไฟ + น้ำร้อน (ระวัง!)<br>
+         4. ถ้าไม่หาย เรียกช่างประปา<br>
+         5. ป้องกัน: ไม่ทิ้งเศษอาหาร ผม
+       </div>
+      </div>
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">🎨</span>
+        <div class="task-title">
+         ทาสีแตะซ่อม
+        </div>
+       </div>
+       <div class="task-description"><strong>งาน:</strong> ซ่อมสีที่ลอก ขีดข่วน หรือเปื้อนบนผนัง เฟอร์นิเจอร์
+       </div>
+       <div class="task-steps"><strong>ขั้นตอน:</strong><br>
+         1. ขัดพื้นผิวให้เรียบ<br>
+         2. เช็ดฝุ่นให้สะอาด<br>
+         3. ทารองพื้น (primer) ถ้าจำเป็น<br>
+         4. ทาสีทับ 2-3 ชั้น<br>
+         5. รอให้แห้งระหว่างชั้น
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       เมื่อไหร่ควรเรียกช่าง
+      </div>
+      <div class="warning-content">
+       <p>หากปัญหาซับซ้อน เกี่ยวกับไฟฟ้าแรงดันสูง ท่อแก๊ส โครงสร้างบ้าน หรือไม่มั่นใจในความปลอดภัย ควรเรียกช่างผู้เชี่ยวชาญ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Measuring and Marking -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📏</span>
+     <h2 class="section-title">การวัด ทำเครื่องหมาย ตรวจแนว</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>ความแม่นยำในการวัดและทำเครื่องหมายเป็นพื้นฐานสำคัญของงานช่างที่ดี</p>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        1
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การใช้ตลับเมตร
+        </div>
+        <div class="step-description">
+         ดึงตลับเมตรให้ตึง วัดจากจุดเริ่มต้นที่ชัดเจน อ่านค่าที่ตำแหน่งที่ต้องการ และเก็บตลับเมตรช้า ๆ เพื่อป้องกันการเด้งกลับ
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        2
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การทำเครื่องหมายด้วยดินสอช่าง
+        </div>
+        <div class="step-description">
+         ใช้ดินสอช่างหรือดินสอดำทำเครื่องหมาย เขียนให้ชัดเจนแต่ไม่เข้มเกินไป เพื่อลบออกได้ง่าย และเขียนขนาดหรือหมายเหตุข้างเครื่องหมาย
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        3
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การใช้ระดับน้ำ
+        </div>
+        <div class="step-description">
+         วางระดับน้ำบนพื้นผิวที่เรียบ อ่านฟองอากาศให้อยู่ตรงกลางเส้น สำหรับแนวตั้งใช้ฟองข้าง สำหรับแนวนอนใช้ฟองกลาง
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        4
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การตรวจสอบความแม่นยำ
+        </div>
+        <div class="step-description">
+         วัดซ้ำอีกครั้งเพื่อยืนยัน ตรวจสอบแนวด้วยระดับน้ำ และใช้หลัก "วัดสองครั้ง ตัดครั้งเดียว" เพื่อหลีกเลี่ยงความผิดพลาด
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">📐</span> เทคนิคการวัดที่แม่นยำ
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>วัดจากจุดอ้างอิงเดียวกัน:</strong> เลือกจุดเริ่มต้นที่ชัดเจนและคงที่
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ใช้หน่วยเดียวกัน:</strong> เซนติเมตร หรือ นิ้ว ตลอดโครงการ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>บันทึกขนาด:</strong> เขียนขนาดลงกระดาษหรือบนชิ้นงาน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ตรวจสอบซ้ำ:</strong> วัดอีกครั้งก่อนตัดหรือเจาะ
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       หลัก "วัดสองครั้ง ตัดครั้งเดียว"
+      </div>
+      <div class="tip-content">
+       <p>หลักการสำคัญของช่างคือการวัดให้แม่นยำก่อนตัดหรือเจาะ เพราะเมื่อตัดแล้วจะแก้ไขได้ยาก การวัดซ้ำจะช่วยลดความผิดพลาดและประหยัดวัสดุ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Tool Care and Maintenance -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧰</span>
+     <h2 class="section-title">การดูแลและเก็บรักษาเครื่องมือ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>เครื่องมือที่ได้รับการดูแลดีจะใช้งานได้นานและมีประสิทธิภาพสูง</p>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        1
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ทำความสะอาดหลังใช้
+        </div>
+        <div class="step-description">
+         เช็ดเครื่องมือให้สะอาดทุกครั้งหลังใช้งาน ล้างคราบสี กาว หรือสิ่งสกปรกออก ใช้แปรงขัดจุดที่สกปรกมาก และเช็ดให้แห้งสนิท
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        2
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ทาน้ำมันกันสนิม
+        </div>
+        <div class="step-description">
+         ทาน้ำมันกันสนิมบางๆ บนส่วนที่เป็นโลหะ โดยเฉพาะใบมีด ดอกสว่าน และส่วนที่เคลื่อนไหว ใช้ผ้าเช็ดส่วนเกินออก
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        3
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         จัดเก็บอย่างเป็นระบบ
+        </div>
+        <div class="step-description">
+         เก็บเครื่องมือในที่แห้ง ไม่ชื้น จัดเรียงให้เป็นระบบ ใช้กล่องเครื่องมือหรือแผงแขวน ป้องกันการชนกันและหาง่าย
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        4
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ตรวจสอบและบำรุงรักษา
+        </div>
+        <div class="step-description">
+         ตรวจสอบความคมของใบมีด ความแน่นของด้าม การทำงานของส่วนเคลื่อนไหว ลับมีดเมื่อทื่อ และซ่อมแซมเมื่อเสียหาย
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🔧</span> การดูแลเครื่องมือแต่ละประเภท
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เครื่องมือมีใบมีด:</strong> ลับให้คม เก็บในซองป้องกัน ไม่ให้ชนกัน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เครื่องมือวัด:</strong> ป้องกันการตก กระแทก เก็บในกล่องนิ่ม
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เครื่องมือไฟฟ้า:</strong> เก็บในที่แห้ง ตรวจสายไฟ ทำความสะอาดช่องระบายอากาศ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เครื่องมือมีข้อต่อ:</strong> หยดน้ำมันหล่อลื่น ตรวจความแน่นของสกรู
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การลับมีดและดอกสว่าน
+      </div>
+      <div class="tip-content">
+       <p>ใช้หินลับหรือแท่นลับ รักษามุมเดิมของใบมีด ลับด้วยแรงเบา ๆ สม่ำเสมอ และทดสอบความคมด้วยกระดาษ สำหรับดอกสว่านควรให้ช่างผู้เชี่ยวชาญลับ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Environment and Value -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">สิ่งแวดล้อมและความคุ้มค่า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>งานช่างที่ดีไม่เพียงแต่แก้ปัญหา แต่ยังต้องคำนึงถึงสิ่งแวดล้อมและความคุ้มค่าในระยะยาว</p>
+     </div>
+     <div class="tasks-grid">
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">♻️</span>
+        <div class="task-title">
+         3R: ลด ใช้ซ้ำ รีไซเคิล
+        </div>
+       </div>
+       <div class="task-description"><strong>Reduce:</strong> ลดการใช้วัสดุที่ไม่จำเป็น วางแผนก่อนซื้อ
+       </div>
+       <div class="task-steps"><strong>Reuse:</strong> นำวัสดุเหลือใช้มาใช้ใหม่<br><strong>Recycle:</strong> แยกขยะ นำไปรีไซเคิล<br><strong>ตัวอย่าง:</strong> ไม้เหลือทำชั้นเล็ก ๆ<br>
+         ขวดพลาสติกใส่น็อต สกรู
+       </div>
+      </div>
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">🗂️</span>
+        <div class="task-title">
+         การแยกเศษวัสดุ
+        </div>
+       </div>
+       <div class="task-description"><strong>วัตถุประสงค์:</strong> ลดขยะ เพิ่มมูลค่า และปกป้องสิ่งแวดล้อม
+       </div>
+       <div class="task-steps"><strong>โลหะ:</strong> เหล็ก ทองแดง อลูมิเนียม<br><strong>ไม้:</strong> ไม้แข็ง ไม้อัด ไผ่<br><strong>พลาสติก:</strong> แยกตามประเภท<br><strong>อันตราย:</strong> แบตเตอรี่ สี ทินเนอร์
+       </div>
+      </div>
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">💪</span>
+        <div class="task-title">
+         เลือกวัสดุทนทาน
+        </div>
+       </div>
+       <div class="task-description"><strong>หลักการ:</strong> ซื้อของดี ใช้นาน ประหยัดในระยะยาว
+       </div>
+       <div class="task-steps"><strong>เครื่องมือ:</strong> เลือกยี่ห้อที่มีชื่อเสียง<br><strong>วัสดุ:</strong> สแตนเลส ไม้แข็ง<br><strong>การรับประกัน:</strong> เลือกที่มีการรับประกัน<br><strong>การดูแล:</strong> บำรุงรักษาอย่างสม่ำเสมอ
+       </div>
+      </div>
+      <div class="task-card">
+       <div class="task-header"><span class="task-icon" aria-hidden="true">🔧</span>
+        <div class="task-title">
+         ซ่อมก่อนซื้อใหม่
+        </div>
+       </div>
+       <div class="task-description"><strong>ปรัชญา:</strong> ของเก่าที่ซ่อมได้ยังมีคุณค่า ไม่ควรทิ้งง่าย ๆ
+       </div>
+       <div class="task-steps"><strong>ประเมิน:</strong> ค่าซ่อม vs ซื้อใหม่<br><strong>ทักษะ:</strong> เรียนรู้การซ่อมเบื้องต้น<br><strong>ชิ้นส่วน:</strong> หาชิ้นส่วนทดแทน<br><strong>ช่าง:</strong> ปรึกษาช่างผู้เชี่ยวชาญ
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">💰</span> การคำนวณความคุ้มค่า
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ค่าวัสดุ + ค่าแรง:</strong> เปรียบเทียบกับการจ้างช่าง
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เวลาที่ใช้:</strong> คิดค่าเวลาของตัวเองด้วย
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ความเสี่ยง:</strong> งานที่เสี่ยงอันตรายควรจ้างช่าง
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>การเรียนรู้:</strong> ทักษะที่ได้เป็นมูลค่าเพิ่ม
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การสร้างมูลค่าจากของเหลือใช้
+      </div>
+      <div class="tip-content">
+       <p>ไม้เหลือจากงานก่อสร้างสามารถทำเป็นชั้นหนังสือ กล่องเก็บของ หรือของตกแต่ง ท่อ PVC เหลือทำเป็นที่ใส่ดินสอ หรือกระถางต้นไม้ ความคิดสร้างสรรค์จะช่วยลดขยะและประหยัดเงิน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>ความปลอดภัยเป็นสิ่งสำคัญที่สุด ต้องเตรียมความพร้อมก่อนทำงานทุกครั้ง</li>
+     <li>เลือกใช้เครื่องมือที่เหมาะสมกับงาน และดูแลรักษาให้อยู่ในสภาพดี</li>
+     <li>การวัดและทำเครื่องหมายที่แม่นยำเป็นพื้นฐานของงานช่างที่ดี</li>
+     <li>เริ่มจากงานง่าย ๆ สะสมประสบการณ์ก่อนทำงานที่ซับซ้อน</li>
+     <li>คำนึงถึงสิ่งแวดล้อม ใช้วัสดุอย่างคุ้มค่า และลดของเสีย</li>
+     <li>รู้จักขีดจำกัดของตัวเอง เรียกช่างเมื่องานเกินความสามารถ</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์ช่างสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Anchor (พุก)
+      </div>
+      <div class="glossary-definition">
+       ตัวยึดที่ใช้ติดสิ่งของบนผนังปูนหรือคอนกรีต ขยายตัวเมื่อขันสกรู
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Level (ระดับน้ำ)
+      </div>
+      <div class="glossary-definition">
+       เครื่องมือตรวจสอบความเรียบ ความตั้งฉาก ใช้ฟองอากาศเป็นตัวบ่งชี้
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Primer (รองพื้น)
+      </div>
+      <div class="glossary-definition">
+       สีรองพื้นที่ทาก่อนสีจริง ช่วยให้สีติดดีและทนนาน
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       PTFE Tape (เทปพันเกลียว)
+      </div>
+      <div class="glossary-definition">
+       เทปสีขาวใช้พันเกลียวท่อน้ำ ป้องกันการรั่วซึม
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Plunger (ที่ปั๊ม)
+      </div>
+      <div class="glossary-definition">
+       เครื่องมือใช้เปิดท่ออุดตัน ทำงานด้วยแรงดันอากาศ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Gasket (ปะเก็น)
+      </div>
+      <div class="glossary-definition">
+       แผ่นยางหรือวัสดุอื่นใช้อุดช่องว่างป้องกันการรั่วซึม
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "งานช่างในบ้าน",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_description: "ทักษะการซ่อมบำรุงเล็ก ๆ น้อย ๆ อย่างปลอดภัยและคุ้มค่า เพื่อการดูแลบ้านที่ยั่งยืน"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson description
+            const descElement = document.getElementById('lessonDescription');
+            if (descElement) {
+                descElement.textContent = config.lesson_description || defaultConfig.lesson_description;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_description", config.lesson_description || defaultConfig.lesson_description]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'991f46a706f15ff7',t:'MTc2MTAzNDIwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

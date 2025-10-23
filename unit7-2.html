@@ -1,0 +1,1669 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การดำเนินงานธุรกิจ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --info: #17A2B8;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+            --green: #4CAF50;
+            --green-light: #81C784;
+            --brown: #8D6E63;
+            --brown-light: #BCAAA4;
+            --orange: #FF9800;
+            --purple: #9C27B0;
+            --teal: #009688;
+            --indigo: #3F51B5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-overview {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Definition Box */
+        .definition-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .definition-box::before {
+            content: '💼';
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .definition-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .definition-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Process Flow */
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .process-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .process-header {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--text-dark);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .process-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .process-content {
+            padding: 1.5rem;
+        }
+
+        .process-steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        .process-steps li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .process-steps li:last-child {
+            border-bottom: none;
+        }
+
+        .process-steps li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* PDCA Cycle */
+        .pdca-cycle {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .pdca-step {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .pdca-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pdca-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .pdca-step:nth-child(1)::before { background: var(--primary); }
+        .pdca-step:nth-child(2)::before { background: var(--success); }
+        .pdca-step:nth-child(3)::before { background: var(--warning); }
+        .pdca-step:nth-child(4)::before { background: var(--danger); }
+
+        .pdca-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .pdca-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdca-step:nth-child(1) .pdca-title { color: var(--primary); }
+        .pdca-step:nth-child(2) .pdca-title { color: var(--success); }
+        .pdca-step:nth-child(3) .pdca-title { color: var(--warning); }
+        .pdca-step:nth-child(4) .pdca-title { color: var(--danger); }
+
+        /* Work Areas */
+        .work-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .work-area-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .work-area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .work-area-header {
+            background: linear-gradient(135deg, var(--info) 0%, #5DADE2 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .work-area-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .work-area-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .work-area-content {
+            padding: 1.5rem;
+        }
+
+        .work-area-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .work-area-points li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .work-area-points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--info);
+            font-weight: bold;
+        }
+
+        /* Quality & Safety */
+        .quality-safety {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .quality-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--success);
+        }
+
+        .quality-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .quality-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        .quality-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--success);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .quality-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .qc-box, .qa-box {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .qc-box {
+            background: #E8F5E8;
+            border-left: 3px solid var(--success);
+        }
+
+        .qa-box {
+            background: #E3F2FD;
+            border-left: 3px solid var(--primary);
+        }
+
+        .qc-title, .qa-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .qc-title { color: var(--success); }
+        .qa-title { color: var(--primary); }
+
+        /* Efficiency Tools */
+        .efficiency-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .efficiency-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .efficiency-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .efficiency-header {
+            background: linear-gradient(135deg, var(--purple) 0%, #BA68C8 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .efficiency-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .efficiency-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .efficiency-content {
+            padding: 1.5rem;
+        }
+
+        /* Digital Tools */
+        .digital-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .digital-tool {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--teal);
+        }
+
+        .digital-tool:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .digital-tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .digital-tool-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .digital-tool-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* KPIs */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .kpi-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .kpi-header {
+            background: linear-gradient(135deg, var(--indigo) 0%, #7986CB 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .kpi-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .kpi-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .kpi-content {
+            padding: 1.5rem;
+        }
+
+        .kpi-formula {
+            background: #E8EAF6;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: monospace;
+        }
+
+        /* Sustainability */
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .sustainability-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .sustainability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sustainability-header {
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .sustainability-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .sustainability-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .sustainability-content {
+            padding: 1.5rem;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-study {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .case-study-header {
+            background: linear-gradient(135deg, var(--orange) 0%, #FFB74D 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .case-study-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .case-study-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-type {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .case-study-content {
+            padding: 1.5rem;
+        }
+
+        .case-study-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-section h4 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .case-study-section p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .process-diagram {
+            background: #F8F9FA;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+            font-family: monospace;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-overview {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .quality-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">⚙️</span>
+    <h1 id="lessonTitle">การดำเนินงานธุรกิจ</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-overview" id="lessonOverview">ภาพรวมการดำเนินงานตั้งแต่รับออเดอร์ถึงส่งมอบ</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจกระบวนการดำเนินงานธุรกิจ ตั้งแต่การจัดซื้อ การผลิต การจัดเก็บ ไปจนถึงการส่งมอบ</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถวิเคราะห์กระบวนการทำงาน ปัญหาคอขวด และวิธีการปรับปรุงประสิทธิภาพ</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>เห็นความสำคัญของคุณภาพ ความปลอดภัย และความยั่งยืนในการดำเนินงาน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Definition -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📋</span>
+     <h2 class="section-title">ความหมายการดำเนินงานธุรกิจ</h2>
+    </div>
+    <div class="section-content">
+     <div class="definition-box">
+      <div class="definition-title">
+       การดำเนินงานธุรกิจ (Business Operations)
+      </div>
+      <div class="definition-text">
+       กิจกรรมประจำวันที่เชื่อมโยงการตลาด การเงิน และทรัพยากรมนุษย์ เพื่อแปลงทรัพยากรให้เป็นสินค้าหรือบริการที่มีคุณค่า ครอบคลุมตั้งแต่การรับออเดอร์ การจัดซื้อวัตถุดิบ การผลิต การจัดเก็บ ไปจนถึงการส่งมอบและบริการลูกค้า
+      </div>
+     </div>
+    </div>
+   </section><!-- Core Processes -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔄</span>
+     <h2 class="section-title">กระบวนการหลัก</h2>
+    </div>
+    <div class="section-content">
+     <div class="process-flow">
+      <div class="process-card">
+       <div class="process-header"><span class="process-icon" aria-hidden="true">🛒</span>
+        <div class="process-title">
+         Procure-to-Pay
+        </div>
+       </div>
+       <div class="process-content">
+        <p style="margin-bottom: 1rem;">กระบวนการจัดซื้อจัดหาวัตถุดิบและบริการ</p>
+        <ul class="process-steps">
+         <li>ระบุความต้องการ</li>
+         <li>เลือกผู้จำหน่าย</li>
+         <li>สั่งซื้อ</li>
+         <li>ตรวจรับสินค้า</li>
+         <li>ชำระเงิน</li>
+        </ul>
+       </div>
+      </div>
+      <div class="process-card">
+       <div class="process-header"><span class="process-icon" aria-hidden="true">💰</span>
+        <div class="process-title">
+         Order-to-Cash
+        </div>
+       </div>
+       <div class="process-content">
+        <p style="margin-bottom: 1rem;">กระบวนการตั้งแต่รับออเดอร์จนได้รับชำระเงิน</p>
+        <ul class="process-steps">
+         <li>รับออเดอร์</li>
+         <li>ผลิต/เตรียมสินค้า</li>
+         <li>ส่งมอบ</li>
+         <li>ออกใบแจ้งหนี้</li>
+         <li>รับชำระเงิน</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <h3 style="margin: 2rem 0 1rem 0; color: var(--primary); font-size: 1.3rem;">วงจร PDCA - การปรับปรุงงานอย่างต่อเนื่อง</h3>
+     <div class="pdca-cycle">
+      <div class="pdca-step"><span class="pdca-icon" aria-hidden="true">📋</span>
+       <div class="pdca-title">
+        Plan (วางแผน)
+       </div>
+       <p>กำหนดเป้าหมาย วิเคราะห์ปัญหา วางแผนการปรับปรุง</p>
+      </div>
+      <div class="pdca-step"><span class="pdca-icon" aria-hidden="true">⚡</span>
+       <div class="pdca-title">
+        Do (ปฏิบัติ)
+       </div>
+       <p>ดำเนินการตามแผน ทดลองในขอบเขตเล็ก</p>
+      </div>
+      <div class="pdca-step"><span class="pdca-icon" aria-hidden="true">🔍</span>
+       <div class="pdca-title">
+        Check (ตรวจสอบ)
+       </div>
+       <p>วัดผล เปรียบเทียบกับเป้าหมาย วิเคราะห์ผลลัพธ์</p>
+      </div>
+      <div class="pdca-step"><span class="pdca-icon" aria-hidden="true">🚀</span>
+       <div class="pdca-title">
+        Act (ปรับปรุง)
+       </div>
+       <p>ปรับปรุงมาตรฐาน ขยายผลสู่พื้นที่อื่น</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Work Areas -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🏭</span>
+     <h2 class="section-title">พื้นที่งานสำคัญ</h2>
+    </div>
+    <div class="section-content">
+     <div class="work-areas">
+      <div class="work-area-card">
+       <div class="work-area-header"><span class="work-area-icon" aria-hidden="true">📦</span>
+        <div class="work-area-title">
+         จัดหา/จัดซื้อ
+        </div>
+       </div>
+       <div class="work-area-content">
+        <ul class="work-area-points">
+         <li>ค้นหาแหล่งวัตถุดิบที่เชื่อถือได้</li>
+         <li>เปรียบเทียบคุณภาพและราคา</li>
+         <li>เจรจาเงื่อนไขการชำระเงิน</li>
+         <li>สร้างความสัมพันธ์กับผู้จำหน่าย</li>
+         <li>ควบคุมต้นทุนการจัดซื้อ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="work-area-card">
+       <div class="work-area-header"><span class="work-area-icon" aria-hidden="true">⚙️</span>
+        <div class="work-area-title">
+         การผลิต/ให้บริการ
+        </div>
+       </div>
+       <div class="work-area-content">
+        <ul class="work-area-points">
+         <li>กำหนดขั้นตอนการทำงานที่ชัดเจน</li>
+         <li>ตั้งมาตรฐานเวลาและคุณภาพ</li>
+         <li>จัดสรรทรัพยากรอย่างมีประสิทธิภาพ</li>
+         <li>ควบคุมกระบวนการผลิต</li>
+         <li>ปรับปรุงประสิทธิภาพอย่างต่อเนื่อง</li>
+        </ul>
+       </div>
+      </div>
+      <div class="work-area-card">
+       <div class="work-area-header"><span class="work-area-icon" aria-hidden="true">📊</span>
+        <div class="work-area-title">
+         คลังสินค้า-สต็อก
+        </div>
+       </div>
+       <div class="work-area-content">
+        <ul class="work-area-points">
+         <li>FIFO (First In First Out) - เข้าก่อนออกก่อน</li>
+         <li>FEFO (First Expired First Out) - หมดอายุก่อนออกก่อน</li>
+         <li>ควบคุมระดับสินค้าคงคลัง</li>
+         <li>กำหนดจุดสั่งซื้อใหม่</li>
+         <li>จัดเก็บอย่างเป็นระบบ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="work-area-card">
+       <div class="work-area-header"><span class="work-area-icon" aria-hidden="true">🚚</span>
+        <div class="work-area-title">
+         โลจิสติกส์-ส่งมอบ
+        </div>
+       </div>
+       <div class="work-area-content">
+        <ul class="work-area-points">
+         <li>เลือกบรรจุภัณฑ์ที่เหมาะสม</li>
+         <li>วางแผนเส้นทางการขนส่ง</li>
+         <li>รับประกันความปลอดภัยสินค้า</li>
+         <li>ติดตามการส่งมอบ</li>
+         <li>ควบคุมต้นทุนการขนส่ง</li>
+        </ul>
+       </div>
+      </div>
+      <div class="work-area-card">
+       <div class="work-area-header"><span class="work-area-icon" aria-hidden="true">🤝</span>
+        <div class="work-area-title">
+         บริการลูกค้า
+        </div>
+       </div>
+       <div class="work-area-content">
+        <ul class="work-area-points">
+         <li>รับเรื่องร้องเรียนและข้อเสนอแนะ</li>
+         <li>ติดตามและแก้ไขปัญหา</li>
+         <li>วัดความพึงพอใจลูกค้า</li>
+         <li>สร้างความสัมพันธ์ระยะยาว</li>
+         <li>พัฒนาบริการให้ดีขึ้น</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Quality & Safety -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛡️</span>
+     <h2 class="section-title">คุณภาพและความปลอดภัย</h2>
+    </div>
+    <div class="section-content">
+     <div class="quality-safety">
+      <div class="quality-card"><span class="quality-icon" aria-hidden="true">✅</span>
+       <div class="quality-title">
+        การควบคุมคุณภาพ
+       </div>
+       <div class="quality-comparison">
+        <div class="qc-box">
+         <div class="qc-title">
+          QC (Quality Control)
+         </div>
+         <p>ตรวจสอบคุณภาพหลังการผลิต หาข้อบกพร่องและแก้ไข</p>
+        </div>
+        <div class="qa-box">
+         <div class="qa-title">
+          QA (Quality Assurance)
+         </div>
+         <p>ป้องกันข้อบกพร่องตั้งแต่ต้น วางระบบและกระบวนการ</p>
+        </div>
+       </div>
+      </div>
+      <div class="quality-card"><span class="quality-icon" aria-hidden="true">📋</span>
+       <div class="quality-title">
+        มาตรฐานการทำงาน
+       </div>
+       <p><strong>SOP (Standard Operating Procedure):</strong> ขั้นตอนการทำงานมาตรฐาน</p>
+       <p><strong>Work Instruction:</strong> คำแนะนำการทำงานเฉพาะ</p>
+       <p><strong>การตรวจสอบ:</strong> รับ → ระหว่างกระบวนการ → ก่อนส่งมอบ</p>
+      </div>
+      <div class="quality-card"><span class="quality-icon" aria-hidden="true">⚠️</span>
+       <div class="quality-title">
+        ความปลอดภัย
+       </div>
+       <p><strong>หน้างาน:</strong> อุปกรณ์ป้องกัน สภาพแวดล้อมปลอดภัย</p>
+       <p><strong>อาหาร:</strong> สุขอนามัย อุณหภูมิ วันหมดอายุ</p>
+       <p><strong>เครื่องมือ:</strong> การบำรุงรักษา การใช้งานที่ถูกต้อง</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Efficiency Tools -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚡</span>
+     <h2 class="section-title">ประสิทธิภาพและการลดความสูญเปล่า</h2>
+    </div>
+    <div class="section-content">
+     <div class="efficiency-tools">
+      <div class="efficiency-card">
+       <div class="efficiency-header"><span class="efficiency-icon" aria-hidden="true">🧹</span>
+        <div class="efficiency-title">
+         5S
+        </div>
+       </div>
+       <div class="efficiency-content">
+        <p><strong>Seiri (เรียง):</strong> แยกของจำเป็น-ไม่จำเป็น</p>
+        <p><strong>Seiton (เรียบ):</strong> จัดเก็บเป็นระเบียบ</p>
+        <p><strong>Seiso (เรียบร้อย):</strong> ทำความสะอาด</p>
+        <p><strong>Seiketsu (รักษา):</strong> รักษามาตรฐาน</p>
+        <p><strong>Shitsuke (ริเริ่ม):</strong> สร้างวินัย</p>
+       </div>
+      </div>
+      <div class="efficiency-card">
+       <div class="efficiency-header"><span class="efficiency-icon" aria-hidden="true">📈</span>
+        <div class="efficiency-title">
+         Kaizen
+        </div>
+       </div>
+       <div class="efficiency-content">
+        <p>การปรับปรุงอย่างต่อเนื่องทีละเล็กทีละน้อย</p>
+        <p>• ลดความสูญเปล่า</p>
+        <p>• เพิ่มประสิทธิภาพ</p>
+        <p>• ลดต้นทุน</p>
+        <p>• ปรับปรุงคุณภาพ</p>
+       </div>
+      </div>
+      <div class="efficiency-card">
+       <div class="efficiency-header"><span class="efficiency-icon" aria-hidden="true">⏱️</span>
+        <div class="efficiency-title">
+         Time &amp; Motion
+        </div>
+       </div>
+       <div class="efficiency-content">
+        <p>การศึกษาเวลาและการเคลื่อนไหว</p>
+        <p>• วิเคราะห์ขั้นตอนการทำงาน</p>
+        <p>• หาจุดที่สูญเสียเวลา</p>
+        <p>• ปรับปรุงวิธีการทำงาน</p>
+        <p>• เพิ่มผลิตภาพ</p>
+       </div>
+      </div>
+      <div class="efficiency-card">
+       <div class="efficiency-header"><span class="efficiency-icon" aria-hidden="true">🚧</span>
+        <div class="efficiency-title">
+         Bottleneck
+        </div>
+       </div>
+       <div class="efficiency-content">
+        <p>จุดคอขวดที่จำกัดกำลังการผลิต</p>
+        <p>• ระบุจุดที่ทำงานช้าที่สุด</p>
+        <p>• เพิ่มกำลังการผลิตที่จุดคอขวด</p>
+        <p>• ปรับสมดุลกระบวนการ</p>
+        <p>• เพิ่มประสิทธิภาพรวม</p>
+       </div>
+      </div>
+      <div class="efficiency-card">
+       <div class="efficiency-header"><span class="efficiency-icon" aria-hidden="true">🎯</span>
+        <div class="efficiency-title">
+         Just-in-Time
+        </div>
+       </div>
+       <div class="efficiency-content">
+        <p>ผลิตเท่าที่ต้องการ ในเวลาที่ต้องการ</p>
+        <p>• ลดสินค้าคงคลัง</p>
+        <p>• ลดความสูญเปล่า</p>
+        <p>• ใช้ Kanban ควบคุม</p>
+        <p>• ตอบสนองลูกค้าเร็วขึ้น</p>
+       </div>
+      </div>
+      <div class="efficiency-card">
+       <div class="efficiency-header"><span class="efficiency-icon" aria-hidden="true">💰</span>
+        <div class="efficiency-title">
+         การคำนวณต้นทุน
+        </div>
+       </div>
+       <div class="efficiency-content">
+        <p><strong>ต้นทุนคงที่:</strong> ค่าเช่า เงินเดือน</p>
+        <p><strong>ต้นทุนผันแปร:</strong> วัตถุดิบ ค่าแรง</p>
+        <p><strong>ต้นทุนต่อหน่วย:</strong> ต้นทุนรวม ÷ จำนวนผลิต</p>
+        <p><strong>จุดคุ้มทุน:</strong> รายได้ = ต้นทุน</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Digital Tools -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💻</span>
+     <h2 class="section-title">ดิจิทัลเพื่อการดำเนินงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="digital-tools">
+      <div class="digital-tool"><span class="digital-tool-icon" aria-hidden="true">🛒</span>
+       <div class="digital-tool-title">
+        POS/บันทึกขาย
+       </div>
+       <div class="digital-tool-description">
+        ระบบขายหน้าร้าน บันทึกยอดขาย จัดการสต็อกแบบเรียลไทม์
+       </div>
+      </div>
+      <div class="digital-tool"><span class="digital-tool-icon" aria-hidden="true">📱</span>
+       <div class="digital-tool-title">
+        แอปจัดสต็อก
+       </div>
+       <div class="digital-tool-description">
+        สแกนบาร์โค้ด/QR Code ตรวจนับสินค้า แจ้งเตือนสินค้าใกล้หมด
+       </div>
+      </div>
+      <div class="digital-tool"><span class="digital-tool-icon" aria-hidden="true">📋</span>
+       <div class="digital-tool-title">
+        แผ่นงานคุมงาน
+       </div>
+       <div class="digital-tool-description">
+        Google Sheets, Excel Online ติดตามความคืบหน้า แบ่งปันข้อมูล
+       </div>
+      </div>
+      <div class="digital-tool"><span class="digital-tool-icon" aria-hidden="true">📊</span>
+       <div class="digital-tool-title">
+        แดชบอร์ดตัวชี้วัด
+       </div>
+       <div class="digital-tool-description">
+        แสดงผล KPIs แบบเรียลไทม์ กราฟ แผนภูมิ รายงานอัตโนมัติ
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- KPIs -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📈</span>
+     <h2 class="section-title">ตัวชี้วัด (KPIs) เบื้องต้น</h2>
+    </div>
+    <div class="section-content">
+     <div class="kpis">
+      <div class="kpi-card">
+       <div class="kpi-header"><span class="kpi-icon" aria-hidden="true">⏰</span>
+        <div class="kpi-title">
+         Lead Time
+        </div>
+       </div>
+       <div class="kpi-content">
+        <div class="kpi-formula">
+         เวลารวมตั้งแต่รับออเดอร์จนส่งมอบ
+        </div>
+        <p>วัดความเร็วในการตอบสนองลูกค้า ยิ่งสั้นยิ่งดี แสดงถึงประสิทธิภาพของระบบ</p>
+       </div>
+      </div>
+      <div class="kpi-card">
+       <div class="kpi-header"><span class="kpi-icon" aria-hidden="true">🔄</span>
+        <div class="kpi-title">
+         Cycle Time
+        </div>
+       </div>
+       <div class="kpi-content">
+        <div class="kpi-formula">
+         เวลาที่ใช้ในการผลิต 1 หน่วย
+        </div>
+        <p>วัดประสิทธิภาพการผลิต ใช้ปรับปรุงกระบวนการและเพิ่มกำลังการผลิต</p>
+       </div>
+      </div>
+      <div class="kpi-card">
+       <div class="kpi-header"><span class="kpi-icon" aria-hidden="true">❌</span>
+        <div class="kpi-title">
+         อัตราของเสีย
+        </div>
+       </div>
+       <div class="kpi-content">
+        <div class="kpi-formula">
+         (สินค้าเสีย ÷ สินค้าทั้งหมด) × 100
+        </div>
+        <p>วัดคุณภาพการผลิต ยิ่งต่ำยิ่งดี แสดงถึงการควบคุมคุณภาพที่มีประสิทธิภาพ</p>
+       </div>
+      </div>
+      <div class="kpi-card">
+       <div class="kpi-header"><span class="kpi-icon" aria-hidden="true">🚚</span>
+        <div class="kpi-title">
+         On-Time Delivery
+        </div>
+       </div>
+       <div class="kpi-content">
+        <div class="kpi-formula">
+         (ส่งตรงเวลา ÷ ออเดอร์ทั้งหมด) × 100
+        </div>
+        <p>วัดความน่าเชื่อถือในการส่งมอบ เป้าหมายควรอยู่ที่ 95% ขึ้นไป</p>
+       </div>
+      </div>
+      <div class="kpi-card">
+       <div class="kpi-header"><span class="kpi-icon" aria-hidden="true">📦</span>
+        <div class="kpi-title">
+         Inventory Turnover
+        </div>
+       </div>
+       <div class="kpi-content">
+        <div class="kpi-formula">
+         ต้นทุนขาย ÷ สินค้าคงคลังเฉลี่ย
+        </div>
+        <p>วัดประสิทธิภาพการจัดการสต็อก ยิ่งสูงแสดงว่าสินค้าหมุนเร็ว</p>
+       </div>
+      </div>
+      <div class="kpi-card">
+       <div class="kpi-header"><span class="kpi-icon" aria-hidden="true">😊</span>
+        <div class="kpi-title">
+         ความพึงพอใจลูกค้า
+        </div>
+       </div>
+       <div class="kpi-content">
+        <div class="kpi-formula">
+         คะแนนเฉลี่ยจากแบบสำรวจ
+        </div>
+        <p>วัดคุณภาพบริการโดยรวม ใช้แบบสำรวจ รีวิว หรือการให้คะแนน</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustainability -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">ความยั่งยืน (ESG) ในการดำเนินงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="sustainability-grid">
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🌍</span>
+        <div class="sustainability-title">
+         สิ่งแวดล้อม
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <p><strong>ลดของเสีย:</strong> ใช้วัตถุดิบอย่างคุ้มค่า รีไซเคิลเศษวัสดุ</p>
+        <p><strong>ประหยัดพลังงาน:</strong> ใช้เครื่องจักรประหยัดไฟ ปิดไฟเมื่อไม่ใช้</p>
+        <p><strong>ประหยัดน้ำ:</strong> ใช้น้ำอย่างมีสติ รีไซเคิลน้ำเสีย</p>
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🤝</span>
+        <div class="sustainability-title">
+         สังคม
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <p><strong>จัดซื้ออย่างรับผิดชอบ:</strong> เลือกผู้จำหน่ายที่มีจริยธรรม</p>
+        <p><strong>ความปลอดภัยแรงงาน:</strong> อุปกรณ์ป้องกัน สภาพแวดล้อมปลอดภัย</p>
+        <p><strong>ความปลอดภัยผู้บริโภค:</strong> สินค้าปลอดภัย ฉลากชัดเจน</p>
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">⚖️</span>
+        <div class="sustainability-title">
+         การกำกับดูแล
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <p><strong>โปร่งใส:</strong> รายงานผลการดำเนินงานที่ถูกต้อง</p>
+        <p><strong>จริยธรรม:</strong> ปฏิบัติตามกฎหมาย ไม่คอร์รัปชัน</p>
+        <p><strong>ความรับผิดชอบ:</strong> รับผิดชอบต่อผลกระทบที่เกิดขึ้น</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Case Studies -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📚</span>
+     <h2 class="section-title">กรณีศึกษา</h2>
+    </div>
+    <div class="section-content">
+     <div class="case-studies">
+      <div class="case-study">
+       <div class="case-study-header"><span class="case-study-icon" aria-hidden="true">✏️</span>
+        <div class="case-study-title">
+         ร้านเครื่องเขียนโรงเรียน
+        </div>
+        <div class="case-study-type">
+         Order-to-Cash + 5S
+        </div>
+       </div>
+       <div class="case-study-content">
+        <div class="case-study-section">
+         <h4>กระบวนการ Order-to-Cash</h4>
+         <div class="process-diagram">
+          นักเรียนสั่งซื้อ → ตรวจสต็อก → หยิบสินค้า → คิดเงิน → ส่งมอบ → บันทึกยอดขาย
+         </div>
+        </div>
+        <div class="case-study-section">
+         <h4>การปรับปรุงด้วย 5S</h4>
+         <p><strong>เรียง:</strong> แยกสินค้าขายดี-ขายไม่ดี</p>
+         <p><strong>เรียบ:</strong> จัดสินค้าตามหมวดหมู่ ติดป้ายชัดเจน</p>
+         <p><strong>เรียบร้อย:</strong> ทำความสะอาดชั้นวางทุกวัน</p>
+         <p><strong>รักษา:</strong> ตรวจสอบการจัดเรียงสินค้าเป็นประจำ</p>
+         <p><strong>ริเริ่ม:</strong> พนักงานปฏิบัติตาม 5S อย่างสม่ำเสมอ</p>
+        </div>
+        <div class="case-study-section">
+         <h4>ผลลัพธ์</h4>
+         <p>ลดเวลาหาสินค้า 50% เพิ่มยอดขาย 20% ลูกค้าพึงพอใจมากขึ้น</p>
+        </div>
+       </div>
+      </div>
+      <div class="case-study">
+       <div class="case-study-header"><span class="case-study-icon" aria-hidden="true">🍽️</span>
+        <div class="case-study-title">
+         ครัวชุมชน
+        </div>
+        <div class="case-study-type">
+         FIFO/FEFO + คุมอุณหภูมิ
+        </div>
+       </div>
+       <div class="case-study-content">
+        <div class="case-study-section">
+         <h4>การจัดการสต็อก FIFO/FEFO</h4>
+         <p><strong>FIFO:</strong> วัตถุดิบแห้ง (ข้าว แป้ง) เข้าก่อนใช้ก่อน</p>
+         <p><strong>FEFO:</strong> วัตถุดิบสด (เนื้อ ผัก) หมดอายุก่อนใช้ก่อน</p>
+         <p>ติดป้ายวันที่ จัดเรียงตามลำดับ ตรวจสอบทุกวัน</p>
+        </div>
+        <div class="case-study-section">
+         <h4>การควบคุมอุณหภูมิ</h4>
+         <p><strong>เก็บรักษา:</strong> ตู้เย็น 0-4°C ตู้แช่แข็ง -18°C</p>
+         <p><strong>การปรุง:</strong> อาหารสุก 75°C ขึ้นไป</p>
+         <p><strong>เสิร์ฟ:</strong> อาหารร้อน 60°C ขึ้นไป</p>
+        </div>
+        <div class="case-study-section">
+         <h4>On-Time Delivery</h4>
+         <p>วางแผนการปรุงล่วงหน้า เตรียมวัตถุดิบพร้อม ส่งอาหารตรงเวลา 95%</p>
+        </div>
+        <div class="case-study-section">
+         <h4>ผลลัพธ์</h4>
+         <p>ลดอาหารเสีย 80% ไม่มีอาหารเป็นพิษ ลูกค้าได้รับอาหารตรงเวลา</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>การดำเนินงานธุรกิจเชื่อมโยงทุกฝ่ายงาน ตั้งแต่การตลาดไปจนถึงการเงินและทรัพยากรมนุษย์</li>
+     <li>กระบวนการหลัก Procure-to-Pay และ Order-to-Cash เป็นหัวใจของการดำเนินงาน</li>
+     <li>วงจร PDCA ช่วยปรับปรุงงานอย่างต่อเนื่อง วางแผน-ปฏิบัติ-ตรวจสอบ-ปรับปรุง</li>
+     <li>พื้นที่งานสำคัญ 5 ด้าน: จัดซื้อ ผลิต คลังสินค้า โลจิสติกส์ บริการลูกค้า</li>
+     <li>QC ตรวจสอบหลังผลิต QA ป้องกันตั้งแต่ต้น SOP กำหนดมาตรฐานการทำงาน</li>
+     <li>เครื่องมือปรับปรุงประสิทธิภาพ: 5S Kaizen Time&amp;Motion Bottleneck Just-in-Time</li>
+     <li>เทคโนโลยีดิจิทัลช่วยจัดการ POS สต็อก แผ่นงาน และแดชบอร์ด KPIs</li>
+     <li>ตัวชี้วัดสำคัญ: Lead Time Cycle Time อัตราของเสีย OTD Inventory Turnover</li>
+     <li>การดำเนินงานยั่งยืนคำนึงถึงสิ่งแวดล้อม สังคม และการกำกับดูแล (ESG)</li>
+     <li>การปรับปรุงอย่างต่อเนื่องและการใช้เทคโนโลยีเป็นกุญแจสู่ความสำเร็จ</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       SOP (Standard Operating Procedure)
+      </div>
+      <div class="glossary-definition">
+       ขั้นตอนการทำงานมาตรฐานที่กำหนดไว้อย่างชัดเจนเพื่อให้ได้ผลลัพธ์ที่สม่ำเสมอ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       QC/QA (Quality Control/Assurance)
+      </div>
+      <div class="glossary-definition">
+       QC คือการตรวจสอบคุณภาพหลังการผลิต QA คือการป้องกันข้อบกพร่องตั้งแต่ต้น
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Lead Time
+      </div>
+      <div class="glossary-definition">
+       เวลารวมตั้งแต่รับออเดอร์จากลูกค้าจนกระทั่งส่งมอบสินค้าหรือบริการ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Cycle Time
+      </div>
+      <div class="glossary-definition">
+       เวลาที่ใช้ในการผลิตสินค้าหรือให้บริการ 1 หน่วย
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Bottleneck (คอขวด)
+      </div>
+      <div class="glossary-definition">
+       จุดในกระบวนการที่มีกำลังการผลิตต่ำที่สุด จำกัดประสิทธิภาพของระบบทั้งหมด
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       FIFO/FEFO
+      </div>
+      <div class="glossary-definition">
+       FIFO: First In First Out (เข้าก่อนออกก่อน) FEFO: First Expired First Out (หมดอายุก่อนออกก่อน)
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       KPI (Key Performance Indicator)
+      </div>
+      <div class="glossary-definition">
+       ตัวชี้วัดผลการดำเนินงานที่สำคัญ ใช้วัดความสำเร็จของธุรกิจ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Kaizen
+      </div>
+      <div class="glossary-definition">
+       ปรัชญาการปรับปรุงอย่างต่อเนื่องทีละเล็กทีละน้อย มาจากภาษาญี่ปุ่น
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "การดำเนินงานธุรกิจ",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_overview: "ภาพรวมการดำเนินงานตั้งแต่รับออเดอร์ถึงส่งมอบ"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson overview
+            const overviewElement = document.getElementById('lessonOverview');
+            if (overviewElement) {
+                overviewElement.textContent = config.lesson_overview || defaultConfig.lesson_overview;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_overview", config.lesson_overview || defaultConfig.lesson_overview]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'992168698705ce4d',t:'MTc2MTA1NjU1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

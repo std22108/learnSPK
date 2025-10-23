@@ -1,0 +1,2171 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การวางแผนธุรกิจ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --info: #17A2B8;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+            --green: #4CAF50;
+            --green-light: #81C784;
+            --brown: #8D6E63;
+            --brown-light: #BCAAA4;
+            --orange: #FF9800;
+            --purple: #9C27B0;
+            --teal: #009688;
+            --indigo: #3F51B5;
+            --pink: #E91E63;
+            --cyan: #00BCD4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-overview {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Business Plan Overview */
+        .plan-overview {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--text-dark);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .plan-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .plan-components {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .plan-component {
+            background: rgba(255,255,255,0.9);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .plan-component:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .component-number {
+            background: var(--primary);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+            font-weight: 600;
+        }
+
+        .component-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .component-description {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Market Analysis */
+        .market-analysis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .analysis-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .analysis-header {
+            background: linear-gradient(135deg, var(--info) 0%, #5DADE2 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .analysis-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .analysis-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .analysis-content {
+            padding: 1.5rem;
+        }
+
+        .analysis-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .analysis-points li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .analysis-points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--info);
+            font-weight: bold;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            background: linear-gradient(135deg, var(--success) 0%, var(--green-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .value-prop-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .value-prop-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .value-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* SWOT Analysis */
+        .swot-analysis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .swot-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .swot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .swot-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .swot-strengths .swot-header { background: linear-gradient(135deg, var(--success) 0%, var(--green-light) 100%); }
+        .swot-weaknesses .swot-header { background: linear-gradient(135deg, var(--danger) 0%, #F1948A 100%); }
+        .swot-opportunities .swot-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .swot-threats .swot-header { background: linear-gradient(135deg, var(--warning) 0%, var(--accent-dark) 100%); color: var(--text-dark); }
+
+        .swot-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .swot-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .swot-content {
+            padding: 1.5rem;
+        }
+
+        /* Product Service */
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--purple);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--purple);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Revenue Model */
+        .revenue-model {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .revenue-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .revenue-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .revenue-header {
+            background: linear-gradient(135deg, var(--orange) 0%, #FFB74D 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .revenue-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .revenue-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .revenue-content {
+            padding: 1.5rem;
+        }
+
+        .cost-breakdown {
+            background: #FFF3E0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .breakeven-formula {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin: 1rem 0;
+            font-family: monospace;
+        }
+
+        /* Operations Plan */
+        .operations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .operation-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .operation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .operation-header {
+            background: linear-gradient(135deg, var(--teal) 0%, #4DB6AC 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .operation-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .operation-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .operation-content {
+            padding: 1.5rem;
+        }
+
+        /* Marketing Plan */
+        .marketing-mix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .mix-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--pink);
+        }
+
+        .mix-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mix-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .mix-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .mix-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Organization Structure */
+        .org-structure {
+            background: linear-gradient(135deg, var(--indigo) 0%, #7986CB 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .org-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .org-roles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .role-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .role-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .role-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Legal & Ethics */
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .legal-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .legal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .legal-header {
+            background: linear-gradient(135deg, var(--brown) 0%, var(--brown-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .legal-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .legal-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .legal-content {
+            padding: 1.5rem;
+        }
+
+        /* Risk Management */
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .risk-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--danger);
+        }
+
+        .risk-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .risk-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 1rem;
+        }
+
+        .risk-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #FFF5F5;
+            border-radius: 8px;
+        }
+
+        .risk-type {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+        }
+
+        .risk-mitigation {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* Sustainability */
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .sustainability-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .sustainability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sustainability-header {
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .sustainability-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .sustainability-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .sustainability-content {
+            padding: 1.5rem;
+        }
+
+        /* Mini Business Plan */
+        .mini-plan {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin: 3rem 0;
+        }
+
+        .mini-plan-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .mini-plan-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .mini-plan-subtitle {
+            opacity: 0.9;
+        }
+
+        .mini-plan-content {
+            padding: 2rem;
+        }
+
+        .plan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .plan-table th,
+        .plan-table td {
+            border: 1px solid #E0E0E0;
+            padding: 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .plan-table th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .plan-table tr:nth-child(even) {
+            background: #FAFAFA;
+        }
+
+        .plan-table tr:hover {
+            background: #E3F2FD;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-overview {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .plan-table {
+                font-size: 0.8rem;
+            }
+
+            .plan-table th,
+            .plan-table td {
+                padding: 0.5rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">📋</span>
+    <h1 id="lessonTitle">การวางแผนธุรกิจ</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-overview" id="lessonOverview">เหตุผลที่ต้องวางแผนก่อนเริ่มธุรกิจ</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจองค์ประกอบของแผนธุรกิจ การวิเคราะห์ตลาด คู่แข่ง และรูปแบบรายได้</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถจัดทำแผนธุรกิจเบื้องต้น วิเคราะห์ SWOT และคำนวณจุดคุ้มทุน</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>เห็นความสำคัญของการวางแผนก่อนเริ่มธุรกิจ และการดำเนินงานอย่างมีจริยธรรม</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Business Plan Overview -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📊</span>
+     <h2 class="section-title">ภาพรวมแผนธุรกิจ</h2>
+    </div>
+    <div class="section-content">
+     <div class="plan-overview">
+      <div class="plan-title">
+       ส่วนประกอบหลักของแผนธุรกิจ
+      </div>
+      <div class="plan-components">
+       <div class="plan-component">
+        <div class="component-number">
+         1
+        </div>
+        <div class="component-title">
+         วิเคราะห์ตลาด
+        </div>
+        <div class="component-description">
+         ลูกค้าเป้าหมาย ขนาดตลาด เทรนด์
+        </div>
+       </div>
+       <div class="plan-component">
+        <div class="component-number">
+         2
+        </div>
+        <div class="component-title">
+         คุณค่าเสนอขาย
+        </div>
+        <div class="component-description">
+         ปัญหาที่แก้ให้ลูกค้า จุดเด่นของสินค้า
+        </div>
+       </div>
+       <div class="plan-component">
+        <div class="component-number">
+         3
+        </div>
+        <div class="component-title">
+         วิเคราะห์คู่แข่ง
+        </div>
+        <div class="component-description">
+         SWOT จุดแข็ง-อ่อน โอกาส-อุปสรรค
+        </div>
+       </div>
+       <div class="plan-component">
+        <div class="component-number">
+         4
+        </div>
+        <div class="component-title">
+         ผลิตภัณฑ์/บริการ
+        </div>
+        <div class="component-description">
+         คุณลักษณะ มาตรฐาน ความแตกต่าง
+        </div>
+       </div>
+       <div class="plan-component">
+        <div class="component-number">
+         5
+        </div>
+        <div class="component-title">
+         รูปแบบรายได้
+        </div>
+        <div class="component-description">
+         ต้นทุน ราคา จุดคุ้มทุน กระแสเงินสด
+        </div>
+       </div>
+       <div class="plan-component">
+        <div class="component-number">
+         6
+        </div>
+        <div class="component-title">
+         แผนปฏิบัติการ
+        </div>
+        <div class="component-description">
+         กระบวนการ ทรัพยากร โลจิสติกส์
+        </div>
+       </div>
+       <div class="plan-component">
+        <div class="component-number">
+         7
+        </div>
+        <div class="component-title">
+         แผนการตลาด
+        </div>
+        <div class="component-description">
+         ช่องทาง 4P/7P โปรโมชัน KPI
+        </div>
+       </div>
+       <div class="plan-component">
+        <div class="component-number">
+         8
+        </div>
+        <div class="component-title">
+         โครงสร้างองค์กร
+        </div>
+        <div class="component-description">
+         บทบาทหน้าที่ ทีมงาน
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Market Analysis -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">การวิเคราะห์ตลาด</h2>
+    </div>
+    <div class="section-content">
+     <div class="market-analysis">
+      <div class="analysis-card">
+       <div class="analysis-header"><span class="analysis-icon" aria-hidden="true">👥</span>
+        <div class="analysis-title">
+         ลูกค้าเป้าหมาย
+        </div>
+       </div>
+       <div class="analysis-content">
+        <h4 style="color: var(--info); margin-bottom: 1rem;">Market Segmentation</h4>
+        <ul class="analysis-points">
+         <li><strong>Demographics:</strong> อายุ เพศ รายได้ การศึกษา</li>
+         <li><strong>Geographics:</strong> ที่อยู่ ภูมิภาค เมือง-ชนบท</li>
+         <li><strong>Psychographics:</strong> ไลฟ์สไตล์ ค่านิยม ความสนใจ</li>
+         <li><strong>Behavioral:</strong> พฤติกรรมการซื้อ ความถี่ ความจงรักภักดี</li>
+        </ul>
+        <h4 style="color: var(--info); margin: 1rem 0;">Customer Persona</h4>
+        <ul class="analysis-points">
+         <li>สร้างตัวแทนลูกค้าในอุดมคติ</li>
+         <li>กำหนดความต้องการและปัญหา</li>
+         <li>เข้าใจพฤติกรรมการตัดสินใจ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="analysis-card">
+       <div class="analysis-header"><span class="analysis-icon" aria-hidden="true">📈</span>
+        <div class="analysis-title">
+         ขนาดตลาดและเทรนด์
+        </div>
+       </div>
+       <div class="analysis-content">
+        <h4 style="color: var(--info); margin-bottom: 1rem;">Market Size</h4>
+        <ul class="analysis-points">
+         <li><strong>TAM:</strong> Total Addressable Market (ตลาดรวมทั้งหมด)</li>
+         <li><strong>SAM:</strong> Serviceable Addressable Market (ตลาดที่เข้าถึงได้)</li>
+         <li><strong>SOM:</strong> Serviceable Obtainable Market (ตลาดที่ได้จริง)</li>
+        </ul>
+        <h4 style="color: var(--info); margin: 1rem 0;">Market Trends</h4>
+        <ul class="analysis-points">
+         <li>แนวโน้มการเติบโตของตลาด</li>
+         <li>เทคโนโลยีใหม่ที่เข้ามา</li>
+         <li>การเปลี่ยนแปลงพฤติกรรมผู้บริโภค</li>
+         <li>ปัจจัยภายนอกที่มีผลกระทบ</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Value Proposition -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💎</span>
+     <h2 class="section-title">คุณค่าเสนอขาย (Value Proposition)</h2>
+    </div>
+    <div class="section-content">
+     <div class="value-prop">
+      <div class="value-prop-title">
+       สิ่งที่ทำให้ธุรกิจของเราพิเศษ
+      </div>
+      <div class="value-prop-content">
+       <div class="value-item">
+        <div class="value-item-title">
+         🎯 ปัญหาที่แก้ให้ลูกค้า
+        </div>
+        <p>ระบุปัญหาหรือความต้องการที่ลูกค้ามี และอธิบายว่าสินค้า/บริการของเราแก้ปัญหานั้นได้อย่างไร</p>
+       </div>
+       <div class="value-item">
+        <div class="value-item-title">
+         ⭐ จุดเด่นที่แตกต่าง
+        </div>
+        <p>คุณสมบัติพิเศษ คุณภาพ ราคา บริการ หรือประสบการณ์ที่ดีกว่าคู่แข่ง</p>
+       </div>
+       <div class="value-item">
+        <div class="value-item-title">
+         💝 ประโยชน์ที่ลูกค้าได้รับ
+        </div>
+        <p>ผลลัพธ์ที่เป็นรูปธรรม ความสะดวก ความประหยัด หรือความพึงพอใจที่ลูกค้าจะได้รับ</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- SWOT Analysis -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚖️</span>
+     <h2 class="section-title">การวิเคราะห์คู่แข่งและ SWOT</h2>
+    </div>
+    <div class="section-content">
+     <div class="swot-analysis">
+      <div class="swot-card swot-strengths">
+       <div class="swot-header"><span class="swot-icon" aria-hidden="true">💪</span>
+        <div class="swot-title">
+         จุดแข็ง (Strengths)
+        </div>
+       </div>
+       <div class="swot-content">
+        <ul class="analysis-points">
+         <li>ทรัพยากรและความสามารถที่มี</li>
+         <li>ประสบการณ์และความเชี่ยวชาญ</li>
+         <li>ความได้เปรียบทางการแข่งขัน</li>
+         <li>ชื่อเสียงและความน่าเชื่อถือ</li>
+         <li>เครือข่ายและความสัมพันธ์</li>
+        </ul>
+       </div>
+      </div>
+      <div class="swot-card swot-weaknesses">
+       <div class="swot-header"><span class="swot-icon" aria-hidden="true">⚠️</span>
+        <div class="swot-title">
+         จุดอ่อน (Weaknesses)
+        </div>
+       </div>
+       <div class="swot-content">
+        <ul class="analysis-points">
+         <li>ข้อจำกัดด้านทรัพยากร</li>
+         <li>ขาดประสบการณ์ในบางด้าน</li>
+         <li>ต้นทุนสูงกว่าคู่แข่ง</li>
+         <li>ช่องทางจำหน่ายจำกัด</li>
+         <li>ทักษะที่ยังขาด</li>
+        </ul>
+       </div>
+      </div>
+      <div class="swot-card swot-opportunities">
+       <div class="swot-header"><span class="swot-icon" aria-hidden="true">🚀</span>
+        <div class="swot-title">
+         โอกาส (Opportunities)
+        </div>
+       </div>
+       <div class="swot-content">
+        <ul class="analysis-points">
+         <li>ตลาดใหม่ที่เติบโต</li>
+         <li>เทคโนโลยีใหม่ที่ช่วยลดต้นทุน</li>
+         <li>การเปลี่ยนแปลงพฤติกรรมผู้บริโภค</li>
+         <li>นโยบายรัฐบาลที่สนับสนุน</li>
+         <li>ช่องว่างในตลาด</li>
+        </ul>
+       </div>
+      </div>
+      <div class="swot-card swot-threats">
+       <div class="swot-header"><span class="swot-icon" aria-hidden="true">⛈️</span>
+        <div class="swot-title">
+         อุปสรรค (Threats)
+        </div>
+       </div>
+       <div class="swot-content">
+        <ul class="analysis-points">
+         <li>คู่แข่งใหม่เข้าสู่ตลาด</li>
+         <li>การเปลี่ยนแปลงกฎหมาย</li>
+         <li>ภาวะเศรษฐกิจตกต่ำ</li>
+         <li>เทคโนโลยีที่ล้าสมัย</li>
+         <li>ความไม่แน่นอนของตลาด</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Product/Service -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛍️</span>
+     <h2 class="section-title">ผลิตภัณฑ์และบริการ</h2>
+    </div>
+    <div class="section-content">
+     <div class="product-features">
+      <div class="feature-card"><span class="feature-icon" aria-hidden="true">⭐</span>
+       <div class="feature-title">
+        คุณลักษณะสินค้า
+       </div>
+       <ul class="analysis-points">
+        <li>รายละเอียดสินค้า/บริการ</li>
+        <li>คุณสมบัติเด่น</li>
+        <li>ขนาด สี รูปแบบ</li>
+        <li>วัสดุและส่วนประกอบ</li>
+        <li>การใช้งานและประโยชน์</li>
+       </ul>
+      </div>
+      <div class="feature-card"><span class="feature-icon" aria-hidden="true">🏆</span>
+       <div class="feature-title">
+        มาตรฐานคุณภาพ
+       </div>
+       <ul class="analysis-points">
+        <li>มาตรฐานสากลที่ได้รับ</li>
+        <li>การรับรองคุณภาพ</li>
+        <li>กระบวนการควบคุมคุณภาพ</li>
+        <li>การทดสอบและตรวจสอบ</li>
+        <li>การรับประกันสินค้า</li>
+       </ul>
+      </div>
+      <div class="feature-card"><span class="feature-icon" aria-hidden="true">🎯</span>
+       <div class="feature-title">
+        ความแตกต่างจากคู่แข่ง
+       </div>
+       <ul class="analysis-points">
+        <li>จุดเด่นที่ไม่มีใครเหมือน</li>
+        <li>นวัตกรรมใหม่</li>
+        <li>ราคาที่แข่งขันได้</li>
+        <li>บริการหลังการขาย</li>
+        <li>ประสบการณ์ลูกค้าที่ดี</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Revenue Model -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💰</span>
+     <h2 class="section-title">รูปแบบรายได้และราคา</h2>
+    </div>
+    <div class="section-content">
+     <div class="revenue-model">
+      <div class="revenue-card">
+       <div class="revenue-header"><span class="revenue-icon" aria-hidden="true">📊</span>
+        <div class="revenue-title">
+         โครงสร้างต้นทุน
+        </div>
+       </div>
+       <div class="revenue-content">
+        <div class="cost-breakdown">
+         <div class="cost-item"><span><strong>ต้นทุนคงที่ (Fixed Cost)</strong></span> <span>ไม่เปลี่ยนตามปริมาณ</span>
+         </div>
+         <div class="cost-item"><span>• ค่าเช่าสถานที่</span> <span>15,000 บาท/เดือน</span>
+         </div>
+         <div class="cost-item"><span>• เงินเดือนพนักงาน</span> <span>25,000 บาท/เดือน</span>
+         </div>
+         <div class="cost-item"><span>• ค่าไฟ น้ำ โทรศัพท์</span> <span>5,000 บาท/เดือน</span>
+         </div>
+         <div class="cost-item"><span><strong>รวมต้นทุนคงที่</strong></span> <span><strong>45,000 บาท/เดือน</strong></span>
+         </div>
+        </div>
+        <div class="cost-breakdown">
+         <div class="cost-item"><span><strong>ต้นทุนผันแปร (Variable Cost)</strong></span> <span>เปลี่ยนตามปริมาณ</span>
+         </div>
+         <div class="cost-item"><span>• วัตถุดิบ</span> <span>60% ของราคาขาย</span>
+         </div>
+         <div class="cost-item"><span>• ค่าแรงชิ้น</span> <span>10% ของราคาขาย</span>
+         </div>
+         <div class="cost-item"><span>• ค่าขนส่ง</span> <span>5% ของราคาขาย</span>
+         </div>
+         <div class="cost-item"><span><strong>รวมต้นทุนผันแปร</strong></span> <span><strong>75% ของราคาขาย</strong></span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="revenue-card">
+       <div class="revenue-header"><span class="revenue-icon" aria-hidden="true">⚖️</span>
+        <div class="revenue-title">
+         จุดคุ้มทุน (Breakeven)
+        </div>
+       </div>
+       <div class="revenue-content">
+        <div class="breakeven-formula">
+         จุดคุ้มทุน = ต้นทุนคงที่ ÷ (ราคาขาย - ต้นทุนผันแปรต่อหน่วย)
+        </div>
+        <p style="margin: 1rem 0;"><strong>ตัวอย่างการคำนวณ:</strong></p>
+        <ul class="analysis-points">
+         <li>ต้นทุนคงที่ = 45,000 บาท/เดือน</li>
+         <li>ราคาขายต่อหน่วย = 100 บาท</li>
+         <li>ต้นทุนผันแปรต่อหน่วย = 75 บาท</li>
+         <li>กำไรต่อหน่วย = 100 - 75 = 25 บาท</li>
+        </ul>
+        <div class="breakeven-formula">
+         จุดคุ้มทุน = 45,000 ÷ 25 = 1,800 หน่วย/เดือน
+        </div>
+        <p style="margin-top: 1rem;">ต้องขายอย่างน้อย <strong>1,800 หน่วยต่อเดือน</strong> จึงจะคุ้มทุน</p>
+       </div>
+      </div>
+      <div class="revenue-card">
+       <div class="revenue-header"><span class="revenue-icon" aria-hidden="true">💸</span>
+        <div class="revenue-title">
+         กระแสเงินสด (Cash Flow)
+        </div>
+       </div>
+       <div class="revenue-content">
+        <h4 style="color: var(--orange); margin-bottom: 1rem;">การจัดการกระแสเงินสด</h4>
+        <ul class="analysis-points">
+         <li><strong>เงินสดรับ:</strong> จากการขายสินค้า/บริการ</li>
+         <li><strong>เงินสดจ่าย:</strong> ต้นทุน ค่าใช้จ่าย การลงทุน</li>
+         <li><strong>เงินสดคงเหลือ:</strong> เงินรับ - เงินจ่าย</li>
+         <li><strong>การวางแผน:</strong> คาดการณ์ 3-6 เดือนข้างหน้า</li>
+        </ul>
+        <h4 style="color: var(--orange); margin: 1rem 0;">ปัจจัยสำคัญ</h4>
+        <ul class="analysis-points">
+         <li>ระยะเวลาเก็บเงิน (Collection Period)</li>
+         <li>ระยะเวลาชำระหนี้ (Payment Terms)</li>
+         <li>สินค้าคงคลัง (Inventory Level)</li>
+         <li>เงินทุนหมุนเวียน (Working Capital)</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Operations Plan -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚙️</span>
+     <h2 class="section-title">แผนปฏิบัติการ (Operations)</h2>
+    </div>
+    <div class="section-content">
+     <div class="operations-grid">
+      <div class="operation-card">
+       <div class="operation-header"><span class="operation-icon" aria-hidden="true">🔄</span>
+        <div class="operation-title">
+         กระบวนการหลัก
+        </div>
+       </div>
+       <div class="operation-content">
+        <ul class="analysis-points">
+         <li>ขั้นตอนการผลิต/ให้บริการ</li>
+         <li>การควบคุมคุณภาพ</li>
+         <li>การจัดการสินค้าคงคลัง</li>
+         <li>การส่งมอบสินค้า</li>
+         <li>บริการหลังการขาย</li>
+        </ul>
+       </div>
+      </div>
+      <div class="operation-card">
+       <div class="operation-header"><span class="operation-icon" aria-hidden="true">🏭</span>
+        <div class="operation-title">
+         ทรัพยากรที่ต้องการ
+        </div>
+       </div>
+       <div class="operation-content">
+        <ul class="analysis-points">
+         <li>สถานที่และอุปกรณ์</li>
+         <li>เครื่องจักรและเทคโนโลยี</li>
+         <li>วัตถุดิบและวัสดุ</li>
+         <li>บุคลากรและทักษะ</li>
+         <li>เงินทุนหมุนเวียน</li>
+        </ul>
+       </div>
+      </div>
+      <div class="operation-card">
+       <div class="operation-header"><span class="operation-icon" aria-hidden="true">📦</span>
+        <div class="operation-title">
+         สต็อกและโลจิสติกส์
+        </div>
+       </div>
+       <div class="operation-content">
+        <ul class="analysis-points">
+         <li>การจัดการคลังสินค้า</li>
+         <li>ระบบ FIFO/FEFO</li>
+         <li>การขนส่งและจัดส่ง</li>
+         <li>การติดตามสินค้า</li>
+         <li>การจัดการผู้จำหน่าย</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Marketing Plan -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📢</span>
+     <h2 class="section-title">แผนการตลาดและการขาย</h2>
+    </div>
+    <div class="section-content">
+     <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Marketing Mix (4P/7P)</h3>
+     <div class="marketing-mix">
+      <div class="mix-card"><span class="mix-icon" aria-hidden="true">🛍️</span>
+       <div class="mix-title">
+        Product
+       </div>
+       <div class="mix-subtitle">
+        ผลิตภัณฑ์
+       </div>
+       <p>คุณลักษณะ คุณภาพ บรรจุภัณฑ์ การรับประกัน</p>
+      </div>
+      <div class="mix-card"><span class="mix-icon" aria-hidden="true">💰</span>
+       <div class="mix-title">
+        Price
+       </div>
+       <div class="mix-subtitle">
+        ราคา
+       </div>
+       <p>กลยุทธ์ราคา ส่วนลด เงื่อนไขการชำระ</p>
+      </div>
+      <div class="mix-card"><span class="mix-icon" aria-hidden="true">📍</span>
+       <div class="mix-title">
+        Place
+       </div>
+       <div class="mix-subtitle">
+        สถานที่
+       </div>
+       <p>ช่องทางจำหน่าย การกระจายสินค้า</p>
+      </div>
+      <div class="mix-card"><span class="mix-icon" aria-hidden="true">📢</span>
+       <div class="mix-title">
+        Promotion
+       </div>
+       <div class="mix-subtitle">
+        การส่งเสริมการขาย
+       </div>
+       <p>โฆษณา ประชาสัมพันธ์ กิจกรรมพิเศษ</p>
+      </div>
+      <div class="mix-card"><span class="mix-icon" aria-hidden="true">👥</span>
+       <div class="mix-title">
+        People
+       </div>
+       <div class="mix-subtitle">
+        บุคลากร
+       </div>
+       <p>ทีมขาย บริการลูกค้า การฝึกอบรม</p>
+      </div>
+      <div class="mix-card"><span class="mix-icon" aria-hidden="true">⚙️</span>
+       <div class="mix-title">
+        Process
+       </div>
+       <div class="mix-subtitle">
+        กระบวนการ
+       </div>
+       <p>ขั้นตอนการให้บริการ ระบบการทำงาน</p>
+      </div>
+      <div class="mix-card"><span class="mix-icon" aria-hidden="true">🏢</span>
+       <div class="mix-title">
+        Physical Evidence
+       </div>
+       <div class="mix-subtitle">
+        สิ่งแวดล้อมทางกายภาพ
+       </div>
+       <p>การตแต่งร้าน บรรยากาศ เอกสาร</p>
+      </div>
+     </div>
+     <h3 style="margin: 2rem 0 1rem 0; color: var(--primary);">ช่องทางการขายและ KPI</h3>
+     <div class="operations-grid">
+      <div class="operation-card">
+       <div class="operation-header"><span class="operation-icon" aria-hidden="true">🏪</span>
+        <div class="operation-title">
+         ช่องทางออฟไลน์
+        </div>
+       </div>
+       <div class="operation-content">
+        <ul class="analysis-points">
+         <li>ร้านค้าตัวเอง</li>
+         <li>ตัวแทนจำหน่าย</li>
+         <li>งานแสดงสินค้า</li>
+         <li>การขายตรง</li>
+         <li>ร้านค้าปลีก</li>
+        </ul>
+       </div>
+      </div>
+      <div class="operation-card">
+       <div class="operation-header"><span class="operation-icon" aria-hidden="true">💻</span>
+        <div class="operation-title">
+         ช่องทางออนไลน์
+        </div>
+       </div>
+       <div class="operation-content">
+        <ul class="analysis-points">
+         <li>เว็บไซต์ตัวเอง</li>
+         <li>แพลตฟอร์ม e-commerce</li>
+         <li>โซเชียลมีเดีย</li>
+         <li>แอปพลิเคชัน</li>
+         <li>การตลาดดิจิทัล</li>
+        </ul>
+       </div>
+      </div>
+      <div class="operation-card">
+       <div class="operation-header"><span class="operation-icon" aria-hidden="true">📊</span>
+        <div class="operation-title">
+         KPI การตลาด
+        </div>
+       </div>
+       <div class="operation-content">
+        <ul class="analysis-points">
+         <li>ยอดขาย (Sales Revenue)</li>
+         <li>จำนวนลูกค้าใหม่</li>
+         <li>อัตราการกลับมาซื้อ</li>
+         <li>ต้นทุนการหาลูกค้า (CAC)</li>
+         <li>มูลค่าลูกค้าตลอดชีวิต (LTV)</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Organization Structure -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">👥</span>
+     <h2 class="section-title">โครงสร้างองค์กรและบทบาทงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="org-structure">
+      <div class="org-title">
+       บทบาทหน้าที่หลัก
+      </div>
+      <div class="org-roles">
+       <div class="role-card"><span class="role-icon" aria-hidden="true">👑</span>
+        <div class="role-title">
+         ผู้บริหาร
+        </div>
+        <p>วางแผนกลยุทธ์ ตัดสินใจสำคัญ ควบคุมการดำเนินงาน</p>
+       </div>
+       <div class="role-card"><span class="role-icon" aria-hidden="true">📊</span>
+        <div class="role-title">
+         การตลาด
+        </div>
+        <p>วิจัยตลาด โฆษณา ประชาสัมพันธ์ หาลูกค้าใหม่</p>
+       </div>
+       <div class="role-card"><span class="role-icon" aria-hidden="true">🛒</span>
+        <div class="role-title">
+         การขาย
+        </div>
+        <p>ติดต่อลูกค้า เจรจาราคา ปิดการขาย บริการลูกค้า</p>
+       </div>
+       <div class="role-card"><span class="role-icon" aria-hidden="true">⚙️</span>
+        <div class="role-title">
+         การผลิต
+        </div>
+        <p>ควบคุมคุณภาพ จัดการสต็อก ส่งมอบสินค้า</p>
+       </div>
+       <div class="role-card"><span class="role-icon" aria-hidden="true">💰</span>
+        <div class="role-title">
+         การเงิน
+        </div>
+        <p>บัญชี การเงิน งบประมาณ ควบคุมต้นทุน</p>
+       </div>
+       <div class="role-card"><span class="role-icon" aria-hidden="true">👨‍💼</span>
+        <div class="role-title">
+         ทรัพยากรมนุษย์
+        </div>
+        <p>สรรหา ฝึกอบรม ประเมินผล จ่ายเงินเดือน</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Legal & Ethics -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚖️</span>
+     <h2 class="section-title">กฎหมายและจริยธรรม</h2>
+    </div>
+    <div class="section-content">
+     <div class="legal-grid">
+      <div class="legal-card">
+       <div class="legal-header"><span class="legal-icon" aria-hidden="true">📋</span>
+        <div class="legal-title">
+         การจดทะเบียน
+        </div>
+       </div>
+       <div class="legal-content">
+        <ul class="analysis-points">
+         <li>จดทะเบียนพาณิชย์</li>
+         <li>ใบอนุญาตประกอบกิจการ</li>
+         <li>เลขประจำตัวผู้เสียภาษี</li>
+         <li>การจดทะเบียนเครื่องหมายการค้า</li>
+         <li>ใบอนุญาตเฉพาะด้าน</li>
+        </ul>
+       </div>
+      </div>
+      <div class="legal-card">
+       <div class="legal-header"><span class="legal-icon" aria-hidden="true">🧾</span>
+        <div class="legal-title">
+         ภาษีและใบกำกับ
+        </div>
+       </div>
+       <div class="legal-content">
+        <ul class="analysis-points">
+         <li>ภาษีมูลค่าเพิ่ม (VAT)</li>
+         <li>ภาษีเงินได้นิติบุคคล</li>
+         <li>ใบกำกับภาษี/ใบเสร็จ</li>
+         <li>การยื่นแบบแสดงรายการ</li>
+         <li>การเก็บเอกสารทางบัญชี</li>
+        </ul>
+       </div>
+      </div>
+      <div class="legal-card">
+       <div class="legal-header"><span class="legal-icon" aria-hidden="true">🛡️</span>
+        <div class="legal-title">
+         ทรัพย์สินทางปัญญา
+        </div>
+       </div>
+       <div class="legal-content">
+        <ul class="analysis-points">
+         <li>เครื่องหมายการค้า</li>
+         <li>ลิขสิทธิ์</li>
+         <li>สิทธิบัตร</li>
+         <li>ความลับทางการค้า</li>
+         <li>การละเมิดทรัพย์สินทางปัญญา</li>
+        </ul>
+       </div>
+      </div>
+      <div class="legal-card">
+       <div class="legal-header"><span class="legal-icon" aria-hidden="true">✨</span>
+        <div class="legal-title">
+         จริยธรรมธุรกิจ
+        </div>
+       </div>
+       <div class="legal-content">
+        <ul class="analysis-points">
+         <li>ความโปร่งใสในการดำเนินงาน</li>
+         <li>การปฏิบัติต่อลูกค้าอย่างเป็นธรรม</li>
+         <li>ความรับผิดชอบต่อสังคม</li>
+         <li>การไม่คอร์รัปชัน</li>
+         <li>การเคารพสิทธิมนุษยชน</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Risk Management -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚠️</span>
+     <h2 class="section-title">การบริหารความเสี่ยง</h2>
+    </div>
+    <div class="section-content">
+     <div class="risk-grid">
+      <div class="risk-card">
+       <div class="risk-title">
+        ความเสี่ยงทางการตลาด
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         ความเสี่ยง:
+        </div>
+        <div class="risk-mitigation">
+         ลูกค้าไม่ยอมรับสินค้า คู่แข่งเข้ามาใหม่ เทรนด์เปลี่ยน
+        </div>
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         วิธีบรรเทา:
+        </div>
+        <div class="risk-mitigation">
+         วิจัยตลาดอย่างต่อเนื่อง พัฒนาสินค้าใหม่ สร้างความแตกต่าง
+        </div>
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         แผนสำรอง:
+        </div>
+        <div class="risk-mitigation">
+         หาตลาดใหม่ ปรับกลยุทธ์ราคา พัฒนาช่องทางใหม่
+        </div>
+       </div>
+      </div>
+      <div class="risk-card">
+       <div class="risk-title">
+        ความเสี่ยงทางการเงิน
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         ความเสี่ยง:
+        </div>
+        <div class="risk-mitigation">
+         กระแสเงินสดไม่พอ ลูกหนี้เก็บเงินไม่ได้ ต้นทุนเพิ่มขึ้น
+        </div>
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         วิธีบรรเทา:
+        </div>
+        <div class="risk-mitigation">
+         วางแผนกระแสเงินสด ตรวจสอบเครดิตลูกค้า ควบคุมต้นทุน
+        </div>
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         แผนสำรอง:
+        </div>
+        <div class="risk-mitigation">
+         หาแหล่งเงินทุนเพิ่ม ลดค่าใช้จ่าย ขายสินทรัพย์ไม่จำเป็น
+        </div>
+       </div>
+      </div>
+      <div class="risk-card">
+       <div class="risk-title">
+        ความเสี่ยงด้านการดำเนินงาน
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         ความเสี่ยง:
+        </div>
+        <div class="risk-mitigation">
+         เครื่องจักรเสีย พนักงานลาออก คุณภาพสินค้าไม่ได้มาตรฐาน
+        </div>
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         วิธีบรรเทา:
+        </div>
+        <div class="risk-mitigation">
+         บำรุงรักษาเครื่องจักร ฝึกอบรมพนักงาน ควบคุมคุณภาพ
+        </div>
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         แผนสำรอง:
+        </div>
+        <div class="risk-mitigation">
+         มีเครื่องจักรสำรอง จ้างพนักงานชั่วคราว outsource บางงาน
+        </div>
+       </div>
+      </div>
+      <div class="risk-card">
+       <div class="risk-title">
+        ความเสี่ยงภายนอก
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         ความเสี่ยง:
+        </div>
+        <div class="risk-mitigation">
+         เศรษฐกิจตกต่ำ กฎหมายเปลี่ยน ภัยธรรมชาติ โรคระบาด
+        </div>
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         วิธีบรรเทา:
+        </div>
+        <div class="risk-mitigation">
+         ติดตามข่าวสาร ซื้อประกันภัย เตรียมแผนฉุกเฉิน
+        </div>
+       </div>
+       <div class="risk-item">
+        <div class="risk-type">
+         แผนสำรอง:
+        </div>
+        <div class="risk-mitigation">
+         ปรับรูปแบบธุรกิจ ลดขนาดการดำเนินงาน หยุดชั่วคราว
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustainability -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">ความยั่งยืน (ESG)</h2>
+    </div>
+    <div class="section-content">
+     <div class="sustainability-grid">
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🌍</span>
+        <div class="sustainability-title">
+         สิ่งแวดล้อม (Environmental)
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <h4 style="color: var(--green); margin-bottom: 0.5rem;">วัตถุดิบและพลังงาน</h4>
+        <ul class="analysis-points">
+         <li>เลือกใช้วัตถุดิบที่เป็นมิตรกับสิ่งแวดล้อม</li>
+         <li>ลดการใช้พลังงาน ใช้พลังงานทดแทน</li>
+         <li>ลดการปล่อยก๊าซเรือนกระจก</li>
+        </ul>
+        <h4 style="color: var(--green); margin: 1rem 0 0.5rem 0;">การจัดการของเสีย</h4>
+        <ul class="analysis-points">
+         <li>ลดของเสียจากกระบวนการผลิต</li>
+         <li>รีไซเคิลและนำกลับมาใช้ใหม่</li>
+         <li>จัดการขยะอย่างถูกต้อง</li>
+        </ul>
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🤝</span>
+        <div class="sustainability-title">
+         สังคม (Social)
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <h4 style="color: var(--green); margin-bottom: 0.5rem;">ผลต่อชุมชน</h4>
+        <ul class="analysis-points">
+         <li>สร้างงานให้คนในชุมชน</li>
+         <li>ซื้อวัตถุดิบจากเกษตรกรท้องถิ่น</li>
+         <li>สนับสนุนกิจกรรมชุมชน</li>
+        </ul>
+        <h4 style="color: var(--green); margin: 1rem 0 0.5rem 0;">ความรับผิดชอบต่อสังคม</h4>
+        <ul class="analysis-points">
+         <li>ผลิตสินค้าที่ปลอดภัยต่อผู้บริโภค</li>
+         <li>ปฏิบัติต่อพนักงานอย่างเป็นธรรม</li>
+         <li>ไม่เอารัดเอาเปรียบผู้บริโภค</li>
+        </ul>
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">⚖️</span>
+        <div class="sustainability-title">
+         การกำกับดูแล (Governance)
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <h4 style="color: var(--green); margin-bottom: 0.5rem;">ความโปร่งใส</h4>
+        <ul class="analysis-points">
+         <li>เปิดเผยข้อมูลการดำเนินงานที่สำคัญ</li>
+         <li>รายงานผลการดำเนินงานอย่างตรงไปตรงมา</li>
+         <li>มีระบบตรวจสอบภายใน</li>
+        </ul>
+        <h4 style="color: var(--green); margin: 1rem 0 0.5rem 0;">จริยธรรม</h4>
+        <ul class="analysis-points">
+         <li>ปฏิบัติตามกฎหมายอย่างเคร่งครัด</li>
+         <li>ไม่มีการคอร์รัปชัน</li>
+         <li>เคารพสิทธิมนุษยชน</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Mini Business Plan -->
+   <section class="mini-plan">
+    <div class="mini-plan-header">
+     <div class="mini-plan-title">
+      ตัวอย่าง: มินิแผนธุรกิจหนึ่งหน้า
+     </div>
+     <div class="mini-plan-subtitle">
+      ร้านกาแฟเพื่อสุขภาพ "Green Cup Café"
+     </div>
+    </div>
+    <div class="mini-plan-content">
+     <table class="plan-table">
+      <thead>
+       <tr>
+        <th>หัวข้อ</th>
+        <th>รายละเอียด</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td><strong>ลูกค้าเป้าหมาย</strong></td>
+        <td>วัยทำงาน 25-45 ปี รักสุขภาพ รายได้ปานกลาง-สูง ใส่ใจสิ่งแวดล้อม</td>
+       </tr>
+       <tr>
+        <td><strong>ปัญหาที่แก้ให้ลูกค้า</strong></td>
+        <td>หากาแฟคุณภาพดี ไม่มีสารเคมี ราคาไม่แพงเกินไป ในบรรยากาศดี</td>
+       </tr>
+       <tr>
+        <td><strong>คุณค่าเสนอขาย</strong></td>
+        <td>กาแฟออร์แกนิก 100% ไม่ใส่น้ำตาล เสิร์ฟในแก้วรีไซเคิล บรรยากาศธรรมชาติ</td>
+       </tr>
+       <tr>
+        <td><strong>ช่องทางการขาย</strong></td>
+        <td>ร้านกาแฟ (70%) แอปสั่งออนไลน์ (20%) จัดส่งออฟฟิศ (10%)</td>
+       </tr>
+       <tr>
+        <td><strong>รูปแบบรายได้</strong></td>
+        <td>ขายกาแฟ เครื่องดื่ม ขนมเบเกอรี่ สินค้าเพื่อสุขภาพ</td>
+       </tr>
+       <tr>
+        <td><strong>ต้นทุนหลัก</strong></td>
+        <td>เมล็ดกาแฟ (40%) ค่าเช่า (25%) เงินเดือน (20%) อื่นๆ (15%)</td>
+       </tr>
+       <tr>
+        <td><strong>KPI สำคัญ</strong></td>
+        <td>ยอดขาย 150,000 บาท/เดือน ลูกค้าประจำ 200 คน ความพึงพอใจ 4.5/5</td>
+       </tr>
+       <tr>
+        <td><strong>จุดคุ้มทุน</strong></td>
+        <td>ขายกาแฟ 300 แก้ว/วัน ราคาเฉลี่ย 80 บาท/แก้ว</td>
+       </tr>
+       <tr>
+        <td><strong>ความได้เปรียบ</strong></td>
+        <td>ตำแหน่งดี เมล็ดกาแฟคุณภาพ บริการเป็นกันเอง ราคาแข่งขันได้</td>
+       </tr>
+       <tr>
+        <td><strong>ความเสี่ยง</strong></td>
+        <td>คู่แข่งเพิ่มขึ้น ราคาเมล็ดกาแฟผันผวน ลูกค้าเปลี่ยนรสนิยม</td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>แผนธุรกิจเป็นแผนที่นำทางสู่ความสำเร็จ ช่วยลดความเสี่ยงและเพิ่มโอกาสสำเร็จ</li>
+     <li>การวิเคราะห์ตลาดและลูกค้าเป้าหมายเป็นพื้นฐานสำคัญของการวางแผน</li>
+     <li>คุณค่าเสนอขายต้องแก้ปัญหาจริงของลูกค้าและแตกต่างจากคู่แข่ง</li>
+     <li>การวิเคราะห์ SWOT ช่วยเข้าใจจุดแข็ง-อ่อน และโอกาส-อุปสรรค</li>
+     <li>การคำนวณจุดคุ้มทุนและกระแสเงินสดเป็นสิ่งจำเป็นสำหรับความอยู่รอด</li>
+     <li>แผนปฏิบัติการต้องครอบคลุมกระบวนการ ทรัพยากร และโลจิสติกส์</li>
+     <li>Marketing Mix (4P/7P) เป็นเครื่องมือสำคัญในการวางแผนการตลาด</li>
+     <li>โครงสร้างองค์กรและบทบาทหน้าที่ต้องชัดเจนเพื่อการทำงานที่มีประสิทธิภาพ</li>
+     <li>การปฏิบัติตามกฎหมายและจริยธรรมเป็นพื้นฐานของธุรกิจที่ยั่งยืน</li>
+     <li>การบริหารความเสี่ยงและการดำเนินงานแบบ ESG เป็นแนวโน้มสำคัญของธุรกิจสมัยใหม่</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Persona
+      </div>
+      <div class="glossary-definition">
+       ตัวแทนลูกค้าในอุดมคติที่สร้างขึ้นจากข้อมูลจริง เพื่อเข้าใจความต้องการและพฤติกรรม
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Value Proposition
+      </div>
+      <div class="glossary-definition">
+       คุณค่าเสนอขาย คือสิ่งที่ทำให้สินค้า/บริการแตกต่างและมีคุณค่าในสายตาลูกค้า
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Breakeven Point
+      </div>
+      <div class="glossary-definition">
+       จุดคุ้มทุน คือจุดที่รายได้เท่ากับต้นทุนรวม ไม่ได้กำไรและไม่ขาดทุน
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Cash Flow
+      </div>
+      <div class="glossary-definition">
+       กระแสเงินสด คือการเคลื่อนไหวของเงินเข้าและเงินออกในธุรกิจ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       KPI (Key Performance Indicator)
+      </div>
+      <div class="glossary-definition">
+       ตัวชี้วัดผลการดำเนินงานที่สำคัญ ใช้วัดความสำเร็จของธุรกิจ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       ESG
+      </div>
+      <div class="glossary-definition">
+       Environmental, Social, Governance - การดำเนินธุรกิจที่คำนึงถึงสิ่งแวดล้อม สังคม และการกำกับดูแล
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       SWOT Analysis
+      </div>
+      <div class="glossary-definition">
+       การวิเคราะห์จุดแข็ง (Strengths) จุดอ่อน (Weaknesses) โอกาส (Opportunities) และอุปสรรค (Threats)
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       TAM, SAM, SOM
+      </div>
+      <div class="glossary-definition">
+       Total/Serviceable/Obtainable Addressable Market - ขนาดตลาดรวม/เข้าถึงได้/ได้จริง
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "การวางแผนธุรกิจ",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_overview: "เหตุผลที่ต้องวางแผนก่อนเริ่มธุรกิจ"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson overview
+            const overviewElement = document.getElementById('lessonOverview');
+            if (overviewElement) {
+                overviewElement.textContent = config.lesson_overview || defaultConfig.lesson_overview;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_overview", config.lesson_overview || defaultConfig.lesson_overview]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9921716145b9ce4d',t:'MTc2MTA1NjkyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

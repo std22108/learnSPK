@@ -1,0 +1,1728 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ตัวอย่างการประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --info: #17A2B8;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+            --green: #4CAF50;
+            --green-light: #81C784;
+            --brown: #8D6E63;
+            --brown-light: #BCAAA4;
+            --orange: #FF9800;
+            --purple: #9C27B0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E8F5E8 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E8F5E8 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--green);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Product Examples Grid */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .example-card {
+            background: var(--white);
+            border: 2px solid var(--green-light);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .example-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green) 0%, var(--accent) 100%);
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--green);
+        }
+
+        .example-header {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E8F5E8 100%);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .example-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .example-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .example-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .example-content {
+            padding: 1.5rem;
+        }
+
+        .example-specs {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: #F8F9FA;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 80px;
+            flex-shrink: 0;
+        }
+
+        .spec-value {
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .example-properties {
+            background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E8 100%);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .properties-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .property-item {
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.7);
+            border-radius: 6px;
+        }
+
+        .property-label {
+            font-weight: 500;
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .property-value {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 1rem 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #E0E0E0;
+            text-align: center;
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+
+        .comparison-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        .material-name {
+            font-weight: 600;
+            color: var(--primary);
+            text-align: left !important;
+        }
+
+        .rating-excellent {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .rating-good {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .rating-fair {
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+
+        .rating-poor {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        /* Technical Design */
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .design-card {
+            background: var(--white);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .design-card:hover {
+            transform: translateX(5px);
+        }
+
+        .design-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .design-icon {
+            font-size: 1.5rem;
+        }
+
+        .design-description {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .design-methods {
+            background: #E8F5E8;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .design-methods strong {
+            color: var(--green);
+        }
+
+        /* Safety Grid */
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .safety-card {
+            background: var(--white);
+            border-top: 4px solid var(--danger);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .safety-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .safety-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .safety-icon {
+            font-size: 2rem;
+        }
+
+        .safety-title {
+            font-weight: 600;
+            color: var(--danger);
+            font-size: 1.1rem;
+        }
+
+        .safety-description {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Cost Analysis */
+        .cost-analysis {
+            background: linear-gradient(135deg, #FFF8E1 0%, #E8F5E8 100%);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .cost-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .cost-table th {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--orange) 100%);
+            color: var(--white);
+            padding: 1rem 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cost-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #E0E0E0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .cost-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        .cost-product {
+            font-weight: 600;
+            color: var(--primary);
+            text-align: left !important;
+        }
+
+        /* Sustainability Grid */
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .sustainability-card {
+            background: var(--white);
+            border-top: 4px solid var(--success);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .sustainability-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sustainability-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .sustainability-icon {
+            font-size: 2rem;
+        }
+
+        .sustainability-title {
+            font-weight: 600;
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+
+        .sustainability-description {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Tip and Warning Boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .tip-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--danger);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-title {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .warning-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .examples-grid,
+            .design-grid,
+            .safety-grid,
+            .sustainability-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table,
+            .cost-table {
+                font-size: 0.8rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td,
+            .cost-table th,
+            .cost-table td {
+                padding: 0.5rem 0.25rem;
+            }
+
+            .tip-box,
+            .warning-box {
+                padding: 1rem;
+            }
+
+            .tip-title,
+            .warning-title,
+            .tip-content,
+            .warning-content {
+                margin-left: 2rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .properties-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🌿</span>
+    <h1 id="lessonTitle">ตัวอย่างการประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">ความยั่งยืน ภูมิปัญญาท้องถิ่น และความปลอดภัยสัมผัสอาหาร ในการสร้างสรรค์บรรจุภัณฑ์ที่เป็นมิตรต่อสิ่งแวดล้อม</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจตัวอย่างการประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ คุณสมบัติ และการประยุกต์ใช้</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถวิเคราะห์เปรียบเทียบวัสดุ ประเมินต้นทุน และเลือกใช้ให้เหมาะสมกับงาน</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>เห็นคุณค่าของการใช้วัสดุธรรมชาติ และมีจิตสำนึกด้านความยั่งยืน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Product Examples -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛠️</span>
+     <h2 class="section-title">ตัวอย่างผลงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>ตัวอย่างการประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติที่สามารถนำไปประยุกต์ใช้ในชีวิตประจำวันและงานอาชีพ</p>
+     </div>
+     <div class="examples-grid"><!-- Example 1: Areca Palm Plate -->
+      <div class="example-card">
+       <div class="example-header"><span class="example-icon" aria-hidden="true">🍽️</span>
+        <div class="example-title">
+         จานกาบหมากอัดขึ้นรูป
+        </div>
+        <div class="example-subtitle">
+         Areca Palm Leaf Plate
+        </div>
+       </div>
+       <div class="example-content">
+        <div class="example-specs">
+         <div class="spec-item"><span class="spec-label">วัสดุหลัก:</span> <span class="spec-value">กาบหมาก (ใบปาล์มแห้ง) อัดขึ้นรูปด้วยความร้อนและแรงดัน</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขนาด/ความจุ:</span> <span class="spec-value">เส้นผ่านศูนย์กลาง 6-10 นิ้ว, ลึก 1-2 ซม., บรรจุอาหาร 200-500 กรัม</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขั้นตอนย่อ:</span> <span class="spec-value">ล้าง → ลวกฆ่าเชื้อ → อัดขึ้นรูปด้วยแม่พิมพ์ → ตัดขอบ → ตรวจคุณภาพ</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การเคลือบ:</span> <span class="spec-value">ไม่จำเป็น (ธรรมชาติกันน้ำได้ระดับหนึ่ง) หรือเคลือบขี้ผึ้งบาง ๆ</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การใช้งาน:</span> <span class="spec-value">อาหารแห้ง ขนมไทย งานเลี้ยง งานประเพณี อาหารอุ่น (ไม่เกิน 60°C)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ต้นทุนคร่าว ๆ:</span> <span class="spec-value">15-25 บาท/ใบ (รวมวัสดุ แรงงาน ค่าใช้จ่าย)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การย่อยสลาย:</span> <span class="spec-value">2-4 เดือน ในสภาพแวดล้อมธรรมชาติ สามารถทำปุ๋ยหมักได้</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ข้อจำกัด:</span> <span class="spec-value">ไม่เหมาะกับอาหารมีน้ำมันมาก อายุการใช้งาน 1-2 วัน</span>
+         </div>
+        </div>
+        <div class="example-properties">
+         <div class="properties-title">
+          คุณสมบัติเชิงเทคนิค
+         </div>
+         <div class="properties-grid">
+          <div class="property-item"><span class="property-label">ความแข็งแรง</span> <span class="property-value">ดี</span>
+          </div>
+          <div class="property-item"><span class="property-label">กันชื้น</span> <span class="property-value">ปานกลาง</span>
+          </div>
+          <div class="property-item"><span class="property-label">ทนร้อน</span> <span class="property-value">ปานกลาง</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Example 2: Bagasse Box -->
+      <div class="example-card">
+       <div class="example-header"><span class="example-icon" aria-hidden="true">📦</span>
+        <div class="example-title">
+         กล่องชานอ้อยขึ้นรูปเยื่อ
+        </div>
+        <div class="example-subtitle">
+         Bagasse Pulp Molded Box
+        </div>
+       </div>
+       <div class="example-content">
+        <div class="example-specs">
+         <div class="spec-item"><span class="spec-label">วัสดุหลัก:</span> <span class="spec-value">เยื่อชานอ้อย (bagasse) ขึ้นรูปด้วยแม่พิมพ์และความดัน</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขนาด/ความจุ:</span> <span class="spec-value">15×10×5 ซม., บรรจุอาหาร 300-800 กรัม, มีฝาปิด</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขั้นตอนย่อ:</span> <span class="spec-value">บดชานอ้อย → ทำเยื่อ → ขึ้นรูปในแม่พิมพ์ → อบแห้ง → ตัดแต่ง</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การเคลือบ:</span> <span class="spec-value">เคลือบ PLA (food-grade) หรือขี้ผึ้งธรรมชาติเพื่อกันน้ำมัน</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การใช้งาน:</span> <span class="spec-value">อาหารร้อน อุ่นไมโครเวฟได้ ร้านอาหารเดลิเวอรี่ อาหารกล่อง</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ต้นทุนคร่าว ๆ:</span> <span class="spec-value">25-40 บาท/กล่อง (รวมฝาปิด)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การย่อยสลาย:</span> <span class="spec-value">3-6 เดือน ย่อยสลายเร็วกว่าโฟม 100 เท่า</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ข้อจำกัด:</span> <span class="spec-value">ราคาสูงกว่าโฟม ต้องเคลือบเพิ่มสำหรับอาหารมีน้ำมันมาก</span>
+         </div>
+        </div>
+        <div class="example-properties">
+         <div class="properties-title">
+          คุณสมบัติเชิงเทคนิค
+         </div>
+         <div class="properties-grid">
+          <div class="property-item"><span class="property-label">ความแข็งแรง</span> <span class="property-value">ดีมาก</span>
+          </div>
+          <div class="property-item"><span class="property-label">กันชื้น</span> <span class="property-value">ดี</span>
+          </div>
+          <div class="property-item"><span class="property-label">ทนร้อน</span> <span class="property-value">ดีมาก</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Example 3: Coconut Shell Cup -->
+      <div class="example-card">
+       <div class="example-header"><span class="example-icon" aria-hidden="true">🥥</span>
+        <div class="example-title">
+         ถ้วย/ช้อนกะลามะพร้าวขัดมัน
+        </div>
+        <div class="example-subtitle">
+         Polished Coconut Shell Cup &amp; Spoon
+        </div>
+       </div>
+       <div class="example-content">
+        <div class="example-specs">
+         <div class="spec-item"><span class="spec-label">วัสดุหลัก:</span> <span class="spec-value">กะลามะพร้าวแก่ ขัดเรียบและขัดเงาด้วยกระดาษทราย</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขนาด/ความจุ:</span> <span class="spec-value">ถ้วย: เส้นผ่านศูนย์กลาง 8-12 ซม., ความจุ 150-400 มล.</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขั้นตอนย่อ:</span> <span class="spec-value">เลือกกะลา → ตัด → ขูดเนื้อใน → ขัดเรียบ → ขัดเงา → เคลือบ</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การเคลือบ:</span> <span class="spec-value">น้ำมันมะพร้าวธรรมชาติ หรือขี้ผึ้งผึ้งโพรง (food-grade)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การใช้งาน:</span> <span class="spec-value">เครื่องดื่มร้อน-เย็น ชา กาแฟ น้ำผลไม้ ไอศกรีม</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ต้นทุนคร่าว ๆ:</span> <span class="spec-value">45-80 บาท/ชิ้น (ขึ้นกับขนาดและความประณีต)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การย่อยสลาย:</span> <span class="spec-value">6-12 เดือน ใช้ซ้ำได้หลายปี หากดูแลดี</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ข้อจำกัด:</span> <span class="spec-value">ต้องขัดเรียบให้ดี ราคาแรงงานสูง ต้องดูแลรักษา</span>
+         </div>
+        </div>
+        <div class="example-properties">
+         <div class="properties-title">
+          คุณสมบัติเชิงเทคนิค
+         </div>
+         <div class="properties-grid">
+          <div class="property-item"><span class="property-label">ความแข็งแรง</span> <span class="property-value">ดีเยี่ยม</span>
+          </div>
+          <div class="property-item"><span class="property-label">กันชื้น</span> <span class="property-value">ดีมาก</span>
+          </div>
+          <div class="property-item"><span class="property-label">ทนร้อน</span> <span class="property-value">ดีมาก</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Example 4: Bamboo Basket -->
+      <div class="example-card">
+       <div class="example-header"><span class="example-icon" aria-hidden="true">🧺</span>
+        <div class="example-title">
+         ตะกร้าไม้ไผ่สาน
+        </div>
+        <div class="example-subtitle">
+         Woven Bamboo Fruit Basket
+        </div>
+       </div>
+       <div class="example-content">
+        <div class="example-specs">
+         <div class="spec-item"><span class="spec-label">วัสดุหลัก:</span> <span class="spec-value">ไม้ไผ่ผ่าเป็นแผ่นบาง สานด้วยเทคนิคแบบไทย</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขนาด/ความจุ:</span> <span class="spec-value">25×20×10 ซม., บรรจุผลไม้ 1-2 กก., มีหูหิ้ว</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขั้นตอนย่อ:</span> <span class="spec-value">ตัดไผ่ → ผ่าแผ่น → แช่น้ำ → สานโครงฐาน → สานขอบ → ทำหูหิ้ว</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การเคลือบ:</span> <span class="spec-value">ไม่จำเป็น หรือทาน้ำมันไผ่เพื่อป้องกันแมลง</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การใช้งาน:</span> <span class="spec-value">ใส่ผลไม้ ขนม ของแห้ง งานตกแต่ง ของขวัญ</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ต้นทุนคร่าว ๆ:</span> <span class="spec-value">80-150 บาท/ใบ (ขึ้นกับขนาดและลวดลาย)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การย่อยสลาย:</span> <span class="spec-value">1-2 ปี ใช้ซ้ำได้หลายปี หากดูแลดี</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ข้อจำกัด:</span> <span class="spec-value">ใช้เวลาทำนาน ต้องมีฝีมือ ไม่เหมาะกับของเปียก</span>
+         </div>
+        </div>
+        <div class="example-properties">
+         <div class="properties-title">
+          คุณสมบัติเชิงเทคนิค
+         </div>
+         <div class="properties-grid">
+          <div class="property-item"><span class="property-label">ความแข็งแรง</span> <span class="property-value">ดีเยี่ยม</span>
+          </div>
+          <div class="property-item"><span class="property-label">กันชื้น</span> <span class="property-value">พอใช้</span>
+          </div>
+          <div class="property-item"><span class="property-label">ทนร้อน</span> <span class="property-value">ดี</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Example 5: Banana Leaf Wrap -->
+      <div class="example-card">
+       <div class="example-header"><span class="example-icon" aria-hidden="true">🍃</span>
+        <div class="example-title">
+         ห่อใบตอง–ทางมะพร้าว
+        </div>
+        <div class="example-subtitle">
+         Banana Leaf &amp; Coconut Fiber Wrap
+        </div>
+       </div>
+       <div class="example-content">
+        <div class="example-specs">
+         <div class="spec-item"><span class="spec-label">วัสดุหลัก:</span> <span class="spec-value">ใบตองสด ทางมะพร้าว (เส้นใยจากกะลา) สำหรับผูกมัด</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขนาด/ความจุ:</span> <span class="spec-value">ใบตอง 20×15 ซม., บรรจุขนม 100-300 กรัม</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขั้นตอนย่อ:</span> <span class="spec-value">เลือกใบตอง → ล้าง → ลวกน้ำร้อน → ตัดขนาด → ห่อ → ผูกทาง</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การเคลือบ:</span> <span class="spec-value">ไม่จำเป็น (ใบตองมีขี้ผึ้งธรรมชาติ)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การใช้งาน:</span> <span class="spec-value">ห่อขนมไทย กระทงลอยกระทง ของขวัญ งานประเพณี</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ต้นทุนคร่าว ๆ:</span> <span class="spec-value">5-15 บาท/ชิ้น (ขึ้นกับขนาดและการตกแต่ง)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การย่อยสลาย:</span> <span class="spec-value">1-2 สัปดาห์ ย่อยสลายเร็วมาก</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ข้อจำกัด:</span> <span class="spec-value">อายุสั้น 1-2 วัน ไวต่อความชื้น ต้องใช้ใบสด</span>
+         </div>
+        </div>
+        <div class="example-properties">
+         <div class="properties-title">
+          คุณสมบัติเชิงเทคนิค
+         </div>
+         <div class="properties-grid">
+          <div class="property-item"><span class="property-label">ความแข็งแรง</span> <span class="property-value">พอใช้</span>
+          </div>
+          <div class="property-item"><span class="property-label">กันชื้น</span> <span class="property-value">ดี</span>
+          </div>
+          <div class="property-item"><span class="property-label">ทนร้อน</span> <span class="property-value">ปานกลาง</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Example 6: Recycled Plant Fiber Paper Box -->
+      <div class="example-card">
+       <div class="example-header"><span class="example-icon" aria-hidden="true">📄</span>
+        <div class="example-title">
+         กล่องกระดาษเยื่อพืชรีไซเคิล
+        </div>
+        <div class="example-subtitle">
+         Recycled Plant Fiber Paper Box
+        </div>
+       </div>
+       <div class="example-content">
+        <div class="example-specs">
+         <div class="spec-item"><span class="spec-label">วัสดุหลัก:</span> <span class="spec-value">เยื่อไผ่ เยื่อฟางข้าว รีไซเคิลจากกระดาษเก่า</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขนาด/ความจุ:</span> <span class="spec-value">12×8×6 ซม., บรรจุขนม 200-400 กรัม, มีฝาพับ</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขั้นตอนย่อ:</span> <span class="spec-value">ทำเยื่อ → กรอง → ขึ้นแผ่น → อบแห้ง → ตัด → พับประกอบ</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การเคลือบ:</span> <span class="spec-value">เคลือบแป้งมันสำปะหลัง (food contact safe) กันน้ำมันเบา ๆ</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การใช้งาน:</span> <span class="spec-value">ขนมแห้ง ของขวัญ บรรจุภัณฑ์อาหารแห้ง</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ต้นทุนคร่าว ๆ:</span> <span class="spec-value">8-18 บาท/กล่อง (ขึ้นกับขนาดและการพิมพ์)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การย่อยสลาย:</span> <span class="spec-value">2-4 สัปดาห์ รีไซเคิลได้ 100%</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ข้อจำกัด:</span> <span class="spec-value">ไม่กันน้ำ ฉีกง่ายเมื่อเปียk ไม่เหมาะกับอาหารมีน้ำมัน</span>
+         </div>
+        </div>
+        <div class="example-properties">
+         <div class="properties-title">
+          คุณสมบัติเชิงเทคนิค
+         </div>
+         <div class="properties-grid">
+          <div class="property-item"><span class="property-label">ความแข็งแรง</span> <span class="property-value">ปานกลาง</span>
+          </div>
+          <div class="property-item"><span class="property-label">กันชื้น</span> <span class="property-value">พอใช้</span>
+          </div>
+          <div class="property-item"><span class="property-label">ทนร้อน</span> <span class="property-value">พอใช้</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Example 7: Natural Fiber Rope -->
+      <div class="example-card">
+       <div class="example-header"><span class="example-icon" aria-hidden="true">🪢</span>
+        <div class="example-title">
+         เชือก–แถบคาดปอ/จูต/กัญชง
+        </div>
+        <div class="example-subtitle">
+         Natural Fiber Rope &amp; Strapping
+        </div>
+       </div>
+       <div class="example-content">
+        <div class="example-specs">
+         <div class="spec-item"><span class="spec-label">วัสดุหลัก:</span> <span class="spec-value">เส้นใยปอ จูต กัญชง ปั่นเป็นเชือกและแถบคาด</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขนาด/ความจุ:</span> <span class="spec-value">เส้นผ่านศูนย์กลาง 3-8 มม., ความยาว 1-50 เมตร</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ขั้นตอนย่อ:</span> <span class="spec-value">แช่เส้นใย → ตาก → หวี → ปั่น → ถัก → ตัดขนาด</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การเคลือบ:</span> <span class="spec-value">ไม่จำเป็น หรือทาขี้ผึ้งเพื่อกันน้ำ</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การใช้งาน:</span> <span class="spec-value">รัดแพ็กเกจ ผูกของขวัญ เชือกห้อย ตกแต่ง</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ต้นทุนคร่าว ๆ:</span> <span class="spec-value">20-60 บาท/เมตร (ขึ้นกับความหนาและคุณภาพ)</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">การย่อยสลาย:</span> <span class="spec-value">6-12 เดือน ใช้ซ้ำได้หลายครั้ง</span>
+         </div>
+         <div class="spec-item"><span class="spec-label">ข้อจำกัด:</span> <span class="spec-value">ไม่กันน้ำ อาจมีกลิ่นเมื่อเปียก ต้องตากแห้ง</span>
+         </div>
+        </div>
+        <div class="example-properties">
+         <div class="properties-title">
+          คุณสมบัติเชิงเทคนิค
+         </div>
+         <div class="properties-grid">
+          <div class="property-item"><span class="property-label">ความแข็งแรง</span> <span class="property-value">ดีมาก</span>
+          </div>
+          <div class="property-item"><span class="property-label">กันชื้น</span> <span class="property-value">พอใช้</span>
+          </div>
+          <div class="property-item"><span class="property-label">ทนร้อน</span> <span class="property-value">ดี</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Material Comparison -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📊</span>
+     <h2 class="section-title">ตารางเปรียบเทียบวัสดุและคุณสมบัติ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การเปรียบเทียบคุณสมบัติของวัสดุธรรมชาติต่าง ๆ เพื่อเลือกใช้ให้เหมาะสมกับงาน</p>
+     </div>
+     <table class="comparison-table">
+      <thead>
+       <tr>
+        <th>วัสดุ</th>
+        <th>ความแข็งแรง</th>
+        <th>กันชื้น/น้ำมัน</th>
+        <th>ทนร้อน</th>
+        <th>อายุการใช้งาน</th>
+        <th>การย่อยสลาย</th>
+        <th>ความพร้อมใช้</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="material-name">กาบหมาก</td>
+        <td class="rating-good">ดี</td>
+        <td class="rating-fair">ปานกลาง</td>
+        <td class="rating-fair">ปานกลาง</td>
+        <td class="rating-fair">1-2 วัน</td>
+        <td class="rating-excellent">2-4 เดือน</td>
+        <td class="rating-excellent">สูง</td>
+       </tr>
+       <tr>
+        <td class="material-name">ชานอ้อย</td>
+        <td class="rating-excellent">ดีมาก</td>
+        <td class="rating-good">ดี</td>
+        <td class="rating-excellent">ดีมาก</td>
+        <td class="rating-good">1-2 สัปดาห์</td>
+        <td class="rating-excellent">3-6 เดือน</td>
+        <td class="rating-good">ปานกลาง</td>
+       </tr>
+       <tr>
+        <td class="material-name">กะลามะพร้าว</td>
+        <td class="rating-excellent">ดีเยี่ยม</td>
+        <td class="rating-excellent">ดีมาก</td>
+        <td class="rating-excellent">ดีมาก</td>
+        <td class="rating-excellent">หลายปี</td>
+        <td class="rating-good">6-12 เดือน</td>
+        <td class="rating-excellent">สูง</td>
+       </tr>
+       <tr>
+        <td class="material-name">ไม้ไผ่</td>
+        <td class="rating-excellent">ดีเยี่ยม</td>
+        <td class="rating-fair">พอใช้</td>
+        <td class="rating-good">ดี</td>
+        <td class="rating-excellent">หลายปี</td>
+        <td class="rating-good">1-2 ปี</td>
+        <td class="rating-excellent">สูง</td>
+       </tr>
+       <tr>
+        <td class="material-name">ใบตอง</td>
+        <td class="rating-fair">พอใช้</td>
+        <td class="rating-good">ดี</td>
+        <td class="rating-fair">ปานกลาง</td>
+        <td class="rating-poor">1-2 วัน</td>
+        <td class="rating-excellent">1-2 สัปดาห์</td>
+        <td class="rating-excellent">สูง</td>
+       </tr>
+       <tr>
+        <td class="material-name">เยื่อพืช</td>
+        <td class="rating-fair">ปานกลาง</td>
+        <td class="rating-fair">พอใช้</td>
+        <td class="rating-fair">พอใช้</td>
+        <td class="rating-fair">1-2 สัปดาห์</td>
+        <td class="rating-excellent">2-4 สัปดาห์</td>
+        <td class="rating-good">ปานกลาง</td>
+       </tr>
+       <tr>
+        <td class="material-name">เส้นใยธรรมชาติ</td>
+        <td class="rating-excellent">ดีมาก</td>
+        <td class="rating-fair">พอใช้</td>
+        <td class="rating-good">ดี</td>
+        <td class="rating-good">หลายเดือน</td>
+        <td class="rating-good">6-12 เดือน</td>
+        <td class="rating-good">ปานกลาง</td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="tip-box">
+      <div class="tip-title">
+       การเลือกวัสดุที่เหมาะสม
+      </div>
+      <div class="tip-content">
+       <p><strong>อาหารร้อน:</strong> ใช้ชานอ้อย กะลามะพร้าว | <strong>อาหารเปียก:</strong> ใช้กาบหมากเคลือบ ใบตอง | <strong>การเก็บรักษานาน:</strong> ใช้ไม้ไผ่ กะลามะพร้าว | <strong>งานประเพณี:</strong> ใช้ใบตอง เส้นใยธรรมชาติ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Technical Design -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔧</span>
+     <h2 class="section-title">การออกแบบเชิงเทคนิค</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>หลักการออกแบบโครงสร้าง ระบบยึดต่อ และการควบคุมคุณภาพในการประดิษฐ์บรรจุภัณฑ์</p>
+     </div>
+     <div class="design-grid">
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🏗️</span> โครงสร้างและรอยพับ
+       </div>
+       <div class="design-description">
+        การออกแบบโครงสร้างให้แข็งแรง ทนทาน และใช้วัสดุอย่างมีประสิทธิภาพ
+       </div>
+       <div class="design-methods"><strong>หลักการ:</strong> กระจายน้ำหนัก ลดจุดเครียด<br><strong>รอยพับ:</strong> พับตามเส้นใย หลีกเลี่ยงการฉีก<br><strong>ขอบ:</strong> พับขอบเพิ่มความแข็งแรง<br><strong>มุม:</strong> ใช้การพับแบบมิเตอร์หรือกลัด
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🔗</span> ระบบยึดต่อ
+       </div>
+       <div class="design-description">
+        วิธีการเชื่อมต่อชิ้นส่วนต่าง ๆ ให้แข็งแรงและปลอดภัยสำหรับอาหาร
+       </div>
+       <div class="design-methods"><strong>การสาน:</strong> เหมาะกับเส้นใยและแผ่นบาง<br><strong>การกลัดไม้:</strong> ใช้ไม้หรือไผ่เป็นตัวยึด<br><strong>การเย็บตอก:</strong> ใช้เข็มหรือตะปูไผ่<br><strong>กาวแป้ง:</strong> แป้งข้าว กาวแป้งมันสำปะหลัง
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">💧</span> การควบคุมความชื้น
+       </div>
+       <div class="design-description">
+        การป้องกันความชื้นและการควบคุมสภาพแวดล้อมในการเก็บรักษา
+       </div>
+       <div class="design-methods"><strong>การระบายอากาศ:</strong> เจาะรูระบายอากาศ<br><strong>การเคลือบ:</strong> ขี้ผึ้ง แวกซ์จากพืช<br><strong>การอบแห้ง:</strong> ลดความชื้นเหลือ 8-12%<br><strong>การเก็บรักษา:</strong> ในที่แห้ง ไม่ชื้น
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">👃</span> การควบคุมกลิ่น
+       </div>
+       <div class="design-description">
+        การป้องกันและกำจัดกลิ่นที่ไม่พึงประสงค์ในบรรจุภัณฑ์
+       </div>
+       <div class="design-methods"><strong>การทำความสะอาด:</strong> ล้างและลวกฆ่าเชื้อ<br><strong>การตาก:</strong> ตากแดดให้แห้งสนิท<br><strong>การดูดซับ:</strong> ใช้ถ่านไผ่ ใบไผ่<br><strong>การหอม:</strong> ใส่ใบเตย ใบมะกรูด
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Food Safety -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧼</span>
+     <h2 class="section-title">สุขอนามัยและความปลอดภัยอาหาร</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>มาตรฐานความปลอดภัยในการผลิตบรรจุภัณฑ์อาหารจากวัสดุธรรมชาติ</p>
+     </div>
+     <div class="safety-grid">
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">🚿</span>
+        <div class="safety-title">
+         การทำความสะอาด
+        </div>
+       </div>
+       <div class="safety-description"><strong>ล้างทำความสะอาด:</strong> ใช้น้ำสะอาด ขัดถูให้สะอาด<br><strong>ลวกฆ่าเชื้อ:</strong> น้ำร้อน 80-90°C นาน 2-3 นาที<br><strong>การอบ:</strong> อบที่ 60-80°C เพื่อฆ่าเชื้อและลดความชื้น<br><strong>การตรวจสอบ:</strong> ไม่มีสิ่งสกปรก เชื้อรา แมลง
+       </div>
+      </div>
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">🔧</span>
+        <div class="safety-title">
+         อุปกรณ์เฉพาะอาหาร
+        </div>
+       </div>
+       <div class="safety-description"><strong>วัสดุ:</strong> สแตนเลส พลาสติก food-grade ไม้ที่ปลอดภัย<br><strong>การแยกใช้:</strong> อุปกรณ์เฉพาะอาหาร ไม่ใช้ร่วมกับงานอื่น<br><strong>การทำความสะอาด:</strong> ล้างและฆ่าเชื้อหลังใช้ทุกครั้ง<br><strong>การเก็บรักษา:</strong> ในที่แห้ง สะอาด ปิดมิดชิด
+       </div>
+      </div>
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">🏷️</span>
+        <div class="safety-title">
+         การติดฉลากพื้นฐาน
+        </div>
+       </div>
+       <div class="safety-description"><strong>ข้อมูลผลิตภัณฑ์:</strong> ชื่อ วัสดุหลัก วันที่ผลิต<br><strong>วิธีใช้:</strong> การใช้งาน การทำความสะอาด การเก็บรักษา<br><strong>ข้อควรระวัง:</strong> อุณหภูมิ ความชื้น การสัมผัสอาหาร<br><strong>ข้อมูลผู้ผลิต:</strong> ชื่อ ที่อยู่ เบอร์ติดต่อ
+       </div>
+      </div>
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">⚠️</span>
+        <div class="safety-title">
+         การป้องกันการปนเปื้อน
+        </div>
+       </div>
+       <div class="safety-description"><strong>สารเคมี:</strong> เก็บแยกจากพื้นที่ผลิต ไม่ใช้สีหรือสารกันเสีย<br><strong>สัตว์และแมลง:</strong> ป้องกันไม่ให้เข้าพื้นที่ผลิต<br><strong>ฝุ่นละออง:</strong> ปิดคลุมระหว่างการผลิตและเก็บรักษา<br><strong>การติดตาม:</strong> บันทึกการผลิต วันที่ แหล่งวัตถุดิบ
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อควรระวังสำคัญ
+      </div>
+      <div class="warning-content">
+       <p><strong>วัสดุที่ห้ามใช้:</strong> ไม้ที่มีสารพิษ ใบที่มีน้ำยาง สีเคมี | <strong>การทดสอบ:</strong> ทดสอบการรั่วซึม กลิ่น รส | <strong>อุณหภูมิ:</strong> ไม่เกิน 100°C สำหรับวัสดุส่วนใหญ่ | <strong>การเก็บรักษา:</strong> หลีกเลี่ยงแสงแดดจัด ความชื้นสูง</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Cost Analysis -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💰</span>
+     <h2 class="section-title">ต้นทุนและความคุ้มค่า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การวิเคราะห์ต้นทุนการผลิตและประเมินความคุ้มค่าเปรียบเทียบกับบรรจุภัณฑ์ทั่วไป</p>
+     </div>
+     <div class="cost-analysis">
+      <div class="cost-title">
+       ตารางเปรียบเทียบต้นทุนการผลิต
+      </div>
+      <table class="cost-table">
+       <thead>
+        <tr>
+         <th>ผลิตภัณฑ์</th>
+         <th>วัสดุ (บาท)</th>
+         <th>แรงงาน (บาท)</th>
+         <th>เวลา (นาที)</th>
+         <th>Yield (%)</th>
+         <th>ต้นทุนรวม (บาท)</th>
+         <th>ราคาขาย (บาท)</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="cost-product">จานกาบหมาก</td>
+         <td>0.50</td>
+         <td>15.00</td>
+         <td>15</td>
+         <td>75</td>
+         <td>16.50</td>
+         <td>21.50</td>
+        </tr>
+        <tr>
+         <td class="cost-product">กล่องชานอ้อย</td>
+         <td>1.20</td>
+         <td>25.00</td>
+         <td>25</td>
+         <td>80</td>
+         <td>27.70</td>
+         <td>36.00</td>
+        </tr>
+        <tr>
+         <td class="cost-product">ถ้วยกะลามะพร้าว</td>
+         <td>2.00</td>
+         <td>45.00</td>
+         <td>45</td>
+         <td>85</td>
+         <td>50.00</td>
+         <td>65.00</td>
+        </tr>
+        <tr>
+         <td class="cost-product">ตะกร้าไผ่</td>
+         <td>5.00</td>
+         <td>80.00</td>
+         <td>120</td>
+         <td>90</td>
+         <td>95.00</td>
+         <td>125.00</td>
+        </tr>
+        <tr>
+         <td class="cost-product">ห่อใบตอง</td>
+         <td>0.30</td>
+         <td>8.00</td>
+         <td>8</td>
+         <td>70</td>
+         <td>9.30</td>
+         <td>12.00</td>
+        </tr>
+        <tr>
+         <td class="cost-product">กล่องกระดาษเยื่อพืช</td>
+         <td>0.80</td>
+         <td>12.00</td>
+         <td>12</td>
+         <td>85</td>
+         <td>14.00</td>
+         <td>18.00</td>
+        </tr>
+        <tr>
+         <td class="cost-product">เชือกเส้นใยธรรมชาติ</td>
+         <td>2.00</td>
+         <td>30.00</td>
+         <td>30</td>
+         <td>95</td>
+         <td>35.00</td>
+         <td>45.00</td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การประเมินความคุ้มค่า
+      </div>
+      <div class="tip-content">
+       <p><strong>เปรียบเทียบราคา:</strong> แพงกว่าพลาสติก 20-50% แต่มีคุณค่าเพิ่ม | <strong>คุณค่าเพิ่ม:</strong> เป็นมิตรต่อสิ่งแวดล้อม เอกลักษณ์ สนับสนุนชุมชน | <strong>ตลาดเป้าหมาย:</strong> ผู้บริโภคที่ใส่ใจสิ่งแวดล้อม ร้านอาหารออร์แกนิค งานประเพณี</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustainability -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌍</span>
+     <h2 class="section-title">ความยั่งยืน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>หลักการ 3R/5R และการประเมิน LCA ในการพัฒนาบรรจุภัณฑ์ที่ยั่งยืน</p>
+     </div>
+     <div class="sustainability-grid">
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">♻️</span>
+        <div class="sustainability-title">
+         หลักการ 3R/5R
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>Reduce:</strong> ลดการใช้วัสดุ ออกแบบให้เบา<br><strong>Reuse:</strong> ใช้ซ้ำได้หลายครั้ง<br><strong>Recycle:</strong> นำกลับมาใช้ใหม่<br><strong>Refuse:</strong> ปฏิเสธสิ่งที่ไม่จำเป็น<br><strong>Rot:</strong> ย่อยสลายได้ตามธรรมชาติ
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🔬</span>
+        <div class="sustainability-title">
+         การประเมิน LCA แบบย่อ
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>วัตถุดิบ:</strong> ใช้พลังงานน้อย ไม่มีสารเคมี<br><strong>การผลิต:</strong> กระบวนการง่าย พลังงานต่ำ<br><strong>การขนส่ง:</strong> เบา ประหยัดเชื้อเพลิง<br><strong>การใช้งาน:</strong> ปลอดภัย ไม่เป็นพิษ<br><strong>การทิ้ง:</strong> ย่อยสลายได้ ไม่สะสม
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🏘️</span>
+        <div class="sustainability-title">
+         การใช้วัตถุดิบท้องถิ่น
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>ลดการขนส่ง:</strong> ประหยัดพลังงานและต้นทุน<br><strong>สนับสนุนชุมชน:</strong> สร้างรายได้ให้เกษตรกร<br><strong>ความสด:</strong> วัตถุดิบมีคุณภาพดี<br><strong>วัฒนธรรม:</strong> อนุรักษ์ภูมิปัญญาท้องถิ่น<br><strong>ความมั่นคง:</strong> ไม่พึ่งพาการนำเข้า
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🌱</span>
+        <div class="sustainability-title">
+         การคืนสู่ธรรมชาติ
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>การย่อยสลาย:</strong> 1 สัปดาห์ - 2 ปี ขึ้นกับวัสดุ<br><strong>การทำปุ๋ย:</strong> กลายเป็นปุ๋ยหมักได้<br><strong>ไม่เป็นพิษ:</strong> ไม่ปล่อยสารเคมีสู่สิ่งแวดล้อม<br><strong>เพิ่มความอุดมสมบูรณ์:</strong> ช่วยบำรุงดิน<br><strong>วงจรธรรมชาติ:</strong> กลับสู่ระบบนิเวศ
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">💚</span>
+        <div class="sustainability-title">
+         ผลกระทบสิ่งแวดล้อม
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>คาร์บอนฟุตพรินต์:</strong> ต่ำกว่าพลาสติก 60-80%<br><strong>การใช้น้ำ:</strong> น้อยกว่าการผลิตพลาสติก<br><strong>ขยะ:</strong> ลดขยะพลาสติกในสิ่งแวดล้อม<br><strong>พลังงาน:</strong> ใช้พลังงานน้อยในการผลิต<br><strong>ความหลากหลาย:</strong> ไม่ทำลายระบบนิเวศ
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🎓</span>
+        <div class="sustainability-title">
+         การศึกษาและพัฒนา
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>ความตระหนัก:</strong> เรื่องสิ่งแวดล้อมในผู้บริโภค<br><strong>การศึกษา:</strong> ถ่ายทอดภูมิปัญญาสู่เยาวชน<br><strong>นวัตกรรม:</strong> พัฒนาผลิตภัณฑ์ใหม่<br><strong>เครือข่าย:</strong> ความร่วมมือระหว่างชุมชน<br><strong>อนาคต:</strong> สร้างสังคมที่ยั่งยืน
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>บรรจุภัณฑ์จากวัสดุธรรมชาติมีความหลากหลายและสามารถประยุกต์ใช้ได้หลายรูปแบบ</li>
+     <li>การเลือกวัสดุต้องพิจารณาคุณสมบัติที่เหมาะสมกับการใช้งานเฉพาะ</li>
+     <li>การออกแบบเชิงเทคนิคช่วยเพิ่มประสิทธิภาพและความทนทาน</li>
+     <li>มาตรฐานสุขอนามัยและความปลอดภัยอาหารเป็นสิ่งสำคัญที่ต้องปฏิบัติตาม</li>
+     <li>การคำนวณต้นทุนช่วยในการประเมินความคุ้มค่าและกำหนดราคาขาย</li>
+     <li>การใช้วัตถุดิบท้องถิ่นช่วยสนับสนุนเศรษฐกิจชุมชนและลดผลกระทบสิ่งแวดล้อม</li>
+     <li>หลักการ 3R/5R และการประเมิน LCA ช่วยในการพัฒนาผลิตภัณฑ์ที่ยั่งยืน</li>
+     <li>บรรจุภัณฑ์ธรรมชาติมีบทบาทในการอนุรักษ์ภูมิปัญญาและสร้างจิตสำนึกสิ่งแวดล้อม</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Biodegradable (ย่อยสลายได้)
+      </div>
+      <div class="glossary-definition">
+       สามารถย่อยสลายโดยจุลินทรีย์ในธรรมชาติได้อย่างสมบูรณ์
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Compostable (ทำปุ๋ยได้)
+      </div>
+      <div class="glossary-definition">
+       สามารถย่อยสลายและกลายเป็นปุ๋ยหมักที่มีประโยชน์ต่อดินได้
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Barrier (คุณสมบัติกั้น)
+      </div>
+      <div class="glossary-definition">
+       ความสามารถในการป้องกันการผ่านของแก๊ส ไอน้ำ แสง หรือกลิ่น
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Pulping (การทำเยื่อ)
+      </div>
+      <div class="glossary-definition">
+       กระบวนการแยกเส้นใยจากพืชเพื่อนำมาทำกระดาษหรือวัสดุอื่น
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Weave (การสาน)
+      </div>
+      <div class="glossary-definition">
+       การเชื่อมต่อเส้นใยหรือแผ่นวัสดุให้เป็นโครงสร้างที่แข็งแรง
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Coating (การเคลือบ)
+      </div>
+      <div class="glossary-definition">
+       การทาสารป้องกันผิวเพื่อเพิ่มคุณสมบัติกันน้ำ กันชื้น หรือกันน้ำมัน
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "ตัวอย่างการประดิษฐ์บรรจุภัณฑ์จากวัสดุธรรมชาติ",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_description: "ความยั่งยืน ภูมิปัญญาท้องถิ่น และความปลอดภัยสัมผัสอาหาร ในการสร้างสรรค์บรรจุภัณฑ์ที่เป็นมิตรต่อสิ่งแวดล้อม"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson description
+            const descElement = document.getElementById('lessonDescription');
+            if (descElement) {
+                descElement.textContent = config.lesson_description || defaultConfig.lesson_description;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_description", config.lesson_description || defaultConfig.lesson_description]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9920df4bd73bf88a',t:'MTc2MTA1MDkzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

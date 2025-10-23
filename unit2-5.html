@@ -1,0 +1,2063 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การตัดเย็บ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Fabric Types Grid */
+        .fabric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .fabric-card {
+            background: var(--white);
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fabric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .fabric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .fabric-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .fabric-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .fabric-details {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Tools Table */
+        .tools-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .tools-table th {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--text-dark);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tools-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .tools-table tr:hover {
+            background: #FFF8E1;
+        }
+
+        .tool-icon {
+            font-size: 1.5rem;
+            text-align: center;
+            width: 60px;
+        }
+
+        /* Measurement Table */
+        .measurement-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .measurement-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .measurement-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .measurement-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        /* Pattern Symbols */
+        .pattern-symbols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .symbol-card {
+            background: var(--white);
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .symbol-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .symbol-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .symbol-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .symbol-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Seam Types */
+        .seam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .seam-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .seam-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .seam-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .seam-icon {
+            font-size: 2.5rem;
+        }
+
+        .seam-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .seam-pros {
+            background: #E8F5E8;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .seam-cons {
+            background: #FFEBEE;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .seam-usage {
+            background: #FFF3E0;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .step-description {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Tip Boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .tip-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--danger);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-title {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .warning-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .checklist-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            color: var(--success);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+        }
+
+        .checklist-text {
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .fabric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives {
+                grid-template-columns: 1fr;
+            }
+
+            .seam-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-table,
+            .measurement-table {
+                font-size: 0.9rem;
+            }
+
+            .tools-table th,
+            .tools-table td,
+            .measurement-table th,
+            .measurement-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .tip-box,
+            .warning-box {
+                padding: 1rem;
+            }
+
+            .tip-title,
+            .warning-title,
+            .tip-content,
+            .warning-content {
+                margin-left: 2rem;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🧵</span>
+    <h1 id="lessonTitle">การตัดเย็บ</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">พัฒนาทักษะการตัดเย็บเพื่อสร้างอาชีพและใช้ชีวิตอย่างยั่งยืน เรียนรู้จากพื้นฐานสู่การปฏิบัติจริง</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจหลักการตัดเย็บ ชนิดผ้า เครื่องมือ แพตเทิร์น และเทคนิคการประกอบชิ้นงาน</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถวัดตัว อ่านแพตเทิร์น ตัดผ้า เย็บตะเข็บพื้นฐาน และตรวจคุณภาพงาน</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>มีความละเอียดรอบคอบ ความปลอดภัย และจิตสำนึกการใช้ทรัพยากรอย่างยั่งยืน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Fabric Basics -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧶</span>
+     <h2 class="section-title">พื้นฐานผ้าและโครงสร้าง</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การเข้าใจโครงสร้างผ้าเป็นพื้นฐานสำคัญในการตัดเย็บ ช่วยให้เลือกเทคนิคและวิธีการที่เหมาะสม</p>
+     </div>
+     <div class="fabric-grid">
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">🔲</span>
+       <div class="fabric-name">
+        ผ้าทอ (Woven)
+       </div>
+       <div class="fabric-details"><strong>โครงสร้าง:</strong> เส้นยืน-ขวางสานกัน<br><strong>คุณสมบัติ:</strong> แข็งแรง ไม่ยืด<br><strong>ตัวอย่าง:</strong> ผ้าฝ้าย ผ้าไหม ผ้าลินิน<br><strong>การใช้:</strong> เสื้อเชิ้ต กระโปรง กางเกง
+       </div>
+      </div>
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">🔗</span>
+       <div class="fabric-name">
+        ผ้าถัก (Knit)
+       </div>
+       <div class="fabric-details"><strong>โครงสร้าง:</strong> เส้นด้ายถักเป็นห่วง<br><strong>คุณสมบัติ:</strong> ยืดหยุ่น นิ่ม<br><strong>ตัวอย่าง:</strong> เจอร์ซี่ ริบ อินเตอร์ล็อค<br><strong>การใช้:</strong> เสื้อยืด ชุดกีฬา ชุดชั้นใน
+       </div>
+      </div>
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">📐</span>
+       <div class="fabric-name">
+        เส้นยืน-ขวาง
+       </div>
+       <div class="fabric-details"><strong>เส้นยืน (Warp):</strong> ขนานกับขอบผ้า<br><strong>เส้นขวาง (Weft):</strong> ตั้งฉากกับขอบผ้า<br><strong>ความสำคัญ:</strong> กำหนดทิศทางการตัด<br><strong>หลักการ:</strong> ตัดตามเส้นด้ายให้ตรง
+       </div>
+      </div>
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">↗️</span>
+       <div class="fabric-name">
+        เส้นเฉียง (Bias)
+       </div>
+       <div class="fabric-details"><strong>ทิศทาง:</strong> 45° กับเส้นยืน-ขวาง<br><strong>คุณสมบัติ:</strong> ยืดได้มากที่สุด<br><strong>การใช้:</strong> ทำกุ๊นโค้ง ชิ้นส่วนพิเศษ<br><strong>ข้อระวัง:</strong> ระวังการเสียรูป
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การทดสอบทิศทางเส้นด้าย
+      </div>
+      <div class="tip-content">
+       <p>ดึงผ้าในทิศทางต่างๆ เส้นยืนจะยืดน้อยที่สุด เส้นขวางยืดปานกลาง และเส้นเฉียงยืดมากที่สุด</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Tools and Equipment -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧰</span>
+     <h2 class="section-title">เครื่องมือและอุปกรณ์</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>เครื่องมือที่เหมาะสมและการใช้งานที่ถูกต้องเป็นกุญแจสำคัญของงานตัดเย็บที่มีคุณภาพ</p>
+     </div>
+     <table class="tools-table">
+      <thead>
+       <tr>
+        <th>เครื่องมือ</th>
+        <th>การใช้งาน</th>
+        <th>ข้อควรระวัง</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tool-icon" aria-label="เข็มและด้าย">🪡</td>
+        <td><strong>เข็มและด้าย</strong><br>
+         เย็บมือ เก็บงาน ปักจุดสำคัญ<br>
+         เข็มขนาด 9-14 ตามเนื้อผ้า</td>
+        <td>เลือกเข็มให้เหมาะกับผ้า<br>
+         ใช้ด้ายคุณภาดีไม่ขาดง่าย</td>
+       </tr>
+       <tr>
+        <td class="tool-icon" aria-label="กรรไกรผ้า">✂️</td>
+        <td><strong>กรรไกรผ้า</strong><br>
+         ตัดผ้าเท่านั้น ใบยาว 20-25 ซม.<br>
+         คมแหลม ตัดได้เรียบ</td>
+        <td>ไม่ใช้ตัดกระดาษหรือวัสดุอื่น<br>
+         เก็บให้คมและสะอาด</td>
+       </tr>
+       <tr>
+        <td class="tool-icon" aria-label="กรรไกรกระดาษ">📄</td>
+        <td><strong>กรรไกรกระดาษ</strong><br>
+         ตัดแพตเทิร์น กระดาษ<br>
+         แยกจากกรรไกรผ้า</td>
+        <td>ไม่ใช้ตัดผ้า<br>
+         จะทำให้ใบมีดทื่อ</td>
+       </tr>
+       <tr>
+        <td class="tool-icon" aria-label="ชอล์กผ้า">✏️</td>
+        <td><strong>ชอล์กผ้า/ปากกาผ้า</strong><br>
+         ทำเครื่องหมาย วาดเส้น<br>
+         ลบออกได้หลังเสร็จงาน</td>
+        <td>ทดสอบบนเศษผ้าก่อน<br>
+         ใช้สีที่เห็นชัดแต่ลบได้</td>
+       </tr>
+       <tr>
+        <td class="tool-icon" aria-label="สายวัด">📏</td>
+        <td><strong>สายวัด</strong><br>
+         วัดตัว วัดผ้า ตรวจขนาด<br>
+         ยาว 150 ซม. มีหน่วยเซนติเมตร</td>
+        <td>ตรวจความแม่นยำเป็นระยะ<br>
+         ไม่ให้ยืดหรือหด</td>
+       </tr>
+       <tr>
+        <td class="tool-icon" aria-label="หมุดกลัด">📌</td>
+        <td><strong>หมุดกลัด</strong><br>
+         กลัดแพตเทิร์น กลัดผ้า<br>
+         หัวสีสันเพื่อมองเห็นง่าย</td>
+        <td>ใช้ปริมาณเหมาะสม<br>
+         ระวังการเจาะผ้าเกินไป</td>
+       </tr>
+       <tr>
+        <td class="tool-icon" aria-label="สะดึง">🧷</td>
+        <td><strong>สะดึง</strong><br>
+         กลัดชั่วคราว ร้อยยางยืด<br>
+         ขนาดต่างๆ ตามงาน</td>
+        <td>ปิดให้แน่นหลังใช้<br>
+         เก็บให้ปลอดภัย</td>
+       </tr>
+       <tr>
+        <td class="tool-icon" aria-label="จักรเย็บผ้า">🪡</td>
+        <td><strong>จักรเย็บผ้า</strong><br>
+         เย็บตะเข็บยาว งานหนัก<br>
+         ปรับความตึงด้ายได้</td>
+        <td>ทดสอบบนเศษผ้าก่อน<br>
+         ดูแลรักษาเป็นประจำ</td>
+       </tr>
+       <tr>
+        <td class="tool-icon" aria-label="ตีนผี">👣</td>
+        <td><strong>ตีนผีหลัก</strong><br>
+         ตีนผีธรรมดา ซิปเปอร์ กระดุม<br>
+         แต่ละชนิดใช้งานเฉพาะ</td>
+        <td>เลือกให้เหมาะกับงาน<br>
+         ติดตั้งให้แน่นก่อนใช้</td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="warning-box">
+      <div class="warning-title">
+       ความปลอดภัยในการใช้เครื่องมือ
+      </div>
+      <div class="warning-content">
+       <p>ใช้เครื่องมือคมด้วยความระมัดระวัง เก็บให้ปลอดภัย ตรวจสอบสภาพก่อนใช้ และปิดไฟจักรเมื่อไม่ใช้งาน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Measurement and Sizing -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📏</span>
+     <h2 class="section-title">การวัดสัดส่วนและปรับขนาด</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การวัดตัวที่แม่นยำเป็นพื้นฐานสำคัญของการตัดเย็บ จะได้เสื้อผ้าที่พอดีและสวยงาม</p>
+     </div>
+     <table class="measurement-table">
+      <thead>
+       <tr>
+        <th>จุดวัด</th>
+        <th>วิธีการวัด</th>
+        <th>ข้อควรระวัง</th>
+        <th>ขนาดมาตรฐาน (ซม.)</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td><strong>รอบอก</strong></td>
+        <td>วัดรอบจุดที่นูนที่สุดของอก<br>
+         สายวัดขนานกับพื้น</td>
+        <td>ไม่รัดแน่นเกินไป<br>
+         หายใจปกติ</td>
+        <td>หญิง: 80-90<br>
+         ชาย: 85-95</td>
+       </tr>
+       <tr>
+        <td><strong>รอบเอว</strong></td>
+        <td>วัดรอบจุดเล็กที่สุดของเอว<br>
+         ประมาณ 2-3 ซม. เหนือสะดือ</td>
+        <td>ยืนตรง ไม่ดูดท้อง<br>
+         สายวัดพอดี</td>
+        <td>หญิง: 60-70<br>
+         ชาย: 70-80</td>
+       </tr>
+       <tr>
+        <td><strong>รอบสะโพก</strong></td>
+        <td>วัดรอบจุดที่นูนที่สุดของสะโพก<br>
+         ประมาณ 18-20 ซม. ใต้เอว</td>
+        <td>เท้าชิดกัน<br>
+         สายวัดขนานกับพื้น</td>
+        <td>หญิง: 85-95<br>
+         ชาย: 90-100</td>
+       </tr>
+       <tr>
+        <td><strong>ความยาวเสื้อ</strong></td>
+        <td>วัดจากไหล่ถึงจุดที่ต้องการ<br>
+         ผ่านจุดนูนของอก</td>
+        <td>ยืนตรง แขนห้อยธรรมชาติ<br>
+         วัดด้านข้าง</td>
+        <td>เสื้อสั้น: 50-60<br>
+         เสื้อยาว: 65-75</td>
+       </tr>
+       <tr>
+        <td><strong>ความยาวแขน</strong></td>
+        <td>วัดจากไหล่ถึงข้อมือ<br>
+         แขนงอเล็กน้อย</td>
+        <td>วัดด้านนอกของแขน<br>
+         ไม่ยืดแขน</td>
+        <td>แขนยาว: 55-65<br>
+         แขนสั้น: 20-25</td>
+       </tr>
+       <tr>
+        <td><strong>ความยาวกางเกง</strong></td>
+        <td>วัดจากเอวถึงข้อเท้า<br>
+         ผ่านด้านข้างของขา</td>
+        <td>ใส่รองเท้าที่จะใส่จริง<br>
+         ยืนตรง</td>
+        <td>กางเกงยาว: 100-110<br>
+         กางเกงสั้น: 40-50</td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">📋</span> เคล็ดลับการวัดให้แม่นยำ
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ใส่เสื้อผ้าพื้นฐาน:</strong> ใส่เสื้อชั้นในหรือเสื้อบางๆ เพื่อความแม่นยำ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>วัดหลายครั้ง:</strong> วัดอย่างน้อย 2-3 ครั้ง แล้วหาค่าเฉลี่ย
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>บันทึกทันที:</strong> จดขนาดลงในตารางทันทีหลังวัด
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เพิ่มค่าเผื่อ:</strong> เพิ่มขนาดสำหรับความสะดวกในการเคลื่อนไหว
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การบันทึกขนาด
+      </div>
+      <div class="tip-content">
+       <p>สร้างตารางบันทึกขนาดส่วนตัว พร้อมวันที่วัด เพื่อใช้อ้างอิงในการตัดเย็บครั้งต่อไป</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Pattern Basics -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📐</span>
+     <h2 class="section-title">แพตเทิร์นพื้นฐาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การอ่านและใช้แพตเทิร์นอย่างถูกต้องจะช่วยให้ได้ชิ้นงานที่มีรูปทรงและขนาดที่ต้องการ</p>
+     </div>
+     <div class="pattern-symbols">
+      <div class="symbol-card"><span class="symbol-icon" aria-hidden="true">↕️</span>
+       <div class="symbol-name">
+        Grainline
+       </div>
+       <div class="symbol-description">
+        เส้นบอกทิศทางเส้นด้าย<br>
+         ต้องขนานกับขอบผ้า<br>
+         สำคัญต่อรูปทรงของชิ้นงาน
+       </div>
+      </div>
+      <div class="symbol-card"><span class="symbol-icon" aria-hidden="true">▲</span>
+       <div class="symbol-name">
+        Notch
+       </div>
+       <div class="symbol-description">
+        จุดบอกตำแหน่งการต่อ<br>
+         ช่วยในการประกอบชิ้นส่วน<br>
+         ตัดเป็นรูปสามเหลี่ยมเล็ก
+       </div>
+      </div>
+      <div class="symbol-card"><span class="symbol-icon" aria-hidden="true">⟲</span>
+       <div class="symbol-name">
+        Fold Line
+       </div>
+       <div class="symbol-description">
+        เส้นบอกการพับผ้า<br>
+         วางบนขอบผ้าที่พับ<br>
+         ได้ชิ้นงานสมมาตร
+       </div>
+      </div>
+      <div class="symbol-card"><span class="symbol-icon" aria-hidden="true">📏</span>
+       <div class="symbol-name">
+        Seam Allowance
+       </div>
+       <div class="symbol-description">
+        ค่าเผื่อสำหรับการเย็บ<br>
+         มาตรฐาน 1-1.5 ซม.<br>
+         วัดจากขอบแพตเทิร์น
+       </div>
+      </div>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        1
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         เตรียมแพตเทิร์น
+        </div>
+        <div class="step-description">
+         ตัดแพตเทิร์นจากกระดาษ ตรวจสอบขนาดและสัญลักษณ์ต่างๆ ให้ครบถ้วน
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        2
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         วางผ้าและแพตเทิร์น
+        </div>
+        <div class="step-description">
+         พับผ้า 2 ชั้น วาง grainline ขนานกับขอบผ้า จัดวางให้ประหยัดผ้าที่สุด
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        3
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         กลัดแพตเทิร์น
+        </div>
+        <div class="step-description">
+         ใช้หมุดกลัดแพตเทิร์นกับผ้า เริ่มจาก grainline แล้วกลัดรอบๆ ให้แน่น
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        4
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ทำเครื่องหมาย
+        </div>
+        <div class="step-description">
+         ทำเครื่องหมาย notch จุดสำคัญ และเส้นตัดด้วยชอล์กผ้า รวมค่าเผื่อเย็บ
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การจัดวางแพตเทิร์นอย่างประหยัด
+      </div>
+      <div class="tip-content">
+       <p>วางชิ้นใหญ่ก่อน แล้วจึงวางชิ้นเล็ก ใช้พื้นที่ว่างให้เกิดประโยชน์สูงสุด และคำนึงถึงทิศทางเส้นด้าย</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Fabric Cutting -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">✂️</span>
+     <h2 class="section-title">การตัดผ้า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การตัดผ้าที่ถูกต้องและแม่นยำเป็นขั้นตอนสำคัญที่ส่งผลต่อคุณภาพของชิ้นงานสำเร็จ</p>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        📐
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การพับผ้า 2 ชั้น
+        </div>
+        <div class="step-description">
+         พับผ้าตามขอบเส้นยืน ให้ขอบตรงกัน ช่วยให้ได้ชิ้นงานซ้าย-ขวาเท่ากัน และประหยัดเวลา
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        📏
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ตัดตามเส้นด้าย
+        </div>
+        <div class="step-description">
+         ใช้กรรไกรผ้าตัดตามเส้นที่ทำเครื่องหมายไว้ ตัดเป็นเส้นตรงยาวๆ ไม่หยุดกลางคัน
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        ➕
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         เว้นเผื่อเย็บมาตรฐาน
+        </div>
+        <div class="step-description">
+         เพิ่มค่าเผื่อเย็บ 1-1.5 ซม. รอบชิ้นงาน สำหรับชายเสื้อเพิ่ม 3-4 ซม. เพื่อพับชาย
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        📍
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         มาร์กจุดสำคัญ
+        </div>
+        <div class="step-description">
+         ทำเครื่องหมาย notch จุดต่อ และจุดสำคัญอื่นๆ ด้วยชอล์กหรือการตัดรอยเล็กๆ
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">✂️</span> หลักการตัดผ้าที่ถูกต้อง
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ใช้กรรไกรผ้าเท่านั้น:</strong> ไม่ใช้ตัดกระดาษหรือวัสดุอื่น
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ตัดบนพื้นเรียบ:</strong> ใช้โต๊ะตัดหรือพื้นที่กว้างเพียงพอ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ไม่ยกผ้าขึ้น:</strong> ให้ผ้าอยู่บนพื้นผิวขณะตัด
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ตัดทีละน้อย:</strong> เปิดใบกรรไกรไม่เกิน 3/4 ของความยาว
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อผิดพลาดที่ควรหลีกเลี่ยง
+      </div>
+      <div class="warning-content">
+       <p>ไม่ตัดผ้าโดยไม่มีแพตเทิร์น ไม่ตัดผ้าเพียงชั้นเดียวเมื่อต้องการชิ้นคู่ และไม่ลืมเพิ่มค่าเผื่อเย็บ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Seams and Assembly -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧵</span>
+     <h2 class="section-title">ตะเข็บและการประกอบ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การเลือกตะเข็บที่เหมาะสมจะทำให้ชิ้นงานแข็งแรง สวยงาม และใช้งานได้นาน</p>
+     </div>
+     <div class="seam-grid">
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">➖</span>
+        <div class="seam-title">
+         Straight Seam
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> ง่าย รวดเร็ว เหมาะกับผู้เริ่มต้น
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> ขอบอาจรุ่ย ไม่เหมาะกับผ้าบาง
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> เย็บชิ้นงานทั่วไป ตะเข็บด้านใน
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🔄</span>
+        <div class="seam-title">
+         French Seam
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> ขอบเรียบ ไม่รุ่ย สวยงาม
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> ใช้เวลานาน ต้องเย็บ 2 ครั้ง
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> ผ้าบาง ชุดชั้นใน เสื้อเชิ้ต
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">📏</span>
+        <div class="seam-title">
+         Flat-Felled Seam
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> แข็งแรงมาก ทนทาน เหมาะกับงานหนัก
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> หนา ยากสำหรับผู้เริ่มต้น
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> กางเกงยีนส์ เสื้อทำงาน ชุดกีฬา
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">〰️</span>
+        <div class="seam-title">
+         Zigzag Finish
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> ป้องกันการรุ่ย ยืดหยุ่น
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> ต้องใช้จักรที่มีตะเข็บซิกแซก
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> เก็บริมผ้า ผ้ายืด ผ้าที่รุ่ยง่าย
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🔗</span>
+        <div class="seam-title">
+         Overlock Seam
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> เร็ว เรียบ ตัดและเก็บริมพร้อมกัน
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> ต้องใช้จักรโอเวอร์ล็อค
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> งานผลิตเชิงพาณิชย์ ผ้ายืด
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การเลือกตะเข็บให้เหมาะสม
+      </div>
+      <div class="tip-content">
+       <p>พิจารณาจากชนิดผ้า การใช้งาน และทักษะของตนเอง ผ้าบางใช้ French Seam ผ้าหนักใช้ Flat-Felled ผ้ายืดใช้ Zigzag</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Hemming and Binding -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📎</span>
+     <h2 class="section-title">การเก็บริมและกุ๊น</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การเก็บริมที่ดีจะทำให้ชิ้นงานดูเรียบร้อย มีความทนทาน และใช้งานได้นาน</p>
+     </div>
+     <div class="seam-grid">
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">📏</span>
+        <div class="seam-title">
+         Bias Binding
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> เข้ากับโค้งได้ดี สวยงาม ทนทาน
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> ใช้ผ้ามาก ต้องตัดเฉียง
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> คอเสื้อ รักแร้ ขอบโค้ง
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">📐</span>
+        <div class="seam-title">
+         Narrow Hem
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> บาง เรียบ ไม่หนัก
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> ยากสำหรับผู้เริ่มต้น
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> ผ้าบาง ผ้าไหม ชายผ้าพัน
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🔄</span>
+        <div class="seam-title">
+         Rolled Hem
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> เรียบมาก สวยงาม เหมาะผ้าบาง
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> ต้องใช้ตีนผีพิเศษ
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> ผ้าชีฟอง ผ้าไหม ผ้าพันคอ
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">📋</span>
+        <div class="seam-title">
+         Double Fold Hem
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ข้อดี:</strong> ง่าย แข็งแรง เหมาะผู้เริ่มต้น
+       </div>
+       <div class="seam-cons"><strong>ข้อเสีย:</strong> หนา ใช้ผ้ามาก
+       </div>
+       <div class="seam-usage"><strong>ใช้เมื่อ:</strong> ชายกางเกง ชายเสื้อ ผ้าหนา
+       </div>
+      </div>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        1
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         เตรียมขอบผ้า
+        </div>
+        <div class="step-description">
+         ตัดขอบให้ตรง เก็บริมด้วยซิกแซกหรือโอเวอร์ล็อคเพื่อป้องกันการรุ่ย
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        2
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         พับและกลัด
+        </div>
+        <div class="step-description">
+         พับขอบตามขนาดที่ต้องการ กลัดด้วยหมุดเพื่อให้อยู่ในตำแหน่ง
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        3
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         เย็บและรีด
+        </div>
+        <div class="step-description">
+         เย็บตามขอบที่พับ รีดให้เรียบเมื่อเสร็จ เพื่อให้ได้รูปทรงที่สวยงาม
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Details and Finishing -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎨</span>
+     <h2 class="section-title">รายละเอียดชิ้นงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>รายละเอียดต่างๆ เช่น เกล็ด จีบ กระดุม และซิป จะช่วยให้ชิ้นงานมีรูปทรงที่สวยงามและใช้งานได้จริง</p>
+     </div>
+     <div class="seam-grid">
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">📐</span>
+        <div class="seam-title">
+         เกล็ด (Darts)
+        </div>
+       </div>
+       <div class="seam-pros"><strong>จุดประสงค์:</strong> ปรับรูปทรงให้เข้ากับตัว
+       </div>
+       <div class="seam-cons"><strong>ตำแหน่ง:</strong> เอว อก ไหล่ สะโพก
+       </div>
+       <div class="seam-usage"><strong>เทคนิค:</strong> เย็บจากกว้างไปแคบ ผูกด้ายปลาย
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">📋</span>
+        <div class="seam-title">
+         จีบ (Pleats)
+        </div>
+       </div>
+       <div class="seam-pros"><strong>จุดประสงค์:</strong> เพิ่มความกว้าง สร้างลวดลาย
+       </div>
+       <div class="seam-cons"><strong>ชนิด:</strong> จีบตรง จีบกล่อง จีบพัด
+       </div>
+       <div class="seam-usage"><strong>เทคนิค:</strong> ทำเครื่องหมายแม่นยำ รีดให้คม
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🔘</span>
+        <div class="seam-title">
+         รังดุม-กระดุม
+        </div>
+       </div>
+       <div class="seam-pros"><strong>จุดประสงค์:</strong> ปิด-เปิดเสื้อผ้า ตกแต่ง
+       </div>
+       <div class="seam-cons"><strong>ขนาด:</strong> เลือกให้เหมาะกับผ้าและการใช้งาน
+       </div>
+       <div class="seam-usage"><strong>เทคนิค:</strong> วัดระยะให้เท่ากัน เย็บให้แน่น
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🔗</span>
+        <div class="seam-title">
+         ซิป (Zipper)
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ชนิด:</strong> Centered, Lapped, Invisible
+       </div>
+       <div class="seam-cons"><strong>การเลือก:</strong> ขนาดและสีให้เหมาะกับงาน
+       </div>
+       <div class="seam-usage"><strong>เทคนิค:</strong> ใช้ตีนผีซิป กลัดก่อนเย็บ
+       </div>
+      </div>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        📍
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ทำเครื่องหมายแม่นยำ
+        </div>
+        <div class="step-description">
+         ใช้ชอล์กผ้าทำเครื่องหมายตำแหน่งเกล็ด จีบ รังดุม และซิปให้ชัดเจนและแม่นยำ
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        📐
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         วัดและตรวจสอบ
+        </div>
+        <div class="step-description">
+         วัดระยะห่างและขนาดให้เท่ากันทั้งสองข้าง ตรวจสอบความสมมาตรก่อนเย็บ
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        🧵
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         เย็บและตกแต่ง
+        </div>
+        <div class="step-description">
+         เย็บตามลำดับขั้นตอน ใช้เทคนิคที่เหมาะสม และตกแต่งให้เรียบร้อยสวยงาม
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       ลำดับการทำรายละเอียด
+      </div>
+      <div class="tip-content">
+       <p>ทำเกล็ดและจีบก่อน จากนั้นติดซิป สุดท้ายติดกระดุมและทำรังดุม เพื่อให้ได้ผลลัพธ์ที่ดีที่สุด</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Pressing Techniques -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔥</span>
+     <h2 class="section-title">การรีดระหว่างขั้นตอน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การรีดที่ถูกต้องจะช่วยให้ชิ้นงานมีรูปทรงที่สวยงาม และง่ายต่อการทำขั้นตอนต่อไป</p>
+     </div>
+     <div class="seam-grid">
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">⬇️</span>
+        <div class="seam-title">
+         Press vs Iron
+        </div>
+       </div>
+       <div class="seam-pros"><strong>Press:</strong> กดลงแล้วยก ไม่ลาก
+       </div>
+       <div class="seam-cons"><strong>Iron:</strong> ลากไปมา เหมาะกับการรีดทั่วไป
+       </div>
+       <div class="seam-usage"><strong>ใช้ Press:</strong> ตะเข็บ เกล็ด จีบ ชิ้นส่วนละเอียด
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🌡️</span>
+        <div class="seam-title">
+         อุณหภูมิที่เหมาะสม
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ผ้าฝ้าย:</strong> อุณหภูมิสูง ใช้ไอน้ำ
+       </div>
+       <div class="seam-cons"><strong>ผ้าไหม:</strong> อุณหภูมิต่ำ ไม่ใช้ไอน้ำ
+       </div>
+       <div class="seam-usage"><strong>ผ้าสังเคราะห์:</strong> อุณหภูมิปานกลาง
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🛡️</span>
+        <div class="seam-title">
+         การป้องกันผ้า
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ผ้ารองรีด:</strong> ป้องกันผ้าเงา ไหม้
+       </div>
+       <div class="seam-cons"><strong>บล็อกรีด:</strong> รองรับรูปทรงโค้ง
+       </div>
+       <div class="seam-usage"><strong>ผ้าขาว:</strong> รองด้านหลังเสมอ
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🔥</span> ขั้นตอนการรีดที่ถูกต้อง
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>รีดตะเข็บทันที:</strong> หลังเย็บแต่ละตะเข็บ ก่อนเย็บตะเข็บต่อไป
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>รีดจากด้านหลัง:</strong> ก่อนรีดด้านหน้า เพื่อป้องกันรอยเงา
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ใช้ผ้ารอง:</strong> สำหรับผ้าที่เป็นเงาง่าย หรือมีสีเข้ม
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ปล่อยให้เย็น:</strong> ก่อนย้ายชิ้นงาน เพื่อให้รูปทรงคงที่
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อควรระวังในการรีด
+      </div>
+      <div class="warning-content">
+       <p>ไม่รีดผ้าเปียก ไม่ทิ้งเตารีดบนผ้านาน และระวังไอน้ำร้อนที่อาจทำให้ลวก ปิดเตารีดทันทีหลังใช้งาน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Safety -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛡️</span>
+     <h2 class="section-title">ความปลอดภัย</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การทำงานอย่างปลอดภัยเป็นสิ่งสำคัญที่สุดในการตัดเย็บ ป้องกันอุบัติเหตุและสร้างสภาพแวดล้อมการทำงานที่ดี</p>
+     </div>
+     <div class="seam-grid">
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🪡</span>
+        <div class="seam-title">
+         ความปลอดภัยจากเข็ม
+        </div>
+       </div>
+       <div class="seam-pros"><strong>การใช้:</strong> ไม่เก็บเข็มในปาก ใช้เข็มหมุด
+       </div>
+       <div class="seam-cons"><strong>การเก็บ:</strong> ใส่กล่องหรือแม่เหล็ก
+       </div>
+       <div class="seam-usage"><strong>เมื่อหัก:</strong> ทิ้งในภาชนะปลอดภัย
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">⚡</span>
+        <div class="seam-title">
+         ความปลอดภัยไฟฟ้า
+        </div>
+       </div>
+       <div class="seam-pros"><strong>จักรเย็บ:</strong> ตรวจสายไฟ ปิดเมื่อไม่ใช้
+       </div>
+       <div class="seam-cons"><strong>เตารีด:</strong> ไม่ทิ้งเปิดทิ้งไว้
+       </div>
+       <div class="seam-usage"><strong>มือเปียก:</strong> ไม่จับอุปกรณ์ไฟฟ้า
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🔥</span>
+        <div class="seam-title">
+         ความปลอดภัยจากความร้อน
+        </div>
+       </div>
+       <div class="seam-pros"><strong>เตารีด:</strong> วางบนที่วางเตารีด
+       </div>
+       <div class="seam-cons"><strong>ไอน้ำ:</strong> ระวังไอน้ำร้อน
+       </div>
+       <div class="seam-usage"><strong>หลังใช้:</strong> ปิดและปล่อยให้เย็น
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🏠</span>
+        <div class="seam-title">
+         พื้นที่ทำงาน
+        </div>
+       </div>
+       <div class="seam-pros"><strong>แสงสว่าง:</strong> เพียงพอ ไม่เมื่อยตา
+       </div>
+       <div class="seam-cons"><strong>ความสะอาด:</strong> เก็บเศษผ้า เศษด้าย
+       </div>
+       <div class="seam-usage"><strong>การจัดเก็บ:</strong> เครื่องมือมีที่เก็บเฉพาะ
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🔒</span> หลักความปลอดภัยพื้นฐาน
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ตรวจสอบเครื่องมือ:</strong> ก่อนใช้งานทุกครั้ง ดูสภาพและความคม
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ใช้งานอย่างระมัดระวัง:</strong> ไม่รีบร้อน มีสมาธิ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เก็บอุปกรณ์:</strong> หลังใช้งาน ให้อยู่ในที่ปลอดภัย
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แจ้งอุบัติเหตุ:</strong> ทันทีเมื่อเกิดขึ้น เพื่อรับการช่วยเหลือ
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       สัญญาณเตือนอันตราย
+      </div>
+      <div class="warning-content">
+       <p>หยุดทำงานทันทีเมื่อรู้สึกเมื่อยล้า สายตาพร่ามัว หรือมีอาการไม่สบาย เพื่อป้องกันอุบัติเหตุ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Quality Control -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔍</span>
+     <h2 class="section-title">การตรวจคุณภาพงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การตรวจสอบคุณภาพอย่างเป็นระบบจะช่วยให้ได้ชิ้นงานที่มีมาตรฐานและใช้งานได้จริง</p>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">📋</span> รายการตรวจสอบคุณภาพ
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แนวตะเข็บตรง:</strong> ตะเข็บไม่คดเคี้ยว ระยะห่างจากขอบเท่ากัน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ค่าเผื่อเย็บคงที่:</strong> ความกว้างเท่ากันตลอดความยาว
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ริมไม่รุ่ย:</strong> ขอบผ้าเก็บเรียบร้อย ไม่มีเส้นด้ายหลุด
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ความสมมาตร:</strong> ซ้าย-ขวาเท่ากัน ขนาดและรูปทรงสมดุล
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>การทดลองสวม:</strong> ขนาดพอดี เคลื่อนไหวสะดวก
+       </div>
+      </div>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        👀
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ตรวจสอบด้วยสายตา
+        </div>
+        <div class="step-description">
+         ดูรูปลักษณ์โดยรวม ความเรียบร้อย ความสมมาตร และรายละเอียดต่างๆ
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        ✋
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ตรวจสอบด้วยการสัมผัส
+        </div>
+        <div class="step-description">
+         ลูบดูความเรียบ ความแน่นของตะเข็บ และความนิ่มของผ้า
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        📏
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         วัดขนาดและสัดส่วน
+        </div>
+        <div class="step-description">
+         ใช้สายวัดตรวจสอบขนาดต่างๆ ให้ตรงตามแพตเทิร์นและความต้องการ
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        👕
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ทดลองใส่จริง
+        </div>
+        <div class="step-description">
+         ลองใส่และเคลื่อนไหวดู ตรวจสอบความพอดี ความสะดวก และรูปทรง
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การแก้ไขข้อบกพร่อง
+      </div>
+      <div class="tip-content">
+       <p>หากพบข้อบกพร่อง ให้แก้ไขทันที อย่าปล่อยให้สะสม เพราะจะทำให้แก้ไขยากขึ้นและส่งผลต่อคุณภาพโดยรวม</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Machine Care -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔧</span>
+     <h2 class="section-title">การดูแลจักรและอุปกรณ์</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การดูแลรักษาเครื่องมือและอุปกรณ์อย่างถูกต้องจะช่วยให้ใช้งานได้นานและมีประสิทธิภาพ</p>
+     </div>
+     <div class="seam-grid">
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🧹</span>
+        <div class="seam-title">
+         ทำความสะอาด
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ประจำวัน:</strong> เก็บเศษผ้า เศษด้าย
+       </div>
+       <div class="seam-cons"><strong>ประจำสัปดาห์:</strong> เช็ดทำความสะอาดทั่วไป
+       </div>
+       <div class="seam-usage"><strong>ประจำเดือน:</strong> ทำความสะอาดลึก
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🛢️</span>
+        <div class="seam-title">
+         การหล่อลื่น
+        </div>
+       </div>
+       <div class="seam-pros"><strong>น้ำมันจักร:</strong> หยดตามจุดที่กำหนด
+       </div>
+       <div class="seam-cons"><strong>ความถี่:</strong> ตามคู่มือการใช้งาน
+       </div>
+       <div class="seam-usage"><strong>หลังหยด:</strong> เดินจักรเปล่าก่อนใช้งาน
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🪡</span>
+        <div class="seam-title">
+         การเปลี่ยนเข็ม
+        </div>
+       </div>
+       <div class="seam-pros"><strong>เมื่อไร:</strong> เข็มทื่อ งอ หรือหัก
+       </div>
+       <div class="seam-cons"><strong>การเลือก:</strong> ขนาดให้เหมาะกับผ้า
+       </div>
+       <div class="seam-usage"><strong>การติดตั้ง:</strong> ใส่ให้ถูกทิศทาง แน่น
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">⚙️</span>
+        <div class="seam-title">
+         การปรับตั้ง
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ความตึงด้าย:</strong> ปรับให้เหมาะกับผ้า
+       </div>
+       <div class="seam-cons"><strong>ความยาวเข็ม:</strong> ตามชนิดตะเข็บ
+       </div>
+       <div class="seam-usage"><strong>ทดสอบ:</strong> บนเศษผ้าก่อนใช้จริง
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🔧</span> การดูแลรักษาประจำ
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>หลังใช้งาน:</strong> ปิดไฟ ปิดฝา เก็บในที่แห้ง
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ตรวจสอบสายไฟ:</strong> ดูรอยแตก รอยชำรุด
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เก็บเครื่องมือ:</strong> ในกล่องหรือลิ้นชักเฉพาะ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>บันทึกการใช้งาน:</strong> วันที่ ชนิดงาน ปัญหาที่พบ
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       สัญญาณเตือนที่ต้องซ่อม
+      </div>
+      <div class="warning-content">
+       <p>เสียงผิดปกติ การเย็บไม่สม่ำเสมอ ด้ายขาดบ่อย หรือเข็มหัก ให้หยุดใช้และนำไปตรวจซ่อมทันที</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustainability -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">ความยั่งยืนและ 3R</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การตัดเย็บอย่างยั่งยืนช่วยลดผลกระทบต่อสิ่งแวดล้อม ประหยัดทรัพยากร และสร้างมูลค่าเพิ่ม</p>
+     </div>
+     <div class="seam-grid">
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">♻️</span>
+        <div class="seam-title">
+         Reduce - ลดการใช้
+        </div>
+       </div>
+       <div class="seam-pros"><strong>วางแพตเทิร์น:</strong> ให้ประหยัดผ้าที่สุด
+       </div>
+       <div class="seam-cons"><strong>เลือกผ้า:</strong> คุณภาพดี ทนทาน
+       </div>
+       <div class="seam-usage"><strong>ออกแบบ:</strong> เรียบง่าย ใช้งานได้นาน
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🔄</span>
+        <div class="seam-title">
+         Reuse - ใช้ซ้ำ
+        </div>
+       </div>
+       <div class="seam-pros"><strong>เศษผ้าใหญ่:</strong> ทำชิ้นงานเล็ก
+       </div>
+       <div class="seam-cons"><strong>กระดุม ซิป:</strong> ถอดจากเสื้อเก่า
+       </div>
+       <div class="seam-usage"><strong>ผ้าเก่า:</strong> ดัดแปลงใหม่
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🔧</span>
+        <div class="seam-title">
+         Recycle - รีไซเคิล
+        </div>
+       </div>
+       <div class="seam-pros"><strong>เศษผ้าเล็ก:</strong> ทำผ้าเช็ด ผ้าอนามัย
+       </div>
+       <div class="seam-cons"><strong>ด้ายเหลือ:</strong> ใช้เย็บงานฝึก
+       </div>
+       <div class="seam-usage"><strong>กระดาษแพตเทิร์น:</strong> ใช้ด้านหลัง
+       </div>
+      </div>
+      <div class="seam-card">
+       <div class="seam-header"><span class="seam-icon" aria-hidden="true">🌿</span>
+        <div class="seam-title">
+         วัสดุเป็นมิตร
+        </div>
+       </div>
+       <div class="seam-pros"><strong>ผ้าธรรมชาติ:</strong> ฝ้าย ลินิน ไหม
+       </div>
+       <div class="seam-cons"><strong>สีธรรมชาติ:</strong> ย้อมจากพืช
+       </div>
+       <div class="seam-usage"><strong>ผลิตในประเทศ:</strong> ลดการขนส่ง
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🌍</span> แนวทางการตัดเย็บยั่งยืน
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>วางแผนก่อนซื้อ:</strong> คิดให้รอบคอบ ซื้อเท่าที่จำเป็น
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เก็บเศษผ้า:</strong> แยกตามขนาดและสี เพื่อใช้ในโครงการอื่น
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แบ่งปันความรู้:</strong> สอนคนอื่นให้ตัดเย็บ ลดการซื้อเสื้อผ้าใหม่
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ซ่อมแซมก่อนทิ้ง:</strong> ดัดแปลงเสื้อผ้าเก่าให้ใช้งานได้ใหม่
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การสร้างมูลค่าเพิ่มจากเศษผ้า
+      </div>
+      <div class="tip-content">
+       <p>เศษผ้าสามารถนำไปทำกระเป๋าเล็ก ที่รองแก้ว ผ้าเช็ดหน้า หรือของตกแต่ง สร้างรายได้เสริมและลดขยะ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญที่ควรจำ</h2>
+    <ul class="takeaways-list">
+     <li>การเข้าใจโครงสร้างผ้าและทิศทางเส้นด้ายเป็นพื้นฐานสำคัญ</li>
+     <li>การวัดตัวที่แม่นยำและการอ่านแพตเทิร์นถูกต้องให้ผลลัพธ์ที่ดี</li>
+     <li>การเลือกเครื่องมือและเทคนิคให้เหมาะกับงานช่วยเพิ่มประสิทธิภาพ</li>
+     <li>การรีดระหว่างขั้นตอนทำให้ชิ้นงานมีรูปทรงสวยงาม</li>
+     <li>ความปลอดภัยในการทำงานป้องกันอุบัติเหตุและสร้างสภาพแวดล้อมที่</li>
+    </ul>
+   </section>
+  </main>
+
+    <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+    <p>เวอร์ชันบทเรียน 1.0 | พัฒนาเพื่อการศึกษา</p>
+   </div>
+  </footer>
+  
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'991f16d0a295a0bc',t:'MTc2MTAzMjI0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,1676 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การดูแลรักษาเสื้อผ้าและเครื่องประกอบการแต่งกาย - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Fabric Types Grid */
+        .fabric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .fabric-card {
+            background: var(--white);
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fabric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .fabric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .fabric-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .fabric-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .fabric-properties {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .fabric-properties li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .fabric-properties li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Symbol Table */
+        .symbol-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .symbol-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .symbol-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .symbol-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        .symbol-icon-cell {
+            font-size: 1.5rem;
+            text-align: center;
+            width: 80px;
+        }
+
+        /* Tip Boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .tip-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--danger);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-title {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .warning-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .checklist-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            color: var(--success);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+        }
+
+        .checklist-text {
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Stain Types */
+        .stain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stain-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
+        }
+
+        .stain-type {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stain-solution {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Temperature Guide */
+        .temp-guide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .temp-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
+        }
+
+        .temp-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .temp-level {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .temp-range {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .temp-fabrics {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Accessory Care */
+        .accessory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .accessory-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .accessory-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .accessory-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .accessory-icon {
+            font-size: 2rem;
+        }
+
+        .accessory-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .accessory-care-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .accessory-care-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #F0F0F0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .accessory-care-list li:last-child {
+            border-bottom: none;
+        }
+
+        .accessory-care-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* References */
+        .references {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .references-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .references-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .references-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .references-list li:last-child {
+            border-bottom: none;
+        }
+
+        .references-list li::before {
+            content: '📚';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .fabric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives {
+                grid-template-columns: 1fr;
+            }
+
+            .symbol-table {
+                font-size: 0.9rem;
+            }
+
+            .symbol-table th,
+            .symbol-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .tip-box,
+            .warning-box {
+                padding: 1rem;
+            }
+
+            .tip-title,
+            .warning-title,
+            .tip-content,
+            .warning-content {
+                margin-left: 2rem;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">👗</span>
+    <h1 id="lessonTitle">การดูแลรักษาเสื้อผ้าและเครื่องประกอบการแต่งกาย</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">เรียนรู้การดูแลเสื้อผ้าให้คงทนและสวยงาม เพื่อการใช้งานที่ยาวนานและประหยัด</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจชนิดเส้นใย สัญลักษณ์การดูแล และวิธีการซักรีดที่ถูกต้อง</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถคัดแยกผ้า ซักรีด และดูแลเครื่องประกอบการแต่งกายได้อย่างเหมาะสม</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>มีจิตสำนึกในการใช้ทรัพยากรอย่างประหยัดและรักษาสิ่งแวดล้อม</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Fabric Types -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧵</span>
+     <h2 class="section-title">ชนิดเส้นใยและผ้า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การรู้จักชนิดเส้นใยและผ้าจะช่วยให้เราเลือกวิธีการดูแลที่เหมาะสม ยืดอายุการใช้งาน และรักษาคุณภาพของเสื้อผ้า</p>
+     </div>
+     <div class="fabric-grid">
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">🌱</span>
+       <div class="fabric-name">
+        ผ้าฝ้าย (Cotton)
+       </div>
+       <ul class="fabric-properties">
+        <li>ดูดซับเหงื่อได้ดี ระบายอากาศ</li>
+        <li>ซักง่าย ทนทาน</li>
+        <li>เหมาะกับการซักน้ำร้อน</li>
+        <li>สามารถรีดไฟสูงได้</li>
+        <li>เหมาะสำหรับเสื้อผ้าประจำวัน</li>
+       </ul>
+      </div>
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">🌾</span>
+       <div class="fabric-name">
+        ผ้าลินิน (Linen)
+       </div>
+       <ul class="fabric-properties">
+        <li>เย็นสบาย เหมาะกับอากาศร้อน</li>
+        <li>ยับง่าย ต้องรีดบ่อย</li>
+        <li>ซักน้ำเย็นถึงอุ่น</li>
+        <li>ตากในที่ร่ม</li>
+        <li>เหมาะสำหรับเสื้อผ้าฤดูร้อน</li>
+       </ul>
+      </div>
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">🐑</span>
+       <div class="fabric-name">
+        ผ้าขนสัตว์ (Wool)
+       </div>
+       <ul class="fabric-properties">
+        <li>อุ่น กันความชื้น</li>
+        <li>ต้องซักมือหรือซักแห้ง</li>
+        <li>ใช้น้ำเย็น ไม่บิดบีบ</li>
+        <li>ตากราบ ไม่แขวน</li>
+        <li>เหมาะสำหรับเสื้อกันหนาว</li>
+       </ul>
+      </div>
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">🐛</span>
+       <div class="fabric-name">
+        ผ้าไหม (Silk)
+       </div>
+       <ul class="fabric-properties">
+        <li>นุ่ม เงางาม บอบบาง</li>
+        <li>ซักมือด้วยน้ำเย็น</li>
+        <li>ใช้ผงซักฟอกอ่อนโยน</li>
+        <li>รีดไฟต่ำ ใส่ผ้าคั่น</li>
+        <li>เหมาะสำหรับเสื้อผ้าหรู</li>
+       </ul>
+      </div>
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">🧪</span>
+       <div class="fabric-name">
+        ผ้าโพลีเอสเตอร์ (Polyester)
+       </div>
+       <ul class="fabric-properties">
+        <li>แห้งเร็ว ไม่ยับง่าย</li>
+        <li>ทนทาน ซักง่าย</li>
+        <li>ซักน้ำอุ่น รีดไฟกลาง</li>
+        <li>ไม่หด ไม่ซีดสี</li>
+        <li>เหมาะสำหรับเสื้อผ้ากีฬา</li>
+       </ul>
+      </div>
+      <div class="fabric-card"><span class="fabric-icon" aria-hidden="true">🔄</span>
+       <div class="fabric-name">
+        ผ้ายืด (Spandex)
+       </div>
+       <ul class="fabric-properties">
+        <li>ยืดหยุ่น กระชับตัว</li>
+        <li>ซักน้ำเย็น โหมดอ่อนโยน</li>
+        <li>ไม่บิดบีบ ไม่แขวน</li>
+        <li>รีดไฟต่ำ หรือไม่รีด</li>
+        <li>เหมาะสำหรับชุดออกกำลังกาย</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Care Symbols -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🏷️</span>
+     <h2 class="section-title">สัญลักษณ์การดูแลผ้า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การอ่านสัญลักษณ์การดูแลบนป้ายเสื้อผ้าจะช่วยให้เราดูแลเสื้อผ้าได้อย่างถูกต้อง ป้องกันการเสียหายและยืดอายุการใช้งาน</p>
+     </div>
+     <table class="symbol-table">
+      <thead>
+       <tr>
+        <th>สัญลักษณ์</th>
+        <th>ความหมาย</th>
+        <th>ข้อควรระวัง</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="symbol-icon-cell" aria-label="สัญลักษณ์การซัก">🌊</td>
+        <td><strong>การซัก</strong><br>
+         จุดใต้สัญลักษณ์ = อุณหภูมิ<br>
+         • = 30°C, •• = 40°C, ••• = 60°C</td>
+        <td>อุณหภูมิสูงเกินไปอาจทำให้ผ้าหดหรือสีซีด</td>
+       </tr>
+       <tr>
+        <td class="symbol-icon-cell" aria-label="สัญลักษณ์การฟอกขาว">⚪</td>
+        <td><strong>การฟอกขาว</strong><br>
+         วงกลม = ใช้คลอรีนได้<br>
+         วงกลมขีดทับ = ห้ามฟอกขาว</td>
+        <td>คลอรีนอาจทำลายเส้นใยและทำให้สีซีด</td>
+       </tr>
+       <tr>
+        <td class="symbol-icon-cell" aria-label="สัญลักษณ์การอบแห้ง">🔥</td>
+        <td><strong>การอบแห้ง</strong><br>
+         จุดในวงกลม = ระดับความร้อน<br>
+         • = ต่ำ, •• = กลาง, ••• = สูง</td>
+        <td>ความร้อนสูงเกินไปอาจทำให้ผ้าหดหรือเสียหาย</td>
+       </tr>
+       <tr>
+        <td class="symbol-icon-cell" aria-label="สัญลักษณ์การรีด">🔺</td>
+        <td><strong>การรีดผ้า</strong><br>
+         จุดในสัญลักษณ์ = อุณหภูมิ<br>
+         • = ต่ำ, •• = กลาง, ••• = สูง</td>
+        <td>อุณหภูมิไม่เหมาะสมอาจทำให้ผ้าไหม้หรือเงา</td>
+       </tr>
+       <tr>
+        <td class="symbol-icon-cell" aria-label="สัญลักษณ์การซักแห้ง">🔄</td>
+        <td><strong>การซักแห้ง</strong><br>
+         P = เพอร์คลอโรเอทิลีน<br>
+         F = ไฮโดรคาร์บอน</td>
+        <td>ใช้เฉพาะร้านซักแห้งที่มีมาตรฐาน</td>
+       </tr>
+       <tr>
+        <td class="symbol-icon-cell" aria-label="สัญลักษณ์ห้าม">❌</td>
+        <td><strong>ห้ามกระทำ</strong><br>
+         เครื่องหมาย X บนสัญลักษณ์ใด<br>
+         หมายถึงห้ามทำในขั้นตอนนั้น</td>
+        <td>การฝ่าฝืนอาจทำให้เสื้อผ้าเสียหายอย่างถาวร</td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="tip-box">
+      <div class="tip-title">
+       เคล็ดลับการอ่านป้าย
+      </div>
+      <div class="tip-content">
+       <p>ป้ายการดูแลมักอยู่ที่ตะเข็บด้านใน ควรอ่านก่อนซักครั้งแรก และเก็บป้ายไว้เป็นข้อมูลอ้างอิง หากป้ายหลุดให้จดบันทึกวิธีการดูแลไว้</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Fabric Sorting -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧺</span>
+     <h2 class="section-title">การคัดแยกผ้าก่อนซัก</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การคัดแยกเสื้อผ้าก่อนซักเป็นขั้นตอนสำคัญที่จะช่วยป้องกันการติดสี การเสียหาย และทำให้ผลการซักดีขึ้น</p>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">📋</span> เช็กลิสต์การคัดแยกผ้า
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แยกตามสี:</strong> สีขาว, สีอ่อน (ครีม เหลืองอ่อน ชมพูอ่อน), สีเข้ม (น้ำเงิน ดำ เทา), สีแดง (แยกต่างหาก)
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แยกตามเนื้อผ้า:</strong> ผ้าบาง (ไหม ชีฟอง), ผ้าหนา (ยีนส์ ผ้าขนหนู), ผ้าขนสัตว์ (แยกต่างหาก)
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แยกตามความสกปรก:</strong> สกปรกมาก (เสื้อออกกำลังกาย), สกปรกปกติ (เสื้อผ้าทั่วไป)
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แยกตามวิธีซัก:</strong> ซักเครื่อง, ซักมือ, ซักแห้ง
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ตรวจกระเป๋า:</strong> เอาของในกระเป๋าออกทั้งหมด ตรวจสอบเศษกระดาษ เหรียญ ปากกา
+       </div>
+      </div>
+     </div>
+     <div class="temp-guide">
+      <div class="temp-card"><span class="temp-icon" aria-hidden="true">🧊</span>
+       <div class="temp-level">
+        น้ำเย็น
+       </div>
+       <div class="temp-range">
+        15-30°C
+       </div>
+       <div class="temp-fabrics">
+        ผ้าสีเข้ม, ผ้าบอบบาง, ผ้าที่ติดสีง่าย
+       </div>
+      </div>
+      <div class="temp-card"><span class="temp-icon" aria-hidden="true">🌡️</span>
+       <div class="temp-level">
+        น้ำอุ่น
+       </div>
+       <div class="temp-range">
+        30-40°C
+       </div>
+       <div class="temp-fabrics">
+        ผ้าสีอ่อน, เสื้อผ้าทั่วไป, ผ้าสังเคราะห์
+       </div>
+      </div>
+      <div class="temp-card"><span class="temp-icon" aria-hidden="true">🔥</span>
+       <div class="temp-level">
+        น้ำร้อน
+       </div>
+       <div class="temp-range">
+        60°C ขึ้นไป
+       </div>
+       <div class="temp-fabrics">
+        ผ้าสีขาว, ผ้าขนหนู, ชุดชั้นใน
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อควรระวัง
+      </div>
+      <div class="warning-content">
+       <p>ไม่ควรซักเสื้อผ้าใหม่ (โดยเฉพาะสีเข้ม) รวมกับเสื้อผ้าอื่น ในการซักครั้งแรก เพราะอาจมีสีตกติดเสื้อผ้าอื่น</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Washing and Stain Removal -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧽</span>
+     <h2 class="section-title">การซักและขจัดคราบเบื้องต้น</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การซักผ้าและขจัดคราบที่ถูกต้องจะช่วยให้เสื้อผ้าสะอาด คงทน และมีอายุการใช้งานยาวนาน</p>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        1
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         เตรียมเสื้อผ้า
+        </div>
+        <div class="step-description">
+         คัดแยกผ้าตามสี เนื้อผ้า และความสกปรก ตรวจสอบกระเป๋าและคราบพิเศษ
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        2
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ขจัดคราบก่อนซัก
+        </div>
+        <div class="step-description">
+         ทำความสะอาดคราบพิเศษด้วยวิธีที่เหมาะสม ก่อนใส่เครื่องซักผ้า
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        3
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         เลือกโปรแกรมซัก
+        </div>
+        <div class="step-description">
+         ตั้งค่าอุณหภูมิ โหมดซัก และเวลาให้เหมาะสมกับชนิดผ้า
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        4
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ใส่ผงซักฟอก
+        </div>
+        <div class="step-description">
+         ใช้ปริมาณที่เหมาะสม ไม่มากเกินไป เพื่อป้องกันตกค้าง
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        5
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ตรวจสอบผลการซัก
+        </div>
+        <div class="step-description">
+         ตรวจดูความสะอาดและคราบที่อาจเหลืออยู่ ก่อนนำไปตาก
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="stain-grid">
+      <div class="stain-card">
+       <div class="stain-type"><span aria-hidden="true">💧</span> คราบเหงื่อ
+       </div>
+       <div class="stain-solution"><strong>วิธีขจัด:</strong> แช่น้ำเย็นผสมเกลือ 30 นาที หรือใช้น้ำส้มสายชูขาวทาบนคราบ แล้วซักตามปกติ
+       </div>
+      </div>
+      <div class="stain-card">
+       <div class="stain-type"><span aria-hidden="true">🛢️</span> คราบน้ำมัน
+       </div>
+       <div class="stain-solution"><strong>วิธีขจัด:</strong> โรยแป้งมันสำปะหลังหรือแป้งข้าวโพดดูดน้ำมัน ทิ้งไว้ 15 นาที แล้วซักด้วยน้ำร้อน
+       </div>
+      </div>
+      <div class="stain-card">
+       <div class="stain-type"><span aria-hidden="true">🖋️</span> คราบหมึก
+       </div>
+       <div class="stain-solution"><strong>วิธีขจัด:</strong> ใช้แอลกอฮอล์หรือน้ำยาล้างเล็บซับคราบ ระวังอย่าให้แพร่กระจาย แล้วซักด้วยน้ำเย็น
+       </div>
+      </div>
+      <div class="stain-card">
+       <div class="stain-type"><span aria-hidden="true">🌍</span> คราบโคลน
+       </div>
+       <div class="stain-solution"><strong>วิธีขจัด:</strong> ปล่อยให้แห้งก่อน แล้วปัดออก ล้างด้วยน้ำเย็น ถูเบาๆ แล้วซักตามปกติ
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       ความปลอดภัยในการใช้น้ำยา
+      </div>
+      <div class="tip-content">
+       <ul>
+        <li>อ่านฉลากก่อนใช้ ใส่ถุงมือยาง</li>
+        <li>ไม่ผสมน้ำยาหลายชนิดเข้าด้วยกัน</li>
+        <li>เก็บให้พ้นมือเด็ก ในที่แห้งและเย็น</li>
+        <li>ใช้ในที่มีอากาศถ่ายเท</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Drying and Ironing -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">☀️</span>
+     <h2 class="section-title">การตาก อบแห้ง และรีดผ้า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การตากผ้า อบแห้ง และรีดผ้าที่ถูกวิธีจะช่วยให้เสื้อผ้าไม่หด ไม่ซีด และมีรูปทรงสวยงาม</p>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🌞</span> วิธีการตากผ้าที่ถูกต้อง
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ผ้าสีขาว:</strong> ตากแดดได้ ช่วยฆ่าเชื้อโรคและทำให้ขาวขึ้น
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ผ้าสีเข้ม:</strong> ตากในที่ร่ม หรือกลับด้านใน เพื่อป้องกันสีซีด
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ผ้าบอบบาง:</strong> ตากในที่ร่ม ไม่บิดบีบ ตากราบหรือแขวนอย่างระมัดระวัง
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เสื้อยืด:</strong> แขวนด้วยไม้แขวนหรือตากราบ เพื่อป้องกันยืด
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>กางเกง:</strong> หนีบที่ขอบเอว ไม่หนีบขา เพื่อป้องกันรอยหนีบ
+       </div>
+      </div>
+     </div>
+     <div class="temp-guide">
+      <div class="temp-card"><span class="temp-icon" aria-hidden="true">🔥</span>
+       <div class="temp-level">
+        ไฟต่ำ
+       </div>
+       <div class="temp-range">
+        110°C
+       </div>
+       <div class="temp-fabrics">
+        ผ้าไหม, ผ้าสังเคราะห์, ผ้ายืด
+       </div>
+      </div>
+      <div class="temp-card"><span class="temp-icon" aria-hidden="true">🔥🔥</span>
+       <div class="temp-level">
+        ไฟกลาง
+       </div>
+       <div class="temp-range">
+        150°C
+       </div>
+       <div class="temp-fabrics">
+        ผ้าขนสัตว์, ผ้าโพลีเอสเตอร์
+       </div>
+      </div>
+      <div class="temp-card"><span class="temp-icon" aria-hidden="true">🔥🔥🔥</span>
+       <div class="temp-level">
+        ไฟสูง
+       </div>
+       <div class="temp-range">
+        200°C
+       </div>
+       <div class="temp-fabrics">
+        ผ้าฝ้าย, ผ้าลินิน
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       เทคนิคการรีดผ้า
+      </div>
+      <div class="tip-content">
+       <ul>
+        <li>รีดตอนผ้าเปียกนิดหน่อย จะรีดง่ายกว่า</li>
+        <li>เริ่มรีดจากส่วนที่ต้องการความร้อนต่ำก่อน</li>
+        <li>ใช้ผ้าคั่นสำหรับผ้าบอบบางหรือผ้าสีเข้ม</li>
+        <li>รีดในทิศทางเดียวกัน ไม่ไปมา</li>
+        <li>แขวนทันทีหลังรีดเสร็จ</li>
+       </ul>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ป้องกันรอยเงาและไหม้
+      </div>
+      <div class="warning-content">
+       <p>ผ้าสีเข้มและผ้าบอบบางควรใส่ผ้าคั่น หรือกลับด้านในมารีด เพื่อป้องกันรอยเงาและการไหม้ ไม่ควรทิ้งเตารีดทับผ้านานเกินไป</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Storage and Organization -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🗂️</span>
+     <h2 class="section-title">การเก็บรักษาและจัดระเบียบตู้เสื้อผ้า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การจัดเก็บเสื้อผ้าอย่างเป็นระบบจะช่วยป้องกันความชื้น กลิ่นอับ และทำให้หาเสื้อผ้าได้ง่าย</p>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">👔</span> วิธีการเก็บเสื้อผ้า
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แขวน:</strong> เสื้อเชิ้ต เสื้อสูท ชุดเดรส เสื้อแจ็คเก็ต (ใช้ไม้แขวนที่เหมาะสม)
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>พับ:</strong> เสื้อยืด กางเกงยีนส์ ชุดชั้นใน เสื้อกันหนาว (พับอย่างเรียบร้อย)
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ม้วน:</strong> ถุงเท้า ผ้าพันคอ เข็มขัด (ประหยัดพื้นที่และไม่ยับ)
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>กันชื้น:</strong> ใส่ซิลิก้าเจล ถ่านไผ่ หรือชอล์ก เพื่อดูดความชื้น
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>กันกลิ่น:</strong> ใส่ซองหอม สบู่ หรือใบไผ่ เพื่อให้กลิ่นหอม
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การจัดระเบียบตู้เสื้อผ้า
+      </div>
+      <div class="tip-content">
+       <ul>
+        <li>จัดเสื้อผ้าตามประเภท สี และความถี่ในการใช้</li>
+        <li>เสื้อผ้าที่ใช้บ่อยวางไว้ในตำแหน่งที่หยิบง่าย</li>
+        <li>ใช้กล่องหรือตะกร้าแบ่งของเล็กๆ</li>
+        <li>ติดป้ายหรือใช้กล่องใสเพื่อหาง่าย</li>
+        <li>ทำความสะอาดตู้เป็นประจำ</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Accessory Care -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">👟</span>
+     <h2 class="section-title">การดูแลเครื่องประกอบการแต่งกาย</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>เครื่องประกอบการแต่งกายต้องการการดูแลเฉพาะเพื่อให้คงทนและสวยงาม</p>
+     </div>
+     <div class="accessory-grid">
+      <div class="accessory-card">
+       <div class="accessory-header"><span class="accessory-icon" aria-hidden="true">👟</span>
+        <div class="accessory-name">
+         รองเท้า
+        </div>
+       </div>
+       <ul class="accessory-care-list">
+        <li><strong>รองเท้าหนัง:</strong> ทำความสะอาดด้วยผ้าชื้น ใส่ยาดูแลหนังเป็นประจำ</li>
+        <li><strong>รองเท้าผ้าใบ:</strong> ซักด้วยแปรงนุ่ม น้ำสบู่ ตากในที่ร่ม</li>
+        <li>ใส่ไม้ยืดรองเท้าเมื่อไม่ใช้งาน</li>
+        <li>เก็บในที่แห้ง มีอากาศถ่ายเท</li>
+        <li>หมุนเวียนการใช้งาน ไม่ใส่คู่เดียวทุกวัน</li>
+       </ul>
+      </div>
+      <div class="accessory-card">
+       <div class="accessory-header"><span class="accessory-icon" aria-hidden="true">🎒</span>
+        <div class="accessory-name">
+         กระเป๋า
+        </div>
+       </div>
+       <ul class="accessory-care-list">
+        <li>เช็ดทำความสะอาดด้วยผ้าชื้นเป็นประจำ</li>
+        <li>เก็บในถุงผ้าเมื่อไม่ใช้งาน เพื่อป้องกันฝุ่น</li>
+        <li>ไม่ใส่ของหนักเกินกำลัง</li>
+        <li>ใส่กระดาษหรือฟองน้ำช่วยรักษารูปทรง</li>
+        <li>หลีกเลี่ยงการแขวนด้วยสายยาวๆ</li>
+       </ul>
+      </div>
+      <div class="accessory-card">
+       <div class="accessory-header"><span class="accessory-icon" aria-hidden="true">👔</span>
+        <div class="accessory-name">
+         เนกไท
+        </div>
+       </div>
+       <ul class="accessory-care-list">
+        <li>แขวนหลังใช้งานทุกครั้ง</li>
+        <li>ม้วนเก็บเมื่อเดินทาง</li>
+        <li>ซักแห้งเมื่อสกปรก</li>
+        <li>รีดด้วยอุณหภูมิต่ำ ใส่ผ้าคั่น</li>
+        <li>เก็บในที่แห้ง ไม่ชื้น</li>
+       </ul>
+      </div>
+      <div class="accessory-card">
+       <div class="accessory-header"><span class="accessory-icon" aria-hidden="true">⌚</span>
+        <div class="accessory-name">
+         นาฬิกา
+        </div>
+       </div>
+       <ul class="accessory-care-list">
+        <li>เช็ดด้วยผ้านุ่มแห้งเป็นประจำ</li>
+        <li>หลีกเลี่ยงน้ำ (ถ้าไม่กันน้ำ)</li>
+        <li>เก็บในกล่องเมื่อไม่ใช้งาน</li>
+        <li>เปลี่ยนแบตเตอรี่เป็นประจำ</li>
+        <li>ตรวจสอบสายนาฬิกาเป็นระยะ</li>
+       </ul>
+      </div>
+      <div class="accessory-card">
+       <div class="accessory-header"><span class="accessory-icon" aria-hidden="true">🕶️</span>
+        <div class="accessory-name">
+         แว่นตา
+        </div>
+       </div>
+       <ul class="accessory-care-list">
+        <li>เช็ดด้วยผ้าไมโครไฟเบอร์</li>
+        <li>ล้างด้วยน้ำสบู่อ่อนๆ</li>
+        <li>เก็บในกล่องป้องกัน</li>
+        <li>หลีกเลี่ยงการวางคว่ำ</li>
+        <li>ไม่ใช้เสื้อผ้าเช็ดเลนส์</li>
+       </ul>
+      </div>
+      <div class="accessory-card">
+       <div class="accessory-header"><span class="accessory-icon" aria-hidden="true">🧤</span>
+        <div class="accessory-name">
+         ผ้าเช็ดหน้า
+        </div>
+       </div>
+       <ul class="accessory-care-list">
+        <li>ซักแยกจากเสื้อผ้าอื่น</li>
+        <li>ใช้น้ำร้อนเพื่อฆ่าเชื้อ</li>
+        <li>ตากแดดให้แห้งสนิท</li>
+        <li>รีดด้วยไฟสูง</li>
+        <li>เปลี่ยนใหม่เป็นประจำ</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Basic Repairs -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🪡</span>
+     <h2 class="section-title">การซ่อมแซมเสื้อผ้าเบื้องต้น</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การซ่อมแซมเสื้อผ้าเบื้องต้นจะช่วยยืดอายุการใช้งานและประหยัดค่าใช้จ่าย</p>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        🔘
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การเย็บกระดุม
+        </div>
+        <div class="step-description"><strong>อุปกรณ์:</strong> เข็มเย็บผ้า ด้ายสีเดียวกัน กรรไกร<br><strong>วิธีทำ:</strong> ร้อยด้ายผ่านรูกระดุม และผ้า สลับไปมา 6-8 ครั้ง ผูกปมแน่น ตัดด้ายส่วนเกิน
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        👖
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การเก็บชายกางเกง
+        </div>
+        <div class="step-description"><strong>อุปกรณ์:</strong> เข็มหมุด ไม้บรรทัด เข็มเย็บผ้า ด้าย<br><strong>วิธีทำ:</strong> วัดความยาวที่ต้องการ พับขึ้น เข็มหมุด เย็บชายใหม่ด้วยมือหรือจักร
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        🧵
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การซ่อมตะเข็บหลุด
+        </div>
+        <div class="step-description"><strong>อุปกรณ์:</strong> เข็มเย็บผ้า ด้ายสีเดียวกัน<br><strong>วิธีทำ:</strong> เย็บทับตะเข็บเดิม ใช้ลายเข็มแน่น เริ่มต้นและจบที่ผ้าแข็งแรง
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       เครื่องมือพื้นฐานสำหรับซ่อมแซม
+      </div>
+      <div class="tip-content">
+       <ul>
+        <li>เข็มเย็บผ้าหลายขนาด</li>
+        <li>ด้ายหลายสี (ขาว ดำ น้ำเงิน)</li>
+        <li>กรรไกรตัดผ้า</li>
+        <li>เข็มหมุด</li>
+        <li>กระดุมสำรอง</li>
+        <li>ผ้าปะสีต่างๆ</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Safety and Environment -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">ความปลอดภัยและสิ่งแวดล้อม</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การดูแลเสื้อผ้าอย่างมีจิตสำนึกจะช่วยประหยัดทรัพยากรและรักษาสิ่งแวดล้อม</p>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">💧</span> การประหยัดน้ำและพลังงาน
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text">
+        ซักผ้าเมื่อมีปริมาณเหมาะสม ไม่ซักทีละน้อย
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text">
+        ใช้น้ำเย็นเมื่อเป็นไปได้ ประหยัดพลังงาน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text">
+        ตากแดดแทนการอบแห้ง ประหยัดไฟฟ้า
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text">
+        ใช้ผงซักฟอกปริมาณที่เหมาะสม
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">♻️</span> หลัก 3R ในการดูแลเสื้อผ้า
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>Reduce (ลด):</strong> ซื้อเสื้อผ้าเท่าที่จำเป็น เลือกคุณภาพดี ทนทาน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>Reuse (ใช้ซ้ำ):</strong> ซ่อมแซมเสื้อผ้าที่เสียหาย ดัดแปลงให้ใช้งานใหม่
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>Recycle (รีไซเคิล):</strong> นำเสื้อผ้าเก่าไปทำผ้าเช็ด หรือบริจาค
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การเลือกน้ำยาที่เป็นมิตรกับสิ่งแวดล้อม
+      </div>
+      <div class="tip-content">
+       <ul>
+        <li>เลือกผงซักฟอกที่ย่อยสลายได้ทางชีวภาพ</li>
+        <li>หลีกเลี่ยงน้ำยาที่มีฟอสเฟต</li>
+        <li>ใช้น้ำส้มสายชูและเบกกิ้งโซดาทดแทนน้ำยาเคมี</li>
+        <li>เลือกผลิตภัณฑ์ที่มีฉลากเขียว</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญที่ควรจำ</h2>
+    <ul class="takeaways-list">
+     <li>การอ่านสัญลักษณ์การดูแลบนป้ายเสื้อผ้าเป็นพื้นฐานสำคัญ</li>
+     <li>การคัดแยกผ้าก่อนซักช่วยป้องกันการเสียหายและติดสี</li>
+     <li>การขจัดคราบทันทีจะได้ผลดีกว่าปล่อยทิ้งไว้</li>
+     <li>การตากและรีดผ้าที่ถูกวิธีช่วยรักษารูปทรงและสี</li>
+     <li>การเก็บรักษาที่เหมาะสมยืดอายุการใช้งาน</li>
+     <li>เครื่องประกอบการแต่งกายต้องการการดูแลเฉพาะ</li>
+     <li>การซ่อมแซมเบื้องต้นช่วยประหยัดค่าใช้จ่าย</li>
+     <li>การใช้ทรัพยากรอย่างประหยัดช่วยรักษาสิ่งแวดล้อม</li>
+    </ul>
+   </section><!-- References -->
+   <section class="references">
+    <h3 class="references-title">แหล่งอ้างอิงและอ่านเพิ่มเติม</h3>
+    <ul class="references-list">
+     <li>หลักสูตรแกนกลางการศึกษาขั้นพื้นฐาน พุทธศักราช 2551 กลุ่มสาระการเรียนรู้การงานอาชีพและเทคโนโลยี</li>
+     <li>คู่มือการดูแลรักษาเสื้อผ้า กรมส่งเสริมอุตสาหกรรม กระทรวงอุตสาหกรรม</li>
+     <li>มาตรฐานสัญลักษณ์การดูแลผลิตภัณฑ์สิ่งทอ สำนักงานมาตรฐานผลิตภัณฑ์อุตสาหกรรม</li>
+     <li>คู่มือการใช้เครื่องซักผ้าและเครื่องใช้ไฟฟ้าอย่างประหยัด การไฟฟ้าฝ่ายผลิตแห่งประเทศไทย</li>
+     <li>แนวทางการจัดการขยะและการรีไซเคิล กรมควบคุมมลพิษ กระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม</li>
+    </ul>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+    <p>เวอร์ชันบทเรียน 1.0 | พัฒนาเพื่อการศึกษา</p>
+   </div>
+  </footer>
+  <script>
+        // Element SDK Configuration
+        const defaultConfig = {
+            lesson_title: "การดูแลรักษาเสื้อผ้าและเครื่องประกอบการแต่งกาย",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_description: "เรียนรู้การดูแลเสื้อผ้าให้คงทนและสวยงาม เพื่อการใช้งานที่ยาวนานและประหยัด"
+        };
+
+        async function render(config) {
+            document.getElementById('lessonTitle').textContent = config.lesson_title || defaultConfig.lesson_title;
+            document.getElementById('schoolName').textContent = config.school_name || defaultConfig.school_name;
+            document.getElementById('teacherName').textContent = config.teacher_name || defaultConfig.teacher_name;
+            document.getElementById('lessonDescription').textContent = config.lesson_description || defaultConfig.lesson_description;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_description", config.lesson_description || defaultConfig.lesson_description]
+            ]);
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                locale: 'th-TH'
+            };
+            document.getElementById('updateDate').textContent = today.toLocaleDateString('th-TH', options);
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            // Add any keyboard shortcuts if needed
+            if (e.key === 'Escape') {
+                // Close any open modals or overlays
+                document.querySelectorAll('.modal, .overlay').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+        });
+
+        // Print functionality
+        function printPage() {
+            window.print();
+        }
+
+        // Add print button if needed
+        if (window.location.search.includes('print=true')) {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '🖨️ พิมพ์บทเรียน';
+            printBtn.className = 'btn btn-secondary';
+            printBtn.onclick = printPage;
+            printBtn.style.position = 'fixed';
+            printBtn.style.top = '20px';
+            printBtn.style.right = '20px';
+            printBtn.style.zIndex = '1000';
+            document.body.appendChild(printBtn);
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'991eea8735bafe86',t:'MTc2MTAzMDQyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

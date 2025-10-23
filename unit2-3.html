@@ -1,0 +1,1699 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การตกแต่งเสื้อผ้า - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Concept Cards */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .concept-card {
+            background: var(--white);
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .concept-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .concept-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .concept-details {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Materials Table */
+        .materials-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .materials-table th {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--text-dark);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .materials-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .materials-table tr:hover {
+            background: #FFF8E1;
+        }
+
+        .material-icon {
+            font-size: 1.5rem;
+            text-align: center;
+            width: 60px;
+        }
+
+        /* Technique Cards */
+        .technique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .technique-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .technique-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .technique-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .technique-icon {
+            font-size: 2.5rem;
+        }
+
+        .technique-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .technique-steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        .technique-steps li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #F0F0F0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .technique-steps li:last-child {
+            border-bottom: none;
+        }
+
+        .technique-steps li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+            background: var(--primary);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .technique-card {
+            counter-reset: step-counter;
+        }
+
+        /* Compatibility Table */
+        .compatibility-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .compatibility-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .compatibility-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .compatibility-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        .compatibility-icon {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .suitable {
+            color: var(--success);
+        }
+
+        .not-suitable {
+            color: var(--danger);
+        }
+
+        .moderate {
+            color: var(--warning);
+        }
+
+        /* Process Steps */
+        .process-steps {
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .step-description {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Tip Boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .tip-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--danger);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-title {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .warning-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .checklist-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            color: var(--success);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+        }
+
+        .checklist-text {
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* References */
+        .references {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .references-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .references-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .references-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .references-list li:last-child {
+            border-bottom: none;
+        }
+
+        .references-list li::before {
+            content: '📚';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives {
+                grid-template-columns: 1fr;
+            }
+
+            .technique-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .materials-table,
+            .compatibility-table {
+                font-size: 0.9rem;
+            }
+
+            .materials-table th,
+            .materials-table td,
+            .compatibility-table th,
+            .compatibility-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .tip-box,
+            .warning-box {
+                padding: 1rem;
+            }
+
+            .tip-title,
+            .warning-title,
+            .tip-content,
+            .warning-content {
+                margin-left: 2rem;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🎨</span>
+    <h1 id="lessonTitle">การตกแต่งเสื้อผ้า</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">เรียนรู้เทคนิคการตกแต่งเสื้อผ้าเพื่อความงาม เอกลักษณ์ และการใช้งาน สร้างสรรค์ผลงานที่สะท้อนบุคลิกภาพและความคิดสร้างสรรค์</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจหลักการออกแบบ เทคนิคการตกแต่ง และการเลือกวัสดุที่เหมาะสมกับเนื้อผ้า</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถปฏิบัติเทคนิคการตกแต่งพื้นฐาน เช่น ปักผ้า อะพลีเก ติดลูกปัด และการใช้ HTV</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>มีความคิดสร้างสรรค์ ความอดทน และจิตสำนึกในการอัปไซเคิลเสื้อผ้า</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Basic Concepts -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💡</span>
+     <h2 class="section-title">แนวคิดพื้นฐานการตกแต่งเสื้อผ้า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การตกแต่งเสื้อผ้าเป็นศิลปะที่ผสมผสานความงาม ความใช้งาน และการแสดงออกถึงบุคลิกภาพ</p>
+     </div>
+     <div class="concept-grid">
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">✨</span>
+       <div class="concept-name">
+        เพื่อความสวยงาม
+       </div>
+       <div class="concept-details"><strong>จุดประสงค์:</strong> เพิ่มความน่าสนใจ<br><strong>เทคนิค:</strong> ปักลาย ติดเลื่อม ลูกไม้<br><strong>หลักการ:</strong> สมดุล จุดเด่น ความกลมกลืน
+       </div>
+      </div>
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">🔧</span>
+       <div class="concept-name">
+        ซ่อมและพรางรอย
+       </div>
+       <div class="concept-details"><strong>จุดประสงค์:</strong> ปกปิดความเสียหาย<br><strong>เทคนิค:</strong> แพตช์ อะพลีเก ปักทับ<br><strong>หลักการ:</strong> ผสมผสานให้เป็นธรรมชาति
+       </div>
+      </div>
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">⚙️</span>
+       <div class="concept-name">
+        เพิ่มฟังก์ชันการใช้งาน
+       </div>
+       <div class="concept-details"><strong>จุดประสงค์:</strong> เพิ่มประโยชน์ใช้สอย<br><strong>เทคนิค:</strong> กระเป๋า แถบสะท้อนแสง<br><strong>หลักการ:</strong> ความสะดวก ความปลอดภัย
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🎨</span> หลักการออกแบบการตกแต่ง
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>สมดุล (Balance):</strong> การจัดวางองค์ประกอบให้มีน้ำหนักทางสายตาเท่ากัน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>จุดเด่น (Emphasis):</strong> การสร้างจุดสนใจหลักที่ดึงดูดสายตา
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ความกลมกลืน (Harmony):</strong> การเลือกสี ลวดลาย และเทคนิคที่เข้ากัน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>สัดส่วน (Proportion):</strong> ขนาดของการตกแต่งเหมาะสมกับเสื้อผ้า
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การเลือกธีมการตกแต่ง
+      </div>
+      <div class="tip-content">
+       <p>เริ่มต้นด้วยการกำหนดธีมหรือแนวคิดหลัก เช่น ธรรมชาติ เรขาคณิต หรือวินเทจ จากนั้นเลือกสี เทคนิค และวัสดุให้สอดคล้องกับธีมนั้น</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Materials and Tools -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧰</span>
+     <h2 class="section-title">วัสดุและเครื่องมือสำหรับการตกแต่ง</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การเลือกวัสดุและเครื่องมือที่เหมาะสมจะช่วยให้งานตกแต่งสวยงามและคงทน</p>
+     </div>
+     <h3 style="color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.3rem;">วัสดุตกแต่ง</h3>
+     <table class="materials-table">
+      <thead>
+       <tr>
+        <th>วัสดุ</th>
+        <th>ประเภท/คุณสมบัติ</th>
+        <th>การใช้งาน</th>
+        <th>ข้อควรระวัง</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="material-icon" aria-label="ด้ายปัก">🧵</td>
+        <td><strong>ด้าย/ไหมปัก</strong><br>
+         Cotton, Silk, Metallic<br>
+         หลากสี มีเงา-ด้าน</td>
+        <td>ปักลาย ตกแต่งขอบ<br>
+         สร้างเส้นและพื้นผิว</td>
+        <td>เลือกให้เหมาะกับผ้า<br>
+         ทดสอบสีตกก่อน</td>
+       </tr>
+       <tr>
+        <td class="material-icon" aria-label="ลูกปัด">💎</td>
+        <td><strong>ลูกปัด/เลื่อม</strong><br>
+         แก้ว พลาสติก โลหะ<br>
+         ขนาดและรูปทรงต่างๆ</td>
+        <td>สร้างจุดเด่น<br>
+         เพิ่มความระยิบระยับ</td>
+        <td>ระวังน้ำหนัก<br>
+         เสริมผ้าด้านหลัง</td>
+       </tr>
+       <tr>
+        <td class="material-icon" aria-label="ริบบิ้น">🎀</td>
+        <td><strong>ริบบิ้น/ลูกไม้</strong><br>
+         ซาติน ออร์แกนซ่า ฝ้าย<br>
+         ความกว้างต่างๆ</td>
+        <td>ตกแต่งขอบ ทำโบว์<br>
+         สร้างเส้นแบ่ง</td>
+        <td>เลือกความกว้างให้เหมาะสม<br>
+         ป้องกันการลุ่ย</td>
+       </tr>
+       <tr>
+        <td class="material-icon" aria-label="แพตช์">🏷️</td>
+        <td><strong>แพตช์/เข็มกลัด</strong><br>
+         ผ้า โลหะ พลาสติก<br>
+         รูปทรงและลวดลายต่างๆ</td>
+        <td>ตกแต่งแบบง่าย<br>
+         แสดงบุคลิกภาพ</td>
+        <td>ตรวจสอบวิธีติดตั้ง<br>
+         ระวังการเจาะผ้า</td>
+       </tr>
+       <tr>
+        <td class="material-icon" aria-label="สีผ้า">🎨</td>
+        <td><strong>สีผ้า/ปากกาผ้า</strong><br>
+         Acrylic Fabric Paint<br>
+         ปากกาถาวร สเปรย์</td>
+        <td>วาดลาย ระบายสี<br>
+         สร้างลวดลายเฉพาะ</td>
+        <td>ทดสอบบนเศษผ้า<br>
+         ฟิกซ์ด้วยความร้อน</td>
+       </tr>
+       <tr>
+        <td class="material-icon" aria-label="HTV">📄</td>
+        <td><strong>HTV/ฟิล์มรีดร้อน</strong><br>
+         Vinyl, Glitter, Flock<br>
+         หลากสีและพื้นผิว</td>
+        <td>ตัดลายด้วยเครื่อง<br>
+         รีดติดด้วยความร้อน</td>
+        <td>ตั้งอุณหภูมิถูกต้อง<br>
+         ลอกฟิล์มเมื่อเย็น</td>
+       </tr>
+       <tr>
+        <td class="material-icon" aria-label="ผ้ากาว">🔗</td>
+        <td><strong>ผ้ากาว/ใยกาว</strong><br>
+         Heat-activated<br>
+         ความหนาต่างๆ</td>
+        <td>ติดผ้าโดยไม่เย็บ<br>
+         เสริมความแข็งแรง</td>
+        <td>ใช้อุณหภูมิเหมาะสม<br>
+         ไม่ซักน้ำร้อน</td>
+       </tr>
+      </tbody>
+     </table>
+     <h3 style="color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.3rem;">เครื่องมือพื้นฐาน</h3>
+     <div class="concept-grid">
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">🪡</span>
+       <div class="concept-name">
+        เข็มและสะดึง
+       </div>
+       <div class="concept-details"><strong>เข็มปัก:</strong> ขนาด 7-10<br><strong>สะดึง:</strong> ไม้ พลาสติก<br><strong>การใช้:</strong> ปักลาย ติดลูกปัด
+       </div>
+      </div>
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">✂️</span>
+       <div class="concept-name">
+        กรรไกรและมีด
+       </div>
+       <div class="concept-details"><strong>กรรไกรผ้า:</strong> คมและแม่นยำ<br><strong>มีดคัตเตอร์:</strong> สำหรับ HTV<br><strong>การใช้:</strong> ตัดวัสดุ ตกแต่ง
+       </div>
+      </div>
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">🔥</span>
+       <div class="concept-name">
+        เตารีดและอุปกรณ์
+       </div>
+       <div class="concept-details"><strong>เตารีด:</strong> ควบคุมอุณหภูมิได้<br><strong>บล็อกรีด:</strong> รองรับงาน<br><strong>การใช้:</strong> รีด HTV ผ้ากาว
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ความปลอดภัยในการใช้เครื่องมือ
+      </div>
+      <div class="warning-content">
+       <p>ใช้เตารีดด้วยความระมัดระวัง ตั้งอุณหภูมิให้เหมาะสมกับวัสดุ ใช้ผ้าคั่นป้องกันความเสียหาย และเก็บเครื่องมือคมให้ปลอดภัย</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Main Techniques -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎨</span>
+     <h2 class="section-title">เทคนิคการตกแต่งหลัก</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>เทคนิคการตกแต่งแต่ละแบบมีจุดเด่นและการใช้งานที่แตกต่างกัน</p>
+     </div>
+     <div class="technique-grid">
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">🪡</span>
+        <div class="technique-title">
+         ปักผ้าเบื้องต้น
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li><strong>Running Stitch:</strong> เย็บเส้นตรงพื้นฐาน</li>
+        <li><strong>Back Stitch:</strong> เส้นต่อเนื่องแข็งแรง</li>
+        <li><strong>Satin Stitch:</strong> เติมสีในพื้นที่</li>
+        <li><strong>French Knot:</strong> จุดนูนสร้างพื้นผิว</li>
+        <li>ใช้สะดึงยึดผ้าให้ตึง</li>
+        <li>เริ่มจากกลางออกไปขอบ</li>
+       </ul>
+       <div class="tip-box">
+        <div class="tip-title">
+         การเลือกลายปัก
+        </div>
+        <div class="tip-content">
+         เริ่มจากลายง่ายๆ เช่น ดอกไม้ ใบไม้ ก่อนไปลายซับซ้อน
+        </div>
+       </div>
+      </div>
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">🧩</span>
+        <div class="technique-title">
+         อะพลีเก (Appliqué)
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li>เลือกผ้าลายที่ต้องการ</li>
+        <li>ตัดรูปทรงตามแบบ</li>
+        <li>ใช้ผ้ากาวติดชั่วคราว</li>
+        <li>เย็บขอบด้วย Blanket Stitch</li>
+        <li>หรือใช้ Satin Stitch ซ่อนริม</li>
+        <li>รีดให้เรียบเมื่อเสร็จ</li>
+       </ul>
+       <div class="tip-box">
+        <div class="tip-title">
+         การซ่อนขอบ
+        </div>
+        <div class="tip-content">
+         พับขอบผ้าเข้าด้านในก่อนเย็บ หรือใช้ผ้าที่ไม่ลุ่ย
+        </div>
+       </div>
+      </div>
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">💎</span>
+        <div class="technique-title">
+         ติดลูกปัดและเลื่อม
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li>วางแบบลายบนผ้า</li>
+        <li>เสริมผ้าด้านหลังหากจำเป็น</li>
+        <li>เย็บลูกปัดทีละเม็ด</li>
+        <li>เลื่อมใช้เข็มผ่านกลาง</li>
+        <li>เว้นระยะสำหรับการซัก</li>
+        <li>ตรวจสอบความแข็งแรง</li>
+       </ul>
+       <div class="warning-box">
+        <div class="warning-title">
+         ข้อระวัง
+        </div>
+        <div class="warning-content">
+         ลูกปัดมีน้ำหนัก อาจทำให้ผ้าบางเสียรูป ควรเสริมด้วยผ้าแข็ง
+        </div>
+       </div>
+      </div>
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">🏷️</span>
+        <div class="technique-title">
+         แพตช์และโลโก้
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li>เลือกตำแหน่งที่เหมาะสม</li>
+        <li>ทำเครื่องหมายด้วยชอล์ก</li>
+        <li>แพตช์เย็บ: เย็บรอบขอบ</li>
+        <li>แพตช์รีด: ตั้งอุณหภูมิ 150°C</li>
+        <li>กดแน่น 15-20 วินาที</li>
+        <li>ทดสอบการติดแน่น</li>
+       </ul>
+       <div class="tip-box">
+        <div class="tip-title">
+         ตำแหน่งยอดนิยม
+        </div>
+        <div class="tip-content">
+         แขนเสื้อ หน้าอก กระเป๋า หรือด้านหลัง ตามสไตล์ที่ต้องการ
+        </div>
+       </div>
+      </div>
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">🎨</span>
+        <div class="technique-title">
+         ระบายสีผ้า
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li>ทดสอบสีบนเศษผ้าก่อน</li>
+        <li>วางแบบหรือเทมเพลต</li>
+        <li>ใช้พู่กันหรือฟองน้ำ</li>
+        <li>ระบายทีละชั้นบางๆ</li>
+        <li>ปล่อยให้แห้งสนิท</li>
+        <li>ฟิกซ์ด้วยเตารีด</li>
+       </ul>
+       <div class="warning-box">
+        <div class="warning-title">
+         การทดสอบสี
+        </div>
+        <div class="warning-content">
+         ทดสอบการซึมและการติดทนของสีก่อนลงมือทำจริง
+        </div>
+       </div>
+      </div>
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">📄</span>
+        <div class="technique-title">
+         HTV/รีดร้อน
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li>ออกแบบและกลับแบบ (Mirror)</li>
+        <li>ตัดด้วยเครื่องตัด</li>
+        <li>ลอกส่วนที่ไม่ต้องการ (Weeding)</li>
+        <li>วางบนผ้า ใช้เทปโอน</li>
+        <li>รีดที่ 160°C นาน 15 วินาที</li>
+        <li>ลอกเทปเมื่อเย็นแล้ว</li>
+       </ul>
+       <div class="tip-box">
+        <div class="tip-title">
+         การดูแลหลังติด
+        </div>
+        <div class="tip-content">
+         ซักน้ำเย็น กลับด้านใน ไม่ใช้น้ำยาฟอก หรือเครื่องอบแห้ง
+        </div>
+       </div>
+      </div>
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">🎀</span>
+        <div class="technique-title">
+         แต่งขอบด้วยลูกไม้
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li>วัดความยาวขอบที่ต้องการ</li>
+        <li>เพิ่มความยาว 2-3 ซม.</li>
+        <li>กลัดลูกไม้ให้เรียบ</li>
+        <li>เย็บด้วย Running Stitch</li>
+        <li>พับปลายเข้าด้านใน</li>
+        <li>รีดให้เรียบร้อย</li>
+       </ul>
+       <div class="tip-box">
+        <div class="tip-title">
+         การเลือกลูกไม้
+        </div>
+        <div class="tip-content">
+         เลือกความกว้างให้เหมาะสมกับเสื้อผ้า และสีที่เข้ากัน
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Fabric Compatibility -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧵</span>
+     <h2 class="section-title">การเลือกเทคนิคให้เหมาะกับเนื้อผ้า</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>เนื้อผ้าแต่ละประเภทมีคุณสมบัติต่างกัน การเลือกเทคนิคที่เหมาะสมจะให้ผลงานที่สวยงามและคงทน</p>
+     </div>
+     <table class="compatibility-table">
+      <thead>
+       <tr>
+        <th>เทคนิค</th>
+        <th>ผ้าที่เหมาะสม</th>
+        <th>ผ้าที่ไม่เหมาะสม</th>
+        <th>ความทนทาน</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td><strong>ปักผ้า</strong></td>
+        <td class="suitable">ฝ้าย ลินิน ผ้าแคนวาส<br><span class="compatibility-icon">✓</span> เนื้อแน่น ไม่ยืด</td>
+        <td class="not-suitable">ผ้ายืด ไหม บาง<br><span class="compatibility-icon">✗</span> เปราะ ลื่น</td>
+        <td class="suitable">สูง<br><span class="compatibility-icon">⭐⭐⭐⭐</span></td>
+       </tr>
+       <tr>
+        <td><strong>อะพลีเก</strong></td>
+        <td class="suitable">ฝ้าย ยีนส์ ผ้าหนา<br><span class="compatibility-icon">✓</span> รับน้ำหนักได้</td>
+        <td class="not-suitable">ผ้าบาง ยืดมาก<br><span class="compatibility-icon">✗</span> เสียรูปง่าย</td>
+        <td class="suitable">สูง<br><span class="compatibility-icon">⭐⭐⭐⭐</span></td>
+       </tr>
+       <tr>
+        <td><strong>ลูกปัด/เลื่อม</strong></td>
+        <td class="suitable">ผ้าหนา มีโครงสร้าง<br><span class="compatibility-icon">✓</span> แข็งแรง</td>
+        <td class="not-suitable">ผ้าบาง ยืด<br><span class="compatibility-icon">✗</span> รับน้ำหนักไม่ได้</td>
+        <td class="moderate">ปานกลาง<br><span class="compatibility-icon">⭐⭐⭐</span></td>
+       </tr>
+       <tr>
+        <td><strong>HTV/รีดร้อน</strong></td>
+        <td class="suitable">ฝ้าย โพลีเอสเตอร์<br><span class="compatibility-icon">✓</span> ทนความร้อน</td>
+        <td class="not-suitable">ไนลอน ผ้าเคลือบ<br><span class="compatibility-icon">✗</span> ละลายง่าย</td>
+        <td class="suitable">สูง<br><span class="compatibility-icon">⭐⭐⭐⭐</span></td>
+       </tr>
+       <tr>
+        <td><strong>สีผ้า</strong></td>
+        <td class="suitable">ฝ้าย ลินิน ธรรมชาติ<br><span class="compatibility-icon">✓</span> ซับสีดี</td>
+        <td class="not-suitable">ผ้าเคลือบ กันน้ำ<br><span class="compatibility-icon">✗</span> ไม่ซับสี</td>
+        <td class="moderate">ปานกลาง<br><span class="compatibility-icon">⭐⭐⭐</span></td>
+       </tr>
+       <tr>
+        <td><strong>ลูกไม้/ริบบิ้น</strong></td>
+        <td class="suitable">ผ้าทุกประเภท<br><span class="compatibility-icon">✓</span> ใช้ได้หลากหลาย</td>
+        <td class="not-suitable">ผ้าหนามาก<br><span class="compatibility-icon">✗</span> เย็บยาก</td>
+        <td class="suitable">สูง<br><span class="compatibility-icon">⭐⭐⭐⭐</span></td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="tip-box">
+      <div class="tip-title">
+       การทดสอบก่อนลงมือทำ
+      </div>
+      <div class="tip-content">
+       <p>ทดสอบเทคนิคบนเศษผ้าก่อนเสมอ เพื่อดูผลลัพธ์และความเหมาะสม โดยเฉพาะการใช้ความร้อนและสีย้อม</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Positioning and Proportion -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📐</span>
+     <h2 class="section-title">การวางตำแหน่งและสัดส่วน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การวางตำแหน่งที่ถูกต้องจะทำให้งานตกแต่งสวยงาม สมดุล และใช้งานได้จริง</p>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        📏
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ระยะจากตะเข็บและขอบ
+        </div>
+        <div class="step-description">
+         วางการตกแต่งห่างจากตะเข็บอย่างน้อย 2 ซม. และห่างจากขอบผ้า 1.5 ซม. เพื่อป้องกันการเสียหายขณะซักและใช้งาน
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        ⚖️
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         ความสมดุลซ้าย-ขวา
+        </div>
+        <div class="step-description">
+         หากตกแต่งด้านเดียว ให้วางในตำแหน่งที่สร้างความสมดุลทางสายตา หรือใช้การตกแต่งแบบสมมาตรทั้งสองข้าง
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        🏃
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         พื้นที่เคลื่อนไหว
+        </div>
+        <div class="step-description">
+         หลีกเลี่ยงการตกแต่งในบริเวณที่มีการเคลื่อนไหวมาก เช่น รักแร้ ข้อศอก เข่า เพื่อป้องกันการเสียหายจากการใช้งาน
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        📐
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         สัดส่วนกับขนาดเสื้อผ้า
+        </div>
+        <div class="step-description">
+         การตกแต่งขนาดใหญ่เหมาะกับเสื้อผ้าขนาดใหญ่ การตกแต่งเล็กๆ เหมาะกับเสื้อผ้าเล็กหรือเด็ก รักษาสัดส่วนให้เหมาะสม
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">📍</span> ตำแหน่งยอดนิยมสำหรับการตกแต่ง
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>หน้าอก:</strong> โลโก้ ลายปัก ขนาดกลาง-ใหญ่
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แขนเสื้อ:</strong> แพตช์ ลายเล็ก ริบบิ้น
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ชายเสื้อ:</strong> ลูกไม้ เทปกุ๊น ลายขอบ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>กระเป๋า:</strong> การตกแต่งเล็กๆ ลูกปัด
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ด้านหลัง:</strong> ลายใหญ่ ข้อความ ภาพประกอบ
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อควรระวังเรื่องสัดส่วน
+      </div>
+      <div class="warning-content">
+       <p>การตกแต่งที่ใหญ่เกินไปอาจทำให้ดูไม่สมดุล และการตกแต่งที่เล็กเกินไปอาจมองไม่เห็นชัดเจน ควรพิจารณาขนาดโดยรวมของเสื้อผ้า</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Safety and Care -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛡️</span>
+     <h2 class="section-title">ความปลอดภัยและการดูแล</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การใช้วัสดุอย่างปลอดภัยและการดูแลรักษาที่ถูกต้องจะช่วยให้งานตกแต่งคงทนและปลอดภัยต่อผู้ใช้</p>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🧪</span> การทดสอบความปลอดภัย
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ทดสอบสีตก:</strong> แช่เศษผ้าในน้ำ 30 นาที ดูว่าสีออกหรือไม่
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ทดสอบความร้อน:</strong> ใช้เตารีดที่อุณหภูมิต่ำก่อน ค่อยเพิ่ม
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ตรวจสอบสารเคมี:</strong> อ่านฉลากสีผ้า กาว ให้ปลอดภัยต่อผิวหนัง
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ทดสอบการแพ้:</strong> ลองใช้วัสดุกับผิวหนังเล็กน้อยก่อน
+       </div>
+      </div>
+     </div>
+     <div class="technique-grid">
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">🧼</span>
+        <div class="technique-title">
+         การซักผ้าที่มีการตกแต่ง
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li>กลับด้านในก่อนซัก</li>
+        <li>ใช้น้ำเย็นและโหมดอ่อนโยน</li>
+        <li>หลีกเลี่ยงน้ำยาฟอกขาว</li>
+        <li>ไม่บิดหรือบีบแรง</li>
+        <li>ตากในที่ร่ม ไม่แดดจัด</li>
+        <li>แยกซักจากเสื้อผ้าอื่น</li>
+       </ul>
+      </div>
+      <div class="technique-card">
+       <div class="technique-header"><span class="technique-icon" aria-hidden="true">🔥</span>
+        <div class="technique-title">
+         การรีดผ้าที่ตกแต่ง
+        </div>
+       </div>
+       <ul class="technique-steps">
+        <li>ใช้อุณหภูมิต่ำ-กลาง</li>
+        <li>วางผ้าคั่นบนการตกแต่ง</li>
+        <li>รีดจากด้านหลัง</li>
+        <li>หลีกเลี่ยงการกดแรงบนลูกปัด</li>
+        <li>ใช้ไอน้ำแทนการกดโดยตรง</li>
+        <li>ปล่อยให้เย็นก่อนเก็บ</li>
+       </ul>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อควรระวังเรื่องน้ำหนัก
+      </div>
+      <div class="warning-content">
+       <p>การตกแต่งที่หนักเกินไป (เช่น ลูกปัดมาก) อาจทำให้ผ้าบางเสียรูป หรือตะเข็บขาด ควรเสริมผ้าด้านหลังหรือลดจำนวนการตกแต่ง</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustainability -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">การตกแต่งเพื่อความยั่งยืน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การตกแต่งเสื้อผ้าสามารถเป็นส่วนหนึ่งของการใช้ชีวิตอย่างยั่งยืน ช่วยลดขยะและใช้ทรัพยากรอย่างคุ้มค่า</p>
+     </div>
+     <div class="concept-grid">
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">♻️</span>
+       <div class="concept-name">
+        อัปไซเคิลเสื้อผ้า
+       </div>
+       <div class="concept-details"><strong>เสื้อผ้าเก่า:</strong> ตกแต่งใหม่ให้ทันสมัย<br><strong>ซ่อนรอยเสีย:</strong> ใช้แพตช์ปกปิด<br><strong>เปลี่ยนสไตล์:</strong> จากเรียบเป็นลวดลาย
+       </div>
+      </div>
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">🧵</span>
+       <div class="concept-name">
+        ใช้เศษวัสดุ
+       </div>
+       <div class="concept-details"><strong>เศษผ้า:</strong> ทำอะพลีเก แพตช์<br><strong>ด้ายเหลือ:</strong> ปักลายเล็กๆ<br><strong>ลูกปัดเก่า:</strong> จากเสื้อผ้าที่ไม่ใช้
+       </div>
+      </div>
+      <div class="concept-card"><span class="concept-icon" aria-hidden="true">🔧</span>
+       <div class="concept-name">
+        ตกแต่งควบคู่การซ่อม
+       </div>
+       <div class="concept-details"><strong>ปะรู:</strong> ใช้ผ้าลายสวยปะ<br><strong>ซ่อมตะเข็บ:</strong> เพิ่มริบบิ้นปกปิด<br><strong>เก็บชาย:</strong> ใส่ลูกไม้ตกแต่ง
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🌍</span> แนวทางการตกแต่งอย่างยั่งยืน
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เลือกวัสดุคุณภาพ:</strong> ใช้ได้นาน ไม่เสื่อมสภาพง่าย
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ออกแบบเหนือกาลเวลา:</strong> หลีกเลี่ยงแฟชั่นที่ล้าสมัยเร็ว
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ใช้วัสดุท้องถิ่น:</strong> ลดการขนส่ง สนับสนุนชุมชน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แบ่งปันความรู้:</strong> สอนคนอื่นให้ตกแต่งเสื้อผ้าเอง
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การยืดอายุการใช้งาน
+      </div>
+      <div class="tip-content">
+       <p>การตกแต่งที่ดีไม่เพียงทำให้เสื้อผ้าสวยงาม แต่ยังช่วยซ่อมแซมและยืดอายุการใช้งาน ทำให้เสื้อผ้าเก่าใช้ได้อีกนาน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญที่ควรจำ</h2>
+    <ul class="takeaways-list">
+     <li>การตกแต่งเสื้อผ้ามีจุดประสงค์หลากหลาย ทั้งความงาม การซ่อมแซม และการเพิ่มฟังก์ชัน</li>
+     <li>หลักการออกแบบ (สมดุล จุดเด่น ความกลมกลืน) ช่วยให้งานตกแต่งสวยงาม</li>
+     <li>การเลือกวัสดุและเทคนิคให้เหมาะกับเนื้อผ้าเป็นสิ่งสำคัญ</li>
+     <li>เทคนิคพื้นฐาน เช่น ปักผ้า อะพลีเก HTV สามารถประยุกต์ใช้ได้หลากหลาย</li>
+     <li>การวางตำแหน่งและสัดส่วนที่ถูกต้องทำให้งานดูสมดุลและใช้งานได้จริง</li>
+     <li>ความปลอดภัยและการทดสอบก่อนใช้จริงป้องกันความเสียหาย</li>
+     <li>การดูแลรักษาที่ถูกต้องช่วยให้งานตกแต่งคงทน</li>
+     <li>การตกแต่งสามารถเป็นส่วนหนึ่งของการใช้ชีวิตอย่างยั่งยืน</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h3 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h3>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       อะพลีเก (Appliqué)
+      </div>
+      <div class="glossary-definition">
+       เทคนิคการเย็บผ้าชิ้นหนึ่งทับลงบนผ้าอีกชิ้นหนึ่งเพื่อสร้างลวดลาย
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       HTV (Heat Transfer Vinyl)
+      </div>
+      <div class="glossary-definition">
+       ฟิล์มไวนิลที่ใช้ความร้อนในการติดลงบนผ้า
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Weeding
+      </div>
+      <div class="glossary-definition">
+       การลอกส่วนที่ไม่ต้องการออกจาก HTV หลังตัด
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       French Knot
+      </div>
+      <div class="glossary-definition">
+       เทคนิคการปักที่สร้างจุดนูนเล็กๆ บนผ้า
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Satin Stitch
+      </div>
+      <div class="glossary-definition">
+       การปักแบบเติมสีในพื้นที่ด้วยเส้นขนาน
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       อัปไซเคิล (Upcycle)
+      </div>
+      <div class="glossary-definition">
+       การนำของเก่ามาดัดแปลงให้มีคุณค่าและประโยชน์มากขึ้น
+      </div>
+     </div>
+    </div>
+   </section><!-- References -->
+   <section class="references">
+    <h3 class="references-title">แหล่งอ้างอิงและอ่านเพิ่มเติม</h3>
+    <ul class="references-list">
+     <li>หลักสูตรแกนกลางการศึกษาขั้นพื้นฐาน พุทธศักราช 2551 กลุ่มสาระการเรียนรู้การงานอาชีพและเทคโนโลยี</li>
+     <li>คู่มือเทคนิคการตกแต่งเสื้อผ้า สถาบันส่งเสริมการสอนวิทยาศาสตร์และเทคโนโลยี</li>
+     <li>หลักการออกแบบและศิลปะประยุกต์ กรมส่งเสริมอุตสาหกรรม กระทรวงอุตสาหกรรม</li>
+     <li>การใช้ชีวิตอย่างยั่งยืนและการอัปไซเคิล สำนักงานนโยบายและแผนทรัพยากรธรรมชาติและสิ่งแวดล้อม</li>
+     <li>คู่มือความปลอดภัยในการใช้สารเคมีและเครื่องมือ สถาบันส่งเสริมความปลอดภัย อาชีวอนามัย และสภาพแวดล้อมในการทำงาน</li>
+    </ul>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+    <p>เวอร์ชันบทเรียน 1.0 | พัฒนาเพื่อการศึกษา</p>
+   </div>
+  </footer>
+  <script>
+        // Element SDK Configuration
+        const defaultConfig = {
+            lesson_title: "การตกแต่งเสื้อผ้า",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_description: "เรียนรู้เทคนิคการตกแต่งเสื้อผ้าเพื่อความงาม เอกลักษณ์ และการใช้งาน สร้างสรรค์ผลงานที่สะท้อนบุคลิกภาพและความคิดสร้างสรรค์"
+        };
+
+        async function render(config) {
+            document.getElementById('lessonTitle').textContent = config.lesson_title || defaultConfig.lesson_title;
+            document.getElementById('schoolName').textContent = config.school_name || defaultConfig.school_name;
+            document.getElementById('teacherName').textContent = config.teacher_name || defaultConfig.teacher_name;
+            document.getElementById('lessonDescription').textContent = config.lesson_description || defaultConfig.lesson_description;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_description", config.lesson_description || defaultConfig.lesson_description]
+            ]);
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                locale: 'th-TH'
+            };
+            document.getElementById('updateDate').textContent = today.toLocaleDateString('th-TH', options);
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close any open modals or overlays
+                document.querySelectorAll('.modal, .overlay').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+        });
+
+        // Print functionality
+        function printPage() {
+            window.print();
+        }
+
+        // Add print button if needed
+        if (window.location.search.includes('print=true')) {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '🖨️ พิมพ์บทเรียน';
+            printBtn.className = 'btn btn-secondary';
+            printBtn.onclick = printPage;
+            printBtn.style.position = 'fixed';
+            printBtn.style.top = '20px';
+            printBtn.style.right = '20px';
+            printBtn.style.zIndex = '1000';
+            document.body.appendChild(printBtn);
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'991f041b01b1561c',t:'MTc2MTAzMTQ3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

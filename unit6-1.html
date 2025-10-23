@@ -1,0 +1,1590 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การขยายพันธุ์พืช - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --info: #17A2B8;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+            --green: #4CAF50;
+            --green-light: #81C784;
+            --brown: #8D6E63;
+            --brown-light: #BCAAA4;
+            --orange: #FF9800;
+            --purple: #9C27B0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E8F5E8 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E8F5E8 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--green);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Basic Knowledge Cards */
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .knowledge-card {
+            background: var(--white);
+            border: 2px solid var(--green-light);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .knowledge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green) 0%, var(--accent) 100%);
+        }
+
+        .knowledge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--green);
+        }
+
+        .knowledge-header {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E8F5E8 100%);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .knowledge-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .knowledge-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .knowledge-content {
+            padding: 1.5rem;
+        }
+
+        .knowledge-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .knowledge-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .knowledge-list li:last-child {
+            border-bottom: none;
+        }
+
+        .knowledge-list li::before {
+            content: '🌱';
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+        }
+
+        /* Methods Grid */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .method-card {
+            background: var(--white);
+            border-left: 4px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .method-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .method-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-icon {
+            font-size: 2.5rem;
+        }
+
+        .method-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .method-steps {
+            background: #E8F5E8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-steps h4 {
+            color: var(--green);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .method-steps ol {
+            padding-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .method-steps li {
+            margin-bottom: 0.5rem;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .pros, .cons {
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .pros {
+            background: linear-gradient(135deg, #E8F5E8 0%, #F1F8E9 100%);
+            border-left: 3px solid var(--success);
+        }
+
+        .cons {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 3px solid var(--danger);
+        }
+
+        .pros h5, .cons h5 {
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pros h5 {
+            color: var(--success);
+        }
+
+        .cons h5 {
+            color: var(--danger);
+        }
+
+        .pros ul, .cons ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pros li::before {
+            content: '✓ ';
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .cons li::before {
+            content: '⚠ ';
+            color: var(--danger);
+            font-weight: bold;
+        }
+
+        /* Summary Table */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .summary-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            padding: 1rem 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .summary-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #E0E0E0;
+            text-align: center;
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+
+        .summary-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        .method-name {
+            font-weight: 600;
+            color: var(--primary);
+            text-align: left !important;
+        }
+
+        .success-rate-high {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .success-rate-medium {
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+
+        .success-rate-low {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        /* Problems Grid */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .problem-card {
+            background: var(--white);
+            border-top: 4px solid var(--warning);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .problem-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-icon {
+            font-size: 2rem;
+        }
+
+        .problem-title {
+            font-weight: 600;
+            color: var(--warning);
+            font-size: 1.1rem;
+        }
+
+        .problem-description {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution {
+            background: #E8F5E8;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--success);
+        }
+
+        .solution h5 {
+            color: var(--success);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Safety Grid */
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .safety-card {
+            background: var(--white);
+            border-top: 4px solid var(--danger);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .safety-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .safety-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .safety-icon {
+            font-size: 2rem;
+        }
+
+        .safety-title {
+            font-weight: 600;
+            color: var(--danger);
+            font-size: 1.1rem;
+        }
+
+        .safety-description {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--green) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Tip and Warning Boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .tip-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--danger);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-title {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .warning-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .knowledge-grid,
+            .methods-grid,
+            .problems-grid,
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-table {
+                font-size: 0.8rem;
+            }
+
+            .summary-table th,
+            .summary-table td {
+                padding: 0.5rem 0.25rem;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            .tip-box,
+            .warning-box {
+                padding: 1rem;
+            }
+
+            .tip-title,
+            .warning-title,
+            .tip-content,
+            .warning-content {
+                margin-left: 2rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🌱</span>
+    <h1 id="lessonTitle">การขยายพันธุ์พืช</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">เพิ่มจำนวน รักษาลักษณะพันธุ์ ปรับปรุงคุณภาพ เพื่อการเกษตรที่ยั่งยืนและมีประสิทธิภาพ</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจหลักการและวิธีการขยายพันธุ์พืชแบบต่าง ๆ รวมทั้งปัจจัยที่มีผลต่อความสำเร็จ</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถเลือกใช้วิธีการขยายพันธุ์ที่เหมาะสมกับพืชแต่ละชนิดและแก้ไขปัญหาที่เกิดขึ้น</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>มีความรอบคอบในการปฏิบัติงาน ใส่ใจความปลอดภัย และรักษาสิ่งแวดล้อม</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Basic Knowledge -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📚</span>
+     <h2 class="section-title">ความรู้พื้นฐาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="knowledge-grid"><!-- Types of Propagation -->
+      <div class="knowledge-card">
+       <div class="knowledge-header"><span class="knowledge-icon" aria-hidden="true">🔄</span>
+        <div class="knowledge-title">
+         ประเภทการขยายพันธุ์
+        </div>
+       </div>
+       <div class="knowledge-content">
+        <ul class="knowledge-list">
+         <li><strong>อาศัยเพศ (Sexual):</strong> ใช้เมล็ด มีการผสมพันธุ์ ลูกอาจแตกต่างจากแม่</li>
+         <li><strong>ไม่อาศัยเพศ (Asexual/Vegetative):</strong> ใช้ส่วนต่าง ๆ ของพืช ลูกเหมือนแม่ 100%</li>
+         <li><strong>ข้อดีการไม่อาศัยเพศ:</strong> รักษาลักษณะพันธุ์ เร็วกว่า ควบคุมคุณภาพได้</li>
+         <li><strong>ข้อดีการอาศัยเพศ:</strong> ได้พันธุ์ใหม่ ต้านทานโรคดีขึ้น ต้นทุนต่ำ</li>
+        </ul>
+       </div>
+      </div><!-- Success Factors -->
+      <div class="knowledge-card">
+       <div class="knowledge-header"><span class="knowledge-icon" aria-hidden="true">⚙️</span>
+        <div class="knowledge-title">
+         ปัจจัยความสำเร็จ
+        </div>
+       </div>
+       <div class="knowledge-content">
+        <ul class="knowledge-list">
+         <li><strong>อายุเนื้อเยื่อ:</strong> เนื้อเยื่ออ่อน (6 เดือน - 2 ปี) ออกรากง่ายกว่า</li>
+         <li><strong>ความชื้น:</strong> 70-85% สำหรับปักชำ 60-70% สำหรับเมล็ด</li>
+         <li><strong>อุณหภูมิ:</strong> 25-30°C เหมาะสำหรับการงอกและออกราก</li>
+         <li><strong>แสง:</strong> แสงกรอง 50-70% หลีกเลี่ยงแสงแดดจัด</li>
+         <li><strong>สื่อปลูก:</strong> ทราย พีทมอส เพอร์ไลต์ กาบมะพร้าว</li>
+         <li><strong>pH/EC:</strong> pH 6.0-7.0, EC 0.5-1.5 mS/cm</li>
+         <li><strong>ฮอร์โมน:</strong> IAA, IBA, NAA ช่วยเร่งการออกราก</li>
+        </ul>
+       </div>
+      </div><!-- Safety & Hygiene -->
+      <div class="knowledge-card">
+       <div class="knowledge-header"><span class="knowledge-icon" aria-hidden="true">🧼</span>
+        <div class="knowledge-title">
+         สุขอนามัยและความปลอดภัย
+        </div>
+       </div>
+       <div class="knowledge-content">
+        <ul class="knowledge-list">
+         <li><strong>มีดคม:</strong> ใช้มีดคมสะอาด ตัดได้เรียบไม่บี้เนื้อเยื่อ</li>
+         <li><strong>ฆ่าเชื้อเครื่องมือ:</strong> แอลกอฮอล์ 70% หรือไฟ</li>
+         <li><strong>ถุงมือ:</strong> ป้องกันการปนเปื้อนและบาดเจ็บ</li>
+         <li><strong>พื้นที่สะอาด:</strong> ทำความสะอาดโต๊ะและอุปกรณ์</li>
+         <li><strong>กำจัดเศษพืช:</strong> เผาหรือฝังลึกป้องกันเชื้อโรค</li>
+         <li><strong>ล้างมือ:</strong> ก่อนและหลังปฏิบัติงาน</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Propagation Methods -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛠️</span>
+     <h2 class="section-title">วิธีการขยายพันธุ์หลัก</h2>
+    </div>
+    <div class="section-content">
+     <div class="methods-grid"><!-- Seed Propagation -->
+      <div class="method-card">
+       <div class="method-header"><span class="method-icon" aria-hidden="true">🌰</span>
+        <div class="method-title">
+         1. เพาะเมล็ด
+        </div>
+       </div>
+       <div class="method-steps">
+        <h4>ขั้นตอนการปฏิบัติ</h4>
+        <ol>
+         <li>คัดเลือกเมล็ดสุก สมบูรณ์ ไม่เสียหาย</li>
+         <li>ทำลายการพักตัว (scarification/stratification)</li>
+         <li>แช่น้ำ 12-24 ชั่วโมง (ตามชนิดพืช)</li>
+         <li>หว่านในสื่อปลูกที่ระบายน้ำดี</li>
+         <li>รักษาความชื้นและอุณหภูมิคงที่</li>
+         <li>ย้ายปลูกเมื่อมี 2-4 ใบจริง</li>
+        </ol>
+       </div>
+       <div class="pros-cons">
+        <div class="pros">
+         <h5>ข้อดี</h5>
+         <ul>
+          <li>ต้นทุนต่ำ</li>
+          <li>ได้จำนวนมาก</li>
+          <li>รากแก้วแข็งแรง</li>
+          <li>อายุยืนนาน</li>
+         </ul>
+        </div>
+        <div class="cons">
+         <h5>ข้อจำกัด</h5>
+         <ul>
+          <li>ลูกอาจแตกต่างจากแม่</li>
+          <li>ใช้เวลานาน</li>
+          <li>บางพืชเมล็ดงอกยาก</li>
+          <li>ต้องรอให้ออกดอกผล</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- Cutting -->
+      <div class="method-card">
+       <div class="method-header"><span class="method-icon" aria-hidden="true">✂️</span>
+        <div class="method-title">
+         2. ปักชำ (Cutting)
+        </div>
+       </div>
+       <div class="method-steps">
+        <h4>ขั้นตอนการปฏิบัติ</h4>
+        <ol>
+         <li>เลือกกิ่งอ่อนแข็งแรง ยาว 10-15 ซม.</li>
+         <li>ตัดเฉียงใต้ข้อ ลบใบล่างออก</li>
+         <li>จุ่มฮอร์โมนเร่งราก 3-5 วินาที</li>
+         <li>ปักในสื่อปลูกลึก 1/3 ของความยาว</li>
+         <li>ครอบพลาสติกใสรักษาความชื้น</li>
+         <li>ดูแลให้ความชื้น 80-90%</li>
+        </ol>
+       </div>
+       <div class="pros-cons">
+        <div class="pros">
+         <h5>ข้อดี</h5>
+         <ul>
+          <li>เร็วกว่าเพาะเมล็ด</li>
+          <li>ลูกเหมือนแม่ 100%</li>
+          <li>ทำได้ตลอดปี</li>
+          <li>วิธีง่าย</li>
+         </ul>
+        </div>
+        <div class="cons">
+         <h5>ข้อจำกัด</h5>
+         <ul>
+          <li>ต้องดูแลความชื้นอย่างใกล้ชิด</li>
+          <li>อัตราสำเร็จขึ้นกับพันธุ์</li>
+          <li>รากไม่แข็งแรงเท่าเมล็ด</li>
+          <li>เสี่ยงเน่าเปื่อย</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- Air Layering -->
+      <div class="method-card">
+       <div class="method-header"><span class="method-icon" aria-hidden="true">🎋</span>
+        <div class="method-title">
+         3. การตอนกิ่ง (Air Layering)
+        </div>
+       </div>
+       <div class="method-steps">
+        <h4>ขั้นตอนการปฏิบัติ</h4>
+        <ol>
+         <li>เลือกกิ่งแก่ขนาดเท่านิ้วโป้ง</li>
+         <li>ปาดเปลือกเป็นวงกว้าง 2-3 ซม.</li>
+         <li>ทาฮอร์โมนเร่งรากบริเวณที่ปาด</li>
+         <li>ห่อด้วยขุยมะพร้าวชื้น</li>
+         <li>พันพลาสติกใสมัดปลายทั้งสอง</li>
+         <li>ตรวจสอบราก 4-8 สัปดาห์</li>
+        </ol>
+       </div>
+       <div class="pros-cons">
+        <div class="pros">
+         <h5>ข้อดี</h5>
+         <ul>
+          <li>อัตราสำเร็จสูง</li>
+          <li>ได้ต้นใหญ่ทันที</li>
+          <li>ไม่ต้องดูแลมาก</li>
+          <li>เหมาะกับไม้ยืนต้น</li>
+         </ul>
+        </div>
+        <div class="cons">
+         <h5>ข้อจำกัด</h5>
+         <ul>
+          <li>ใช้เวลานาน</li>
+          <li>ได้จำนวนน้อย</li>
+          <li>ต้องมีต้นแม่ใหญ่</li>
+          <li>ไม่เหมาะกับไม้เนื้ออ่อน</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- Grafting -->
+      <div class="method-card">
+       <div class="method-header"><span class="method-icon" aria-hidden="true">🔗</span>
+        <div class="method-title">
+         4. การเสียบยอด/ติดตา
+        </div>
+       </div>
+       <div class="method-steps">
+        <h4>ขั้นตอนการปฏิบัติ</h4>
+        <ol>
+         <li>เตรียม rootstock และ scion ขนาดเท่ากัน</li>
+         <li>ตัดเฉียงทั้งสองส่วนให้พอดี</li>
+         <li>แนบชั้น cambium ให้ตรงกัน</li>
+         <li>พันเทปกราฟติ้งแน่น</li>
+         <li>ครอบถุงพลาสติกใส</li>
+         <li>ตรวจสอบการติด 2-4 สัปดาห์</li>
+        </ol>
+       </div>
+       <div class="pros-cons">
+        <div class="pros">
+         <h5>ข้อดี</h5>
+         <ul>
+          <li>รวมข้อดีของทั้งสองพันธุ์</li>
+          <li>ต้านทานโรคดีขึ้น</li>
+          <li>ปรับปรุงคุณภาพผล</li>
+          <li>ออกผลเร็วขึ้น</li>
+         </ul>
+        </div>
+        <div class="cons">
+         <h5>ข้อจำกัด</h5>
+         <ul>
+          <li>ต้องมีความชำนาญ</li>
+          <li>ใช้เวลาและแรงงาน</li>
+          <li>อัตราสำเร็จปานกลาง</li>
+          <li>ต้องเป็นพืชใกล้เคียงกัน</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- Division -->
+      <div class="method-card">
+       <div class="method-header"><span class="method-icon" aria-hidden="true">🌿</span>
+        <div class="method-title">
+         5. แบ่งกอ/แยกหน่อ
+        </div>
+       </div>
+       <div class="method-steps">
+        <h4>ขั้นตอนการปฏิบัติ</h4>
+        <ol>
+         <li>ขุดต้นแม่ออกจากดิน</li>
+         <li>ล้างดินออกให้เห็นรากชัดเจน</li>
+         <li>แยกกอที่มีรากและยอดครบ</li>
+         <li>ตัดรากเก่าและใบเก่าออก</li>
+         <li>ทาฆ่าเชื้อที่แผลตัด</li>
+         <li>ปลูกในกระถางแยกกัน</li>
+        </ol>
+       </div>
+       <div class="pros-cons">
+        <div class="pros">
+         <h5>ข้อดี</h5>
+         <ul>
+          <li>ง่ายที่สุด</li>
+          <li>อัตราสำเร็จสูงมาก</li>
+          <li>ได้ต้นใหญ่ทันที</li>
+          <li>ไม่ต้องใช้ฮอร์โมน</li>
+         </ul>
+        </div>
+        <div class="cons">
+         <h5>ข้อจำกัด</h5>
+         <ul>
+          <li>ทำได้เฉพาะไม้กอ</li>
+          <li>ได้จำนวนจำกัด</li>
+          <li>ต้องรอให้กอใหญ่</li>
+          <li>อาจทำลายต้นแม่</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- Tissue Culture -->
+      <div class="method-card">
+       <div class="method-header"><span class="method-icon" aria-hidden="true">🧪</span>
+        <div class="method-title">
+         6. เพาะเลี้ยงเนื้อเยื่อ
+        </div>
+       </div>
+       <div class="method-steps">
+        <h4>หลักการพื้นฐาน</h4>
+        <ol>
+         <li>ใช้เนื้อเยื่อพืชขนาดเล็กมาก</li>
+         <li>เลี้ยงในอาหารเทียมปลอดเชื้อ</li>
+         <li>ควบคุมสภาพแวดล้อมอย่างเข้มงวด</li>
+         <li>ใช้ฮอร์โมนพืชกระตุ้นการเจริญ</li>
+         <li>ขยายจำนวนได้มากในเวลาสั้น</li>
+         <li>ต้องมีห้องปฏิบัติการพิเศษ</li>
+        </ol>
+       </div>
+       <div class="pros-cons">
+        <div class="pros">
+         <h5>ข้อดี</h5>
+         <ul>
+          <li>ได้จำนวนมหาศาลเร็วมาก</li>
+          <li>ปลอดเชื้อโรค</li>
+          <li>ใช้พื้นที่น้อย</li>
+          <li>ทำได้ตลอดปี</li>
+         </ul>
+        </div>
+        <div class="cons">
+         <h5>ข้อจำกัด</h5>
+         <ul>
+          <li>ต้นทุนสูงมาก</li>
+          <li>ต้องมีความรู้เฉพาะ</li>
+          <li>ต้องมีอุปกรณ์พิเศษ</li>
+          <li>ไม่เหมาะกับเกษตรกรทั่วไป</li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Summary Table -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📊</span>
+     <h2 class="section-title">ตารางสรุปวิธีการขยายพันธุ์</h2>
+    </div>
+    <div class="section-content">
+     <table class="summary-table">
+      <thead>
+       <tr>
+        <th>วิธีการ</th>
+        <th>ตัวอย่างพืชที่เหมาะ</th>
+        <th>ระยะเวลาเห็นราก/ติด</th>
+        <th>อัตราสำเร็จ</th>
+        <th>หมายเหตุดูแล</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="method-name">เพาะเมล็ด</td>
+        <td>มะเขือเทศ พริก ถั่ว ข้าวโพด</td>
+        <td>3-14 วัน</td>
+        <td class="success-rate-high">สูง (80-95%)</td>
+        <td>รักษาความชื้นสม่ำเสมอ</td>
+       </tr>
+       <tr>
+        <td class="method-name">ปักชำกิ่ง</td>
+        <td>ชบา ไทร เฟื่องฟ้า บานชื่น</td>
+        <td>2-6 สัปดาห์</td>
+        <td class="success-rate-high">สูง (70-90%)</td>
+        <td>รักษาความชื้น หลีกเลี่ยงแสงจัด</td>
+       </tr>
+       <tr>
+        <td class="method-name">ปักชำใบ</td>
+        <td>เบโกเนีย ไวโอเล็ต แคคตัส</td>
+        <td>3-8 สัปดาห์</td>
+        <td class="success-rate-medium">ปานกลาง (50-70%)</td>
+        <td>ใช้ใบสมบูรณ์ ไม่รดน้ำมาก</td>
+       </tr>
+       <tr>
+        <td class="method-name">ตอนกิ่ง</td>
+        <td>มะนาว มะม่วง ลิ้นจี่ ลำไย</td>
+        <td>4-8 สัปดาห์</td>
+        <td class="success-rate-high">สูง (80-95%)</td>
+        <td>ตัดแยกหลังรากแก่ ระวังการหัก</td>
+       </tr>
+       <tr>
+        <td class="method-name">เสียบยอด</td>
+        <td>มะม่วง ส้ม กุหลาบ</td>
+        <td>2-4 สัปดาห์</td>
+        <td class="success-rate-medium">ปานกลาง (60-80%)</td>
+        <td>รักษาความชื้น ป้องกันแสงแดด</td>
+       </tr>
+       <tr>
+        <td class="method-name">ติดตา</td>
+        <td>กุหลาบ ส้ม มะม่วง</td>
+        <td>2-3 สัปดาห์</td>
+        <td class="success-rate-high">สูง (70-85%)</td>
+        <td>เลือกตาอ่อนสมบูรณ์</td>
+       </tr>
+       <tr>
+        <td class="method-name">แบ่งกอ</td>
+        <td>กล้วย ข่า ขิง หอม กระเทียม</td>
+        <td>1-2 สัปดาห์</td>
+        <td class="success-rate-high">สูงมาก (90-100%)</td>
+        <td>ตากแผลให้แห้งก่อนปลูก</td>
+       </tr>
+       <tr>
+        <td class="method-name">แยกหน่อ</td>
+        <td>ไผ่ อ้อย หญ้า ปาล์ม</td>
+        <td>1-3 สัปดาห์</td>
+        <td class="success-rate-high">สูง (80-95%)</td>
+        <td>เลือกหน่อแข็งแรงมีรากเล็ก ๆ</td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="tip-box">
+      <div class="tip-title">
+       การเลือกวิธีที่เหมาะสม
+      </div>
+      <div class="tip-content">
+       <p><strong>พืชผัก/ดอกไม้ 1 ปี:</strong> เพาะเมล็ด ปักชำ | <strong>ไม้ยืนต้น:</strong> ตอนกิ่ง เสียบยอด | <strong>ไม้กอ/หัว:</strong> แบ่งกอ แยกหน่อ | <strong>เชิงพาณิชย์:</strong> เพาะเลี้ยงเนื้อเยื่อ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Common Problems -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚠️</span>
+     <h2 class="section-title">ปัญหาพบบ่อยและแนวทางแก้ไข</h2>
+    </div>
+    <div class="section-content">
+     <div class="problems-grid">
+      <div class="problem-card">
+       <div class="problem-header"><span class="problem-icon" aria-hidden="true">🦠</span>
+        <div class="problem-title">
+         เน่าเปื่อย/เชื้อรา
+        </div>
+       </div>
+       <div class="problem-description">
+        ต้นกล้าหรือชำเน่าเปื่อย มีเชื้อราขาวหรือสีเทาปกคลุม กลิ่นเหม็น
+       </div>
+       <div class="solution">
+        <h5>แนวทางแก้ไข</h5>
+        <p>• ลดความชื้น เพิ่มการระบายอากาศ<br>
+          • ใช้สื่อปลูกระบายน้ำดี<br>
+          • ฉีดพ่นสารป้องกันกำจัดเชื้อราปลอดภัย<br>
+          • ย้ายออกจากแหล่งเชื้อ</p>
+       </div>
+      </div>
+      <div class="problem-card">
+       <div class="problem-header"><span class="problem-icon" aria-hidden="true">🚫</span>
+        <div class="problem-title">
+         ไม่ออกราก
+        </div>
+       </div>
+       <div class="problem-description">
+        ชำไม่ออกราก หรือออกรากช้า แม้ผ่านไปนานแล้ว
+       </div>
+       <div class="solution">
+        <h5>แนวทางแก้ไข</h5>
+        <p>• ใช้ฮอร์โมนเร่งรากเพิ่มขึ้น<br>
+          • ตรวจสอบอุณหภูมิ 25-30°C<br>
+          • เปลี่ยนสื่อปลูกใหม่<br>
+          • ตัดใหม่ในช่วงเวลาที่เหมาะสม</p>
+       </div>
+      </div>
+      <div class="problem-card">
+       <div class="problem-header"><span class="problem-icon" aria-hidden="true">🥀</span>
+        <div class="problem-title">
+         เหี่ยวแห้ง
+        </div>
+       </div>
+       <div class="problem-description">
+        ใบเหี่ยว แห้ง ร่วง แม้ให้น้ำแล้ว อาจเป็นเพราะแสงแดดจัดหรือลมแรง
+       </div>
+       <div class="solution">
+        <h5>แนวทางแก้ไข</h5>
+        <p>• ย้ายไปที่ร่ม แสงกรอง 50-70%<br>
+          • เพิ่มความชื้นในอากาศ<br>
+          • ลดใบเหลือ 1/3 ลดการคายน้ำ<br>
+          • ป้องกันลมแรง</p>
+       </div>
+      </div>
+      <div class="problem-card">
+       <div class="problem-header"><span class="problem-icon" aria-hidden="true">💧</span>
+        <div class="problem-title">
+         ความชื้นไม่เหมาะสม
+        </div>
+       </div>
+       <div class="problem-description">
+        ความชื้นสูงเกินไป ทำให้เกิดเชื้อรา หรือต่ำเกินไป ทำให้แห้ง
+       </div>
+       <div class="solution">
+        <h5>แนวทางแก้ไข</h5>
+        <p>• ใช้เครื่องวัดความชื้น<br>
+          • ปรับการรดน้ำตามสภาพอากาศ<br>
+          • ใช้วัสดุคลุมหน้าดิน<br>
+          • เปิด-ปิดฝาครอบตามเวลา</p>
+       </div>
+      </div>
+      <div class="problem-card">
+       <div class="problem-header"><span class="problem-icon" aria-hidden="true">🐛</span>
+        <div class="problem-title">
+         แมลงศัตรูพืช
+        </div>
+       </div>
+       <div class="problem-description">
+        เพลี้ย หนอน เจาะใส ทำลายต้นกล้าอ่อน ๆ
+       </div>
+       <div class="solution">
+        <h5>แนวทางแก้ไข</h5>
+        <p>• ใช้มุ้งป้องกันแมลง<br>
+          • ฉีดพ่นสารกำจัดแมลงปลอดภัย<br>
+          • ทำความสะอาดพื้นที่เพาะปลูก<br>
+          • ใช้กับดักแมลง</p>
+       </div>
+      </div>
+      <div class="problem-card">
+       <div class="problem-header"><span class="problem-icon" aria-hidden="true">⚖️</span>
+        <div class="problem-title">
+         pH ไม่เหมาะสม
+        </div>
+       </div>
+       <div class="problem-description">
+        ดินหรือสื่อปลูกเป็นกรดหรือด่างเกินไป ทำให้ดูดธาตุอาหารไม่ได้
+       </div>
+       <div class="solution">
+        <h5>แนวทางแก้ไข</h5>
+        <p>• วัด pH ด้วยเครื่องวัด<br>
+          • ปรับ pH ด้วยปูนขาวหรือกำมะถัน<br>
+          • เปลี่ยนสื่อปลูกใหม่<br>
+          • ใช้น้ำที่มี pH เหมาะสม</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Safety & Environment -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛡️</span>
+     <h2 class="section-title">ความปลอดภัยและสิ่งแวดล้อม</h2>
+    </div>
+    <div class="section-content">
+     <div class="safety-grid">
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">🧪</span>
+        <div class="safety-title">
+         การใช้สารเคมี
+        </div>
+       </div>
+       <div class="safety-description"><strong>อ่านฉลาก:</strong> ศึกษาวิธีใช้ ความเข้มข้น ข้อควรระวัง<br><strong>อุปกรณ์ป้องกัน:</strong> ถุงมือ แว่นตา หน้ากาก<br><strong>เก็บรักษา:</strong> ในที่แห้ง เย็น ห่างจากเด็ก<br><strong>กำจัด:</strong> ตามวิธีที่กำหนดในฉลาก
+       </div>
+      </div>
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">♻️</span>
+        <div class="safety-title">
+         ลดพลาสติกใช้ครั้งเดียว
+        </div>
+       </div>
+       <div class="safety-description"><strong>ใช้ซ้ำ:</strong> กระถาง ถาด ขวดพ่นที่ยังดี<br><strong>ทดแทน:</strong> ใช้กระถางดิน กาบมะพร้าว<br><strong>รีไซเคิล:</strong> แยกขยะพลาสติกอย่างถูกต้อง<br><strong>ซื้อน้อย:</strong> เลือกบรรจุภัณฑ์ขนาดใหญ่
+       </div>
+      </div>
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">🌱</span>
+        <div class="safety-title">
+         วัสดุปลูกหมุนเวียน
+        </div>
+       </div>
+       <div class="safety-description"><strong>ทราย:</strong> ล้างใช้ซ้ำได้หลายครั้ง<br><strong>กาบมะพร้าว:</strong> ย่อยสลายได้ ทำปุ๋ยหมัก<br><strong>เพอร์ไลต์:</strong> ใช้ได้นาน ล้างทำความสะอาด<br><strong>พีทมอส:</strong> ผสมดินหลังใช้งาน
+       </div>
+      </div>
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">💧</span>
+        <div class="safety-title">
+         การใช้น้ำอย่างรู้คุณค่า
+        </div>
+       </div>
+       <div class="safety-description"><strong>รดตามความต้องการ:</strong> ไม่ให้มากเกินไป<br><strong>รวบรวมน้ำฝน:</strong> เก็บไว้ใช้ในฤดูแล้ง<br><strong>ระบบหยด:</strong> ประหยัดน้ำและแรงงาน<br><strong>น้ำใช้แล้ว:</strong> กรองใช้รดพืชได้
+       </div>
+      </div>
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">🔥</span>
+        <div class="safety-title">
+         การกำจัดเศษพืช
+        </div>
+       </div>
+       <div class="safety-description"><strong>เศษพืชป่วย:</strong> เผาหรือฝังลึกห่างจากแปลง<br><strong>เศษพืชปกติ:</strong> ทำปุ๋ยหมัก คืนสู่ดิน<br><strong>ไม่ทิ้งลำธาร:</strong> ป้องกันการแพร่เชื้อ<br><strong>แยกประเภท:</strong> ป่วย-ปกติ เพื่อการจัดการ
+       </div>
+      </div>
+      <div class="safety-card">
+       <div class="safety-header"><span class="safety-icon" aria-hidden="true">🌍</span>
+        <div class="safety-title">
+         การอนุรักษ์พันธุ์พืช
+        </div>
+       </div>
+       <div class="safety-description"><strong>พันธุ์พื้นเมือง:</strong> รักษาและขยายพันธุ์ต่อ<br><strong>แลกเปลี่ยน:</strong> เมล็ด กิ่งพันธุ์กับเกษตรกร<br><strong>บันทึกข้อมูล:</strong> ลักษณะ แหล่งที่มา<br><strong>ไม่ปล่อยพันธุ์แปลก:</strong> ป้องกันการรุกราน
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อควรระวังสำคัญ
+      </div>
+      <div class="warning-content">
+       <p><strong>สารเคมี:</strong> อ่านฉลากทุกครั้ง ใช้อุปกรณ์ป้องกัน | <strong>เครื่องมือคม:</strong> เก็บให้ปลอดภัย ฆ่าเชื้อก่อนใช้ | <strong>ไฟฟ้า:</strong> ระวังน้ำกับอุปกรณ์ไฟฟ้า | <strong>การยก:</strong> ใช้ขาและหลังอย่างถูกต้อง</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>การขยายพันธุ์พืชมีหลายวิธี เลือกใช้ให้เหมาะสมกับชนิดพืชและวัตถุประสงค์</li>
+     <li>ปัจจัยสำคัญคือ ความชื้น อุณหภูมิ แสง และสื่อปลูกที่เหมาะสม</li>
+     <li>การไม่อาศัยเพศให้ลูกเหมือนแม่ 100% เหมาะสำหรับรักษาพันธุ์ดี</li>
+     <li>ฮอร์โมนเร่งรากช่วยเพิ่มอัตราสำเร็จในการปักชำและตอนกิ่ง</li>
+     <li>สุขอนามัยและการฆ่าเชื้อเครื่องมือป้องกันการติดเชื้อโรค</li>
+     <li>การแก้ไขปัญหาต้องวินิจฉัยสาเหตุให้ถูกต้องก่อน</li>
+     <li>ความปลอดภัยและการรักษาสิ่งแวดล้อมเป็นส่วนสำคัญของการปฏิบัติงาน</li>
+     <li>การอนุรักษ์พันธุ์พื้นเมืองช่วยรักษาความหลากหลายทางชีวภาพ</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Callus (เนื้อเยื่อหาย)
+      </div>
+      <div class="glossary-definition">
+       เนื้อเยื่อที่เกิดขึ้นใหม่ที่แผลตัด เป็นจุดเริ่มต้นของการออกราก
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Auxin (ออกซิน)
+      </div>
+      <div class="glossary-definition">
+       ฮอร์โมนพืชที่กระตุ้นการออกรากและการเจริญเติบโต
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Cambium (แคมเบียม)
+      </div>
+      <div class="glossary-definition">
+       ชั้นเนื้อเยื่อที่สร้างเนื้อไม้และเปลือกใน สำคัญในการติดตอ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Scion (ยอดตอน)
+      </div>
+      <div class="glossary-definition">
+       ส่วนบนที่ต้องการลักษณะพิเศษ ใช้ในการเสียบยอด
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Rootstock (ต้นตอ)
+      </div>
+      <div class="glossary-definition">
+       ส่วนรากที่มีความแข็งแรงหรือต้านทานโรค ใช้รองรับยอดตอน
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Stratification (การพักตัวเย็น)
+      </div>
+      <div class="glossary-definition">
+       การทำลายการพักตัวของเมล็ดด้วยความเย็นและความชื้น
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Scarification (การขูดเปลือก)
+      </div>
+      <div class="glossary-definition">
+       การทำลายเปลือกเมล็ดแข็งเพื่อให้น้ำซึมเข้าได้
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Vegetative Propagation
+      </div>
+      <div class="glossary-definition">
+       การขยายพันธุ์โดยไม่ใช้เมล็ด ใช้ส่วนต่าง ๆ ของพืช
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "การขยายพันธุ์พืช",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_description: "เพิ่มจำนวน รักษาลักษณะพันธุ์ ปรับปรุงคุณภาพ เพื่อการเกษตรที่ยั่งยืนและมีประสิทธิภาพ"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson description
+            const descElement = document.getElementById('lessonDescription');
+            if (descElement) {
+                descElement.textContent = config.lesson_description || defaultConfig.lesson_description;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_description", config.lesson_description || defaultConfig.lesson_description]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'992115bda1d25f6a',t:'MTc2MTA1MzE2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

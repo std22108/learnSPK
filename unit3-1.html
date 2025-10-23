@@ -1,0 +1,1988 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>อาหารประเภทสำรับ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Component Grid */
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .component-card {
+            background: var(--white);
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .component-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .component-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .component-details {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Nutrition Table */
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .nutrition-table th {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--text-dark);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .nutrition-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .nutrition-table tr:hover {
+            background: #FFF8E1;
+        }
+
+        .food-group-icon {
+            font-size: 1.5rem;
+            text-align: center;
+            width: 60px;
+        }
+
+        /* Regional Cards */
+        .regional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .regional-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .regional-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .regional-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .regional-icon {
+            font-size: 2.5rem;
+        }
+
+        .regional-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .regional-features {
+            background: #E8F5E8;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .regional-menu {
+            background: #FFF3E0;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        /* Menu Planning */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .menu-card {
+            background: var(--white);
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .menu-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .menu-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(5px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .step-description {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Sample Menu Table */
+        .sample-menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .sample-menu-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .sample-menu-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .sample-menu-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        /* Tip Boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .tip-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--danger);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-title {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .warning-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .checklist-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            color: var(--success);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+        }
+
+        .checklist-text {
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives {
+                grid-template-columns: 1fr;
+            }
+
+            .regional-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nutrition-table,
+            .sample-menu-table {
+                font-size: 0.9rem;
+            }
+
+            .nutrition-table th,
+            .nutrition-table td,
+            .sample-menu-table th,
+            .sample-menu-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .tip-box,
+            .warning-box {
+                padding: 1rem;
+            }
+
+            .tip-title,
+            .warning-title,
+            .tip-content,
+            .warning-content {
+                margin-left: 2rem;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🍽️</span>
+    <h1 id="lessonTitle">อาหารประเภทสำรับ</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">เรียนรู้หลักการจัดสำรับไทยที่สมดุลทั้งรสชาติ โภชนาการ และวัฒนธรรม สู่การสร้างมื้ออาหารที่สมบูรณ์แบบ</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจองค์ประกอบของสำรับไทย หลักการจัดสำรับ และความสำคัญทางโภชนาการและวัฒนธรรม</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถวางแผนเมนู จัดสำรับที่สมดุล คำนวณสัดส่วน และจัดการอาหารอย่างปลอดภัย</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>เห็นคุณค่าของอาหารไทย มีจิตสำนึกด้านสุขอนามัย และความรับผิดชอบต่อสิ่งแวดล้อม</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Components of Thai Set Menu -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🥘</span>
+     <h2 class="section-title">ความหมายและองค์ประกอบของสำรับ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p><strong>"สำรับ"</strong> หมายถึง ชุดอาหารที่จัดเสิร์ฟพร้อมกันในมื้อเดียว ประกอบด้วยอาหารหลายชนิดที่เสริมกันและกันทั้งรสชาติ เนื้อสัมผัส และคุณค่าทางโภชนาการ</p>
+     </div>
+     <div class="component-grid">
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🍚</span>
+       <div class="component-name">
+        ข้าว
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> อาหารหลัก แหล่งคาร์โบไหเดรต<br><strong>ชนิด:</strong> ข้าวสวย ข้าวเหนียว ข้าวกล้อง<br><strong>ปริมาณ:</strong> 1-1.5 ทัพพี ต่อคน ต่อมื้อ<br><strong>ความสำคัญ:</strong> ฐานของมื้ออาหารไทย
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🍖</span>
+       <div class="component-name">
+        กับข้าวหลัก
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> แหล่งโปรตีนหลัก<br><strong>ชนิด:</strong> เนื้อ หมู ไก่ ปลา กุ้ง<br><strong>วิธีปรุง:</strong> ผัด ทอด ต้ม นึ่ง ย่าง<br><strong>ปริมาณ:</strong> 80-100 กรัม ต่อคน
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🍲</span>
+       <div class="component-name">
+        แกง
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> เพิ่มความชุ่มชื้น รสจัดจ้าน<br><strong>ชนิด:</strong> แกงเผ็ด แกงเขียวหวาน แกงส้ม<br><strong>ลักษณะ:</strong> มีน้ำแกง ผักสด เครื่องแกง<br><strong>ปริมาณ:</strong> 1 ทัพพี ต่อคน
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🥬</span>
+       <div class="component-name">
+        ผัด
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> ผักใบเขียว วิตามินและเกลือแร่<br><strong>ชนิด:</strong> ผัดผักบุ้ง ผัดคะน้า ผัดกะเพรา<br><strong>ลักษณะ:</strong> ผักสด กรอบ สีเขียวสด<br><strong>ปริมาณ:</strong> 80-100 กรัม ต่อคน
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🍤</span>
+       <div class="component-name">
+        ทอด
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> เนื้อสัมผัสกรอบ รสชาติเข้มข้น<br><strong>ชนิด:</strong> ปลาทอด ไก่ทอด กุ้งทอด<br><strong>ลักษณะ:</strong> ผิวกรอบ เนื้อในนุ่ม<br><strong>ปริมาณ:</strong> 60-80 กรัม ต่อคน
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🌶️</span>
+       <div class="component-name">
+        น้ำพริก
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> เครื่องจิ้ม รสจัด กระตุ้นรสชาติ<br><strong>ชนิด:</strong> น้ำพริกกะปิ น้ำพริกปลาร้า<br><strong>ลักษณะ:</strong> เผ็ด เค็ม เปรี้ยว<br><strong>ปริมาณ:</strong> 1-2 ช้อนโต๊ะ ต่อคน
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🥒</span>
+       <div class="component-name">
+        ผักแนม
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> ผักสด ใยอาหาร วิตามิน<br><strong>ชนิด:</strong> แตงกวา มะเขือ ถั่วฝักยาว<br><strong>ลักษณะ:</strong> สด กรอบ เย็น<br><strong>ปริมาณ:</strong> 50-80 กรัม ต่อคน
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🍯</span>
+       <div class="component-name">
+        เครื่องจิ้ม
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> เสริมรสชาติ เพิ่มความหลากหลาย<br><strong>ชนิด:</strong> น้ำจิ้มไก่ น้ำจิ้มซีฟู้ด<br><strong>ลักษณะ:</strong> หวาน เปรี้ยว เผ็ด<br><strong>ปริมาณ:</strong> ตามต้องการ
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🍮</span>
+       <div class="component-name">
+        ของหวาน
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> ปิดท้าย ลดความเผ็ด<br><strong>ชนิด:</strong> ขนมไทย ผลไม้ ไอศกรีม<br><strong>ลักษณะ:</strong> หวาน เย็น สดชื่น<br><strong>ปริมาณ:</strong> 1 ชิ้นเล็ก ต่อคน
+       </div>
+      </div>
+      <div class="component-card"><span class="component-icon" aria-hidden="true">🍊</span>
+       <div class="component-name">
+        ผลไม้
+       </div>
+       <div class="component-details"><strong>บทบาท:</strong> วิตามินซี ช่วยย่อย<br><strong>ชนิด:</strong> ส้ม สับปะรด มะม่วง<br><strong>ลักษณะ:</strong> สด หวาน เปรี้ยว<br><strong>ปริมาณ:</strong> 80-100 กรัม ต่อคน
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       หลักการจัดสำรับแบบไทย
+      </div>
+      <div class="tip-content">
+       <p>สำรับไทยเน้นความสมดุลของรสชาติ (เผ็ด เค็ม เปรี้ยว หวาน) เนื้อสัมผัส (นุ่ม กรอบ เหนียว) และสีสัน (เขียว แดง เหลือง ขาว) เพื่อให้ได้มื้ออาหารที่สมบูรณ์</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Flavor Balance Principles -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚖️</span>
+     <h2 class="section-title">หลักการจัดสำรับ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การจัดสำรับที่ดีต้องคำนึงถึงความกลมกล่อมในทุกด้าน เพื่อสร้างประสบการณ์การรับประทานที่สมบูรณ์แบบ</p>
+     </div>
+     <div class="regional-grid">
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">👅</span>
+        <div class="regional-title">
+         ความกลมกล่อมรส
+        </div>
+       </div>
+       <div class="regional-features"><strong>รสชาติ 6 รส:</strong><br>
+         • เผ็ด - กระตุ้นการรับประทาน<br>
+         • เค็ม - รสชาติพื้นฐาน<br>
+         • เปรี้ยว - ช่วยย่อย สดชื่น<br>
+         • หวาน - สมดุลความเผ็ด<br>
+         • ขม - ช่วยย่อย ลดความมัน<br>
+         • อูมามิ - ความเข้มข้น กลมกล่อม
+       </div>
+       <div class="regional-menu"><strong>การจัดสมดุล:</strong> ไม่ควรมีรสเดียวเด่นเกินไป ต้องมีรสหวานและเปรี้ยวสมดุลกับความเผ็ดเค็ม
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🤏</span>
+        <div class="regional-title">
+         เนื้อสัมผัส
+        </div>
+       </div>
+       <div class="regional-features"><strong>ความหลากหลาย:</strong><br>
+         • นุ่ม - แกง ต้ม<br>
+         • กรอบ - ทอด ย่าง<br>
+         • เหนียว - ข้าวเหนียว<br>
+         • เนียน - น้ำพริก แจ่ว<br>
+         • สด - ผักแนม ผลไม้
+       </div>
+       <div class="regional-menu"><strong>หลักการ:</strong> ในหนึ่งสำรับควรมีเนื้อสัมผัสที่แตกต่างกัน เพื่อความน่าสนใจและไม่น่าเบื่อ
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🎨</span>
+        <div class="regional-title">
+         สีสันและการตกแต่ง
+        </div>
+       </div>
+       <div class="regional-features"><strong>สีธรรมชาติ:</strong><br>
+         • เขียว - ผักใบ สมุนไพร<br>
+         • แดง - พริก มะเขือเทศ<br>
+         • เหลือง - ไข่ ข้าวโพด<br>
+         • ขาว - ข้าว เนื้อสัตว์<br>
+         • ส้ม - แครอท กุ้ง
+       </div>
+       <div class="regional-menu"><strong>การจัดวาง:</strong> จัดให้มีสีสันสดใส ดึงดูดสายตา และสะท้อนความสดใหม่ของวัตถุดิบ
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🔥</span>
+        <div class="regional-title">
+         วิธีปรุงที่หลากหลาย
+        </div>
+       </div>
+       <div class="regional-features"><strong>เทคนิคการปรุง:</strong><br>
+         • ต้ม - รักษาสารอาหาร<br>
+         • ผัด - รสชาติเข้มข้น<br>
+         • ทอด - เนื้อสัมผัสกรอบ<br>
+         • ย่าง - หอมควัน<br>
+         • นึ่ง - อ่อนโยน สุขภาพดี
+       </div>
+       <div class="regional-menu"><strong>ความสำคัญ:</strong> การใช้วิธีปรุงที่แตกต่างกันช่วยให้ได้รสชาติและเนื้อสัมผัสที่หลากหลาย
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อควรหลีกเลี่ยงในการจัดสำรับ
+      </div>
+      <div class="warning-content">
+       <p>ไม่ควรมีอาหารรสเดียวกันหลายอย่าง เช่น ทอดหลายชนิด หรือแกงหลายชนิด และควรหลีกเลี่ยงการใช้วัตถุดิบหลักเดียวกันในหลายเมนู</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Nutrition and Proportions -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🥗</span>
+     <h2 class="section-title">โภชนาการและสัดส่วน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การจัดสำรับที่ดีต้องให้ความสำคัญกับคุณค่าทางโภชนาการ โดยมีอาหารครบ 5 หมู่ในสัดส่วนที่เหมาะสม</p>
+     </div>
+     <table class="nutrition-table">
+      <thead>
+       <tr>
+        <th>หมวดอาหาร</th>
+        <th>ตัวอย่างเมนูในสำรับ</th>
+        <th>ปริมาณต่อมื้อ</th>
+        <th>คุณค่าทางโภชนาการ</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="food-group-icon" aria-label="หมู่ที่ 1">🍚</td>
+        <td><strong>หมู่ที่ 1: แป้งและน้ำตาล</strong><br>
+         ข้าวสวย ข้าวเหนียว ขนมจีน</td>
+        <td>1.5-2 ทัพพี<br>
+         (240-320 กรัม)</td>
+        <td>คาร์โบไหเดรต พลังงาน<br>
+         วิตามินบี1 ใยอาหาร</td>
+       </tr>
+       <tr>
+        <td class="food-group-icon" aria-label="หมู่ที่ 2">🥬</td>
+        <td><strong>หมู่ที่ 2: ผักและผลไม้</strong><br>
+         ผัดผักบุ้ง ผักแนม ส้มตำ</td>
+        <td>150-200 กรัม<br>
+         (3-4 ทัพพี)</td>
+        <td>วิตามิน A, C, K<br>
+         เกลือแร่ ใยอาหาร</td>
+       </tr>
+       <tr>
+        <td class="food-group-icon" aria-label="หมู่ที่ 3">🍖</td>
+        <td><strong>หมู่ที่ 3: เนื้อสัตว์</strong><br>
+         แกงเผ็ดหมู ปลาทอด ไก่ย่าง</td>
+        <td>80-120 กรัม<br>
+         (2-3 ชิ้นปานกลาง)</td>
+        <td>โปรตีน เหล็ก สังกะสี<br>
+         วิตามินบี12</td>
+       </tr>
+       <tr>
+        <td class="food-group-icon" aria-label="หมู่ที่ 4">🥛</td>
+        <td><strong>หมู่ที่ 4: นมและผลิตภัณฑ์</strong><br>
+         ไข่เจียว ไข่ต้ม (ทดแทนนม)</td>
+        <td>1-2 ฟอง<br>
+         (50-100 กรัม)</td>
+        <td>แคลเซียม โปรตีน<br>
+         วิตามินดี</td>
+       </tr>
+       <tr>
+        <td class="food-group-icon" aria-label="หมู่ที่ 5">🫒</td>
+        <td><strong>หมู่ที่ 5: ไขมัน</strong><br>
+         น้ำมันปรุงอาหาร กะทิ</td>
+        <td>2-3 ช้อนโต๊ะ<br>
+         (20-30 มล.)</td>
+        <td>พลังงาน กรดไขมันจำเป็น<br>
+         วิตามินละลายไขมัน</td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">📊</span> หลักการคำนวณสัดส่วนอาหาร
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ข้าว 50%:</strong> เป็นฐานของมื้ออาหาร ให้พลังงานหลัก
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เนื้อสัตว์ 25%:</strong> โปรตีนหลัก สำหรับการเจริญเติบโต
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ผัก 20%:</strong> วิตามิน เกลือแร่ ใยอาหาร
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ไขมัน 5%:</strong> ให้พลังงาน ช่วยดูดซึมวิตามิน
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การปรับสัดส่วนตามวัย
+      </div>
+      <div class="tip-content">
+       <p>เด็กและวัยรุ่นต้องการโปรตีนมากกว่าผู้ใหญ่ ผู้สูงอายุควรเพิ่มผักและลดไขมัน ผู้ป่วยเบาหวานควรควบคุมแป้งและน้ำตาล</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Regional Varieties -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🗺️</span>
+     <h2 class="section-title">ความหลากหลายภูมิภาค</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>สำรับไทยแต่ละภูมิภาคมีเอกลักษณ์เฉพาะตัว สะท้อนวัฒนธรรม ภูมิอากาศ และวัตถุดิบท้องถิ่น</p>
+     </div>
+     <div class="regional-grid">
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🏛️</span>
+        <div class="regional-title">
+         ภาคกลาง
+        </div>
+       </div>
+       <div class="regional-features"><strong>ลักษณะเด่น:</strong><br>
+         • รสชาติกลมกล่อม หวานนำ<br>
+         • ใช้กะทิ น้ำตาลปี๊บ<br>
+         • เครื่องแกงละเอียด<br>
+         • การตกแต่งสวยงาม
+       </div>
+       <div class="regional-menu"><strong>ตัวอย่างสำรับ:</strong><br>
+         ข้าวสวย + แกงเผ็ดหมู + ผัดผักบุ้ง + ปลาทอด + น้ำพริกกะปิ + ผักแนม + ทับทิมกรอบ
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🏔️</span>
+        <div class="regional-title">
+         ภาคเหนือ
+        </div>
+       </div>
+       <div class="regional-features"><strong>ลักษณะเด่น:</strong><br>
+         • รสชาติเข้มข้น เค็มนำ<br>
+         • ใช้ข้าวเหนียวเป็นหลัก<br>
+         • ผักป่า สมุนไพรท้องถิน<br>
+         • น้ำพริกหลากหลาย
+       </div>
+       <div class="regional-menu"><strong>ตัวอย่างสำรับ:</strong><br>
+         ข้าวเหนียว + แกงฮังเล + ผัดผักกูด + ไส้อั่ว + น้ำพริกอ่อง + ผักต้ม + ขนมจีน
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🌾</span>
+        <div class="regional-title">
+         ภาคอีสาน
+        </div>
+       </div>
+       <div class="regional-features"><strong>ลักษณะเด่น:</strong><br>
+         • รสเผ็ด เปรี้ยว เค็มจัด<br>
+         • ใช้ปลาร้า กะปิ<br>
+         • ผักสดมากมาย<br>
+         • อาหารหมักดอง
+       </div>
+       <div class="regional-menu"><strong>ตัวอย่างสำรับ:</strong><br>
+         ข้าวเหนียว + ส้มตำ + ลาบหมู + แกงโซ่ + ปลาเผา + น้ำพริกปลาร้า + ผักสด
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🏖️</span>
+        <div class="regional-title">
+         ภาคใต้
+        </div>
+       </div>
+       <div class="regional-features"><strong>ลักษณะเด่น:</strong><br>
+         • รสเผ็ดจัด เปรี้ยวแซ่บ<br>
+         • อาหารทะเล มะพร้าว<br>
+         • เครื่องแกงเผ็ดร้อน<br>
+         • ใช้ใบแกงสด
+       </div>
+       <div class="regional-menu"><strong>ตัวอย่างสำรับ:</strong><br>
+         ข้าวสวย + แกงส้มปลา + ผัดสะตอ + กุ้งทอด + น้ำพริกกุ้งเสียบ + ผักแนม + ขนมชั้น
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การปรับสำรับตามภูมิภาค
+      </div>
+      <div class="tip-content">
+       <p>เมื่อจัดสำรับ ควรคำนึงถึงความชอบของผู้รับประทาน ภาคเหนือ-อีสานชอบรสจัด ภาคกลาง-ใต้ชอบรสหวาน และควรใช้วัตถุดิบท้องถิ่น</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Menu Planning -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📋</span>
+     <h2 class="section-title">การวางแผนเมนู</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การวางแผนเมนูที่ดีต้องคำนึงถึงหลายปัจจัย เพื่อให้ได้สำรับที่เหมาะสมกับโอกาสและผู้รับประทาน</p>
+     </div>
+     <div class="menu-grid">
+      <div class="menu-card"><span class="menu-icon" aria-hidden="true">🌅</span>
+       <div class="menu-name">
+        มื้อเช้า
+       </div>
+       <div class="menu-description"><strong>ลักษณะ:</strong> เบา ย่อยง่าย<br><strong>ตัวอย่าง:</strong> โจ๊ก ข้าวต้ม<br><strong>เวลา:</strong> 06:00-09:00 น.
+       </div>
+      </div>
+      <div class="menu-card"><span class="menu-icon" aria-hidden="true">☀️</span>
+       <div class="menu-name">
+        มื้อกลางวัน
+       </div>
+       <div class="menu-description"><strong>ลักษณะ:</strong> อิ่ม ครบถ้วน<br><strong>ตัวอย่าง:</strong> สำรับข้าวแกง<br><strong>เวลา:</strong> 11:00-14:00 น.
+       </div>
+      </div>
+      <div class="menu-card"><span class="menu-icon" aria-hidden="true">🌆</span>
+       <div class="menu-name">
+        มื้อเย็น
+       </div>
+       <div class="menu-description"><strong>ลักษณะ:</strong> หลากหลาย สมดุล<br><strong>ตัวอย่าง:</strong> สำรับครบครัน<br><strong>เวลา:</strong> 17:00-20:00 น.
+       </div>
+      </div>
+      <div class="menu-card"><span class="menu-icon" aria-hidden="true">🎉</span>
+       <div class="menu-name">
+        มื้อพิเศษ
+       </div>
+       <div class="menu-description"><strong>ลักษณะ:</strong> หรูหรา พิเศษ<br><strong>ตัวอย่าง:</strong> งานเลี้ยง งานแต่ง<br><strong>โอกาส:</strong> วันสำคัญ
+       </div>
+      </div>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        1
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         กำหนดงบประมาณ
+        </div>
+        <div class="step-description">
+         คำนวณค่าใช้จ่ายต่อคน ต่อมื้อ รวมวัตถุดิบ แรงงาน และค่าใช้จ่ายอื่นๆ
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        2
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         เลือกวัตถุดิบตามฤดูกาล
+        </div>
+        <div class="step-description">
+         ใช้ผักผลไม้ตามฤดู ราคาถูก คุณภาพดี และสนับสนุนเกษตรกรท้องถิ่น
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        3
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         คำนวณจำนวนผู้รับประทาน
+        </div>
+        <div class="step-description">
+         ประเมินจำนวนคนที่แน่นอน เพื่อคำนวณปริมาณวัตถุดิบให้เหมาะสม
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        4
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         จัดลำดับการปรุง
+        </div>
+        <div class="step-description">
+         วางแผนการปรุงให้อาหารเสร็จพร้อมกัน เริ่มจากอาหารที่ใช้เวลานาน
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">📝</span> ปัจจัยในการวางแผนเมนู
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>กลุ่มผู้รับประทาน:</strong> อายุ เพศ ความชอบ ข้อจำกัดด้านสุขภาพ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>โอกาสและสถานที่:</strong> งานเป็นทางการ งานสังสรรค์ ที่บ้าน ร้านอาหาร
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>เวลาและแรงงาน:</strong> เวลาที่มี ทักษะการปรุง จำนวนผู้ช่วย
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>อุปกรณ์และสิ่งอำนวยความสะดวก:</strong> เตา ตู้เย็น ภาชนะ พื้นที่เตรียม
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Recipe Standards -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚖️</span>
+     <h2 class="section-title">มาตรฐานสูตรและผลผลิต</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การใช้สูตรมาตรฐานและการคำนวณปริมาณที่แม่นยำเป็นพื้นฐานสำคัญของการจัดทำอาหารเชิงพาณิชย์</p>
+     </div>
+     <div class="regional-grid">
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">📏</span>
+        <div class="regional-title">
+         หน่วยชั่งตวง
+        </div>
+       </div>
+       <div class="regional-features"><strong>หน่วยมาตรฐาน:</strong><br>
+         • กรัม (g) - ของแห้ง<br>
+         • มิลลิลิตร (ml) - ของเหลว<br>
+         • ช้อนโต๊ะ (tbsp) = 15 ml<br>
+         • ช้อนชา (tsp) = 5 ml<br>
+         • ถ้วยตวง = 240 ml
+       </div>
+       <div class="regional-menu"><strong>การแปลงหน่วย:</strong><br>
+         1 ทัพพี = 160 g ข้าวสุก<br>
+         1 ปอนด์ = 454 g<br>
+         1 ลิตร = 1,000 ml
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🧮</span>
+        <div class="regional-title">
+         การคำนวณ Portion
+        </div>
+       </div>
+       <div class="regional-features"><strong>ขนาดมาตรฐาน:</strong><br>
+         • ข้าว: 150-200 g/คน<br>
+         • เนื้อสัตว์: 80-120 g/คน<br>
+         • ผัก: 80-100 g/คน<br>
+         • แกง: 120-150 ml/คน<br>
+         • ผลไม้: 80-100 g/คน
+       </div>
+       <div class="regional-menu"><strong>การปรับขนาด:</strong><br>
+         สูตร 4 คน → 10 คน<br>
+         คูณด้วย 2.5<br>
+         (10 ÷ 4 = 2.5)
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">📊</span>
+        <div class="regional-title">
+         Yield Calculation
+        </div>
+       </div>
+       <div class="regional-features"><strong>การคำนวณผลผลิต:</strong><br>
+         • วัตถุดิบดิบ → สุก<br>
+         • ข้าวสาร 1 ถ้วย → ข้าวสุก 3 ถ้วย<br>
+         • เนื้อดิบ 500g → เนื้อสุก 350g<br>
+         • ผักสด 200g → ผักสุก 150g
+       </div>
+       <div class="regional-menu"><strong>สูตรคำนวณ:</strong><br>
+         Yield % = (น้ำหนักสุก ÷ น้ำหนักดิบ) × 100
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">💰</span>
+        <div class="regional-title">
+         การคำนวณต้นทุน
+        </div>
+       </div>
+       <div class="regional-features"><strong>องค์ประกอบต้นทุน:</strong><br>
+         • วัตถุดิบ 40-45%<br>
+         • แรงงาน 25-30%<br>
+         • ค่าใช้จ่ายอื่น 15-20%<br>
+         • กำไร 15-20%
+       </div>
+       <div class="regional-menu"><strong>ตัวอย่าง:</strong><br>
+         ต้นทุนวัตถุดิบ 50 บาท<br>
+         ราคาขาย = 50 ÷ 0.4 = 125 บาท
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การบันทึกสูตรมาตรฐาน
+      </div>
+      <div class="tip-content">
+       <p>ควรบันทึกสูตรอาหารที่ได้ผลดี ระบุปริมาณที่แม่นยำ วิธีการปรุง เวลาที่ใช้ และข้อสังเกตพิเศษ เพื่อให้ได้ผลลัพธ์ที่เหมือนเดิมทุกครั้ง</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Food Safety -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛡️</span>
+     <h2 class="section-title">สุขอนามัยและความปลอดภัยอาหาร</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การรักษาสุขอนามัยและความปลอดภัยอาหารเป็นสิ่งสำคัญที่สุดในการจัดทำอาหาร เพื่อป้องกันโรคที่เกิดจากอาหาร</p>
+     </div>
+     <div class="regional-grid">
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🧼</span>
+        <div class="regional-title">
+         หลักความสะอาด
+        </div>
+       </div>
+       <div class="regional-features"><strong>ความสะอาดส่วนบุคคล:</strong><br>
+         • ล้างมือบ่อยๆ<br>
+         • ใส่ผ้ากันเปื้อน<br>
+         • คลุมผม รองเท้าปิด<br>
+         • เล็บสั้น สะอาด
+       </div>
+       <div class="regional-menu"><strong>ความสะอาดอุปกรณ์:</strong><br>
+         ล้างด้วยน้ำสบู่ → ล้างน้ำสะอาด → ฆ่าเชื้อ → ผึ่งแห้ง
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🔄</span>
+        <div class="regional-title">
+         การแยกดิบ-สุก
+        </div>
+       </div>
+       <div class="regional-features"><strong>หลักการแยก:</strong><br>
+         • เขียงแยกดิบ-สุก<br>
+         • มีดแยกตามประเภท<br>
+         • ภาชนะแยกเก็บ<br>
+         • ผ้าเช็ดแยกใช้
+       </div>
+       <div class="regional-menu"><strong>การจัดเก็บ:</strong><br>
+         ชั้นบน: อาหารสุก<br>
+         ชั้นล่าง: อาหารดิบ
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🌡️</span>
+        <div class="regional-title">
+         การควบคุมอุณหภูมิ
+        </div>
+       </div>
+       <div class="regional-features"><strong>อุณหภูมิปลอดภัย:</strong><br>
+         • เก็บเย็น: ≤ 4°C<br>
+         • ปรุงสุก: ≥ 75°C<br>
+         • เก็บร้อน: ≥ 60°C<br>
+         • อุ่นซ้ำ: ≥ 75°C
+       </div>
+       <div class="regional-menu"><strong>Danger Zone:</strong><br>
+         4-60°C เป็นช่วงที่เชื้อโรค<br>
+         เจริญเติบโตได้ดี
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">📅</span>
+        <div class="regional-title">
+         การตรวจสอบวันหมดอายุ
+        </div>
+       </div>
+       <div class="regional-features"><strong>การตรวจสอบ:</strong><br>
+         • ดูวันที่ผลิต<br>
+         • ตรวจสี กลิ่น เนื้อสัมผัส<br>
+         • ใช้ของเก่าก่อน (FIFO)<br>
+         • บันทึกการตรวจสอบ
+       </div>
+       <div class="regional-menu"><strong>สัญญาณเสีย:</strong><br>
+         กลิ่นเปรี้ยว เหม็น<br>
+         สีเปลี่ยน มีเมือก
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🏠</span> การจัดพื้นที่เตรียมอาหาร
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>พื้นที่แยกชัดเจน:</strong> เตรียมดิบ ปรุงสุก เก็บอาหารสำเร็จ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ระบบระบายอากาศ:</strong> ดูดควัน ลดความชื้น ป้องกันกลิ่น
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แสงสว่างเพียงพอ:</strong> มองเห็นชัดเจน ตรวจสอบคุณภาพได้
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>น้ำสะอาดเพียงพอ:</strong> ล้างทำความสะอาด ปรุงอาหาร
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       สัญญาณเตือนอันตราย
+      </div>
+      <div class="warning-content">
+       <p>หยุดใช้อาหารทันทีหากพบ กลิ่นผิดปกติ สีเปลี่ยน มีเมือก หรือรสเปรี้ยว และไม่ควรชิมอาหารที่สงสัยว่าเสีย</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Table Setting -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🍽️</span>
+     <h2 class="section-title">การจัดโต๊ะและมารยาทบนโต๊ะอาหาร</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การจัดโต๊ะอาหารและมารยาทการรับประทานที่เหมาะสมจะช่วยสร้างบรรยากาศที่ดีและแสดงความเคารพต่อผู้ร่วมโต๊ะ</p>
+     </div>
+     <div class="regional-grid">
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🥢</span>
+        <div class="regional-title">
+         รูปแบบไทยดั้งเดิม
+        </div>
+       </div>
+       <div class="regional-features"><strong>การจัดวาง:</strong><br>
+         • นั่งพื้น หรือโต๊ะต่ำ<br>
+         • อาหารวางกลางโต๊ะ<br>
+         • ข้าวใส่จานส่วนตัว<br>
+         • ช้อนส้อม ไม่ใช้มีด
+       </div>
+       <div class="regional-menu"><strong>มารยาท:</strong><br>
+         • ผู้ใหญ่รับประทานก่อน<br>
+         • ตักอาหารพอดีคำ<br>
+         • ไม่ทำเสียงดัง
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🍴</span>
+        <div class="regional-title">
+         รูปแบบร่วมสมัย
+        </div>
+       </div>
+       <div class="regional-features"><strong>การจัดวาง:</strong><br>
+         • โต๊ะสูง เก้าอี้<br>
+         • จานส่วนตัวใหญ่ขึ้น<br>
+         • ช้อนส้อม มีด (ถ้าจำเป็น)<br>
+         • แก้วน้ำ ผ้าเช็ดปาก
+       </div>
+       <div class="regional-menu"><strong>การเสิร์ฟ:</strong><br>
+         • เสิร์ฟทีละจาน<br>
+         • หรือ Buffet Style<br>
+         • มีผู้เสิร์ฟช่วย
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">📋</span>
+        <div class="regional-title">
+         ลำดับการเสิร์ฟ
+        </div>
+       </div>
+       <div class="regional-features"><strong>ลำดับมาตรฐาน:</strong><br>
+         1. ข้าว (ฐานอาหาร)<br>
+         2. แกง (อาหารเหลว)<br>
+         3. กับข้าวหลัก<br>
+         4. ผัด ทอด<br>
+         5. น้ำพริก ผักแนม
+       </div>
+       <div class="regional-menu"><strong>การปิดท้าย:</strong><br>
+         • ของหวาน<br>
+         • ผลไม้<br>
+         • เครื่องดื่ม
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🥄</span>
+        <div class="regional-title">
+         ภาชนะที่เหมาะสม
+        </div>
+       </div>
+       <div class="regional-features"><strong>การเลือกใช้:</strong><br>
+         • ข้าว: จานเซรามิก<br>
+         • แกง: ถ้วยลึก<br>
+         • ผัด: จานแบน<br>
+         • น้ำพริก: จานเล็ก
+       </div>
+       <div class="regional-menu"><strong>วัสดุ:</strong><br>
+         • เซรามิก - ดูดี ปลอดภัย<br>
+         • สแตนเลส - ทนทาน<br>
+         • ไม้ไผ่ - เป็นมิตรสิ่งแวดล้อม
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">✨</span> มารยาทบนโต๊ะอาหาร
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ก่อนรับประทาน:</strong> ล้างมือ รอผู้ใหญ่ กล่าวคำขอบคุณ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ขณะรับประทาน:</strong> เคี้ยวปากปิด ไม่ทำเสียงดัง พูดคุยเบาๆ
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>การตักอาหาร:</strong> ใช้ช้อนกลาง ตักพอดีคำ ไม่คุ้ยหาชิ้นดี
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>หลังรับประทาน:</strong> วางช้อนส้อมเรียบร้อย ขอบคุณผู้ปรุง
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sample Menus -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📖</span>
+     <h2 class="section-title">เมนูตัวอย่างสำรับไทย</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>ตัวอย่างสำรับไทยที่สมดุลและเหมาะสมกับความต้องการที่แตกต่างกัน</p>
+     </div>
+     <table class="sample-menu-table">
+      <thead>
+       <tr>
+        <th>ประเภทสำรับ</th>
+        <th>เมนูหลัก</th>
+        <th>เมนูรอง</th>
+        <th>ของหวาน</th>
+        <th>เครื่องเคียง</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td><strong>ชุดประหยัด</strong><br><small>(80-100 บาท/คน)</small></td>
+        <td>• ข้าวสวย<br>
+         • แกงจืดฟัก<br>
+         • ไข่เจียว<br>
+         • ผัดผักบุ้ง</td>
+        <td>• น้ำพริกกะปิ<br>
+         • ปลาทูทอด</td>
+        <td>• กล้วยบวชชี<br>
+         • ผลไม้ตามฤดู</td>
+        <td>• ผักแนม<br>
+         • น้ำเปล่า</td>
+       </tr>
+       <tr>
+        <td><strong>ชุดเพื่อสุขภาพ</strong><br><small>(120-150 บาท/คน)</small></td>
+        <td>• ข้าวกล้อง<br>
+         • แกงเลียงผักรวม<br>
+         • ปลานึ่งมะนาว<br>
+         • ผัดผักคะน้า</td>
+        <td>• น้ำพริกผักเผา<br>
+         • ไก่ต้มขมิ้น</td>
+        <td>• วุ้นกะทิ<br>
+         • สลัดผลไม้</td>
+        <td>• ผักสดหลากสี<br>
+         • น้ำใบเตย</td>
+       </tr>
+       <tr>
+        <td><strong>ชุดมังสวิรัติ</strong><br><small>(100-130 บาท/คน)</small></td>
+        <td>• ข้าวสวย<br>
+         • แกงเผ็ดเห็ด<br>
+         • เต้าหู้ทอด<br>
+         • ผัดผักรวม</td>
+        <td>• น้ำพริกตาแดง<br>
+         • ยำวุ้นเส้น</td>
+        <td>• ขนมถั่วแดง<br>
+         • ผลไม้รวม</td>
+        <td>• ผักแนมมังสวิรัติ<br>
+         • น้ำใบบัวบก</td>
+       </tr>
+       <tr>
+        <td><strong>ชุดฮาลาล</strong><br><small>(150-180 บาท/คน)</small></td>
+        <td>• ข้าวสวย<br>
+         • แกงเผ็ดไก่<br>
+         • เนื้อผัดพริกไทยดำ<br>
+         • ผัดผักกาดขาว</td>
+        <td>• น้ำพริกลงเรือ<br>
+         • ปลาทอดขมิ้น</td>
+        <td>• ขนมชั้น<br>
+         • ลูกชุบ</td>
+        <td>• ผักแนมฮาลาล<br>
+         • น้ำใสใจ</td>
+       </tr>
+       <tr>
+        <td><strong>ชุดพิเศษ</strong><br><small>(200-300 บาท/คน)</small></td>
+        <td>• ข้าวหอมมะลิ<br>
+         • แกงเผ็ดเป็ดย่าง<br>
+         • ปลากะพงนึ่งมะนาว<br>
+         • กุ้งผัดพริกเกลือ</td>
+        <td>• น้ำพริกกุ้งเสียบ<br>
+         • ยำมะม่วง<br>
+         • หอยทอดกรอบ</td>
+        <td>• ทับทิมกรอบ<br>
+         • ไอศกรีมกะทิ<br>
+         • ผลไม้แกะสลัก</td>
+        <td>• ผักแนมหรู<br>
+         • น้ำดอกไม้<br>
+         • ชาไทย</td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="tip-box">
+      <div class="tip-title">
+       การปรับเมนูตามโอกาส
+      </div>
+      <div class="tip-content">
+       <p>สำรับประจำวันเน้นความง่าย ประหยัด สำรับวันพิเศษเพิ่มความหรูหรา สำรับเด็กลดความเผ็ด สำรับผู้สูงอายุเน้นอาหารนุ่ม ย่อยง่าย</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Food Storage -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">❄️</span>
+     <h2 class="section-title">การเก็บรักษาและจัดการของเหลือ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การจัดการอาหารที่เหลือและการเก็บรักษาที่ถูกต้องช่วยลดการสูญเสียและรักษาคุณภาพอาหาร</p>
+     </div>
+     <div class="process-steps">
+      <div class="step">
+       <div class="step-number">
+        ❄️
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การแช่เย็นที่ถูกต้อง
+        </div>
+        <div class="step-description">
+         เก็บอาหารในตู้เย็น ≤ 4°C ภายใน 2 ชั่วโมงหลังปรุง ใส่ภาชนะปิดมิดชิด แบ่งเป็นส่วนเล็กๆ เพื่อให้เย็นเร็ว
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        🔥
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การอุ่นซ้ำอย่างปลอดภัย
+        </div>
+        <div class="step-description">
+         อุ่นให้ร้อนทั่วถึง ≥ 75°C ใช้ไมโครเวฟหรือเตา คนให้ทั่ว ไม่อุ่นซ้ำเกิน 1 ครั้ง
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        🗂️
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การแยกเศษอาหาร
+        </div>
+        <div class="step-description">
+         แยกเศษอาหารเป็นประเภท: เศษผัก (ทำปุ๋ย) เศษเนื้อสัตว์ (ทิ้งถูกวิธี) น้ำมันใช้แล้ว (รีไซเคิล)
+        </div>
+       </div>
+      </div>
+      <div class="step">
+       <div class="step-number">
+        📋
+       </div>
+       <div class="step-content">
+        <div class="step-title">
+         การวางแผนลดขยะอาหาร
+        </div>
+        <div class="step-description">
+         ประเมินปริมาณที่แม่นยำ ใช้วัตถุดิบให้หมด วางแผนเมนูใช้วัตถุดิบร่วมกัน
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">⏰</span> ระยะเวลาการเก็บรักษา
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ในตู้เย็น (4°C):</strong> อาหารสุก 3-4 วัน, อาหารดิบ 1-2 วัน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ในช่องแช่แข็ง (-18°C):</strong> อาหารสุก 2-3 เดือน, เนื้อดิบ 6-12 เดือน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ที่อุณหภูมิห้อง:</strong> อาหารสุก 2 ชั่วโมง, อาหารเปื่อยง่าย 1 ชั่วโมง
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>อาหารแห้ง:</strong> ข้าว แป้ง 1-2 ปี, เครื่องเทศ 2-3 ปี
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       สัญญาณอาหารเสีย
+      </div>
+      <div class="warning-content">
+       <p>ทิ้งอาหารทันทีหากพบ กลิ่นเปรี้ยว เหม็นหืน สีเปลี่ยน มีเมือก หรือรสชาติผิดปกติ ไม่ควรเสี่ยงกับสุขภาพ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustainability -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">ความยั่งยืน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การจัดทำอาหารอย่างยั่งยืนช่วยลดผลกระทบต่อสิ่งแวดล้อม สนับสนุนเศรษฐกิจท้องถิ่น และสร้างอนาคตที่ดีกว่า</p>
+     </div>
+     <div class="regional-grid">
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🌾</span>
+        <div class="regional-title">
+         วัตถุดิบท้องถิ่น
+        </div>
+       </div>
+       <div class="regional-features"><strong>ข้อดี:</strong><br>
+         • สดใหม่ คุณภาพดี<br>
+         • ราคาถูกกว่า<br>
+         • ลดการขนส่ง<br>
+         • สนับสนุนเกษตรกร
+       </div>
+       <div class="regional-menu"><strong>การเลือกซื้อ:</strong><br>
+         • ตลาดสด ตลาดนัด<br>
+         • เกษตรกรโดยตรง<br>
+         • ผลิตภัณฑ์ออร์แกนิก
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">🚫</span>
+        <div class="regional-title">
+         ลดพลาสติกใช้ครั้งเดียว
+        </div>
+       </div>
+       <div class="regional-features"><strong>ทางเลือก:</strong><br>
+         • ถุงผ้า กระเป๋าผ้า<br>
+         • ภาชนะแก้ว สแตนเลส<br>
+         • ใบตอง ใบไผ่<br>
+         • กล่องกระดาษรีไซเคิล
+       </div>
+       <div class="regional-menu"><strong>การใช้ซ้ำ:</strong><br>
+         • ขวดแก้วเก็บเครื่องปรุง<br>
+         • กล่องพลาสติกเก็บอาหาร<br>
+         • ถุงพลาสติกล้างใช้ใหม่
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">♻️</span>
+        <div class="regional-title">
+         การใช้ซ้ำและหมุนเวียน
+        </div>
+       </div>
+       <div class="regional-features"><strong>เศษผัก:</strong><br>
+         • ทำน้ำซุป น้ำแกง<br>
+         • หมักทำปุ๋ย<br>
+         • อาหารสัตว์<br>
+         • ปลูกผักใหม่
+       </div>
+       <div class="regional-menu"><strong>เศษเนื้อสัตว์:</strong><br>
+         • ต้มกระดูกทำน้ำซุป<br>
+         • ทำอาหารสัตว์เลี้ยง<br>
+         • ปุ๋ยหมัก (ถูกวิธี)
+       </div>
+      </div>
+      <div class="regional-card">
+       <div class="regional-header"><span class="regional-icon" aria-hidden="true">💚</span>
+        <div class="regional-title">
+         การเลือกอาหารเป็นมิตร
+        </div>
+       </div>
+       <div class="regional-features"><strong>หลักการ:</strong><br>
+         • ลดเนื้อสัตว์ เพิ่มผัก<br>
+         • เลือกปลาจากการเพาะเลี้ยง<br>
+         • หลีกเลี่ยงสัตว์ใกล้สูญพันธุ์<br>
+         • อาหารตามฤดูกาล
+       </div>
+       <div class="regional-menu"><strong>ทางเลือก:</strong><br>
+         • โปรตีนจากพืช<br>
+         • เมนูมังสวิรัติ<br>
+         • อาหารทะเลยั่งยืน
+       </div>
+      </div>
+     </div>
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🌍</span> แนวทางการทำอาหารยั่งยืน
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>วางแผนการซื้อ:</strong> ซื้อเท่าที่จำเป็น ตรวจสอบของในตู้เย็นก่อน
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ใช้วัตถุดิบให้หมด:</strong> เปลือกผลไม้ทำขนม ใบผักทำแกง
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>ประหยัดพลังงาน:</strong> ใช้หม้อหุงข้าวไฟฟ้า ปิดไฟเมื่อไม่ใช้
+       </div>
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">✓</span>
+       <div class="checklist-text"><strong>แบ่งปันความรู้:</strong> สอนคนอื่นทำอาหาร ลดการซื้ออาหารสำเร็จรูป
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การสร้างสวนครัวเล็กๆ
+      </div>
+      <div class="tip-content">
+       <p>ปลูกผักสวนครัวง่ายๆ เช่น ผักบุ้ง ผักกาด โหระพา ใบมะกรูด ในกระถางหรือพื้นที่เล็กๆ ช่วยลดค่าใช้จ่ายและได้ผักสดใหม่</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญที่ควรจำ</h2>
+    <ul class="takeaways-list">
+     <li>สำรับไทยต้องมีความสมดุลของรสชาติ เนื้อสัมผัส และสีสัน</li>
+     <li>การจัดสำรับต้องครบ 5 หมู่อาหารในสัดส่วนที่เหมาะสม</li>
+     <li>แต่ละภูมิภาคมีเอกลักษณ์สำรับที่สะท้อนวัฒนธรรมท้องถิ่น</li>
+     <li>การวางแผนเมนูต้องคำนึงถึงงบประมาณ ผู้รับประทาน และโอกาส</li>
+     <li>สุขอนามัยและความปลอดภัยอาหารเป็นสิ่งสำคัญที่สุด</li>
+     <li>การจัดทำอาหารอย่างยั่งยืนช่วยรักษาสิ่งแวดล้อม</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์สำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Portion (พอร์ชั่น)
+      </div>
+      <div class="glossary-definition">
+       ปริมาณอาหารที่เหมาะสมสำหรับบุคคลหนึ่งคนในหนึ่งมื้อ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Yield (ยีลด์)
+      </div>
+      <div class="glossary-definition">
+       ปริมาณอาหารสำเร็จรูปที่ได้จากวัตถุดิบดิบ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Seasoning Balance
+      </div>
+      <div class="glossary-definition">
+       ความสมดุลของรสชาติในอาหาร ไม่เด่นรสใดรสหนึ่ง
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Garnish (การ์นิช)
+      </div>
+      <div class="glossary-definition">
+       การตกแต่งอาหารให้สวยงาม ดึงดูดสายตา
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       FIFO
+      </div>
+      <div class="glossary-definition">
+       First In First Out - ใช้ของเก่าก่อน ของใหม่หลัง
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Cross Contamination
+      </div>
+      <div class="glossary-definition">
+       การปนเปื้อนข้ามจากอาหารดิบไปสู่อาหารสุก
+      </div>
+     </div>
+    </div>
+   </section><!-- Additional Resources -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📚</span>
+     <h2 class="section-title">แหล่งอ่านเพิ่มเติม</h2>
+    </div>
+    <div class="section-content">
+     <div class="checklist">
+      <div class="checklist-title"><span aria-hidden="true">🔗</span> แหล่งข้อมูลที่น่าสนใจ
+      </div>
+      <div class="checklist-item"><span class="checklist-icon" aria-hidden="true">📖</span>
+       <div class="checklist-text"><strong>หนังสือ:</strong> "อาหารไทย 4 ภาค
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+    <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+    <p>เวอร์ชันบทเรียน 1.0 | พัฒนาเพื่อการศึกษา</p>
+   </div>
+  </footer>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'991f25aae3bcfdf9',t:'MTc2MTAzMjg0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

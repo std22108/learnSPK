@@ -1,0 +1,1977 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การบรรจุภัณฑ์ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --info: #17A2B8;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Functions Grid */
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .function-card {
+            background: var(--white);
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .function-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .function-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .function-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .function-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .function-details {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Levels Grid */
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .level-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .level-card.primary::before {
+            background: linear-gradient(90deg, var(--success) 0%, #66BB6A 100%);
+        }
+
+        .level-card.secondary::before {
+            background: linear-gradient(90deg, var(--info) 0%, #42A5F5 100%);
+        }
+
+        .level-card.tertiary::before {
+            background: linear-gradient(90deg, var(--warning) 0%, #FFCA28 100%);
+        }
+
+        .level-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .level-icon {
+            font-size: 2.5rem;
+        }
+
+        .level-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .level-description {
+            background: #F8F9FA;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .level-examples {
+            background: #E3F2FD;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .level-examples strong {
+            color: var(--primary);
+        }
+
+        /* Materials Grid */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .material-card {
+            background: var(--white);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .material-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .material-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .material-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .material-details {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Plastic Types */
+        .plastic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .plastic-card {
+            background: var(--white);
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .plastic-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .plastic-number {
+            background: var(--primary);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 auto 1rem;
+        }
+
+        .plastic-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .plastic-uses {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Design Principles */
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .design-card {
+            background: var(--white);
+            border-left: 4px solid var(--success);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .design-card:hover {
+            transform: translateX(5px);
+        }
+
+        .design-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .design-icon {
+            font-size: 1.5rem;
+        }
+
+        .design-description {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+        }
+
+        .data-table tr:hover {
+            background: #F8F9FA;
+        }
+
+        .table-icon {
+            font-size: 1.5rem;
+            text-align: center;
+            width: 60px;
+        }
+
+        /* Calculation Box */
+        .calculation-box {
+            background: linear-gradient(135deg, #FFF8E1 0%, #E8F5E8 100%);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .calculation-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .calculation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .calculation-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .calculation-formula {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .calculation-example {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            background: #F8F9FA;
+            padding: 0.75rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
+
+        /* Tip Boxes */
+        .tip-box {
+            background: linear-gradient(135deg, #FFF3E0 0%, #E8F5E8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .tip-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 1rem;
+            left: -2px;
+            font-size: 1.5rem;
+            background: var(--danger);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-title {
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            margin-left: 3rem;
+        }
+
+        .warning-content {
+            margin-left: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Sustainability Grid */
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .sustainability-card {
+            background: var(--white);
+            border-top: 4px solid var(--success);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .sustainability-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sustainability-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .sustainability-icon {
+            font-size: 2rem;
+        }
+
+        .sustainability-title {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .sustainability-description {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            margin: 2rem 0;
+        }
+
+        .case-study {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .case-study:hover {
+            transform: translateY(-2px);
+        }
+
+        .case-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .case-icon {
+            font-size: 2rem;
+        }
+
+        .case-title {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .case-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .case-detail {
+            background: #F8F9FA;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .case-detail-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .case-detail-content {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Resources */
+        .resources {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .resources-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .resources-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resources-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .resources-list li:last-child {
+            border-bottom: none;
+        }
+
+        .resources-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .functions-grid,
+            .levels-grid,
+            .materials-grid,
+            .design-grid,
+            .sustainability-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives {
+                grid-template-columns: 1fr;
+            }
+
+            .data-table {
+                font-size: 0.9rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .tip-box,
+            .warning-box {
+                padding: 1rem;
+            }
+
+            .tip-title,
+            .warning-title,
+            .tip-content,
+            .warning-content {
+                margin-left: 2rem;
+            }
+
+            .calculation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">📦</span>
+    <h1 id="lessonTitle">การบรรจุภัณฑ์</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-description" id="lessonDescription">บทบาทของบรรจุภัณฑ์ต่อคุณภาพสินค้า เศรษฐกิจ และสิ่งแวดล้อม ในการสร้างมูลค่าเพิ่มและการพัฒนาที่ยั่งยืน</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจหน้าที่ ประเภท วัสดุ และหลักการออกแบบบรรจุภัณฑ์ รวมถึงผลกระทบต่อสิ่งแวดล้อม</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถคำนวณต้นทุน เลือกวัสดุที่เหมาะสม และประเมินคุณภาพบรรจุภัณฑ์ได้</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>ตระหนักถึงความสำคัญของความยั่งยืนและความรับผิดชอบต่อสิ่งแวดล้อม</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Functions of Packaging -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛡️</span>
+     <h2 class="section-title">ความหมายและหน้าที่ของบรรจุภัณฑ์</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p><strong>บรรจุภัณฑ์</strong> คือ วัสดุหรือภาชนะที่ใช้ห่อหุ้ม บรรจุ หรือครอบคลุมสินค้า เพื่อป้องกัน ถนอม และอำนวยความสะดวกในการขนส่ง จัดเก็บ และจำหน่าย</p>
+     </div>
+     <div class="functions-grid">
+      <div class="function-card"><span class="function-icon" aria-hidden="true">📦</span>
+       <div class="function-title">
+        บรรจุและป้องกัน
+       </div>
+       <div class="function-details"><strong>หน้าที่หลัก:</strong> ห่อหุ้มสินค้า<br><strong>ป้องกัน:</strong> การกระแทก ฝุ่น สิ่งสกปรก<br><strong>รักษารูปร่าง:</strong> ไม่ให้เสียหาย<br><strong>ตัวอย่าง:</strong> กล่องไข่ ถุงขนม
+       </div>
+      </div>
+      <div class="function-card"><span class="function-icon" aria-hidden="true">🌡️</span>
+       <div class="function-title">
+        ถนอมคุณภาพ
+       </div>
+       <div class="function-details"><strong>ควบคุม:</strong> อุณหภูมิ ความชื้น<br><strong>กั้นออกซิเจน:</strong> ป้องกันการเน่าเสีย<br><strong>ป้องกันแสง:</strong> รักษาสีและรส<br><strong>ตัวอย่าง:</strong> กระป๋องอาหาร ถุงสุญญากาศ
+       </div>
+      </div>
+      <div class="function-card"><span class="function-icon" aria-hidden="true">🤝</span>
+       <div class="function-title">
+        อำนวยความสะดวก
+       </div>
+       <div class="function-details"><strong>การใช้งาน:</strong> เปิด-ปิดง่าย<br><strong>การจับถือ:</strong> หูหิ้ว มือจับ<br><strong>การเทรินา:</strong> จะงอยปาก<br><strong>ตัวอย่าง:</strong> ขวดน้ำ กล่องนม
+       </div>
+      </div>
+      <div class="function-card"><span class="function-icon" aria-hidden="true">📢</span>
+       <div class="function-title">
+        สื่อสารข้อมูล
+       </div>
+       <div class="function-details"><strong>ข้อมูลสินค้า:</strong> ชื่อ ส่วนประกอบ<br><strong>วิธีใช้:</strong> คำแนะนำ คำเตือน<br><strong>แบรนด์:</strong> โลโก้ สีสัน<br><strong>ตัวอย่าง:</strong> ฉลากยา ป้ายโภชนาการ
+       </div>
+      </div>
+      <div class="function-card"><span class="function-icon" aria-hidden="true">🚛</span>
+       <div class="function-title">
+        โลจิสติกส์
+       </div>
+       <div class="function-details"><strong>การขนส่ง:</strong> ซ้อนวางได้<br><strong>การจัดเก็บ:</strong> ประหยัดพื้นที่<br><strong>การนับ:</strong> หน่วยมาตรฐาน<br><strong>ตัวอย่าง:</strong> พาเลท กล่องลัง
+       </div>
+      </div>
+      <div class="function-card"><span class="function-icon" aria-hidden="true">💰</span>
+       <div class="function-title">
+        การตลาด
+       </div>
+       <div class="function-details"><strong>ดึงดูดใจ:</strong> สีสัน รูปแบบ<br><strong>แยกแยะ:</strong> จากคู่แข่ง<br><strong>สร้างมูลค่า:</strong> ภาพลักษณ์พรีเมียม<br><strong>ตัวอย่าง:</strong> กล่องของขวัญ บรรจุภัณฑ์หรู
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Packaging Levels -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🏗️</span>
+     <h2 class="section-title">ระดับบรรจุภัณฑ์</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>บรรจุภัณฑ์แบ่งออกเป็น 3 ระดับตามลำดับการใช้งาน แต่ละระดับมีหน้าที่และวัตถุประสงค์ที่แตกต่างกัน</p>
+     </div>
+     <div class="levels-grid">
+      <div class="level-card primary">
+       <div class="level-header"><span class="level-icon" aria-hidden="true">1️⃣</span>
+        <div class="level-title">
+         บรรจุภัณฑ์ปฐมภูมิ (Primary)
+        </div>
+       </div>
+       <div class="level-description"><strong>คำจำกัดความ:</strong> บรรจุภัณฑ์ที่สัมผัสโดยตรงกับสินค้า เป็นชั้นแรกที่ห่อหุ้มผลิตภัณฑ์
+       </div>
+       <div class="level-examples"><strong>ตัวอย่าง:</strong><br>
+         • ขวดน้ำดื่ม ขวดน้ำอัดลม<br>
+         • ถุงขนม ถุงนม<br>
+         • กระป๋องอาหาร<br>
+         • หลอดยาสีฟัน<br>
+         • ซองแชมพู ซองครีม<br><strong>จุดเด่น:</strong> ต้องปลอดภัยต่อสุขภาพ กันเปื้อน รักษาคุณภาพ
+       </div>
+      </div>
+      <div class="level-card secondary">
+       <div class="level-header"><span class="level-icon" aria-hidden="true">2️⃣</span>
+        <div class="level-title">
+         บรรจุภัณฑ์ทุติยภูมิ (Secondary)
+        </div>
+       </div>
+       <div class="level-description"><strong>คำจำกัดความ:</strong> บรรจุภัณฑ์ที่ห่อหุ้มบรรจุภัณฑ์ปฐมภูมิ เพื่อการขนส่งและจำหน่าย
+       </div>
+       <div class="level-examples"><strong>ตัวอย่าง:</strong><br>
+         • กล่องกระดาษใส่ขวดน้ำ<br>
+         • กล่องใส่ซองแชมพู<br>
+         • ถาดโฟมใส่ไข่<br>
+         • กล่องใส่หลอดยาสีฟัน<br>
+         • ซองพลาสติกใส่ขนม<br><strong>จุดเด่น:</strong> ป้องกันการกระแทก แสดงข้อมูล การตลาด
+       </div>
+      </div>
+      <div class="level-card tertiary">
+       <div class="level-header"><span class="level-icon" aria-hidden="true">3️⃣</span>
+        <div class="level-title">
+         บรรจุภัณฑ์ตติยภูมิ (Tertiary)
+        </div>
+       </div>
+       <div class="level-description"><strong>คำจำกัดความ:</strong> บรรจุภัณฑ์สำหรับการขนส่งและจัดเก็บในปริมาณมาก เน้นประสิทธิภาพโลจิสติกส์
+       </div>
+       <div class="level-examples"><strong>ตัวอย่าง:</strong><br>
+         • กล่องลังใส่สินค้าหลายชิ้น<br>
+         • พาเลทไม้หรือพลาสติก<br>
+         • ถุงใหญ่ใส่กล่องเล็ก<br>
+         • คอนเทนเนอร์ขนส่ง<br>
+         • ฟิล์มพันพาเลท<br><strong>จุดเด่น:</strong> ประหยัดค่าขนส่ง ป้องกันการสูญหาย
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       ความสัมพันธ์ระหว่างระดับ
+      </div>
+      <div class="tip-content">
+       <p>บรรจุภัณฑ์ทั้ง 3 ระดับทำงานร่วมกันเป็นระบบ ยิ่งเพิ่มระดับ ยิ่งเน้นการขนส่งและจัดเก็บมากขึ้น แต่ต้นทุนก็เพิ่มขึ้นด้วย การออกแบบต้องสมดุลระหว่างการป้องกันและต้นทุน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Materials and Properties -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧪</span>
+     <h2 class="section-title">วัสดุหลักและคุณสมบัติ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การเลือกวัสดุบรรจุภัณฑ์ต้องพิจารณาคุณสมบัติที่เหมาะสมกับประเภทสินค้าและการใช้งาน</p>
+     </div>
+     <div class="materials-grid">
+      <div class="material-card"><span class="material-icon" aria-hidden="true">📄</span>
+       <div class="material-name">
+        กระดาษและกระดาษลูกฟูก
+       </div>
+       <div class="material-details"><strong>ข้อดี:</strong> เบา รีไซเคิลได้ ราคาถูก<br><strong>ข้อเสีย:</strong> ไม่กันน้ำ แข็งแรงน้อย<br><strong>ใช้กับ:</strong> ขนม เสื้อผ้า อิเล็กทรอนิกส์<br><strong>ประเภท:</strong> กระดาษธรรมดา ลูกฟูก กันน้ำ
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">🍶</span>
+       <div class="material-name">
+        แก้ว
+       </div>
+       <div class="material-details"><strong>ข้อดี:</strong> ใส ไม่ทำปฏิกิริยา รีไซเคิลได้ 100%<br><strong>ข้อเสีย:</strong> หนัก แตกง่าย ราคาแพง<br><strong>ใช้กับ:</strong> เครื่องดื่ม อาหารกระป๋อง ยา<br><strong>ประเภท:</strong> แก้วใส แก้วสี แก้วกันแสง UV
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">🥫</span>
+       <div class="material-name">
+        โลหะ (อะลูมิเนียม/เหล็ก)
+       </div>
+       <div class="material-details"><strong>ข้อดี:</strong> แข็งแรง กันแสง กันอากาศ 100%<br><strong>ข้อเสีย:</strong> หนัก ราคาแพง เป็นสนิมได้<br><strong>ใช้กับ:</strong> เครื่องดื่ม อาหารกระป๋อง<br><strong>ประเภท:</strong> อะลูมิเนียม เหล็กเคลือบ
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">🧴</span>
+       <div class="material-name">
+        พลาสติก
+       </div>
+       <div class="material-details"><strong>ข้อดี:</strong> เบา ไม่แตก ปั้นรูปได้<br><strong>ข้อเสีย:</strong> ย่อยสลายช้า ทำปฏิกิริยาได้<br><strong>ใช้กับ:</strong> เครื่องดื่ม อาหาร เครื่องสำอาง<br><strong>ประเภท:</strong> ดูตารางสัญลักษณ์ด้านล่าง
+       </div>
+      </div>
+      <div class="material-card"><span class="material-icon" aria-hidden="true">🌿</span>
+       <div class="material-name">
+        วัสดุผสมและชีวภาพ
+       </div>
+       <div class="material-details"><strong>วัสดุผสม:</strong> กระดาษ+พลาสติก+อะลูมิเนียม<br><strong>ชีวภาพ:</strong> จากแป้ง ข้าวโพด อ้อย<br><strong>ข้อดี:</strong> คุณสมบัติดี ย่อยสลายได้<br><strong>ข้อเสีย:</strong> ราคาแพง รีไซเคิลยาก
+       </div>
+      </div>
+     </div>
+     <h3 style="color: var(--primary); margin: 2rem 0 1rem;">สัญลักษณ์รีไซเคิลพลาสติก</h3>
+     <div class="plastic-grid">
+      <div class="plastic-card">
+       <div class="plastic-number">
+        1
+       </div>
+       <div class="plastic-name">
+        PET/PETE
+       </div>
+       <div class="plastic-uses">
+        ขวดน้ำ น้ำอัดลม ขวดน้ำมัน
+       </div>
+      </div>
+      <div class="plastic-card">
+       <div class="plastic-number">
+        2
+       </div>
+       <div class="plastic-name">
+        HDPE
+       </div>
+       <div class="plastic-uses">
+        ขวดนม ขวดแชมพู ถังน้ำ
+       </div>
+      </div>
+      <div class="plastic-card">
+       <div class="plastic-number">
+        3
+       </div>
+       <div class="plastic-name">
+        PVC
+       </div>
+       <div class="plastic-uses">
+        ท่อ ฟิล์มห่อ บรรจุภัณฑ์ยา
+       </div>
+      </div>
+      <div class="plastic-card">
+       <div class="plastic-number">
+        4
+       </div>
+       <div class="plastic-name">
+        LDPE
+       </div>
+       <div class="plastic-uses">
+        ถุงพลาสติก ฟิล์มห่อ ขวดบีบ
+       </div>
+      </div>
+      <div class="plastic-card">
+       <div class="plastic-number">
+        5
+       </div>
+       <div class="plastic-name">
+        PP
+       </div>
+       <div class="plastic-uses">
+        กล่องอาหาร ฝาขวด หลอดดูด
+       </div>
+      </div>
+      <div class="plastic-card">
+       <div class="plastic-number">
+        6
+       </div>
+       <div class="plastic-name">
+        PS
+       </div>
+       <div class="plastic-uses">
+        โฟมใส่อาหาร ถ้วยโยเกิร์ต
+       </div>
+      </div>
+      <div class="plastic-card">
+       <div class="plastic-number">
+        7
+       </div>
+       <div class="plastic-name">
+        อื่น ๆ
+       </div>
+       <div class="plastic-uses">
+        พลาสติกผสม ชีวภาพ PC
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       ข้อควรระวังในการเลือกวัสดุ
+      </div>
+      <div class="warning-content">
+       <p><strong>อาหาร:</strong> ต้องปลอดภัย ไม่มีสารพิษ | <strong>เครื่องดื่มร้อน:</strong> หลีกเลี่ยง PS และ PVC | <strong>ไมโครเวฟ:</strong> ใช้เฉพาะที่มีสัญลักษณ์อนุญาต | <strong>สิ่งแวดล้อม:</strong> เลือกรีไซเคิลได้หรือย่อยสลายได้</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Design Principles -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎨</span>
+     <h2 class="section-title">หลักการออกแบบบรรจุภัณฑ์</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การออกแบบบรรจุภัณฑ์ที่ดีต้องสมดุลระหว่างการใช้งาน ความปลอดภัย ต้นทุน และความสวยงาม</p>
+     </div>
+     <div class="design-grid">
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">💪</span> ความแข็งแรง
+       </div>
+       <div class="design-description">
+        ทนต่อแรงกด แรงดึง การกระแทก และการสั่นสะเทือนระหว่างขนส่ง ใช้โครงสร้างลูกฟูก เสริมมุม หรือวัสดุกันกระแทก
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">💧</span> การกันชื้นและออกซิเจน
+       </div>
+       <div class="design-description">
+        ป้องกันไอน้ำ ออกซิเจน และแก๊สอื่น ๆ ที่ทำให้สินค้าเสื่อมคุณภาพ ใช้ฟิล์มกั้น การปิดผนึก หรือสารดูดความชื้น
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🛡️</span> ความปลอดภัยขอบคม
+       </div>
+       <div class="design-description">
+        หลีกเลี่ยงขอบแหลม มุมคม ที่อาจทำอันตราย ใช้มุมมน ขอบพับ หรือวัสดุนิ่ม เพื่อความปลอดภัยในการใช้งาน
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">✋</span> การจับถนัด
+       </div>
+       <div class="design-description">
+        ออกแบบให้จับถือสะดวก มีหูหิ้ว มือจับ หรือร่องนิ้ว ที่เหมาะสมกับขนาดมือ น้ำหนัก และวิธีการใช้งาน
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">📐</span> ประหยัดพื้นที่
+       </div>
+       <div class="design-description">
+        ใช้พื้นที่อย่างมีประสิทธิภาพ ลดช่องว่างเปล่า ออกแบบให้พับเก็บได้ หรือซ้อนวางได้ เพื่อประหยัดค่าขนส่งและจัดเก็บ
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">📚</span> ซ้อนวางได้
+       </div>
+       <div class="design-description">
+        ออกแบบให้ซ้อนทับกันได้อย่างมั่นคง มีร่องหรือขอบที่ช่วยยึดตำแหน่ง ป้องกันการล้มหรือเลื่อนไถล
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🎭</span> ความสวยงามและแบรนด์
+       </div>
+       <div class="design-description">
+        สื่อสารเอกลักษณ์แบรนด์ ดึงดูดความสนใจ สร้างความน่าเชื่อถือ และแยกแยะจากคู่แข่ง ผ่านสี รูปแบบ และการจัดวาง
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🔓</span> ความสะดวกในการเปิด
+       </div>
+       <div class="design-description">
+        เปิดง่าย ไม่ต้องใช้เครื่องมือ มีจุดฉีกหรือเส้นปรุ ปิดกลับได้ และไม่ทำลายสินค้าข้างใน
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การทดสอบการออกแบบ
+      </div>
+      <div class="tip-content">
+       <p>ทดสอบการใช้งานจริงกับกลุ่มผู้บริโภคเป้าหมาย ทดสอบการขนส่ง การจัดเก็บ และการใช้งานในสภาพแวดล้อมต่าง ๆ เพื่อปรับปรุงการออกแบบให้เหมาะสมที่สุด</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Labeling and Information -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🏷️</span>
+     <h2 class="section-title">การติดฉลากและข้อมูลสำคัญ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>ฉลากและข้อมูลบนบรรจุภัณฑ์เป็นสื่อกลางสำคัญในการสื่อสารกับผู้บริโภค</p>
+     </div>
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>ประเภทข้อมูล</th>
+        <th>รายละเอียด</th>
+        <th>ความสำคัญ</th>
+        <th>ตัวอย่าง</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td><strong>ชื่อสินค้า</strong></td>
+        <td>ชื่อทางการค้า แบรนด์ รุ่น</td>
+        <td>ระบุตัวตนสินค้า</td>
+        <td>โค้ก เป๊ปซี่ น้ำดื่มสิงห์</td>
+       </tr>
+       <tr>
+        <td><strong>ส่วนประกอบ</strong></td>
+        <td>วัตถุดิบ สารเติมแต่ง สารก่อภูมิแพ้</td>
+        <td>ความปลอดภัย การเลือกซื้อ</td>
+        <td>น้ำ น้ำตาล กรดซิตริก สีผสมอาหาร</td>
+       </tr>
+       <tr>
+        <td><strong>ปริมาณสุทธิ</strong></td>
+        <td>น้ำหนัก ปริมาตร จำนวนชิ้น</td>
+        <td>เปรียบเทียบราคา</td>
+        <td>330 มล. 500 กรัม 12 ชิ้น</td>
+       </tr>
+       <tr>
+        <td><strong>วันผลิต-หมดอายุ</strong></td>
+        <td>วันที่ผลิต วันหมดอายุ เลขลอต</td>
+        <td>ความปลอดภัย คุณภาพ</td>
+        <td>MFD: 15/03/67 EXP: 15/03/68</td>
+       </tr>
+       <tr>
+        <td><strong>คำเตือน</strong></td>
+        <td>วิธีใช้ ข้อควรระวัง การเก็บรักษา</td>
+        <td>ป้องกันอันตราย</td>
+        <td>เก็บในที่เย็น ห้ามเด็กต่ำกว่า 3 ปี</td>
+       </tr>
+       <tr>
+        <td><strong>ข้อมูลผู้ผลิต</strong></td>
+        <td>ชื่อ ที่อยู่ เบอร์โทร เลขที่ใบอนุญาต</td>
+        <td>ความรับผิดชอบ ติดต่อ</td>
+        <td>บริษัท ABC จำกัด เลขที่ อย. 123456</td>
+       </tr>
+      </tbody>
+     </table>
+     <h3 style="color: var(--primary); margin: 2rem 0 1rem;">สัญลักษณ์สำคัญ</h3>
+     <div class="functions-grid">
+      <div class="function-card"><span class="function-icon" aria-hidden="true">📱</span>
+       <div class="function-title">
+        ไมโครเวฟ
+       </div>
+       <div class="function-details"><strong>ความหมาย:</strong> ใช้ในไมโครเวฟได้<br><strong>สัญลักษณ์:</strong> รูปไมโครเวฟ คลื่น<br><strong>ข้อควรระวัง:</strong> ตรวจสอบอุณหภูมิสูงสุด<br><strong>วัสดุ:</strong> PP, แก้ว, เซรามิก
+       </div>
+      </div>
+      <div class="function-card"><span class="function-icon" aria-hidden="true">🍽️</span>
+       <div class="function-title">
+        อาหารปลอดภัย
+       </div>
+       <div class="function-details"><strong>ความหมาย:</strong> ปลอดภัยสำหรับอาหาร<br><strong>สัญลักษณ์:</strong> แก้วและส้อม<br><strong>มาตรฐาน:</strong> FDA, EU, มอก.<br><strong>การใช้:</strong> สัมผัสอาหารโดยตรง
+       </div>
+      </div>
+      <div class="function-card"><span class="function-icon" aria-hidden="true">♻️</span>
+       <div class="function-title">
+        รีไซเคิล
+       </div>
+       <div class="function-details"><strong>ความหมาย:</strong> สามารถรีไซเคิลได้<br><strong>สัญลักษณ์:</strong> ลูกศรวงกลม ตัวเลข<br><strong>วิธีทิ้ง:</strong> แยกตามประเภท<br><strong>ประโยชน์:</strong> ลดขยะ ประหยัดทรัพยากร
+       </div>
+      </div>
+      <div class="function-card"><span class="function-icon" aria-hidden="true">🕌</span>
+       <div class="function-title">
+        ฮาลาล
+       </div>
+       <div class="function-details"><strong>ความหมาย:</strong> ถูกต้องตามหลักอิสลาม<br><strong>สัญลักษณ์:</strong> เครื่องหมายฮาลาล<br><strong>การรับรอง:</strong> องค์กรที่ได้รับอนุญาต<br><strong>กลุ่มเป้าหมาย:</strong> ผู้บริโภคมุสลิม
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Food Safety -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧼</span>
+     <h2 class="section-title">สุขอนามัยและความปลอดภัยอาหาร</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>บรรจุภัณฑ์อาหารต้องป้องกันการปนเปื้อนและรักษาคุณภาพอาหารให้ปลอดภัย</p>
+     </div>
+     <div class="design-grid">
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🥩</span> แยกอาหารดิบ-สุก
+       </div>
+       <div class="design-description">
+        ใช้บรรจุภัณฑ์แยกประเภท มีสีหรือเครื่องหมายแยกแยะ ป้องกันการปนเปื้อนข้าม (Cross Contamination) ระหว่างอาหารดิบและอาหารสุก
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🦠</span> ป้องกันการปนเปื้อน
+       </div>
+       <div class="design-description">
+        ปิดผนึกมิดชิด ป้องกันฝุ่น แมลง เชื้อโรค และสารเคมี ใช้วัสดุที่ไม่ทำปฏิกิริยากับอาหาร และทำความสะอาดง่าย
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🌡️</span> ควบคุมอุณหภูมิ
+       </div>
+       <div class="design-description">
+        เลือกวัสดุที่เหมาะสมกับอุณหภูมิการใช้งาน ทนความร้อน-เย็น ไม่ปล่อยสารพิษ และรักษาอุณหภูมิอาหารได้
+       </div>
+      </div>
+      <div class="design-card">
+       <div class="design-title"><span class="design-icon" aria-hidden="true">🔒</span> การปิดผนึก
+       </div>
+       <div class="design-description">
+        ใช้เทคนิคปิดผนึกที่เหมาะสม เช่น ความร้อน อัลตราโซนิก หรือกาว เพื่อป้องกันอากาศ ความชื้น และเชื้อโรค
+       </div>
+      </div>
+     </div>
+     <div class="warning-box">
+      <div class="warning-title">
+       สิ่งที่ต้องหลีกเลี่ยง
+      </div>
+      <div class="warning-content">
+       <p><strong>วัสดุไม่เหมาะสม:</strong> PVC สำหรับอาหารร้อน | <strong>การปนเปื้อน:</strong> ใช้บรรจุภัณฑ์เดิมซ้ำ | <strong>การเก็บรักษา:</strong> อุณหภูมิไม่เหมาะสม | <strong>การทำความสะอาด:</strong> ใช้สารเคมีที่เป็นอันตราย</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Basic Calculations -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🧮</span>
+     <h2 class="section-title">การคำนวณพื้นฐาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การคำนวณต้นทุนและประสิทธิภาพบรรจุภัณฑ์เป็นทักษะสำคัญในการออกแบบและเลือกใช้</p>
+     </div>
+     <div class="calculation-box">
+      <div class="calculation-title">
+       สูตรการคำนวณสำคัญ
+      </div>
+      <div class="calculation-grid">
+       <div class="calculation-item">
+        <div class="calculation-formula">
+         ปริมาตรกล่อง = กว้าง × ยาว × สูง
+        </div>
+        <p>หน่วย: เซนติเมตรลูกบาศก์ (cm³) หรือลิตร</p>
+        <div class="calculation-example"><strong>ตัวอย่าง:</strong> กล่อง 20×15×10 ซม.<br>
+          ปริมาตร = 20×15×10 = 3,000 cm³ = 3 ลิตร
+        </div>
+       </div>
+       <div class="calculation-item">
+        <div class="calculation-formula">
+         พื้นที่คลี่แผ่น (Net Area)
+        </div>
+        <p>พื้นที่วัสดุทั้งหมดที่ใช้ทำกล่อง รวมแผ่นพับ</p>
+        <div class="calculation-example"><strong>ตัวอย่าง:</strong> กล่อง 20×15×10 ซม.<br>
+          พื้นที่ = 2(20×15) + 2(20×10) + 2(15×10) + พับ<br>
+          = 600 + 400 + 300 + 100 = 1,400 cm²
+        </div>
+       </div>
+       <div class="calculation-item">
+        <div class="calculation-formula">
+         ต้นทุนต่อหน่วย = ต้นทุนรวม ÷ จำนวนชิ้น
+        </div>
+        <p>คำนวณต้นทุนบรรจุภัณฑ์ต่อชิ้น</p>
+        <div class="calculation-example"><strong>ตัวอย่าง:</strong> ผลิตกล่อง 1,000 ใบ ต้นทุน 5,000 บาท<br>
+          ต้นทุนต่อใบ = 5,000 ÷ 1,000 = 5 บาท/ใบ
+        </div>
+       </div>
+       <div class="calculation-item">
+        <div class="calculation-formula">
+         สัดส่วนต้นทุนบรรจุภัณฑ์ = (ต้นทุนบรรจุภัณฑ์ ÷ ราคาขาย) × 100
+        </div>
+        <p>เปอร์เซ็นต์ต้นทุนบรรจุภัณฑ์ต่อราคาขาย</p>
+        <div class="calculation-example"><strong>ตัวอย่าง:</strong> บรรจุภัณฑ์ 5 บาท ขาย 50 บาท<br>
+          สัดส่วน = (5 ÷ 50) × 100 = 10%
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       หลักการคำนวณต้นทุน
+      </div>
+      <div class="tip-content">
+       <p>ต้นทุนบรรจุภัณฑ์ควรอยู่ที่ 5-15% ของราคาขาย ขึ้นอยู่กับประเภทสินค้า สินค้าราคาถูกใช้บรรจุภัณฑ์ง่าย ๆ สินค้าพรีเมียมใช้บรรจุภัณฑ์หรูหรา</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Storage and Transportation -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🚚</span>
+     <h2 class="section-title">การจัดเก็บ ขนส่ง และอายุการเก็บ</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>บรรจุภัณฑ์ต้องรักษาคุณภาพสินค้าตลอดห่วงโซ่อุปทาน จากโรงงานสู่ผู้บริโภค</p>
+     </div>
+     <table class="data-table">
+      <thead>
+       <tr>
+        <th>ปัจจัย</th>
+        <th>ผลกระทบ</th>
+        <th>การป้องกัน</th>
+        <th>ตัวอย่างวัสดุ</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td><strong>อุณหภูมิ</strong></td>
+        <td>เร่งปฏิกิริยา เน่าเสีย ละลาย</td>
+        <td>ฉนวนกันความร้อน ควบคุมอุณหภูมิ</td>
+        <td>โฟมกันกระแทก กล่องเย็น</td>
+       </tr>
+       <tr>
+        <td><strong>ความชื้น</strong></td>
+        <td>เชื้อรา การเน่าเสีย การเปียกชื้น</td>
+        <td>ซิลิก้าเจล ฟิล์มกันความชื้น</td>
+        <td>ฟิล์ม PE, PP ถุงอลูมิเนียม</td>
+       </tr>
+       <tr>
+        <td><strong>แสง UV</strong></td>
+        <td>ซีดจาง ย่อยสลาย เสื่อมคุณภาพ</td>
+        <td>บรรจุภัณฑ์สีเข้ม กันแสง UV</td>
+        <td>แก้วสีน้ำตาล ฟิล์มกัน UV</td>
+       </tr>
+       <tr>
+        <td><strong>ออกซิเจน</strong></td>
+        <td>ออกซิไดซ์ หืน เสื่อมรส</td>
+        <td>บรรจุสุญญากาศ แก๊สไนโตรเจน</td>
+        <td>ฟิล์มกั้นออกซิเจน กระป๋อง</td>
+       </tr>
+       <tr>
+        <td><strong>การกระแทก</strong></td>
+        <td>แตก บิ่น เสียรูปร่าง</td>
+        <td>วัสดุกันกระแทก การออกแบบ</td>
+        <td>ฟองอากาศ โฟม กระดาษลูกฟูก</td>
+       </tr>
+      </tbody>
+     </table>
+     <h3 style="color: var(--primary); margin: 2rem 0 1rem;">คุณสมบัติกั้น (Barrier Properties)</h3>
+     <div class="levels-grid">
+      <div class="level-card primary">
+       <div class="level-header"><span class="level-icon" aria-hidden="true">🚫</span>
+        <div class="level-title">
+         กั้นออกซิเจน (O₂)
+        </div>
+       </div>
+       <div class="level-description"><strong>วัตถุประสงค์:</strong> ป้องกันการออกซิไดซ์ การเน่าเสีย และการเสื่อมคุณภาพ
+       </div>
+       <div class="level-examples"><strong>วัสดุที่ดี:</strong> อะลูมิเนียม แก้ว EVOH PET เคลือบ<br><strong>วัสดุที่ไม่ดี:</strong> PE PP ธรรมดา<br><strong>ใช้กับ:</strong> อาหารกระป๋อง ขนม น้ำมัน
+       </div>
+      </div>
+      <div class="level-card secondary">
+       <div class="level-header"><span class="level-icon" aria-hidden="true">💨</span>
+        <div class="level-title">
+         กั้นไอน้ำ (H₂O)
+        </div>
+       </div>
+       <div class="level-description"><strong>วัตถุประสงค์:</strong> ป้องกันการดูดความชื้น การเปียกชื้น และการเสื่อมสภาพ
+       </div>
+       <div class="level-examples"><strong>วัสดุที่ดี:</strong> PE PP ฟิล์มเคลือบ<br><strong>วัสดุที่ไม่ดี:</strong> กระดาษธรรมดา เซลโลเฟน<br><strong>ใช้กับ:</strong> ขนมกรอบ ผงซักฟอก ยา
+       </div>
+      </div>
+      <div class="level-card tertiary">
+       <div class="level-header"><span class="level-icon" aria-hidden="true">🌈</span>
+        <div class="level-title">
+         กั้นแสง
+        </div>
+       </div>
+       <div class="level-description"><strong>วัตถุประสงค์:</strong> ป้องกันการซีดจาง การย่อยสลาย และการเปลี่ยนแปลงสี
+       </div>
+       <div class="level-examples"><strong>วัสดุที่ดี:</strong> แก้วสีเข้ม อะลูมิเนียม ฟิล์มสี<br><strong>วัสดุที่ไม่ดี:</strong> แก้วใส พลาสติกใส<br><strong>ใช้กับ:</strong> เบียร์ น้ำมันหอม ยา
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustainability -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">ความยั่งยืน</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การออกแบบบรรจุภัณฑ์ที่ยั่งยืนเป็นความรับผิดชอบต่อสิ่งแวดล้อมและสังคม</p>
+     </div>
+     <div class="sustainability-grid">
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">♻️</span>
+        <div class="sustainability-title">
+         3R และ 5R
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>3R:</strong> Reduce (ลด) Reuse (ใช้ซ้ำ) Recycle (รีไซเคิล)<br><strong>5R:</strong> เพิ่ม Refuse (ปฏิเสธ) Rot (ย่อยสลาย)<br><strong>หลักการ:</strong> ลดการใช้วัสดุ เลือกวัสดุรีไซเคิลได้ ออกแบบให้ใช้ซ้ำได้
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">📉</span>
+        <div class="sustainability-title">
+         ลดชั้นวัสดุ
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>Lightweighting:</strong> ลดน้ำหนักและปริมาณวัสดุ<br><strong>Right-sizing:</strong> ขนาดที่เหมาะสมกับสินค้า<br><strong>ประโยชน์:</strong> ลดต้นทุน ลดผลกระทบสิ่งแวดล้อม ประหยัดพลังงานขนส่ง
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🌿</span>
+        <div class="sustainability-title">
+         วัสดุย่อยสลายได้
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>ชีวภาพ:</strong> จากแป้ง ข้าวโพด อ้อย<br><strong>Compostable:</strong> ย่อยสลายในดิน<br><strong>ข้อดี:</strong> ลดขยะ ไม่สะสมในธรรมชาติ<br><strong>ข้อจำกัด:</strong> ราคาแพง อายุการเก็บสั้น
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🔄</span>
+        <div class="sustainability-title">
+         รีฟิลและรีใช้
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>Refillable:</strong> เติมสินค้าใหม่ในบรรจุภัณฑ์เดิม<br><strong>Reusable:</strong> นำไปใช้ประโยชน์อื่น<br><strong>ตัวอย่าง:</strong> ขวดแก้วเครื่องดื่ม ถุงผ้า กล่องพลาสติก
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🔬</span>
+        <div class="sustainability-title">
+         วัฏจักรชีวิตผลิตภัณฑ์ (LCA)
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>Life Cycle Assessment:</strong> ประเมินผลกระทบตลอดวัฏจักร<br><strong>ขั้นตอน:</strong> วัตถุดิบ → ผลิต → ใช้งาน → ทิ้ง<br><strong>ประเมิน:</strong> พลังงาน น้ำ ก๊าซเรือนกระจก ของเสีย
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🏭</span>
+        <div class="sustainability-title">
+         เศรษฐกิจหมุนเวียน
+        </div>
+       </div>
+       <div class="sustainability-description"><strong>Circular Economy:</strong> ใช้ทรัพยากรอย่างมีประสิทธิภาพ<br><strong>หลักการ:</strong> ออกแบบให้ทนทาน ซ่อมได้ รีไซเคิลได้<br><strong>เป้าหมาย:</strong> ขยะเป็นศูนย์ ใช้ทรัพยากรซ้ำ
+       </div>
+      </div>
+     </div>
+     <div class="tip-box">
+      <div class="tip-title">
+       การเลือกบรรจุภัณฑ์ยั่งยืน
+      </div>
+      <div class="tip-content">
+       <p>พิจารณาผลกระทบทั้งระบบ ไม่ใช่เพียงวัสดุเดียว เช่น บรรจุภัณฑ์ชีวภาพอาจใช้พลังงานผลิตมาก หรือบรรจุภัณฑ์เบาอาจใช้วัสดุหลายชนิด เลือกที่เหมาะสมกับบริบทและการใช้งาน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Case Studies -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📋</span>
+     <h2 class="section-title">ตัวอย่างกรณีศึกษา</h2>
+    </div>
+    <div class="section-content">
+     <div class="content-text">
+      <p>การวิเคราะห์บรรจุภัณฑ์ของสินค้าประเภทต่าง ๆ เพื่อเข้าใจการเลือกใช้วัสดุและการออกแบบ</p>
+     </div>
+     <div class="case-studies">
+      <div class="case-study">
+       <div class="case-header"><span class="case-icon" aria-hidden="true">🍪</span>
+        <div class="case-title">
+         ขนมอบกรอบ
+        </div>
+       </div>
+       <div class="case-details">
+        <div class="case-detail">
+         <div class="case-detail-title">
+          เป้าหมายคุณภาพ
+         </div>
+         <div class="case-detail-content">
+          รักษาความกรอบ ป้องกันความชื้น ป้องกันการแตกหัก
+         </div>
+        </div>
+        <div class="case-detail">
+         <div class="case-detail-title">
+          วัสดุ/โครงสร้าง
+         </div>
+         <div class="case-detail-content">
+          ถุงฟิล์มกันความชื้น + กล่องกระดาษลูกฟูก + ถาดพลาสติก
+         </div>
+        </div>
+        <div class="case-detail">
+         <div class="case-detail-title">
+          เหตุผลเลือกใช้
+         </div>
+         <div class="case-detail-content">
+          ฟิล์มกันความชื้น กล่องป้องกันกระแทก ถาดจัดเรียงสวยงาม
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="case-study">
+       <div class="case-header"><span class="case-icon" aria-hidden="true">🧃</span>
+        <div class="case-title">
+         เครื่องดื่มเย็นพร้อมดื่ม
+        </div>
+       </div>
+       <div class="case-details">
+        <div class="case-detail">
+         <div class="case-detail-title">
+          เป้าหมายคุณภาพ
+         </div>
+         <div class="case-detail-content">
+          รักษารสชาติ ป้องกันแบคทีเรีย สะดวกดื่ม เก็บเย็นได้
+         </div>
+        </div>
+        <div class="case-detail">
+         <div class="case-detail-title">
+          วัสดุ/โครงสร้าง
+         </div>
+         <div class="case-detail-content">
+          กล่องเทตระแพค (กระดาษ+PE+อะลูมิเนียม) + หลอดดูด
+         </div>
+        </div>
+        <div class="case-detail">
+         <div class="case-detail-title">
+          เหตุผลเลือกใช้
+         </div>
+         <div class="case-detail-content">
+          กันแสง กันอากาศ 100% เบา ไม่แตก ราคาประหยัด
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="case-study">
+       <div class="case-header"><span class="case-icon" aria-hidden="true">🧽</span>
+        <div class="case-title">
+         ผงซักฟอก
+        </div>
+       </div>
+       <div class="case-details">
+        <div class="case-detail">
+         <div class="case-detail-title">
+          เป้าหมายคุณภาพ
+         </div>
+         <div class="case-detail-content">
+          ป้องกันความชื้น เทง่าย เก็บได้นาน แสดงข้อมูลชัดเจน
+         </div>
+        </div>
+        <div class="case-detail">
+         <div class="case-detail-title">
+          วัสดุ/โครงสร้าง
+         </div>
+         <div class="case-detail-content">
+          กล่องกระดาษลูกฟูก + ถุงพลาสติกด้านใน + ฝาปิด
+         </div>
+        </div>
+        <div class="case-detail">
+         <div class="case-detail-title">
+          เหตุผลเลือกใช้
+         </div>
+         <div class="case-detail-content">
+          กล่องแข็งแรง ถุงกันความชื้น พิมพ์ข้อมูลได้ดี
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>บรรจุภัณฑ์มีหน้าที่หลากหลาย ตั้งแต่ป้องกันสินค้าไปจนถึงการสื่อสารการตลาด</li>
+     <li>การเลือกวัสดุต้องพิจารณาคุณสมบัติที่เหมาะสมกับประเภทสินค้าและการใช้งาน</li>
+     <li>บรรจุภัณฑ์ 3 ระดับทำงานร่วมกันเป็นระบบเพื่อประสิทธิภาพสูงสุด</li>
+     <li>การออกแบบต้องสมดุลระหว่างการใช้งาน ความปลอดภัย ต้นทุน และความสวยงาม</li>
+     <li>ข้อมูลและสัญลักษณ์บนฉลากมีความสำคัญต่อความปลอดภัยและการเลือกซื้อ</li>
+     <li>การคำนวณต้นทุนช่วยในการตัดสินใจเลือกใช้บรรจุภัณฑ์ที่เหมาะสม</li>
+     <li>คุณสมบัติกั้นช่วยรักษาคุณภาพสินค้าตลอดอายุการเก็บรักษา</li>
+     <li>ความยั่งยืนเป็นแนวโน้มสำคัญที่ต้องคำนึงถึงในการออกแบบบรรจุภัณฑ์</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Primary Packaging (ปฐมภูมิ)
+      </div>
+      <div class="glossary-definition">
+       บรรจุภัณฑ์ที่สัมผัสโดยตรงกับสินค้า เป็นชั้นแรกของการห่อหุ้ม
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Secondary Packaging (ทุติยภูมิ)
+      </div>
+      <div class="glossary-definition">
+       บรรจุภัณฑ์ที่ห่อหุ้มบรรจุภัณฑ์ปฐมภูมิ เพื่อการขนส่งและจำหน่าย
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Tertiary Packaging (ตติยภูมิ)
+      </div>
+      <div class="glossary-definition">
+       บรรจุภัณฑ์สำหรับการขนส่งและจัดเก็บในปริมาณมาก
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Barrier Properties (คุณสมบัติกั้น)
+      </div>
+      <div class="glossary-definition">
+       ความสามารถในการป้องกันการผ่านของแก๊ส ไอน้ำ หรือแสง
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Net Area (พื้นที่สุทธิ)
+      </div>
+      <div class="glossary-definition">
+       พื้นที่วัสดุทั้งหมดที่ใช้ในการทำบรรจุภัณฑ์ รวมส่วนพับ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       LCA (Life Cycle Assessment)
+      </div>
+      <div class="glossary-definition">
+       การประเมินผลกระทบสิ่งแวดล้อมตลอดวัฏจักรชีวิตของผลิตภัณฑ์
+      </div>
+     </div>
+    </div>
+   </section><!-- Additional Resources -->
+   <section class="resources">
+    <h2 class="resources-title">แหล่งอ่านเพิ่มเติม</h2>
+    <ul class="resources-list">
+     <li><span class="resources-icon" aria-hidden="true">🏛️</span> <span>สำนักงานมาตรฐานผลิตภัณฑ์อุตสาหกรรม (สมอ.) - มาตรฐานบรรจุภัณฑ์</span></li>
+     <li><span class="resources-icon" aria-hidden="true">🏥</span> <span>องค์การอาหารและยา (อย.) - ข้อกำหนดบรรจุภัณฑ์อาหาร</span></li>
+     <li><span class="resources-icon" aria-hidden="true">🌍</span> <span>สถาบันบรรจุภัณฑ์ไทย - งานวิจัยและพัฒนา</span></li>
+     <li><span class="resources-icon" aria-hidden="true">♻️</span> <span>มูลนิธิสิ่งแวดล้อมไทย - การจัดการขยะบรรจุภัณฑ์</span></li>
+     <li><span class="resources-icon" aria-hidden="true">📚</span> <span>วารสารบรรจุภัณฑ์และการพิมพ์ - ความรู้และแนวโน้ม</span></li>
+    </ul>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "การบรรจุภัณฑ์",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_description: "บทบาทของบรรจุภัณฑ์ต่อคุณภาพสินค้า เศรษฐกิจ และสิ่งแวดล้อม ในการสร้างมูลค่าเพิ่มและการพัฒนาที่ยั่งยืน"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson description
+            const descElement = document.getElementById('lessonDescription');
+            if (descElement) {
+                descElement.textContent = config.lesson_description || defaultConfig.lesson_description;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_description", config.lesson_description || defaultConfig.lesson_description]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9920b8e9b5fba060',t:'MTc2MTA0OTM2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

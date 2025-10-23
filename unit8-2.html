@@ -1,0 +1,1892 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การศึกษาต่อเพื่อเข้าสู่อาชีพ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --info: #17A2B8;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+            --green: #4CAF50;
+            --green-light: #81C784;
+            --brown: #8D6E63;
+            --brown-light: #BCAAA4;
+            --orange: #FF9800;
+            --purple: #9C27B0;
+            --teal: #009688;
+            --indigo: #3F51B5;
+            --pink: #E91E63;
+            --cyan: #00BCD4;
+            --red: #F44336;
+            --deep-orange: #FF5722;
+            --lime: #CDDC39;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-overview {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Pathway Overview */
+        .pathway-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .pathway-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .pathway-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pathway-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .pathway-general .pathway-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .pathway-vocational .pathway-header { background: linear-gradient(135deg, var(--orange) 0%, #FFB74D 100%); }
+        .pathway-short .pathway-header { background: linear-gradient(135deg, var(--purple) 0%, #BA68C8 100%); }
+
+        .pathway-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .pathway-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .pathway-content {
+            padding: 1.5rem;
+        }
+
+        .pathway-flow {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: var(--bg-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .flow-arrow {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Self Assessment */
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .assessment-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .assessment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .assessment-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .assessment-interests .assessment-header { background: linear-gradient(135deg, var(--pink) 0%, #F48FB1 100%); }
+        .assessment-aptitude .assessment-header { background: linear-gradient(135deg, var(--purple) 0%, #BA68C8 100%); }
+        .assessment-personality .assessment-header { background: linear-gradient(135deg, var(--indigo) 0%, #7986CB 100%); }
+        .assessment-values .assessment-header { background: linear-gradient(135deg, var(--teal) 0%, #4DB6AC 100%); }
+        .assessment-digital .assessment-header { background: linear-gradient(135deg, var(--cyan) 0%, #4DD0E1 100%); }
+
+        .assessment-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .assessment-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .assessment-content {
+            padding: 1.5rem;
+        }
+
+        .assessment-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .assessment-points li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .assessment-points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Career Fields */
+        .career-fields {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .career-field {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .career-field:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .career-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .field-health .career-header { background: linear-gradient(135deg, var(--red) 0%, #EF5350 100%); }
+        .field-engineering .career-header { background: linear-gradient(135deg, var(--brown) 0%, var(--brown-light) 100%); }
+        .field-agriculture .career-header { background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%); }
+        .field-business .career-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .field-digital .career-header { background: linear-gradient(135deg, var(--purple) 0%, #BA68C8 100%); }
+        .field-tourism .career-header { background: linear-gradient(135deg, var(--cyan) 0%, #4DD0E1 100%); }
+        .field-creative .career-header { background: linear-gradient(135deg, var(--pink) 0%, #F48FB1 100%); }
+
+        .career-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .career-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .career-content {
+            padding: 1.5rem;
+        }
+
+        .career-detail {
+            margin-bottom: 1rem;
+        }
+
+        .career-detail-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .career-detail p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Application Process */
+        .application-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .application-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--accent);
+        }
+
+        .application-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .application-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .application-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Academic Preparation */
+        .preparation-section {
+            background: linear-gradient(135deg, var(--success) 0%, var(--green-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .preparation-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .preparation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .preparation-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .preparation-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .preparation-card-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Financial Planning */
+        .financial-section {
+            background: linear-gradient(135deg, var(--info) 0%, #5DADE2 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .financial-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .financial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .financial-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .financial-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .financial-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Work Experience */
+        .experience-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .experience-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .experience-header {
+            background: linear-gradient(135deg, var(--orange) 0%, #FFB74D 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .experience-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .experience-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .experience-content {
+            padding: 1.5rem;
+        }
+
+        /* Roadmap Timeline */
+        .roadmap {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .roadmap-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 2px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-period {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Ethics Section */
+        .ethics-section {
+            background: linear-gradient(135deg, var(--indigo) 0%, #7986CB 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .ethics-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ethics-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .ethics-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .ethics-card-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-overview {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .pathway-flow {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+                align-self: center;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🎓</span>
+    <h1 id="lessonTitle">การศึกษาต่อเพื่อเข้าสู่อาชีพ</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-overview" id="lessonOverview">เชื่อมเส้นทางการเรียนสู่อาชีพอย่างมีแผน</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจเส้นทางการศึกษาต่อหลัง ม.3 รู้จักสาขาอาชีพหลักและข้อกำหนดการเข้าศึกษา</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถวางแผนการศึกษา เตรียมเอกสารสมัคร และประเมินความพร้อมด้านการเงิน</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>มีทัศนคติที่ดีต่อการเรียนรู้ตลอดชีวิต และมีจริยธรรมทางวิชาการ</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Pathway Overview -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛤️</span>
+     <h2 class="section-title">ภาพรวมเส้นทางหลัง ม.3</h2>
+    </div>
+    <div class="section-content">
+     <div class="pathway-overview">
+      <div class="pathway-card pathway-general">
+       <div class="pathway-header"><span class="pathway-icon" aria-hidden="true">🏫</span>
+        <div class="pathway-title">
+         สายสามัญ
+        </div>
+       </div>
+       <div class="pathway-content">
+        <div class="pathway-flow">
+         <div class="flow-step">
+          ม.4-ม.6
+         </div><span class="flow-arrow">→</span>
+         <div class="flow-step">
+          มหาวิทยาลัย
+         </div><span class="flow-arrow">→</span>
+         <div class="flow-step">
+          ปริญญาตรี
+         </div>
+        </div>
+        <h4 style="color: var(--primary); margin: 1rem 0 0.5rem 0;">เหมาะสำหรับ</h4>
+        <ul class="assessment-points">
+         <li>ผู้ที่ชอบเรียนวิชาการ</li>
+         <li>ต้องการอาชีพที่ใช้ความรู้เชิงลึก</li>
+         <li>มีเป้าหมายเป็นแพทย์ วิศวกร นักกฎหมาย</li>
+         <li>ครอบครัวสนับสนุนการศึกษาระยะยาว</li>
+        </ul>
+        <h4 style="color: var(--primary); margin: 1rem 0 0.5rem 0;">ข้อดี</h4>
+        <ul class="assessment-points">
+         <li>ความรู้กว้างขวาง</li>
+         <li>โอกาสเงินเดือนสูง</li>
+         <li>เป็นที่ยอมรับในสังคม</li>
+         <li>สามารถเรียนต่อระดับสูงได้</li>
+        </ul>
+       </div>
+      </div>
+      <div class="pathway-card pathway-vocational">
+       <div class="pathway-header"><span class="pathway-icon" aria-hidden="true">🔧</span>
+        <div class="pathway-title">
+         อาชีวศึกษา
+        </div>
+       </div>
+       <div class="pathway-content">
+        <div class="pathway-flow">
+         <div class="flow-step">
+          ปวช.
+         </div><span class="flow-arrow">→</span>
+         <div class="flow-step">
+          ปวส./ทำงาน
+         </div><span class="flow-arrow">→</span>
+         <div class="flow-step">
+          ปริญญาตรี
+         </div>
+        </div>
+        <h4 style="color: var(--orange); margin: 1rem 0 0.5rem 0;">เหมาะสำหรับ</h4>
+        <ul class="assessment-points">
+         <li>ผู้ที่ชอบงานปฏิบัติ</li>
+         <li>ต้องการทักษะเฉพาะทาง</li>
+         <li>อยากได้งานเร็ว</li>
+         <li>ชอบเรียนรู้จากการทำ</li>
+        </ul>
+        <h4 style="color: var(--orange); margin: 1rem 0 0.5rem 0;">ข้อดี</h4>
+        <ul class="assessment-points">
+         <li>เรียนจบได้งานทันที</li>
+         <li>ทักษะตรงกับตลาดงาน</li>
+         <li>ค่าเล่าเรียนถูกกว่า</li>
+         <li>ระบบทวิภาคี (เรียน+ทำงาน)</li>
+        </ul>
+       </div>
+      </div>
+      <div class="pathway-card pathway-short">
+       <div class="pathway-header"><span class="pathway-icon" aria-hidden="true">⚡</span>
+        <div class="pathway-title">
+         หลักสูตรระยะสั้น
+        </div>
+       </div>
+       <div class="pathway-content">
+        <div class="pathway-flow">
+         <div class="flow-step">
+          Non-Degree
+         </div><span class="flow-arrow">→</span>
+         <div class="flow-step">
+          Micro-credential
+         </div><span class="flow-arrow">→</span>
+         <div class="flow-step">
+          ทำงาน
+         </div>
+        </div>
+        <h4 style="color: var(--purple); margin: 1rem 0 0.5rem 0;">เหมาะสำหรับ</h4>
+        <ul class="assessment-points">
+         <li>ผู้ที่ต้องการทักษะเฉพาะ</li>
+         <li>อยากเปลี่ยนสายงาน</li>
+         <li>เรียนรู้ออนไลน์ได้</li>
+         <li>มีข้อจำกัดด้านเวลา/เงิน</li>
+        </ul>
+        <h4 style="color: var(--purple); margin: 1rem 0 0.5rem 0;">ตัวอย่าง</h4>
+        <ul class="assessment-points">
+         <li>Google Certificate</li>
+         <li>หลักสูตรออนไลน์ Coursera</li>
+         <li>อบรมเฉพาะทาง</li>
+         <li>Bootcamp โปรแกรมมิ่ง</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Self Assessment -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔍</span>
+     <h2 class="section-title">รู้จักตนเองเพื่อเลือกเส้นทาง</h2>
+    </div>
+    <div class="section-content">
+     <div class="assessment-grid">
+      <div class="assessment-card assessment-interests">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">❤️</span>
+        <div class="assessment-title">
+         ความสนใจ
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--pink); margin-bottom: 0.5rem;">RIASEC Model</h4>
+        <ul class="assessment-points">
+         <li><strong>Realistic:</strong> ชอบงานปฏิบัติ เครื่องจักร</li>
+         <li><strong>Investigative:</strong> ชอบวิจัย วิเคราะห์</li>
+         <li><strong>Artistic:</strong> ชอบสร้างสรรค์ ศิลปะ</li>
+         <li><strong>Social:</strong> ชอบช่วยเหลือผู้อื่น</li>
+         <li><strong>Enterprising:</strong> ชอบนำ ขาย</li>
+         <li><strong>Conventional:</strong> ชอบระเบียบ ข้อมูล</li>
+        </ul>
+       </div>
+      </div>
+      <div class="assessment-card assessment-aptitude">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">🧠</span>
+        <div class="assessment-title">
+         ความถนัด
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--purple); margin-bottom: 0.5rem;">ทักษะที่เรียนรู้ได้เร็ว</h4>
+        <ul class="assessment-points">
+         <li>คณิตศาสตร์และตรรกะ</li>
+         <li>ภาษาและการสื่อสาร</li>
+         <li>ศิลปะและความคิดสร้างสรรค์</li>
+         <li>กีฬาและการเคลื่อนไหว</li>
+         <li>ดนตรีและจังหวะ</li>
+         <li>ธรรมชาติและสิ่งแวดล้อม</li>
+         <li>สังคมและความสัมพันธ์</li>
+         <li>การรู้จักตนเอง</li>
+        </ul>
+       </div>
+      </div>
+      <div class="assessment-card assessment-personality">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">🎭</span>
+        <div class="assessment-title">
+         บุคลิกภาพ
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--indigo); margin-bottom: 0.5rem;">ลักษณะการทำงาน</h4>
+        <ul class="assessment-points">
+         <li>ชอบทำงานคนเดียวหรือเป็นทีม</li>
+         <li>ชอบความท้าทายหรือความมั่นคง</li>
+         <li>ชอบนำหรือตาม</li>
+         <li>ชอบรายละเอียดหรือภาพรวม</li>
+         <li>ชอบแผนหรือความยืดหยุ่น</li>
+         <li>ชอบคิดหรือปฏิบัติ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="assessment-card assessment-values">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">⭐</span>
+        <div class="assessment-title">
+         ค่านิยม
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--teal); margin-bottom: 0.5rem;">สิ่งที่ให้ความสำคัญ</h4>
+        <ul class="assessment-points">
+         <li>เงิน ความมั่นคง</li>
+         <li>ชื่อเสียง การยอมรับ</li>
+         <li>ความสุข ความสมดุล</li>
+         <li>การช่วยเหลือสังคม</li>
+         <li>ความท้าทาย การเติบโต</li>
+         <li>ความเป็นอิสระ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="assessment-card assessment-digital">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">💻</span>
+        <div class="assessment-title">
+         ทักษะดิจิทัลพื้นฐาน
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">ทุกอาชีพต้องใช้</h4>
+        <ul class="assessment-points">
+         <li>การใช้คอมพิวเตอร์พื้นฐาน</li>
+         <li>อินเทอร์เน็ตและอีเมล</li>
+         <li>โปรแกรมออฟฟิศ</li>
+         <li>โซเชียลมีเดีย</li>
+         <li>ความปลอดภัยไซเบอร์</li>
+         <li>การเรียนรู้ออนไลน์</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Career Fields -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🏭</span>
+     <h2 class="section-title">สำรวจสาขาอาชีพหลัก</h2>
+    </div>
+    <div class="section-content">
+     <div class="career-fields">
+      <div class="career-field field-health">
+       <div class="career-header"><span class="career-icon" aria-hidden="true">🏥</span>
+        <div class="career-title">
+         สุขภาพ
+        </div>
+       </div>
+       <div class="career-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          สิ่งที่เรียน
+         </div>
+         <p>วิทยาศาสตร์ ชีววิทยา เคมี ฟิสิกส์ กายวิภาคศาสตร์ สรีรวิทยา</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะจำเป็น
+         </div>
+         <p>ความเมตตา ความอดทน ความละเอียดรอบคอบ การแก้ปัญหา</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสงาน
+         </div>
+         <p>แพทย์ พยาบาล เภสัชกร นักกายภาพบำบัด เทคนิคการแพทย์</p>
+        </div>
+       </div>
+      </div>
+      <div class="career-field field-engineering">
+       <div class="career-header"><span class="career-icon" aria-hidden="true">⚙️</span>
+        <div class="career-title">
+         วิศวกรรม/ช่าง
+        </div>
+       </div>
+       <div class="career-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          สิ่งที่เรียน
+         </div>
+         <p>คณิตศาสตร์ ฟิสิกส์ เคมี วิศวกรรม เทคโนโลジี การออกแบบ</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะจำเป็น
+         </div>
+         <p>ความคิดเชิงตรรกะ การแก้ปัญหา ความละเอียด ทักษะปฏิบัติ</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสงาน
+         </div>
+         <p>วิศวกร ช่างเทคนิค นักออกแบบ ผู้ควบคุมคุณภาพ</p>
+        </div>
+       </div>
+      </div>
+      <div class="career-field field-agriculture">
+       <div class="career-header"><span class="career-icon" aria-hidden="true">🌾</span>
+        <div class="career-title">
+         เกษตรและอาหาร
+        </div>
+       </div>
+       <div class="career-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          สิ่งที่เรียน
+         </div>
+         <p>เกษตรศาสตร์ ชีววิทยา เคมี วิทยาศาสตร์อาหาร เทคโนโลยีการเกษตร</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะจำเป็น
+         </div>
+         <p>ความรักธรรมชาติ ความอดทน การสังเกต นวัตกรรม</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสงาน
+         </div>
+         <p>เกษตรกรสมัยใหม่ นักวิจัย ผู้ประกอบการเกษตร นักเทคโนโลยีอาหาร</p>
+        </div>
+       </div>
+      </div>
+      <div class="career-field field-business">
+       <div class="career-header"><span class="career-icon" aria-hidden="true">💼</span>
+        <div class="career-title">
+         ธุรกิจ/การตลาด
+        </div>
+       </div>
+       <div class="career-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          สิ่งที่เรียน
+         </div>
+         <p>บริหารธุรกิจ การตลาด การเงิน เศรษฐศาสตร์ การบัญชี</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะจำเป็น
+         </div>
+         <p>การสื่อสาร ความเป็นผู้นำ การวิเคราะห์ การเจรจา</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสงาน
+         </div>
+         <p>นักการตลาด ผู้จัดการ นักวิเคราะห์ ผู้ประกอบการ</p>
+        </div>
+       </div>
+      </div>
+      <div class="career-field field-digital">
+       <div class="career-header"><span class="career-icon" aria-hidden="true">💻</span>
+        <div class="career-title">
+         ดิจิทัล/ไอที
+        </div>
+       </div>
+       <div class="career-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          สิ่งที่เรียน
+         </div>
+         <p>วิทยาการคอมพิวเตอร์ โปรแกรมมิ่ง ระบบเครือข่าย ความปลอดภัย</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะจำเป็น
+         </div>
+         <p>ความคิดเชิงตรรกะ การแก้ปัญหา ความอดทน การเรียนรู้ใหม่</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสงาน
+         </div>
+         <p>โปรแกรมเมอร์ นักวิเคราะห์ระบบ ผู้เชี่ยวชาญ AI/Data</p>
+        </div>
+       </div>
+      </div>
+      <div class="career-field field-tourism">
+       <div class="career-header"><span class="career-icon" aria-hidden="true">✈️</span>
+        <div class="career-title">
+         การท่องเที่ยว/บริการ
+        </div>
+       </div>
+       <div class="career-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          สิ่งที่เรียน
+         </div>
+         <p>การท่องเที่ยว การโรงแรม ภาษาต่างประเทศ วัฒนธรรม การบริการ</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะจำเป็น
+         </div>
+         <p>การสื่อสาร ความเป็นมิตร ภาษาต่างประเทศ ความอดทน</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสงาน
+         </div>
+         <p>ไกด์นำเที่ยว พนักงานโรงแรม ตัวแทนท่องเที่ยว</p>
+        </div>
+       </div>
+      </div>
+      <div class="career-field field-creative">
+       <div class="career-header"><span class="career-icon" aria-hidden="true">🎨</span>
+        <div class="career-title">
+         ครีเอทีฟ/สื่อ
+        </div>
+       </div>
+       <div class="career-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          สิ่งที่เรียน
+         </div>
+         <p>ศิลปะ ดีไซน์ สื่อสารมวลชน ภาพยนตร์ ดนตรี การเขียน</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะจำเป็น
+         </div>
+         <p>ความคิดสร้างสรรค์ จินตนาการ ความอดทน ทักษะเทคนิค</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสงาน
+         </div>
+         <p>นักออกแบบ ช่างภาพ นักเขียน ผู้ผลิตคอนเทนต์</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Application Process -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📝</span>
+     <h2 class="section-title">เส้นทางการสมัคร/คัดเลือก</h2>
+    </div>
+    <div class="section-content">
+     <div class="application-grid">
+      <div class="application-card"><span class="application-icon" aria-hidden="true">📊</span>
+       <div class="application-title">
+        เกณฑ์พื้นฐาน
+       </div>
+       <ul class="assessment-points">
+        <li>เกรดเฉลี่ย (GPA) ตามที่กำหนด</li>
+        <li>คะแนนสอบ O-NET/GAT/PAT</li>
+        <li>คะแนนสอบเข้าสถาบัน</li>
+        <li>ผลการเรียนวิชาเฉพาะ</li>
+        <li>ความประพฤติและการเข้าเรียน</li>
+       </ul>
+      </div>
+      <div class="application-card"><span class="application-icon" aria-hidden="true">📁</span>
+       <div class="application-title">
+        แฟ้มสะสมงาน (Portfolio)
+       </div>
+       <ul class="assessment-points">
+        <li>ผลงานที่เกี่ยวข้องกับสาขา</li>
+        <li>ประกาศนียบัตรรางวัล</li>
+        <li>กิจกรรมจิตอาสา</li>
+        <li>การแข่งขันทางวิชาการ</li>
+        <li>โครงงานและการวิจัย</li>
+        <li>จดหมายรับรองจากครู/ผู้ใหญ่</li>
+       </ul>
+      </div>
+      <div class="application-card"><span class="application-icon" aria-hidden="true">🎤</span>
+       <div class="application-title">
+        สอบ/สัมภาษณ์
+       </div>
+       <ul class="assessment-points">
+        <li>การสอบข้อเขียน</li>
+        <li>การสอบปฏิบัติ (สำหรับบางสาขา)</li>
+        <li>การสัมภาษณ์บุคลิกภาพ</li>
+        <li>การนำเสนอผลงาน</li>
+        <li>การทดสอบความถนัด</li>
+       </ul>
+      </div>
+      <div class="application-card"><span class="application-icon" aria-hidden="true">🔄</span>
+       <div class="application-title">
+        สะพานต่อ
+       </div>
+       <ul class="assessment-points">
+        <li>ปวช. → ปวส. (เทียบโอน)</li>
+        <li>ปวส. → ปริญญาตรี</li>
+        <li>อนุปริญญา → ปริญญาตรี</li>
+        <li>การเทียบโอนหน่วยกิต</li>
+        <li>หลักสูตรเชื่อมต่อ</li>
+       </ul>
+      </div>
+      <div class="application-card"><span class="application-icon" aria-hidden="true">🤝</span>
+       <div class="application-title">
+        สายอาชีว/ทวิภาคี
+       </div>
+       <ul class="assessment-points">
+        <li>เรียนในสถานศึกษา 50%</li>
+        <li>ฝึกงานในสถานประกอบการ 50%</li>
+        <li>ได้เงินเดือนระหว่างเรียน</li>
+        <li>รับรองจากสถานประกอบการ</li>
+        <li>โอกาสได้งานหลังจบ</li>
+       </ul>
+      </div>
+      <div class="application-card"><span class="application-icon" aria-hidden="true">📋</span>
+       <div class="application-title">
+        เอกสารที่ควรมี
+       </div>
+       <ul class="assessment-points">
+        <li>ใบแสดงผลการเรียน</li>
+        <li>หนังสือรับรองความประพฤติ</li>
+        <li>ใบประกาศเกียรติคุณ</li>
+        <li>รูปถ่าย</li>
+        <li>สำเนาบัตรประชาชน</li>
+        <li>หนังสือรับรองรายได้ผู้ปกครอง</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Academic Preparation -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📚</span>
+     <h2 class="section-title">การเตรียมพร้อมด้านวิชาการและทักษะ</h2>
+    </div>
+    <div class="section-content">
+     <div class="preparation-section">
+      <div class="preparation-title">
+       ทักษะสำคัญที่ต้องพัฒนา
+      </div>
+      <div class="preparation-grid">
+       <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">📖</span>
+        <div class="preparation-card-title">
+         วิชาหลัก
+        </div>
+        <ul class="assessment-points">
+         <li><strong>คณิตศาสตร์:</strong> พื้นฐานทุกสาขา</li>
+         <li><strong>วิทยาศาสตร์:</strong> ฟิสิกส์ เคมี ชีววิทยา</li>
+         <li><strong>ภาษาไทย:</strong> การอ่าน เขียน สื่อสาร</li>
+         <li><strong>ภาษาอังกฤษ:</strong> จำเป็นทุกอาชีพ</li>
+         <li><strong>สังคมศึกษา:</strong> ความเข้าใจสังคม</li>
+        </ul>
+       </div>
+       <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">🤝</span>
+        <div class="preparation-card-title">
+         Soft Skills
+        </div>
+        <ul class="assessment-points">
+         <li><strong>การสื่อสาร:</strong> พูด ฟัง อ่าน เขียน</li>
+         <li><strong>การทำงานทีม:</strong> ร่วมมือ แบ่งปัน</li>
+         <li><strong>วินัยในตนเอง:</strong> ตรงต่อเวลา รับผิดชอบ</li>
+         <li><strong>การคิดเชิงวิพากษ์:</strong> วิเคราะห์ ประเมิน</li>
+         <li><strong>การแก้ปัญหา:</strong> คิดสร้างสรรค์</li>
+        </ul>
+       </div>
+       <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">💻</span>
+        <div class="preparation-card-title">
+         Digital Literacy
+        </div>
+        <ul class="assessment-points">
+         <li><strong>คอมพิวเตอร์พื้นฐาน:</strong> Windows/Mac</li>
+         <li><strong>โปรแกรมออฟฟิศ:</strong> Word Excel PowerPoint</li>
+         <li><strong>อินเทอร์เน็ต:</strong> ค้นหาข้อมูล อีเมล</li>
+         <li><strong>โซเชียลมีเดีย:</strong> ใช้อย่างสร้างสรรค์</li>
+         <li><strong>ความปลอดภัย:</strong> รหัสผ่าน ไวรัส</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Financial Planning -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💰</span>
+     <h2 class="section-title">แผนการเงินเพื่อการศึกษา</h2>
+    </div>
+    <div class="section-content">
+     <div class="financial-section">
+      <div class="financial-title">
+       การวางแผนค่าใช้จ่ายการศึกษา
+      </div>
+      <div class="financial-grid">
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">🏫</span>
+        <div class="financial-item-title">
+         ค่าเล่าเรียน
+        </div>
+        <p>ภาคเรียนละ 15,000-50,000 บาท (มหาวิทยาลัย) หรือ 5,000-15,000 บาท (อาชีวะ)</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">📚</span>
+        <div class="financial-item-title">
+         อุปกรณ์การเรียน
+        </div>
+        <p>หนังสือ เครื่องแบบ คอมพิวเตอร์ อุปกรณ์เฉพาะสาขา</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">🚌</span>
+        <div class="financial-item-title">
+         ค่าเดินทาง
+        </div>
+        <p>ค่าน้ำมัน ค่าหอพัก ค่าอาหาร ค่าใช้จ่ายประจำวัน</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">🎓</span>
+        <div class="financial-item-title">
+         ทุนการศึกษา
+        </div>
+        <p>ทุนรัฐบาล ทุนมูลนิธิ ทุนชุมชน ทุนจากสถานศึกษา</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">🏦</span>
+        <div class="financial-item-title">
+         เงินกู้การศึกษา
+        </div>
+        <p>กยศ. (รายได้น้อย) กรอ. (รายได้ปานกลาง) ดอกเบี้ยต่ำ</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">⏰</span>
+        <div class="financial-item-title">
+         งานพาร์ทไทม์
+        </div>
+        <p>ติวเตอร์ งานออนไลน์ งานในมหาวิทยาลัย (ไม่เกิน 20 ชม./สัปดาห์)</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Work Experience -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔧</span>
+     <h2 class="section-title">เรียนรู้จากงานจริง</h2>
+    </div>
+    <div class="section-content">
+     <div class="experience-cards">
+      <div class="experience-card">
+       <div class="experience-header"><span class="experience-icon" aria-hidden="true">🏭</span>
+        <div class="experience-title">
+         ฝึกงาน (Internship)
+        </div>
+       </div>
+       <div class="experience-content">
+        <h4 style="color: var(--orange); margin-bottom: 0.5rem;">ลักษณะ</h4>
+        <ul class="assessment-points">
+         <li>ฝึกงานระยะสั้น 2-4 เดือน</li>
+         <li>ไม่ได้เงินเดือน หรือได้น้อย</li>
+         <li>เน้นการเรียนรู้</li>
+         <li>ได้ใบรับรองการฝึกงาน</li>
+        </ul>
+        <h4 style="color: var(--orange); margin: 1rem 0 0.5rem 0;">ประโยชน์</h4>
+        <ul class="assessment-points">
+         <li>ได้ประสบการณ์จริง</li>
+         <li>รู้จักสภาพงาน</li>
+         <li>สร้างเครือข่าย</li>
+         <li>เพิ่มโอกาสได้งาน</li>
+        </ul>
+       </div>
+      </div>
+      <div class="experience-card">
+       <div class="experience-header"><span class="experience-icon" aria-hidden="true">🤝</span>
+        <div class="experience-title">
+         สหกิจศึกษา (Co-op)
+        </div>
+       </div>
+       <div class="experience-content">
+        <h4 style="color: var(--orange); margin-bottom: 0.5rem;">ลักษณะ</h4>
+        <ul class="assessment-points">
+         <li>ทำงานเต็มเวลา 4-8 เดือน</li>
+         <li>ได้เงินเดือนเต็ม</li>
+         <li>มีหน้าที่ความรับผิดชอบจริง</li>
+         <li>ได้หน่วยกิตการเรียน</li>
+        </ul>
+        <h4 style="color: var(--orange); margin: 1rem 0 0.5rem 0;">ประโยชน์</h4>
+        <ul class="assessment-points">
+         <li>ประสบการณ์ทำงานจริง</li>
+         <li>รายได้ระหว่างเรียน</li>
+         <li>โอกาสได้งานประจำ</li>
+         <li>พัฒนาทักษะการทำงาน</li>
+        </ul>
+       </div>
+      </div>
+      <div class="experience-card">
+       <div class="experience-header"><span class="experience-icon" aria-hidden="true">👨‍🏫</span>
+        <div class="experience-title">
+         Apprenticeship
+        </div>
+       </div>
+       <div class="experience-content">
+        <h4 style="color: var(--orange); margin-bottom: 0.5rem;">ลักษณะ</h4>
+        <ul class="assessment-points">
+         <li>เรียนและทำงานไปพร้อมกัน</li>
+         <li>มีพี่เลี้ยงสอนงาน</li>
+         <li>ระยะเวลา 1-3 ปี</li>
+         <li>ได้ใบรับรองฝีมือ</li>
+        </ul>
+        <h4 style="color: var(--orange); margin: 1rem 0 0.5rem 0;">เหมาะสำหรับ</h4>
+        <ul class="assessment-points">
+         <li>งานช่างเทคนิค</li>
+         <li>งานฝีมือเฉพาะ</li>
+         <li>งานที่ต้องประสบการณ์</li>
+         <li>ผู้ที่เรียนรู้จากการปฏิบัติ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="experience-card">
+       <div class="experience-header"><span class="experience-icon" aria-hidden="true">🔄</span>
+        <div class="experience-title">
+         โครงการทวิภาคี
+        </div>
+       </div>
+       <div class="experience-content">
+        <h4 style="color: var(--orange); margin-bottom: 0.5rem;">ลักษณะ</h4>
+        <ul class="assessment-points">
+         <li>เรียนในโรงเรียน 50%</li>
+         <li>ทำงานในบริษัท 50%</li>
+         <li>ได้เงินเดือนระหว่างเรียน</li>
+         <li>จบแล้วมีงานรอ</li>
+        </ul>
+        <h4 style="color: var(--orange); margin: 1rem 0 0.5rem 0;">ข้อดี</h4>
+        <ul class="assessment-points">
+         <li>ไม่เสียค่าเล่าเรียน</li>
+         <li>มีรายได้ตั้งแต่เรียน</li>
+         <li>ทักษะตรงกับงาน</li>
+         <li>การันตีการจ้างงาน</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Roadmap -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🗺️</span>
+     <h2 class="section-title">แผนที่ทาง (Roadmap)</h2>
+    </div>
+    <div class="section-content">
+     <div class="roadmap">
+      <div class="roadmap-title">
+       ไทม์ไลน์การเตรียมตัวตั้งแต่ ม.3
+      </div>
+      <div class="timeline">
+       <div class="timeline-item">
+        <div class="timeline-period">
+         ม.3 เทอม 1
+        </div>
+        <div class="timeline-content">
+         <h4 style="color: var(--primary); margin-bottom: 0.5rem;">สำรวจตนเอง</h4>
+         <ul class="assessment-points">
+          <li>ทำแบบทดสอบความถนัด ความสนใจ</li>
+          <li>สังเกตวิชาที่ชอบและเก่ง</li>
+          <li>คุยกับครู ผู้ปกครอง</li>
+          <li>อ่านข้อมูลอาชีพต่างๆ</li>
+         </ul>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-period">
+         ม.3 เทอม 2
+        </div>
+        <div class="timeline-content">
+         <h4 style="color: var(--primary); margin-bottom: 0.5rem;">สำรวจสาขา</h4>
+         <ul class="assessment-points">
+          <li>เยี่ยมชมสถานศึกษา</li>
+          <li>เข้าร่วม Open House</li>
+          <li>คุยกับรุ่นพี่ ศิษย์เก่า</li>
+          <li>ศึกษาหลักสูตรและค่าใช้จ่าย</li>
+         </ul>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-period">
+         ปิดเทอม ม.3
+        </div>
+        <div class="timeline-content">
+         <h4 style="color: var(--primary); margin-bottom: 0.5rem;">เก็บผลงาน</h4>
+         <ul class="assessment-points">
+          <li>เข้าร่วมกิจกรรมจิตอาสา</li>
+          <li>เข้าแข่งขันทางวิชาการ</li>
+          <li>ทำโครงงาน</li>
+          <li>เรียนเสริมทักษะ</li>
+         </ul>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-period">
+         ม.4-ม.6 / ปวช.
+        </div>
+        <div class="timeline-content">
+         <h4 style="color: var(--primary); margin-bottom: 0.5rem;">เตรียมเอกสาร</h4>
+         <ul class="assessment-points">
+          <li>รักษาเกรดให้ดี</li>
+          <li>สะสมผลงานอย่างต่อเนื่อง</li>
+          <li>เตรียมสอบ O-NET, GAT, PAT</li>
+          <li>หาข้อมูลทุนการศึกษา</li>
+         </ul>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-period">
+         ก่อนจบการศึกษา
+        </div>
+        <div class="timeline-content">
+         <h4 style="color: var(--primary); margin-bottom: 0.5rem;">ยื่นสมัคร/สัมภาษณ์</h4>
+         <ul class="assessment-points">
+          <li>ยื่นใบสมัครตามกำหนด</li>
+          <li>เตรียมตัวสัมภาษณ์</li>
+          <li>จัดเตรียม Portfolio</li>
+          <li>สมัครทุนการศึกษา</li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Ethics and Safety -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚖️</span>
+     <h2 class="section-title">จริยธรรมและความปลอดภัย</h2>
+    </div>
+    <div class="section-content">
+     <div class="ethics-section">
+      <div class="ethics-title">
+       หลักการสำคัญในการศึกษาและการทำงาน
+      </div>
+      <div class="ethics-grid">
+       <div class="ethics-card"><span class="ethics-icon" aria-hidden="true">📚</span>
+        <div class="ethics-card-title">
+         ความซื่อสัตย์ทางวิชาการ
+        </div>
+        <ul class="assessment-points">
+         <li>ไม่ลอกผลงานผู้อื่น</li>
+         <li>อ้างอิงแหล่งที่มาอย่างถูกต้อง</li>
+         <li>ไม่โกงในการสอบ</li>
+         <li>ทำงานด้วยความจริงใจ</li>
+         <li>ยอมรับเมื่อทำผิดพลาด</li>
+        </ul>
+       </div>
+       <div class="ethics-card"><span class="ethics-icon" aria-hidden="true">👣</span>
+        <div class="ethics-card-title">
+         รอยเท้าดิจิทัล
+        </div>
+        <ul class="assessment-points">
+         <li>ระวังการโพสต์โซเชียลมีเดีย</li>
+         <li>หลีกเลี่ยงเนื้อหาไม่เหมาะสม</li>
+         <li>สร้างภาพลักษณ์ที่ดี</li>
+         <li>ตรวจสอบความเป็นส่วนตัว</li>
+         <li>คิดก่อนแชร์</li>
+        </ul>
+       </div>
+       <div class="ethics-card"><span class="ethics-icon" aria-hidden="true">🤝</span>
+        <div class="ethics-card-title">
+         มารยาทการสมัครและสัมภาษณ์
+        </div>
+        <ul class="assessment-points">
+         <li>แต่งกายเหมาะสม</li>
+         <li>ไปให้ตรงเวลา</li>
+         <li>พูดจาสุภาพ</li>
+         <li>แสดงความสนใจจริงใจ</li>
+         <li>เตรียมคำถามที่ดี</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>การรู้จักตนเองเป็นพื้นฐานสำคัญในการเลือกเส้นทางการศึกษา</li>
+     <li>มีหลายเส้นทางสู่ความสำเร็จ ไม่จำเป็นต้องเป็นมหาวิทยาลัยเสมอไป</li>
+     <li>อาชีวศึกษาและระบบทวิภาคีเป็นทางเลือกที่ดีสำหรับการได้งานเร็ว</li>
+     <li>การสร้าง Portfolio และการสะสมประสบการณ์มีความสำคัญมาก</li>
+     <li>การวางแผนการเงินช่วยลดภาระครอบครัวและเพิ่มโอกาส</li>
+     <li>การฝึกงานและสหกิจศึกษาเป็นสะพานเชื่อมสู่โลกการทำงาน</li>
+     <li>ทักษะดิจิทัลและ Soft Skills จำเป็นสำหรับทุกสาขาอาชีพ</li>
+     <li>จริยธรรมทางวิชาการและการสร้างภาพลักษณ์ดิจิทัลมีความสำคัญ</li>
+     <li>การเตรียมตัวล่วงหน้าและการมีแผนชัดเจนเพิ่มโอกาสความสำเร็จ</li>
+     <li>การเรียนรู้ตลอดชีวิตและการปรับตัวเป็นกุญแจสู่อนาคตที่ดี</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Pathway
+      </div>
+      <div class="glossary-definition">
+       เส้นทางการศึกษาและการพัฒนาอาชีพที่มีแผนชัดเจน
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Portfolio
+      </div>
+      <div class="glossary-definition">
+       แฟ้มสะสมผลงาน รวบรวมความสำเร็จและประสบการณ์
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Apprenticeship
+      </div>
+      <div class="glossary-definition">
+       การเรียนรู้ทักษะจากผู้เชี่ยวชาญในสถานที่ทำงานจริง
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Co-op (สหกิจศึกษา)
+      </div>
+      <div class="glossary-definition">
+       การทำงานเต็มเวลาในสถานประกอบการระหว่างเรียน
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Micro-credential
+      </div>
+      <div class="glossary-definition">
+       ใบรับรองทักษะเฉพาะจากหลักสูตรระยะสั้น
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Upskill/Reskill
+      </div>
+      <div class="glossary-definition">
+       การพัฒนาทักษะเพิ่มเติม (Upskill) หรือเรียนทักษะใหม่ (Reskill)
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       RIASEC
+      </div>
+      <div class="glossary-definition">
+       แบบจำแนกความสนใจอาชีพ 6 ประเภท ของ John Holland
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Digital Footprint
+      </div>
+      <div class="glossary-definition">
+       รอยเท้าดิจิทัล ข้อมูลที่เหลือไว้ในโลกออนไลน์
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "การศึกษาต่อเพื่อเข้าสู่อาชีพ",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_overview: "เชื่อมเส้นทางการเรียนสู่อาชีพอย่างมีแผน"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson overview
+            const overviewElement = document.getElementById('lessonOverview');
+            if (overviewElement) {
+                overviewElement.textContent = config.lesson_overview || defaultConfig.lesson_overview;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_overview", config.lesson_overview || defaultConfig.lesson_overview]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99217f3df53bce4d',t:'MTc2MTA1NzQ4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

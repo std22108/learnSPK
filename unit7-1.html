@@ -1,0 +1,1749 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>งานธุรกิจ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --info: #17A2B8;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+            --green: #4CAF50;
+            --green-light: #81C784;
+            --brown: #8D6E63;
+            --brown-light: #BCAAA4;
+            --orange: #FF9800;
+            --purple: #9C27B0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-goal {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Business Types Grid */
+        .business-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .business-type-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .business-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .business-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .business-type-header {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E3F2FD 100%);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .business-type-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .business-type-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .business-type-content {
+            padding: 1.5rem;
+        }
+
+        .business-type-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .business-type-examples {
+            background: #E3F2FD;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .examples-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Value Chain */
+        .value-chain {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .value-step {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .value-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-step::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .value-step:last-child::after {
+            display: none;
+        }
+
+        .value-step-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .value-step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-step-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Organization Forms */
+        .org-forms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .org-form-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .org-form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .org-form-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .org-form-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .org-form-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .org-form-content {
+            padding: 1.5rem;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .pros, .cons {
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .pros {
+            background: #E8F5E8;
+            border-left: 3px solid var(--success);
+        }
+
+        .cons {
+            background: #FFEBEE;
+            border-left: 3px solid var(--danger);
+        }
+
+        .pros h5, .cons h5 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .pros h5 {
+            color: var(--success);
+        }
+
+        .cons h5 {
+            color: var(--danger);
+        }
+
+        .pros ul, .cons ul {
+            font-size: 0.9rem;
+            padding-left: 1rem;
+        }
+
+        .pros li, .cons li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Stakeholders */
+        .stakeholders {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stakeholder-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .stakeholder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stakeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .stakeholder-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stakeholder-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Marketing Mix */
+        .marketing-mix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .marketing-p {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .marketing-p:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .marketing-p-header {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--text-dark);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .marketing-p-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .marketing-p-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .marketing-p-content {
+            padding: 1.5rem;
+        }
+
+        .marketing-example {
+            background: #FFF8E1;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: var(--accent-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Finance Basics */
+        .finance-concepts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .finance-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--success);
+        }
+
+        .finance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .finance-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        .finance-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--success);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .finance-formula {
+            background: #E8F5E8;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: monospace;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-study {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .case-study-header {
+            background: linear-gradient(135deg, var(--info) 0%, #5DADE2 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .case-study-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .case-study-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-type {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .case-study-content {
+            padding: 1.5rem;
+        }
+
+        .case-study-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-section h4 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .case-study-section p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Digital Tools */
+        .digital-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .digital-tool {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--info);
+        }
+
+        .digital-tool:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .digital-tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .digital-tool-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--info);
+            margin-bottom: 0.5rem;
+        }
+
+        .digital-tool-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Sustainability */
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .sustainability-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .sustainability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sustainability-header {
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .sustainability-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .sustainability-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .sustainability-content {
+            padding: 1.5rem;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-goal {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .value-chain {
+                flex-direction: column;
+            }
+
+            .value-step::after {
+                display: none;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🏢</span>
+    <h1 id="lessonTitle">งานธุรกิจ</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-goal" id="lessonGoal">บทบาทของธุรกิจต่อเศรษฐกิจ สังคม และชุมชน</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจความหมาย ประเภท และรูปแบบองค์กรธุรกิจ รวมถึงบทบาทต่อเศรษฐกิจและสังคม</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถวิเคราะห์ห่วงโซ่คุณค่า ผู้มีส่วนได้ส่วนเสีย และหลักการตลาดเบื้องต้น</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>เห็นคุณค่าของจริยธรรมธุรกิจ ความยั่งยืน และความรับผิดชอบต่อสังคม</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Business Definition and Types -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🏪</span>
+     <h2 class="section-title">ความหมายและประเภทธุรกิจ</h2>
+    </div>
+    <div class="section-content">
+     <p style="font-size: 1.1rem; margin-bottom: 2rem; text-align: center; color: var(--primary); font-weight: 500;"><strong>ธุรกิจ</strong> คือ กิจกรรมการผลิตสินค้าหรือบริการเพื่อตอบสนองความต้องการของลูกค้า และสร้างกำไรอย่างยั่งยืน</p>
+     <div class="business-types">
+      <div class="business-type-card">
+       <div class="business-type-header"><span class="business-type-icon" aria-hidden="true">🏭</span>
+        <div class="business-type-title">
+         การผลิต
+        </div>
+       </div>
+       <div class="business-type-content">
+        <div class="business-type-description">
+         การแปรรูปวัตถุดิบให้เป็นสินค้าสำเร็จรูป เพิ่มมูลค่าและประโยชน์ใช้สอย
+        </div>
+        <div class="business-type-examples">
+         <div class="examples-title">
+          ตัวอย่าง:
+         </div> โรงงานผลิตอาหาร, โรงทอผ้า, โรงงานประกอบรถยนต์, โรงงานผลิตเครื่องใช้ไฟฟ้า
+        </div>
+       </div>
+      </div>
+      <div class="business-type-card">
+       <div class="business-type-header"><span class="business-type-icon" aria-hidden="true">🛒</span>
+        <div class="business-type-title">
+         การค้า
+        </div>
+       </div>
+       <div class="business-type-content">
+        <div class="business-type-description">
+         การซื้อสินค้ามาขายต่อ เป็นตัวกลางระหว่างผู้ผลิตและผู้บริโภค
+        </div>
+        <div class="business-type-examples">
+         <div class="examples-title">
+          ตัวอย่าง:
+         </div> ร้านค้าปลีก, ห้างสรรพสินค้า, ตลาดสด, ร้านค้าออนไลน์, ผู้จำหน่ายส่ง
+        </div>
+       </div>
+      </div>
+      <div class="business-type-card">
+       <div class="business-type-header"><span class="business-type-icon" aria-hidden="true">🤝</span>
+        <div class="business-type-title">
+         บริการ
+        </div>
+       </div>
+       <div class="business-type-content">
+        <div class="business-type-description">
+         การให้บริการที่ไม่ใช่สินค้า เพื่อตอบสนองความต้องการของลูกค้า
+        </div>
+        <div class="business-type-examples">
+         <div class="examples-title">
+          ตัวอย่าง:
+         </div> ธนาคาร, โรงพยาบาล, โรงแรม, ร้านตัดผม, บริษัทขนส่ง, สำนักงานบัญชี
+        </div>
+       </div>
+      </div>
+      <div class="business-type-card">
+       <div class="business-type-header"><span class="business-type-icon" aria-hidden="true">💻</span>
+        <div class="business-type-title">
+         ดิจิทัล
+        </div>
+       </div>
+       <div class="business-type-content">
+        <div class="business-type-description">
+         ธุรกิจที่ใช้เทคโนโลยีดิจิทัลเป็นหลักในการดำเนินงาน
+        </div>
+        <div class="business-type-examples">
+         <div class="examples-title">
+          ตัวอย่าง:
+         </div> แอปพลิเคชัน, เว็บไซต์, เกม, สื่อสังคมออนไลน์, ระบบชำระเงินดิจิทัล
+        </div>
+       </div>
+      </div>
+      <div class="business-type-card">
+       <div class="business-type-header"><span class="business-type-icon" aria-hidden="true">❤️</span>
+        <div class="business-type-title">
+         สังคม (Social Enterprise)
+        </div>
+       </div>
+       <div class="business-type-content">
+        <div class="business-type-description">
+         ธุรกิจที่มุ่งแก้ไขปัญหาสังคมและสิ่งแวดล้อม พร้อมสร้างกำไรอย่างยั่งยืน
+        </div>
+        <div class="business-type-examples">
+         <div class="examples-title">
+          ตัวอย่าง:
+         </div> วิสาหกิจชุมชน, ธุรกิจเพื่อสิ่งแวดล้อม, กลุ่มออมทรัพย์, สหกรณ์
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Value Chain -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔗</span>
+     <h2 class="section-title">ห่วงโซ่คุณค่า (Value Chain)</h2>
+    </div>
+    <div class="section-content">
+     <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">กระบวนการสร้างคุณค่าให้กับสินค้าหรือบริการ ตั้งแต่วัตถุดิบจนถึงลูกค้า</p>
+     <div class="value-chain">
+      <div class="value-step"><span class="value-step-icon" aria-hidden="true">📦</span>
+       <div class="value-step-title">
+        จัดหา
+       </div>
+       <div class="value-step-description">
+        วัตถุดิบ อุปกรณ์ บริการ
+       </div>
+      </div>
+      <div class="value-step"><span class="value-step-icon" aria-hidden="true">⚙️</span>
+       <div class="value-step-title">
+        ผลิต
+       </div>
+       <div class="value-step-description">
+        แปรรูป ประกอب ควบคุมคุณภาพ
+       </div>
+      </div>
+      <div class="value-step"><span class="value-step-icon" aria-hidden="true">📢</span>
+       <div class="value-step-title">
+        การตลาด
+       </div>
+       <div class="value-step-description">
+        โฆษณา ประชาสัมพันธ์ สร้างแบรนด์
+       </div>
+      </div>
+      <div class="value-step"><span class="value-step-icon" aria-hidden="true">🚚</span>
+       <div class="value-step-title">
+        จำหน่าย
+       </div>
+       <div class="value-step-description">
+        ขาย ส่งมอบ ช่องทางจัดจำหน่าย
+       </div>
+      </div>
+      <div class="value-step"><span class="value-step-icon" aria-hidden="true">🛠️</span>
+       <div class="value-step-title">
+        บริการหลังการขาย
+       </div>
+       <div class="value-step-description">
+        ซ่อม รับประกัน ดูแลลูกค้า
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Organization Forms -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🏛️</span>
+     <h2 class="section-title">รูปแบบองค์กรธุรกิจ</h2>
+    </div>
+    <div class="section-content">
+     <div class="org-forms">
+      <div class="org-form-card">
+       <div class="org-form-header"><span class="org-form-icon" aria-hidden="true">👤</span>
+        <div class="org-form-title">
+         เจ้าของคนเดียว
+        </div>
+       </div>
+       <div class="org-form-content">
+        <p>ธุรกิจที่มีเจ้าของคนเดียว รับผิดชอบทุกอย่างด้วยตนเอง</p>
+        <div class="pros-cons">
+         <div class="pros">
+          <h5>ข้อดี</h5>
+          <ul>
+           <li>ตัดสินใจเร็ว</li>
+           <li>ได้กำไรทั้งหมด</li>
+           <li>จดทะเบียนง่าย</li>
+          </ul>
+         </div>
+         <div class="cons">
+          <h5>ข้อจำกัด</h5>
+          <ul>
+           <li>ความรับผิดชอบไม่จำกัด</li>
+           <li>เงินทุนจำกัด</li>
+           <li>ขึ้นกับคนเดียว</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="org-form-card">
+       <div class="org-form-header"><span class="org-form-icon" aria-hidden="true">👥</span>
+        <div class="org-form-title">
+         ห้างหุ้นส่วน
+        </div>
+       </div>
+       <div class="org-form-content">
+        <p>ธุรกิจที่มีหุ้นส่วนตั้งแต่ 2 คนขึ้นไป ร่วมลงทุนและดำเนินงาน</p>
+        <div class="pros-cons">
+         <div class="pros">
+          <h5>ข้อดี</h5>
+          <ul>
+           <li>เงินทุนมากขึ้น</li>
+           <li>แบ่งปันความเสี่ยง</li>
+           <li>ความเชี่ยวชาญหลากหลาย</li>
+          </ul>
+         </div>
+         <div class="cons">
+          <h5>ข้อจำกัด</h5>
+          <ul>
+           <li>ความขัดแย้งระหว่างหุ้นส่วน</li>
+           <li>แบ่งกำไร</li>
+           <li>ตัดสินใจช้า</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="org-form-card">
+       <div class="org-form-header"><span class="org-form-icon" aria-hidden="true">🏢</span>
+        <div class="org-form-title">
+         บริษัท
+        </div>
+       </div>
+       <div class="org-form-content">
+        <p>นิติบุคคลที่แยกจากเจ้าของ มีผู้ถือหุ้นและคณะกรรมการบริหาร</p>
+        <div class="pros-cons">
+         <div class="pros">
+          <h5>ข้อดี</h5>
+          <ul>
+           <li>ความรับผิดชอบจำกัด</li>
+           <li>ระดมทุนได้มาก</li>
+           <li>ความน่าเชื่อถือสูง</li>
+          </ul>
+         </div>
+         <div class="cons">
+          <h5>ข้อจำกัด</h5>
+          <ul>
+           <li>ขั้นตอนซับซ้อน</li>
+           <li>ต้นทุนสูง</li>
+           <li>กฎหมายเข้มงวด</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="org-form-card">
+       <div class="org-form-header"><span class="org-form-icon" aria-hidden="true">🏘️</span>
+        <div class="org-form-title">
+         วิสาหกิจชุมชน
+        </div>
+       </div>
+       <div class="org-form-content">
+        <p>ธุรกิจที่ชุมชนร่วมกันดำเนินการ เพื่อแก้ไขปัญหาและพัฒนาท้องถิ่น</p>
+        <div class="pros-cons">
+         <div class="pros">
+          <h5>ข้อดี</h5>
+          <ul>
+           <li>ได้รับการสนับสนุน</li>
+           <li>ใช้ทรัพยากรท้องถิ่น</li>
+           <li>สร้างงานในชุมชน</li>
+          </ul>
+         </div>
+         <div class="cons">
+          <h5>ข้อจำกัด</h5>
+          <ul>
+           <li>ตลาดจำกัด</li>
+           <li>ทักษะการจัดการ</li>
+           <li>เทคโนโลยีล้าหลัง</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="org-form-card">
+       <div class="org-form-header"><span class="org-form-icon" aria-hidden="true">🚀</span>
+        <div class="org-form-title">
+         สตาร์ทอัป
+        </div>
+       </div>
+       <div class="org-form-content">
+        <p>ธุรกิจเริ่มต้นที่มุ่งเน้นนวัตกรรมและการเติบโตอย่างรวดเร็ว</p>
+        <div class="pros-cons">
+         <div class="pros">
+          <h5>ข้อดี</h5>
+          <ul>
+           <li>ศักยภาพเติบโตสูง</li>
+           <li>ใช้เทคโนโลยีใหม่</li>
+           <li>ความยืดหยุ่น</li>
+          </ul>
+         </div>
+         <div class="cons">
+          <h5>ข้อจำกัด</h5>
+          <ul>
+           <li>ความเสี่ยงสูง</li>
+           <li>เงินทุนไม่แน่นอน</li>
+           <li>การแข่งขันสูง</li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Stakeholders -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎭</span>
+     <h2 class="section-title">ผู้มีส่วนได้ส่วนเสีย (Stakeholders)</h2>
+    </div>
+    <div class="section-content">
+     <div class="stakeholders">
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
+       <div class="stakeholder-title">
+        ลูกค้า
+       </div>
+       <div class="stakeholder-description">
+        ผู้ซื้อสินค้าหรือใช้บริการ ต้องการคุณภาพ ราคาเหมาะสม และบริการที่ดี
+       </div>
+      </div>
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">👷‍♂️</span>
+       <div class="stakeholder-title">
+        พนักงาน
+       </div>
+       <div class="stakeholder-description">
+        ผู้ทำงานในองค์กร ต้องการค่าจ้างที่เป็นธรรม สวัสดิการ และสภาพแวดล้อมที่ดี
+       </div>
+      </div>
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">🤝</span>
+       <div class="stakeholder-title">
+        คู่ค้า
+       </div>
+       <div class="stakeholder-description">
+        ผู้จำหน่ายวัตถุดิบ ผู้รับเหมา ต้องการความสัมพันธ์ที่ยั่งยืนและการชำระเงินตรงเวลา
+       </div>
+      </div>
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">🏘️</span>
+       <div class="stakeholder-title">
+        ชุมชน
+       </div>
+       <div class="stakeholder-description">
+        ประชาชนในพื้นที่ ต้องการการจ้างงาน การไม่ทำลายสิ่งแวดล้อม และการพัฒนาท้องถิ่น
+       </div>
+      </div>
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">🏛️</span>
+       <div class="stakeholder-title">
+        รัฐ
+       </div>
+       <div class="stakeholder-description">
+        หน่วยงานภาครัฐ ต้องการการปฏิบัติตามกฎหมาย การจ่ายภาษี และการพัฒนาเศรษฐกิจ
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Business Ethics -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚖️</span>
+     <h2 class="section-title">จริยธรรมธุรกิจและกฎหมายพื้นฐาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="stakeholders">
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">🤝</span>
+       <div class="stakeholder-title">
+        ความซื่อสัตย์
+       </div>
+       <div class="stakeholder-description">
+        ไม่โกหก ไม่หลอกลวง ให้ข้อมูลที่ถูกต้องแก่ลูกค้าและคู่ค้า
+       </div>
+      </div>
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">🔍</span>
+       <div class="stakeholder-title">
+        ความโปร่งใส
+       </div>
+       <div class="stakeholder-description">
+        เปิดเผยข้อมูลที่สำคัญ บัญชีชัดเจน ไม่ปกปิดข้อมูลที่ผู้มีส่วนได้ส่วนเสียควรรู้
+       </div>
+      </div>
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">🛡️</span>
+       <div class="stakeholder-title">
+        ความปลอดภัยผู้บริโภค
+       </div>
+       <div class="stakeholder-description">
+        ผลิตสินค้าที่ปลอดภัย มีฉลากครบถ้วน ไม่ทำอันตรายต่อผู้ใช้
+       </div>
+      </div>
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">©️</span>
+       <div class="stakeholder-title">
+        ลิขสิทธิ์
+       </div>
+       <div class="stakeholder-description">
+        เคารพทรัพย์สินทางปัญญา ไม่ละเมิดลิขสิทธิ์ สิทธิบัตร เครื่องหมายการค้า
+       </div>
+      </div>
+      <div class="stakeholder-card"><span class="stakeholder-icon" aria-hidden="true">🧾</span>
+       <div class="stakeholder-title">
+        ภาษีและใบกำกับ
+       </div>
+       <div class="stakeholder-description">
+        จ่ายภาษีตามกฎหมาย ออกใบกำกับภาษีถูกต้อง ทำบัญชีตามมาตรฐาน
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Marketing Mix -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📊</span>
+     <h2 class="section-title">การตลาดเบื้องต้น (4P Marketing Mix)</h2>
+    </div>
+    <div class="section-content">
+     <div class="marketing-mix">
+      <div class="marketing-p">
+       <div class="marketing-p-header"><span class="marketing-p-icon" aria-hidden="true">📦</span>
+        <div class="marketing-p-title">
+         Product (สินค้า)
+        </div>
+       </div>
+       <div class="marketing-p-content">
+        <p>สินค้าหรือบริการที่นำเสนอให้ลูกค้า ต้องตอบสนองความต้องการและสร้างคุณค่า</p>
+        <div class="marketing-example">
+         <div class="example-title">
+          ตัวอย่าง: ร้านขนมไทย
+         </div>
+         <p>ขนมไทยโบราณ รสชาติดั้งเดิม บรรจุภัณฑ์สวยงาม วัตถุดิบธรรมชาติ</p>
+        </div>
+       </div>
+      </div>
+      <div class="marketing-p">
+       <div class="marketing-p-header"><span class="marketing-p-icon" aria-hidden="true">💰</span>
+        <div class="marketing-p-title">
+         Price (ราคา)
+        </div>
+       </div>
+       <div class="marketing-p-content">
+        <p>การกำหนดราคาที่เหมาะสมกับคุณค่าสินค้า กำลังซื้อของลูกค้า และการแข่งขัน</p>
+        <div class="marketing-example">
+         <div class="example-title">
+          ตัวอย่าง: ร้านขนมไทย
+         </div>
+         <p>ราคา 20-50 บาท/ชิ้น เปรียบเทียบคู่แข่ง ส่วนลดสำหรับซื้อจำนวนมาก</p>
+        </div>
+       </div>
+      </div>
+      <div class="marketing-p">
+       <div class="marketing-p-header"><span class="marketing-p-icon" aria-hidden="true">🏪</span>
+        <div class="marketing-p-title">
+         Place (ช่องทาง)
+        </div>
+       </div>
+       <div class="marketing-p-content">
+        <p>ช่องทางการจำหน่ายที่ทำให้ลูกค้าเข้าถึงสินค้าได้สะดวกและรวดเร็ว</p>
+        <div class="marketing-example">
+         <div class="example-title">
+          ตัวอย่าง: ร้านขนมไทย
+         </div>
+         <p>ร้านหน้าบ้าน ตลาดนัด งานเทศกาล แอปพลิเคชันสั่งอาหาร</p>
+        </div>
+       </div>
+      </div>
+      <div class="marketing-p">
+       <div class="marketing-p-header"><span class="marketing-p-icon" aria-hidden="true">📢</span>
+        <div class="marketing-p-title">
+         Promotion (โปรโมชัน)
+        </div>
+       </div>
+       <div class="marketing-p-content">
+        <p>การสื่อสารเพื่อแจ้งข่าวสาร โน้มน้าวใจ และสร้างความสัมพันธ์กับลูกค้า</p>
+        <div class="marketing-example">
+         <div class="example-title">
+          ตัวอย่าง: ร้านขนมไทย
+         </div>
+         <p>โซเชียลมีเดีย ป้ายหน้าร้าน ชิมฟรี ส่วนลดวันเกิด</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Finance Basics -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💹</span>
+     <h2 class="section-title">การเงินเบื้องต้น</h2>
+    </div>
+    <div class="section-content">
+     <div class="finance-concepts">
+      <div class="finance-card"><span class="finance-icon" aria-hidden="true">💰</span>
+       <div class="finance-title">
+        กำไร
+       </div>
+       <div class="finance-formula">
+        กำไร = รายได้ - ต้นทุน
+       </div>
+       <p>ผลตอบแทนที่เหลือหลังหักต้นทุนทั้งหมด เป็นเป้าหมายสำคัญของธุรกิจ</p>
+      </div>
+      <div class="finance-card"><span class="finance-icon" aria-hidden="true">📊</span>
+       <div class="finance-title">
+        ต้นทุนคงที่
+       </div>
+       <div class="finance-formula">
+        ค่าเช่า + เงินเดือน + ค่าประกัน
+       </div>
+       <p>ค่าใช้จ่ายที่ไม่เปลี่ยนแปลงตามปริมาณการผลิต เช่น ค่าเช่า ค่าไฟฟ้าพื้นฐาน</p>
+      </div>
+      <div class="finance-card"><span class="finance-icon" aria-hidden="true">📈</span>
+       <div class="finance-title">
+        ต้นทุนผันแปร
+       </div>
+       <div class="finance-formula">
+        วัตถุดิบ + ค่าแรง + ค่าขนส่ง
+       </div>
+       <p>ค่าใช้จ่ายที่เปลี่ยนแปลงตามปริมาณการผลิต ยิ่งผลิตมากยิ่งสูง</p>
+      </div>
+      <div class="finance-card"><span class="finance-icon" aria-hidden="true">⚖️</span>
+       <div class="finance-title">
+        จุดคุ้มทุน
+       </div>
+       <div class="finance-formula">
+        ต้นทุนคงที่ ÷ (ราคาขาย - ต้นทุนผันแปรต่อหน่วย)
+       </div>
+       <p>ปริมาณการขายที่ทำให้รายได้เท่ากับต้นทุน ไม่กำไรไม่ขาดทุน</p>
+      </div>
+      <div class="finance-card"><span class="finance-icon" aria-hidden="true">🔄</span>
+       <div class="finance-title">
+        เงินสดหมุนเวียน
+       </div>
+       <div class="finance-formula">
+        เงินสดรับ - เงินสดจ่าย
+       </div>
+       <p>การไหลเวียนของเงินสดในธุรกิจ สำคัญต่อการดำเนินงานประจำวัน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Digital Technology -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💻</span>
+     <h2 class="section-title">เทคโนโลยีดิจิทัลสำหรับธุรกิจ</h2>
+    </div>
+    <div class="section-content">
+     <div class="digital-tools">
+      <div class="digital-tool"><span class="digital-tool-icon" aria-hidden="true">🌐</span>
+       <div class="digital-tool-title">
+        ช่องทางออนไลน์
+       </div>
+       <div class="digital-tool-description">
+        เว็บไซต์ แอปพลิเคชัน ตลาดออนไลน์ เพื่อเข้าถึงลูกค้าได้กว้างขึ้น
+       </div>
+      </div>
+      <div class="digital-tool"><span class="digital-tool-icon" aria-hidden="true">💳</span>
+       <div class="digital-tool-title">
+        ระบบรับชำระ
+       </div>
+       <div class="digital-tool-description">
+        QR Code, Mobile Banking, บัตรเครดิต เพื่อความสะดวกในการชำระเงิน
+       </div>
+      </div>
+      <div class="digital-tool"><span class="digital-tool-icon" aria-hidden="true">📱</span>
+       <div class="digital-tool-title">
+        โซเชียลมีเดีย
+       </div>
+       <div class="digital-tool-description">
+        Facebook, Instagram, TikTok เพื่อการตลาดและสร้างความสัมพันธ์กับลูกค้า
+       </div>
+      </div>
+      <div class="digital-tool"><span class="digital-tool-icon" aria-hidden="true">📊</span>
+       <div class="digital-tool-title">
+        เครื่องมือวิเคราะห์
+       </div>
+       <div class="digital-tool-description">
+        Google Analytics, Facebook Insights เพื่อวิเคราะห์พฤติกรรมลูกค้า
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustainability -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌱</span>
+     <h2 class="section-title">ความยั่งยืน</h2>
+    </div>
+    <div class="section-content">
+     <div class="sustainability-grid">
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">♻️</span>
+        <div class="sustainability-title">
+         3R และ ESG
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <p><strong>3R:</strong> Reduce (ลด) Reuse (ใช้ซ้ำ) Recycle (รีไซเคิล)</p>
+        <p><strong>ESG:</strong> Environmental (สิ่งแวดล้อม) Social (สังคม) Governance (การกำกับดูแล)</p>
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">🏘️</span>
+        <div class="sustainability-title">
+         วัตถุดิบท้องถิ่น
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <p>ใช้วัตถุดิบจากชุมชน ลดต้นทุนขนส่ง สร้างงานให้คนในพื้นที่ และรักษาภูมิปัญญาท้องถิ่น</p>
+       </div>
+      </div>
+      <div class="sustainability-card">
+       <div class="sustainability-header"><span class="sustainability-icon" aria-hidden="true">❤️</span>
+        <div class="sustainability-title">
+         ธุรกิจเพื่อสังคม
+        </div>
+       </div>
+       <div class="sustainability-content">
+        <p>สร้างกำไรควบคู่กับการแก้ไขปัญหาสังคม เช่น การศึกษา สุขภาพ สิ่งแวดล้อม</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Case Studies -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📚</span>
+     <h2 class="section-title">ตัวอย่างกรณีศึกษา</h2>
+    </div>
+    <div class="section-content">
+     <div class="case-studies">
+      <div class="case-study">
+       <div class="case-study-header"><span class="case-study-icon" aria-hidden="true">🧁</span>
+        <div class="case-study-title">
+         ร้านขนมโฮมเมด
+        </div>
+        <div class="case-study-type">
+         ธุรกิจการผลิต
+        </div>
+       </div>
+       <div class="case-study-content">
+        <div class="case-study-section">
+         <h4>ลักษณะธุรกิจ</h4>
+         <p>ผลิตขนมเค้ก คุกกี้ ขายผ่านโซเชียลมีเดียและรับออเดอร์</p>
+        </div>
+        <div class="case-study-section">
+         <h4>ผู้มีส่วนได้ส่วนเสีย</h4>
+         <p>ลูกค้า (คุณภาพ รสชาติ) ครอบครัว (เวลา รายได้) ผู้จำหน่ายวัตถุดิบ</p>
+        </div>
+        <div class="case-study-section">
+         <h4>การตลาด 4P</h4>
+         <p>สินค้า: ขนมสด ราคา: 150-500 บาท ช่องทาง: Facebook, Line โปรโมชัน: รีวิว ส่วนลด</p>
+        </div>
+       </div>
+      </div>
+      <div class="case-study">
+       <div class="case-study-header"><span class="case-study-icon" aria-hidden="true">🔧</span>
+        <div class="case-study-title">
+         ร้านซ่อมมือถือ
+        </div>
+        <div class="case-study-type">
+         ธุรกิจบริการ
+        </div>
+       </div>
+       <div class="case-study-content">
+        <div class="case-study-section">
+         <h4>ลักษณะธุรกิจ</h4>
+         <p>ซ่อมมือถือ แท็บเล็ต เปลี่ยนอะไหล่ ติดฟิล์มกันรอย</p>
+        </div>
+        <div class="case-study-section">
+         <h4>ผู้มีส่วนได้ส่วนเสีย</h4>
+         <p>ลูกค้า (ความเร็ว ราคา) ช่างเทคนิค (ทักษะ เครื่องมือ) ผู้จำหน่ายอะไหล่</p>
+        </div>
+        <div class="case-study-section">
+         <h4>การตลาด 4P</h4>
+         <p>บริการ: ซ่อมเร็ว รับประกัน ราคา: 200-2000 บาท ช่องทาง: ร้านหน้าบ้าน โปรโมชัน: การันตี</p>
+        </div>
+       </div>
+      </div>
+      <div class="case-study">
+       <div class="case-study-header"><span class="case-study-icon" aria-hidden="true">🧺</span>
+        <div class="case-study-title">
+         กลุ่มทอผ้าชุมชน
+        </div>
+        <div class="case-study-type">
+         วิสาหกิจชุมชน
+        </div>
+       </div>
+       <div class="case-study-content">
+        <div class="case-study-section">
+         <h4>ลักษณะธุรกิจ</h4>
+         <p>ทอผ้าไหมพื้นเมือง ย้อมสีธรรมชาติ ขายให้นักท่องเที่ยวและร้านค้า</p>
+        </div>
+        <div class="case-study-section">
+         <h4>ผู้มีส่วนได้ส่วนเสีย</h4>
+         <p>สมาชิกกลุ่ม (รายได้ ทักษะ) ชุมชน (งาน วัฒนธรรม) นักท่องเที่ยว (ของฝาก)</p>
+        </div>
+        <div class="case-study-section">
+         <h4>ความยั่งยืน</h4>
+         <p>ใช้วัตถุดิบท้องถิ่น อนุรักษ์ภูมิปัญญา สร้างงานในชุมชน เป็นมิตรกับสิ่งแวดล้อม</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>ธุรกิจมีบทบาทสำคัญต่อเศรษฐกิจ สังคม และชุมชน ผ่านการสร้างงาน รายได้ และการพัฒนา</li>
+     <li>ประเภทธุรกิจแบ่งเป็น การผลิต การค้า บริการ ดิจิทัล และสังคม แต่ละประเภทมีลักษณะเฉพาะ</li>
+     <li>ห่วงโซ่คุณค่าแสดงกระบวนการสร้างคุณค่าตั้งแต่จัดหาวัตถุดิบจนถึงบริการหลังการขาย</li>
+     <li>รูปแบบองค์กรมีข้อดีข้อจำกัดต่างกัน ต้องเลือกให้เหมาะสมกับลักษณะธุรกิจ</li>
+     <li>ผู้มีส่วนได้ส่วนเสียทุกกลุ่มมีความสำคัญ ต้องสร้างสมดุลและความพึงพอใจร่วมกัน</li>
+     <li>จริยธรรมธุรกิจและการปฏิบัติตามกฎหมายเป็นพื้นฐานสำคัญของการดำเนินธุรกิจ</li>
+     <li>การตลาด 4P ช่วยวางแผนการนำเสนอสินค้าบริการให้ตรงกับความต้องการลูกค้า</li>
+     <li>การเงินพื้นฐานช่วยควบคุมต้นทุน วิเคราะห์กำไร และวางแผนการเงิน</li>
+     <li>เทคโนโลยีดิจิทัลเป็นเครื่องมือสำคัญในการขยายธุรกิจและเข้าถึงลูกค้า</li>
+     <li>ความยั่งยืนเป็นแนวทางสำคัญที่ธุรกิจสมัยใหม่ต้องคำนึงถึง</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Value Chain (ห่วงโซ่คุณค่า)
+      </div>
+      <div class="glossary-definition">
+       กระบวนการสร้างคุณค่าให้กับสินค้าหรือบริการตั้งแต่วัตถุดิบจนถึงลูกค้า
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Stakeholder (ผู้มีส่วนได้ส่วนเสีย)
+      </div>
+      <div class="glossary-definition">
+       บุคคลหรือกลุ่มที่ได้รับผลกระทบหรือมีอิทธิพลต่อการดำเนินงานของธุรกิจ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Breakeven (จุดคุ้มทุน)
+      </div>
+      <div class="glossary-definition">
+       จุดที่รายได้เท่ากับต้นทุนรวม ไม่มีกำไรหรือขาดทุน
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Cash Flow (กระแสเงินสด)
+      </div>
+      <div class="glossary-definition">
+       การไหลเวียนของเงินสดเข้าและออกจากธุรกิจในช่วงเวลาหนึ่ง
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       ESG
+      </div>
+      <div class="glossary-definition">
+       Environmental, Social, Governance - หลักการดำเนินธุรกิจที่คำนึงถึงสิ่งแวดล้อม สังคม และการกำกับดูแล
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "งานธุรกิจ",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_goal: "บทบาทของธุรกิจต่อเศรษฐกิจ สังคม และชุมชน"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson goal
+            const goalElement = document.getElementById('lessonGoal');
+            if (goalElement) {
+                goalElement.textContent = config.lesson_goal || defaultConfig.lesson_goal;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_goal", config.lesson_goal || defaultConfig.lesson_goal]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99215e4843ca2328',t:'MTc2MTA1NjEzOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,1997 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แนวทางการประกอบอาชีพ - การงานอาชีพ ม.3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1565C0;
+            --accent: #FFC107;
+            --primary-light: #42A5F5;
+            --primary-dark: #0D47A1;
+            --accent-dark: #FF8F00;
+            --bg-light: #F8F9FA;
+            --text-dark: #212529;
+            --text-light: #6C757D;
+            --success: #28A745;
+            --danger: #DC3545;
+            --warning: #FFC107;
+            --info: #17A2B8;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+            --green: #4CAF50;
+            --green-light: #81C784;
+            --brown: #8D6E63;
+            --brown-light: #BCAAA4;
+            --orange: #FF9800;
+            --purple: #9C27B0;
+            --teal: #009688;
+            --indigo: #3F51B5;
+            --pink: #E91E63;
+            --cyan: #00BCD4;
+            --red: #F44336;
+            --deep-orange: #FF5722;
+            --lime: #CDDC39;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #E3F2FD 100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-overview {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        /* Objectives */
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-card {
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFF8E1 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .objective-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Definition Cards */
+        .definition-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .definition-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .definition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .definition-header {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--text-dark);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .definition-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .definition-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .definition-content {
+            padding: 1.5rem;
+        }
+
+        /* Self Assessment */
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .assessment-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .assessment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .assessment-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .assessment-interests .assessment-header { background: linear-gradient(135deg, var(--pink) 0%, #F48FB1 100%); }
+        .assessment-aptitude .assessment-header { background: linear-gradient(135deg, var(--purple) 0%, #BA68C8 100%); }
+        .assessment-personality .assessment-header { background: linear-gradient(135deg, var(--indigo) 0%, #7986CB 100%); }
+        .assessment-values .assessment-header { background: linear-gradient(135deg, var(--teal) 0%, #4DB6AC 100%); }
+        .assessment-goals .assessment-header { background: linear-gradient(135deg, var(--orange) 0%, #FFB74D 100%); }
+
+        .assessment-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .assessment-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .assessment-content {
+            padding: 1.5rem;
+        }
+
+        .assessment-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .assessment-points li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .assessment-points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Industry Cards */
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .industry-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .industry-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .industry-agriculture .industry-header { background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%); }
+        .industry-manufacturing .industry-header { background: linear-gradient(135deg, var(--brown) 0%, var(--brown-light) 100%); }
+        .industry-service .industry-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .industry-health .industry-header { background: linear-gradient(135deg, var(--red) 0%, #EF5350 100%); }
+        .industry-tourism .industry-header { background: linear-gradient(135deg, var(--cyan) 0%, #4DD0E1 100%); }
+        .industry-digital .industry-header { background: linear-gradient(135deg, var(--purple) 0%, #BA68C8 100%); }
+        .industry-creative .industry-header { background: linear-gradient(135deg, var(--pink) 0%, #F48FB1 100%); }
+        .industry-entrepreneur .industry-header { background: linear-gradient(135deg, var(--orange) 0%, #FFB74D 100%); }
+
+        .industry-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .industry-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .industry-content {
+            padding: 1.5rem;
+        }
+
+        /* Market Trends */
+        .trends-section {
+            background: linear-gradient(135deg, var(--info) 0%, #5DADE2 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .trends-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .trends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .trend-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .trend-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .trend-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Career Pathways */
+        .pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .pathway-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .pathway-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pathway-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .pathway-immediate .pathway-header { background: linear-gradient(135deg, var(--success) 0%, var(--green-light) 100%); }
+        .pathway-vocational .pathway-header { background: linear-gradient(135deg, var(--orange) 0%, #FFB74D 100%); }
+        .pathway-university .pathway-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); }
+        .pathway-entrepreneur .pathway-header { background: linear-gradient(135deg, var(--purple) 0%, #BA68C8 100%); }
+
+        .pathway-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .pathway-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .pathway-content {
+            padding: 1.5rem;
+        }
+
+        /* Skills Section */
+        .skills-overview {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--text-dark);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .skills-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: rgba(255,255,255,0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Work Ethics */
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .ethics-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .ethics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .ethics-header {
+            background: linear-gradient(135deg, var(--indigo) 0%, #7986CB 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .ethics-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .ethics-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .ethics-content {
+            padding: 1.5rem;
+        }
+
+        /* Preparation Section */
+        .preparation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .preparation-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--teal);
+        }
+
+        .preparation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .preparation-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+            color: var(--teal);
+        }
+
+        .preparation-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Financial Planning */
+        .financial-section {
+            background: linear-gradient(135deg, var(--success) 0%, var(--green-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .financial-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .financial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .financial-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .financial-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .financial-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Entrepreneur Section */
+        .entrepreneur-flow {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .entrepreneur-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .flow-step {
+            background: linear-gradient(135deg, var(--purple) 0%, #BA68C8 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            background: rgba(255,255,255,0.2);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+            font-weight: 600;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Career Examples */
+        .career-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .career-example {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .career-example:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .career-example-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .example-technician .career-example-header { background: linear-gradient(135deg, var(--orange) 0%, #FFB74D 100%); }
+        .example-creator .career-example-header { background: linear-gradient(135deg, var(--pink) 0%, #F48FB1 100%); }
+        .example-nurse .career-example-header { background: linear-gradient(135deg, var(--red) 0%, #EF5350 100%); }
+
+        .career-example-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .career-example-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .career-example-content {
+            padding: 1.5rem;
+        }
+
+        .career-detail {
+            margin-bottom: 1rem;
+        }
+
+        .career-detail-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Key Takeaways */
+        .takeaways {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .takeaways-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .takeaways-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .takeaways-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .takeaways-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Glossary */
+        .glossary {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .glossary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .glossary-item {
+            padding: 1rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            background: #F8F9FA;
+        }
+
+        .glossary-term {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-definition {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-overview {
+                font-size: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .takeaways-list {
+                grid-template-columns: 1fr;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .content-section {
+                break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+            
+            .section-header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Hero Section -->
+  <header class="hero" role="banner">
+   <div class="hero-container"><span class="hero-icon" aria-hidden="true">🎯</span>
+    <h1 id="lessonTitle">แนวทางการประกอบอาชีพ</h1>
+    <p class="hero-subtitle" id="schoolName">โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม</p>
+    <p class="hero-subtitle">ครูผู้สอน: <span id="teacherName">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p class="hero-overview" id="lessonOverview">เข้าใจเส้นทางสู่อาชีพให้เหมาะกับตนเองและตลาดงาน</p>
+   </div>
+  </header><!-- Main Content -->
+  <main class="main-content" role="main"><!-- Learning Objectives -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🎯</span>
+     <h2 class="section-title">วัตถุประสงค์การเรียนรู้</h2>
+    </div>
+    <div class="section-content">
+     <div class="objectives">
+      <div class="objective-card">
+       <div class="objective-title">
+        ความรู้ (Knowledge)
+       </div>
+       <p>เข้าใจความหมายของอาชีพและเส้นทางอาชีพ รู้จักกลุ่มอาชีพหลักและแนวโน้มตลาดแรงงาน</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        ทักษะ (Practice)
+       </div>
+       <p>สามารถประเมินตนเอง วางแผนเส้นทางอาชีพ และเตรียมความพร้อมเข้าสู่โลกการทำงาน</p>
+      </div>
+      <div class="objective-card">
+       <div class="objective-title">
+        เจตคติ (Attitude)
+       </div>
+       <p>มีทัศนคติที่ดีต่อการทำงาน เห็นคุณค่าของอาชีพสุจริต และมีจริยธรรมในการทำงาน</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Definition of Career -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💼</span>
+     <h2 class="section-title">ความหมายของอาชีพและเส้นทางอาชีพ</h2>
+    </div>
+    <div class="section-content">
+     <div class="definition-cards">
+      <div class="definition-card">
+       <div class="definition-header"><span class="definition-icon" aria-hidden="true">💼</span>
+        <div class="definition-title">
+         อาชีพ (Career)
+        </div>
+       </div>
+       <div class="definition-content">
+        <p><strong>คือ</strong> งานหรือหน้าที่ที่บุคคลทำเป็นประจำเพื่อหาเลี้ยงชีพ โดยใช้ความรู้ ความสามารถ และทักษะที่มี</p>
+        <h4 style="color: var(--primary); margin: 1rem 0 0.5rem 0;">คุณค่าของอาชีพ</h4>
+        <ul class="assessment-points">
+         <li>สร้างรายได้และความมั่นคงทางการเงิน</li>
+         <li>ให้ความภาคภูมิใจและความสำเร็จในชีวิต</li>
+         <li>พัฒนาตนเองและเรียนรู้สิ่งใหม่ๆ</li>
+         <li>สร้างประโยชน์ให้สังคมและชุมชน</li>
+         <li>สร้างเครือข่ายและความสัมพันธ์</li>
+        </ul>
+       </div>
+      </div>
+      <div class="definition-card">
+       <div class="definition-header"><span class="definition-icon" aria-hidden="true">🛤️</span>
+        <div class="definition-title">
+         เส้นทางอาชีพ (Career Pathway)
+        </div>
+       </div>
+       <div class="definition-content">
+        <p><strong>คือ</strong> แผนการเรียนรู้และพัฒนาตนเองอย่างต่อเนื่องเพื่อก้าวสู่อาชีพที่ต้องการ</p>
+        <h4 style="color: var(--primary); margin: 1rem 0 0.5rem 0;">องค์ประกอบสำคัญ</h4>
+        <ul class="assessment-points">
+         <li>การศึกษาและการฝึกอบรม</li>
+         <li>การสะสมประสบการณ์และทักษะ</li>
+         <li>การสร้างเครือข่ายและความสัมพันธ์</li>
+         <li>การพัฒนาตนเองอย่างต่อเนื่อง</li>
+         <li>การปรับตัวตามการเปลี่ยนแปลง</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Self Assessment -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🔍</span>
+     <h2 class="section-title">การรู้จักตนเอง</h2>
+    </div>
+    <div class="section-content">
+     <div class="assessment-grid">
+      <div class="assessment-card assessment-interests">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">❤️</span>
+        <div class="assessment-title">
+         ความสนใจ (Interests)
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--pink); margin-bottom: 0.5rem;">สิ่งที่ชอบทำ</h4>
+        <ul class="assessment-points">
+         <li>กิจกรรมที่ทำแล้วมีความสุข</li>
+         <li>เรื่องที่อยากเรียนรู้เพิ่มเติม</li>
+         <li>งานอดิเรกและความบันเทิง</li>
+         <li>หัวข้อที่ติดตามข่าวสาร</li>
+        </ul>
+        <p style="font-size: 0.9rem; margin-top: 1rem; font-style: italic;"><strong>RIASEC:</strong> Realistic, Investigative, Artistic, Social, Enterprising, Conventional</p>
+       </div>
+      </div>
+      <div class="assessment-card assessment-aptitude">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">🧠</span>
+        <div class="assessment-title">
+         ความถนัด (Aptitudes)
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--purple); margin-bottom: 0.5rem;">สิ่งที่ทำได้ดี</h4>
+        <ul class="assessment-points">
+         <li>ทักษะที่เรียนรู้ได้เร็ว</li>
+         <li>งานที่ทำได้ดีกว่าคนอื่น</li>
+         <li>ความสามารถพิเศษ</li>
+         <li>วิชาที่ได้คะแนนดี</li>
+        </ul>
+        <p style="font-size: 0.9rem; margin-top: 1rem; font-style: italic;"><strong>Multiple Intelligence:</strong> ภาษา, คณิตศาสตร์, ดนตรี, กายภาพ, ธรรมชาติ, สังคม, ตนเอง, ศิลปะ</p>
+       </div>
+      </div>
+      <div class="assessment-card assessment-personality">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">🎭</span>
+        <div class="assessment-title">
+         บุคลิกภาพ (Personality)
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--indigo); margin-bottom: 0.5rem;">ลักษณะนิสัย</h4>
+        <ul class="assessment-points">
+         <li>ชอบทำงานคนเดียวหรือเป็นทีม</li>
+         <li>ชอบความท้าทายหรือความมั่นคง</li>
+         <li>ชอบนำหรือตาม</li>
+         <li>ชอบรายละเอียดหรือภาพรวม</li>
+        </ul>
+       </div>
+      </div>
+      <div class="assessment-card assessment-values">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">⭐</span>
+        <div class="assessment-title">
+         ค่านิยม (Values)
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--teal); margin-bottom: 0.5rem;">สิ่งที่ให้ความสำคัญ</h4>
+        <ul class="assessment-points">
+         <li>เงิน ชื่อเสียง หรือความสุข</li>
+         <li>ความมั่นคงหรือความท้าทาย</li>
+         <li>การช่วยเหลือผู้อื่น</li>
+         <li>ความสมดุลชีวิตและงาน</li>
+        </ul>
+       </div>
+      </div>
+      <div class="assessment-card assessment-goals">
+       <div class="assessment-header"><span class="assessment-icon" aria-hidden="true">🎯</span>
+        <div class="assessment-title">
+         เป้าหมายชีวิต (Life Goals)
+        </div>
+       </div>
+       <div class="assessment-content">
+        <h4 style="color: var(--orange); margin-bottom: 0.5rem;">สิ่งที่อยากเป็น</h4>
+        <ul class="assessment-points">
+         <li>ตำแหน่งงานที่ฝัน</li>
+         <li>ไลฟ์สไตล์ที่ต้องการ</li>
+         <li>ผลงานที่อยากสร้าง</li>
+         <li>ผลกระทบที่อยากมีต่อสังคม</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Industry Groups -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🏭</span>
+     <h2 class="section-title">อุตสาหกรรมและกลุ่มอาชีพหลัก</h2>
+    </div>
+    <div class="section-content">
+     <div class="industry-grid">
+      <div class="industry-card industry-agriculture">
+       <div class="industry-header"><span class="industry-icon" aria-hidden="true">🌾</span>
+        <div class="industry-title">
+         เกษตรกรรม
+        </div>
+       </div>
+       <div class="industry-content">
+        <ul class="assessment-points">
+         <li>เกษตรกร ผู้เพาะปลูก</li>
+         <li>ผู้เลี้ยงสัตว์ ประมง</li>
+         <li>วิศวกรเกษตร นักวิจัย</li>
+         <li>ผู้ประกอบการเกษตรแปรรูป</li>
+         <li>เกษตรอินทรีย์ เกษตรสมัยใหม่</li>
+        </ul>
+       </div>
+      </div>
+      <div class="industry-card industry-manufacturing">
+       <div class="industry-header"><span class="industry-icon" aria-hidden="true">🏭</span>
+        <div class="industry-title">
+         อุตสาหกรรม
+        </div>
+       </div>
+       <div class="industry-content">
+        <ul class="assessment-points">
+         <li>ช่างเทคนิค ช่างซ่อมบำรุง</li>
+         <li>วิศวกร นักออกแบบ</li>
+         <li>ผู้ควบคุมคุณภาพ</li>
+         <li>ผู้จัดการโรงงาน</li>
+         <li>ผู้เชี่ยวชาญระบบอัตโนมัติ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="industry-card industry-service">
+       <div class="industry-header"><span class="industry-icon" aria-hidden="true">🤝</span>
+        <div class="industry-title">
+         บริการ
+        </div>
+       </div>
+       <div class="industry-content">
+        <ul class="assessment-points">
+         <li>พนักงานขาย บริการลูกค้า</li>
+         <li>ธนาคาร ประกันภัย</li>
+         <li>ขนส่ง โลจิสติกส์</li>
+         <li>ร้านอาหาร โรงแรม</li>
+         <li>ความงาม สปา นวดแผนไทย</li>
+        </ul>
+       </div>
+      </div>
+      <div class="industry-card industry-health">
+       <div class="industry-header"><span class="industry-icon" aria-hidden="true">🏥</span>
+        <div class="industry-title">
+         สุขภาพ
+        </div>
+       </div>
+       <div class="industry-content">
+        <ul class="assessment-points">
+         <li>แพทย์ พยาบาล เภสัชกร</li>
+         <li>นักกายภาพบำบัด</li>
+         <li>ผู้ช่วยพยาบาล ผู้ดูแลผู้สูงอายุ</li>
+         <li>เทคนิคการแพทย์</li>
+         <li>แพทย์แผนไทย นักโภชนาการ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="industry-card industry-tourism">
+       <div class="industry-header"><span class="industry-icon" aria-hidden="true">✈️</span>
+        <div class="industry-title">
+         ท่องเที่ยว
+        </div>
+       </div>
+       <div class="industry-content">
+        <ul class="assessment-points">
+         <li>ไกด์นำเที่ยว มัคคุเทศก์</li>
+         <li>พนักงานโรงแรม รีสอร์ท</li>
+         <li>ตัวแทนท่องเที่ยว</li>
+         <li>ผู้จัดงานอีเวนต์</li>
+         <li>ผู้ประกอบการท่องเที่ยวชุมชน</li>
+        </ul>
+       </div>
+      </div>
+      <div class="industry-card industry-digital">
+       <div class="industry-header"><span class="industry-icon" aria-hidden="true">💻</span>
+        <div class="industry-title">
+         ดิจิทัล
+        </div>
+       </div>
+       <div class="industry-content">
+        <ul class="assessment-points">
+         <li>โปรแกรมเมอร์ นักพัฒนาเว็บ</li>
+         <li>นักวิเคราะห์ข้อมูล</li>
+         <li>ผู้เชี่ยวชาญ AI/IoT</li>
+         <li>นักการตลาดดิจิทัล</li>
+         <li>ผู้ดูแลระบบ ความปลอดภัยไซเบอร์</li>
+        </ul>
+       </div>
+      </div>
+      <div class="industry-card industry-creative">
+       <div class="industry-header"><span class="industry-icon" aria-hidden="true">🎨</span>
+        <div class="industry-title">
+         ครีเอทีฟ
+        </div>
+       </div>
+       <div class="industry-content">
+        <ul class="assessment-points">
+         <li>นักออกแบบกราฟิก</li>
+         <li>ช่างภาพ วิดีโอกราฟเฟอร์</li>
+         <li>นักเขียน บล็อกเกอร์</li>
+         <li>ศิลปิน นักดนตรี</li>
+         <li>ผู้ผลิตคอนเทนต์ ยูทูบเบอร์</li>
+        </ul>
+       </div>
+      </div>
+      <div class="industry-card industry-entrepreneur">
+       <div class="industry-header"><span class="industry-icon" aria-hidden="true">🚀</span>
+        <div class="industry-title">
+         ผู้ประกอบการ
+        </div>
+       </div>
+       <div class="industry-content">
+        <ul class="assessment-points">
+         <li>เจ้าของธุรกิจ SME</li>
+         <li>ผู้ประกอบการออนไลน์</li>
+         <li>ฟรีแลนซ์ คอนซัลแตนต์</li>
+         <li>สตาร์ทอัพ นวัตกรรม</li>
+         <li>ผู้ประกอบการสังคม</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Market Trends -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📈</span>
+     <h2 class="section-title">แนวโน้มตลาดแรงงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="trends-section">
+      <div class="trends-title">
+       การเปลี่ยนแปลงของโลกการทำงาน
+      </div>
+      <div class="trends-grid">
+       <div class="trend-card"><span class="trend-icon" aria-hidden="true">🔥</span>
+        <div class="trend-title">
+         ทักษะที่ต้องการมาก
+        </div>
+        <ul class="assessment-points">
+         <li>ทักษะดิจิทัล และการเขียนโปรแกรม</li>
+         <li>การวิเคราะห์ข้อมูล</li>
+         <li>ความคิดสร้างสรรค์</li>
+         <li>การแก้ปัญหาเชิงซับซ้อน</li>
+         <li>การทำงานร่วมกับ AI</li>
+        </ul>
+       </div>
+       <div class="trend-card"><span class="trend-icon" aria-hidden="true">✨</span>
+        <div class="trend-title">
+         งานใหม่จากเทคโนโลยี
+        </div>
+        <ul class="assessment-points">
+         <li>นักพัฒนา AI/Machine Learning</li>
+         <li>ผู้เชี่ยวชาญ Cybersecurity</li>
+         <li>นักวิเคราะห์ Big Data</li>
+         <li>ผู้ออกแบบ UX/UI</li>
+         <li>ผู้จัดการโซเชียลมีเดีย</li>
+        </ul>
+       </div>
+       <div class="trend-card"><span class="trend-icon" aria-hidden="true">⚠️</span>
+        <div class="trend-title">
+         งานที่เสี่ยงถูกแทนที่
+        </div>
+        <ul class="assessment-points">
+         <li>งานที่ทำซ้ำๆ ไม่ต้องคิด</li>
+         <li>พนักงานธนาคารทั่วไป</li>
+         <li>แคชเชียร์ พนักงานเก็บเงิน</li>
+         <li>งานผลิตในโรงงาน</li>
+         <li>งานบันทึกข้อมูลพื้นฐาน</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Career Pathways -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🛤️</span>
+     <h2 class="section-title">เส้นทางสู่การทำงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="pathway-grid">
+      <div class="pathway-card pathway-immediate">
+       <div class="pathway-header"><span class="pathway-icon" aria-hidden="true">⚡</span>
+        <div class="pathway-title">
+         ทำงานทันที
+        </div>
+       </div>
+       <div class="pathway-content">
+        <h4 style="color: var(--success); margin-bottom: 0.5rem;">เหมาะสำหรับ</h4>
+        <p>ผู้ที่ต้องการรายได้เร็ว มีทักษะพื้นฐาน หรือสถานการณ์ครอบครัวจำเป็น</p>
+        <h4 style="color: var(--success); margin: 1rem 0 0.5rem 0;">การเตรียมตัว</h4>
+        <ul class="assessment-points">
+         <li>เรียนทักษะอาชีพพื้นฐาน</li>
+         <li>หาประสบการณ์ฝึกงาน</li>
+         <li>สร้างพอร์ตผลงาน</li>
+         <li>เรียนรู้จากผู้เชี่ยวชาญ</li>
+         <li>พัฒนาทักษะต่อเนื่อง</li>
+        </ul>
+       </div>
+      </div>
+      <div class="pathway-card pathway-vocational">
+       <div class="pathway-header"><span class="pathway-icon" aria-hidden="true">🔧</span>
+        <div class="pathway-title">
+         อาชีวศึกษา
+        </div>
+       </div>
+       <div class="pathway-content">
+        <h4 style="color: var(--orange); margin-bottom: 0.5rem;">ตัวเลือก</h4>
+        <ul class="assessment-points">
+         <li>ปวช. ปวส. (2-4 ปี)</li>
+         <li>ทวิภาคี (เรียน+ทำงาน)</li>
+         <li>ประกาศนียบัตรวิชาชีพ</li>
+         <li>หลักสูตรระยะสั้น</li>
+        </ul>
+        <h4 style="color: var(--orange); margin: 1rem 0 0.5rem 0;">ข้อดี</h4>
+        <ul class="assessment-points">
+         <li>เรียนทักษะเฉพาะทาง</li>
+         <li>ได้ประสบการณ์จริง</li>
+         <li>หางานง่าย เงินเดือนดี</li>
+         <li>สามารถเรียนต่อได้</li>
+        </ul>
+       </div>
+      </div>
+      <div class="pathway-card pathway-university">
+       <div class="pathway-header"><span class="pathway-icon" aria-hidden="true">🎓</span>
+        <div class="pathway-title">
+         อุดมศึกษา
+        </div>
+       </div>
+       <div class="pathway-content">
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">ตัวเลือก</h4>
+        <ul class="assessment-points">
+         <li>ปริญญาตรี (4 ปี)</li>
+         <li>หลักสูตรเฉพาะทาง</li>
+         <li>การศึกษาต่อเนื่อง</li>
+         <li>ปริญญาโท เอก</li>
+        </ul>
+        <h4 style="color: var(--primary); margin: 1rem 0 0.5rem 0;">เหมาะสำหรับ</h4>
+        <ul class="assessment-points">
+         <li>อาชีพที่ต้องใช้ความรู้เชิงลึก</li>
+         <li>ตำแหน่งผู้บริหาร</li>
+         <li>งานวิจัยและพัฒนา</li>
+         <li>อาชีพที่ต้องใบประกอบวิชาชีพ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="pathway-card pathway-entrepreneur">
+       <div class="pathway-header"><span class="pathway-icon" aria-hidden="true">🚀</span>
+        <div class="pathway-title">
+         ผู้ประกอบการ
+        </div>
+       </div>
+       <div class="pathway-content">
+        <h4 style="color: var(--purple); margin-bottom: 0.5rem;">รูปแบบ</h4>
+        <ul class="assessment-points">
+         <li>ธุรกิจส่วนตัว</li>
+         <li>ฟรีแลนซ์</li>
+         <li>เศรษฐกิจสร้างสรรค์</li>
+         <li>สตาร์ทอัพ</li>
+        </ul>
+        <h4 style="color: var(--purple); margin: 1rem 0 0.5rem 0;">ทักษะที่ต้องการ</h4>
+        <ul class="assessment-points">
+         <li>ความคิดสร้างสรรค์</li>
+         <li>การบริหารจัดการ</li>
+         <li>การตลาดและการขาย</li>
+         <li>การเงินพื้นฐาน</li>
+         <li>ความกล้าเสี่ยงและอดทน</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Essential Skills -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💪</span>
+     <h2 class="section-title">ทักษะหลักที่นายจ้างต้องการ</h2>
+    </div>
+    <div class="section-content">
+     <div class="skills-overview">
+      <div class="skills-title">
+       ทักษะสำคัญในศตวรรษที่ 21
+      </div>
+      <div class="skills-grid">
+       <div class="skill-category">
+        <div class="skill-category-title">
+         🔧 Hard Skills (ทักษะเฉพาะ)
+        </div>
+        <ul class="assessment-points">
+         <li><strong>ทักษะวิชาชีพ:</strong> ความรู้เฉพาะสาขา</li>
+         <li><strong>ทักษะเทคนิค:</strong> การใช้เครื่องมือ อุปกรณ์</li>
+         <li><strong>ใบประกอบวิชาชีพ:</strong> ใบรับรองมาตรฐาน</li>
+         <li><strong>ภาษาต่างประเทศ:</strong> อังกฤษ จีน ญี่ปุ่น</li>
+         <li><strong>การวิเคราะห์:</strong> คณิตศาสตร์ สถิติ</li>
+        </ul>
+       </div>
+       <div class="skill-category">
+        <div class="skill-category-title">
+         🤝 Soft Skills (ทักษะชีวิต)
+        </div>
+        <ul class="assessment-points">
+         <li><strong>การสื่อสาร:</strong> พูด เขียน ฟัง เข้าใจ</li>
+         <li><strong>การทำงานทีม:</strong> ร่วมมือ แบ่งปัน</li>
+         <li><strong>ความเป็นผู้นำ:</strong> จูงใจ ตัดสินใจ</li>
+         <li><strong>การแก้ปัญหา:</strong> คิดเชิงวิเคราะห์</li>
+         <li><strong>วินัยและความรับผิดชอบ:</strong> ตรงต่อเวลา</li>
+        </ul>
+       </div>
+       <div class="skill-category">
+        <div class="skill-category-title">
+         💻 Digital Skills (ทักษะดิจิทัล)
+        </div>
+        <ul class="assessment-points">
+         <li><strong>โปรแกรมออฟฟิศ:</strong> Word, Excel, PowerPoint</li>
+         <li><strong>อินเทอร์เน็ต:</strong> ค้นหาข้อมูล อีเมล</li>
+         <li><strong>โซเชียลมีเดีย:</strong> การตลาดออนไลน์</li>
+         <li><strong>การจัดการข้อมูล:</strong> ฐานข้อมูล คลาวด์</li>
+         <li><strong>ความปลอดภัยไซเบอร์:</strong> รหัสผ่าน ไวรัส</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Work Ethics & Safety -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">⚖️</span>
+     <h2 class="section-title">จริยธรรมในการทำงานและความปลอดภัยแรงงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="ethics-grid">
+      <div class="ethics-card">
+       <div class="ethics-header"><span class="ethics-icon" aria-hidden="true">✨</span>
+        <div class="ethics-title">
+         จริยธรรมในการทำงาน
+        </div>
+       </div>
+       <div class="ethics-content">
+        <ul class="assessment-points">
+         <li><strong>ความซื่อสัตย์:</strong> ไม่โกง ไม่ทุจริต</li>
+         <li><strong>ความรับผิดชอบ:</strong> ทำงานให้สำเร็จ</li>
+         <li><strong>การเคารพผู้อื่น:</strong> เพื่อนร่วมงาน ลูกค้า</li>
+         <li><strong>การรักษาความลับ:</strong> ข้อมูลบริษัท</li>
+         <li><strong>การพัฒนาตนเอง:</strong> เรียนรู้ใหม่ๆ</li>
+        </ul>
+       </div>
+      </div>
+      <div class="ethics-card">
+       <div class="ethics-header"><span class="ethics-icon" aria-hidden="true">📋</span>
+        <div class="ethics-title">
+         กฎหมายแรงงานพื้นฐาน
+        </div>
+       </div>
+       <div class="ethics-content">
+        <ul class="assessment-points">
+         <li><strong>สัญญาจ้างงาน:</strong> อ่านให้เข้าใจก่อนลงนาม</li>
+         <li><strong>ค่าจ้างขั้นต่ำ:</strong> 330-370 บาท/วัน (2567)</li>
+         <li><strong>ชั่วโมงทำงาน:</strong> ไม่เกิน 8 ชม./วัน</li>
+         <li><strong>วันหุด:</strong> อย่างน้อย 1 วัน/สัปดาห์</li>
+         <li><strong>ประกันสังคม:</strong> สิทธิประโยชน์พนักงาน</li>
+        </ul>
+       </div>
+      </div>
+      <div class="ethics-card">
+       <div class="ethics-header"><span class="ethics-icon" aria-hidden="true">🛡️</span>
+        <div class="ethics-title">
+         ความปลอดภัยในการทำงาน
+        </div>
+       </div>
+       <div class="ethics-content">
+        <ul class="assessment-points">
+         <li><strong>อุปกรณ์ป้องกัน:</strong> หมวก ถุงมือ รองเท้า</li>
+         <li><strong>การฝึกอบรม:</strong> ความปลอดภัย</li>
+         <li><strong>สภาพแวดล้อม:</strong> สะอาด ปลอดภัย</li>
+         <li><strong>การปฐมพยาบาล:</strong> เมื่อเกิดอุบัติเหตุ</li>
+         <li><strong>สิทธิในการปฏิเสธ:</strong> งานที่อันตราย</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Job Preparation -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">📝</span>
+     <h2 class="section-title">การเตรียมความพร้อมเข้าสู่การทำงาน</h2>
+    </div>
+    <div class="section-content">
+     <div class="preparation-grid">
+      <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">📄</span>
+       <div class="preparation-title">
+        เรซูเม่และใบสมัครงาน
+       </div>
+       <ul class="assessment-points">
+        <li>ข้อมูลส่วนตัวที่ถูกต้อง</li>
+        <li>ประวัติการศึกษา</li>
+        <li>ประสบการณ์การทำงาน/ฝึกงาน</li>
+        <li>ทักษะและความสามารถพิเศษ</li>
+        <li>ผู้ให้ข้อมูลอ้างอิง</li>
+        <li>รูปถ่ายที่เหมาะสม</li>
+       </ul>
+      </div>
+      <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">📁</span>
+       <div class="preparation-title">
+        แฟ้มสะสมผลงาน (Portfolio)
+       </div>
+       <ul class="assessment-points">
+        <li>ผลงานที่ภาคภูมิใจ</li>
+        <li>ใบประกาศเกียรติคุณ</li>
+        <li>ใบรับรองการฝึกอบรม</li>
+        <li>รูปภาพการทำงาน</li>
+        <li>จดหมายรับรองจากครู/นายจ้าง</li>
+        <li>ผลงานสร้างสรรค์</li>
+       </ul>
+      </div>
+      <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">💬</span>
+       <div class="preparation-title">
+        มารยาทการสัมภาษณ์งาน
+       </div>
+       <ul class="assessment-points">
+        <li>แต่งกายเหมาะสม สุภาพ</li>
+        <li>ไปให้ตรงเวลา หรือเร็วกว่า 10-15 นาที</li>
+        <li>ทักทายด้วยความสุภาพ</li>
+        <li>ตอบคำถามด้วยความมั่นใจ</li>
+        <li>แสดงความสนใจในงาน</li>
+        <li>ถามคำถามที่เหมาะสม</li>
+       </ul>
+      </div>
+      <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">👔</span>
+       <div class="preparation-title">
+        ภาพลักษณ์ความเป็นมืออาชีพ
+       </div>
+       <ul class="assessment-points">
+        <li>การแต่งกายที่เหมาะสม</li>
+        <li>ความสะอาดและเรียบร้อย</li>
+        <li>การพูดจาสุภาพ</li>
+        <li>ท่าทางและกิริยามารยาท</li>
+        <li>การใช้โซเชียลมีเดียอย่างเหมาะสม</li>
+        <li>ความมั่นใจและเป็นมิตร</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Networks & Opportunities -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🌐</span>
+     <h2 class="section-title">เครือข่ายและโอกาส</h2>
+    </div>
+    <div class="section-content">
+     <div class="preparation-grid">
+      <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">🏘️</span>
+       <div class="preparation-title">
+        ชุมชนและท้องถิ่น
+       </div>
+       <ul class="assessment-points">
+        <li>กลุ่มอาชีพในชุมชน</li>
+        <li>วิสาหกิจชุมชน</li>
+        <li>โครงการพัฒนาท้องถิ่น</li>
+        <li>ตลาดนัดและงานแสดงสินค้า</li>
+        <li>ผู้นำชุมชนและปราชญ์</li>
+       </ul>
+      </div>
+      <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">🤝</span>
+       <div class="preparation-title">
+        สหกรณ์และสมาคม
+       </div>
+       <ul class="assessment-points">
+        <li>สหกรณ์การเกษตร</li>
+        <li>สมาคมวิชาชีพ</li>
+        <li>หอการค้าจังหวัด</li>
+        <li>สภาอุตสาหกรรม</li>
+        <li>กลุ่มผู้ประกอบการ SME</li>
+       </ul>
+      </div>
+      <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">📱</span>
+       <div class="preparation-title">
+        แพลตฟอร์มออนไลน์
+       </div>
+       <ul class="assessment-points">
+        <li>เว็บไซต์หางาน JobThai, JobsDB</li>
+        <li>LinkedIn สำหรับมืออาชีพ</li>
+        <li>Facebook Groups อาชีพ</li>
+        <li>YouTube ช่องเรียนรู้ทักษะ</li>
+        <li>แอปฝึกงานและงานพาร์ทไทม์</li>
+       </ul>
+      </div>
+      <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">🎓</span>
+       <div class="preparation-title">
+        สถาบันการศึกษา
+       </div>
+       <ul class="assessment-points">
+        <li>ศูนย์การจัดหางานของมหาวิทยาลัย</li>
+        <li>งาน Job Fair</li>
+        <li>อาจารย์และรุ่นพี่</li>
+        <li>ศิษย์เก่าที่ประสบความสำเร็จ</li>
+        <li>โครงการฝึกงานและสหกิจ</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Personal Finance -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">💰</span>
+     <h2 class="section-title">การเงินส่วนบุคคลเบื้องต้น</h2>
+    </div>
+    <div class="section-content">
+     <div class="financial-section">
+      <div class="financial-title">
+       การวางแผนการเงินสำหรับคนทำงาน
+      </div>
+      <div class="financial-grid">
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">💵</span>
+        <div class="financial-item-title">
+         รายรับ
+        </div>
+        <p>เงินเดือน โบนัส ค่าล่วงเวลา รายได้เสริม</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">💸</span>
+        <div class="financial-item-title">
+         รายจ่าย
+        </div>
+        <p>ค่าใช้จ่ายจำเป็น ค่าเช่า อาหาร เดินทาง</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">🏦</span>
+        <div class="financial-item-title">
+         การออม
+        </div>
+        <p>ออมอย่างน้อย 20% ของรายได้</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">📈</span>
+        <div class="financial-item-title">
+         การลงทุน
+        </div>
+        <p>ลงทุนอย่างระมัดระวัง เรียนรู้ก่อนลงทุน</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">🛡️</span>
+        <div class="financial-item-title">
+         ประกันภัย
+        </div>
+        <p>ประกันสุขภาพ ประกันชีวิต ประกันสังคม</p>
+       </div>
+       <div class="financial-item"><span class="financial-icon" aria-hidden="true">🎯</span>
+        <div class="financial-item-title">
+         เป้าหมาย
+        </div>
+        <p>วางแผนระยะสั้น กลาง ยาว</p>
+       </div>
+      </div>
+     </div>
+     <div style="margin-top: 2rem;">
+      <h3 style="color: var(--primary); margin-bottom: 1rem;">การวางแผนอาชีพสอดคล้องกับฐานะครอบครัว</h3>
+      <div class="preparation-grid">
+       <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
+        <div class="preparation-title">
+         ครอบครัวที่มีฐานะดี
+        </div>
+        <ul class="assessment-points">
+         <li>เลือกอาชีพตามความสนใจ</li>
+         <li>ลงทุนการศึกษาระยะยาว</li>
+         <li>เสี่ยงได้มากขึ้น</li>
+         <li>สร้างเครือข่ายกว้างขวาง</li>
+        </ul>
+       </div>
+       <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">⚖️</span>
+        <div class="preparation-title">
+         ครอบครัวปานกลาง
+        </div>
+        <ul class="assessment-points">
+         <li>สมดุลระหว่างความสนใจและความมั่นคง</li>
+         <li>เลือกการศึกษาที่คุ้มค่า</li>
+         <li>หารายได้เสริมระหว่างเรียน</li>
+         <li>วางแผนการเงินระมัดระวัง</li>
+        </ul>
+       </div>
+       <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">💪</span>
+        <div class="preparation-title">
+         ครอบครัวที่มีข้อจำกัด
+        </div>
+        <ul class="assessment-points">
+         <li>เน้นอาชีพที่มีรายได้เร็ว</li>
+         <li>เลือกทักษะที่ตลาดต้องการ</li>
+         <li>หาทุนการศึกษาและโครงการช่วยเหลือ</li>
+         <li>สร้างโอกาสด้วยตนเอง</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Entrepreneur Basics -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">🚀</span>
+     <h2 class="section-title">ผู้ประกอบการเบื้องต้น</h2>
+    </div>
+    <div class="section-content">
+     <div class="entrepreneur-flow">
+      <div class="entrepreneur-title">
+       ขั้นตอนการเริ่มต้นธุรกิจ
+      </div>
+      <div class="flow-steps">
+       <div class="flow-step">
+        <div class="step-number">
+         1
+        </div>
+        <div class="step-title">
+         ไอเดีย
+        </div>
+        <p>หาปัญหาที่อยากแก้ หรือความต้องการที่ยังไม่มีใครตอบสนอง</p>
+       </div>
+       <div class="flow-step">
+        <div class="step-number">
+         2
+        </div>
+        <div class="step-title">
+         ลูกค้า
+        </div>
+        <p>ระบุกลุ่มลูกค้าเป้าหมาย เข้าใจความต้องการจริง</p>
+       </div>
+       <div class="flow-step">
+        <div class="step-number">
+         3
+        </div>
+        <div class="step-title">
+         คุณค่า
+        </div>
+        <p>สร้างสินค้า/บริการที่แก้ปัญหาลูกค้าได้จริง</p>
+       </div>
+       <div class="flow-step">
+        <div class="step-number">
+         4
+        </div>
+        <div class="step-title">
+         ต้นทุน-รายได้
+        </div>
+        <p>คำนวณต้นทุน กำหนดราคา วางแผนกำไร</p>
+       </div>
+       <div class="flow-step">
+        <div class="step-number">
+         5
+        </div>
+        <div class="step-title">
+         ทดลองขาย
+        </div>
+        <p>เริ่มขายในวงเล็ก เรียนรู้จากผลตอบรับ</p>
+       </div>
+      </div>
+     </div>
+     <div style="margin-top: 2rem;">
+      <h3 style="color: var(--primary); margin-bottom: 1rem;">เคล็ดลับการเริ่มต้น</h3>
+      <div class="preparation-grid">
+       <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">💡</span>
+        <div class="preparation-title">
+         เริ่มจากสิ่งที่มี
+        </div>
+        <ul class="assessment-points">
+         <li>ใช้ทักษะและความรู้ที่มีอยู่</li>
+         <li>เริ่มด้วยเงินทุนน้อย</li>
+         <li>ขายให้คนรู้จักก่อน</li>
+         <li>เรียนรู้จากความผิดพลาด</li>
+        </ul>
+       </div>
+       <div class="preparation-card"><span class="preparation-icon" aria-hidden="true">📊</span>
+        <div class="preparation-title">
+         วัดผลและปรับปรุง
+        </div>
+        <ul class="assessment-points">
+         <li>ติดตามยอดขายและกำไร</li>
+         <li>รับฟังความคิดเห็นลูกค้า</li>
+         <li>ปรับปรุงสินค้าอย่างต่อเนื่อง</li>
+         <li>ขยายธุรกิจอย่างระมัดระวัง</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Career Examples -->
+   <section class="content-section">
+    <div class="section-header"><span class="section-icon" aria-hidden="true">👥</span>
+     <h2 class="section-title">ตัวอย่างเส้นทางอาชีพจริง</h2>
+    </div>
+    <div class="section-content">
+     <div class="career-examples">
+      <div class="career-example example-technician">
+       <div class="career-example-header"><span class="career-example-icon" aria-hidden="true">🔧</span>
+        <div class="career-example-title">
+         ช่างเทคนิคบริการ
+        </div>
+       </div>
+       <div class="career-example-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะที่ต้องการ
+         </div>
+         <p>ช่างไฟฟ้า เครื่องยนต์ แอร์ คอมพิวเตอร์ การแก้ปัญหา บริการลูกค้า</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          เส้นทางการเรียน
+         </div>
+         <p>ปวช.ช่างยนต์ → ฝึกงานร้านซ่อม → ทำงาน 2-3 ปี → เปิดร้านเอง</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสเติบโต
+         </div>
+         <p>รายได้ 15,000-50,000 บาท/เดือน สามารถเปิดธุรกิจเอง มีงานตลอดเวลา</p>
+        </div>
+       </div>
+      </div>
+      <div class="career-example example-creator">
+       <div class="career-example-header"><span class="career-example-icon" aria-hidden="true">🎨</span>
+        <div class="career-example-title">
+         ครีเอเตอร์ดิจิทัล
+        </div>
+       </div>
+       <div class="career-example-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะที่ต้องการ
+         </div>
+         <p>การถ่ายภาพ ตัดต่อวิดีโอ กราฟิกดีไซน์ การเขียน การตลาดออนไลน์</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          เส้นทางการเรียน
+         </div>
+         <p>เรียนด้วยตนเอง YouTube → สร้างผลงาน → หาลูกค้า → สร้างแบรนด์</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสเติบโต
+         </div>
+         <p>รายได้ 10,000-100,000+ บาท/เดือน ทำงานอิสระ มีชื่อเสียง</p>
+        </div>
+       </div>
+      </div>
+      <div class="career-example example-nurse">
+       <div class="career-example-header"><span class="career-example-icon" aria-hidden="true">👩‍⚕️</span>
+        <div class="career-example-title">
+         ผู้ช่วยพยาบาล
+        </div>
+       </div>
+       <div class="career-example-content">
+        <div class="career-detail">
+         <div class="career-detail-title">
+          ทักษะที่ต้องการ
+         </div>
+         <p>การดูแลผู้ป่วย ปฐมพยาบาล ความอดทน ความเมตตา การสื่อสาร</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          เส้นทางการเรียน
+         </div>
+         <p>ปวช.พยาบาลศาสตร์ → ฝึกงานโรงพยาบาล → ทำงาน → เรียนต่อ ปวส./ปริญญาตรี</p>
+        </div>
+        <div class="career-detail">
+         <div class="career-detail-title">
+          โอกาสเติบโต
+         </div>
+         <p>รายได้ 18,000-35,000 บาท/เดือน มั่นคง มีความหมาย ขาดแคลนบุคลากร</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Key Takeaways -->
+   <section class="takeaways">
+    <h2 class="takeaways-title">สาระสำคัญ</h2>
+    <ul class="takeaways-list">
+     <li>การรู้จักตนเองเป็นพื้นฐานสำคัญในการเลือกอาชีพที่เหมาะสม</li>
+     <li>มีหลายเส้นทางสู่ความสำเร็จ ไม่จำเป็นต้องเรียนมหาวิทยาลัยเสมอไป</li>
+     <li>ทักษะดิจิทัลและ Soft Skills มีความสำคัญมากขึ้นในยุคปัจจุบัน</li>
+     <li>การเตรียมความพร้อมและสร้างเครือข่ายช่วยเพิ่มโอกาสในการหางาน</li>
+     <li>จริยธรรมและความปลอดภัยในการทำงานเป็นสิ่งที่ต้องให้ความสำคัญ</li>
+     <li>การวางแผนการเงินส่วนบุคคลช่วยสร้างความมั่นคงในชีวิต</li>
+     <li>การเป็นผู้ประกอบการเป็นทางเลือกที่น่าสนใจสำหรับคนรุ่นใหม่</li>
+     <li>การเรียนรู้ตลอดชีวิตและการปรับตัวเป็นกุญแจสู่ความสำเร็จ</li>
+     <li>อาชีพที่ดีคือการทำสิ่งที่รัก รักสิ่งที่ทำ และสร้างประโยชน์ให้สังคม</li>
+     <li>ความสำเร็จในอาชีพไม่ได้วัดจากเงินเพียงอย่างเดียว แต่รวมถึงความสุขและความภาคภูมิใจ</li>
+    </ul>
+   </section><!-- Glossary -->
+   <section class="glossary">
+    <h2 class="glossary-title">คำศัพท์เทคนิคสำคัญ</h2>
+    <div class="glossary-grid">
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Career Pathway
+      </div>
+      <div class="glossary-definition">
+       เส้นทางอาชีพ คือแผนการเรียนรู้และพัฒนาตนเองเพื่อก้าวสู่อาชีพที่ต้องการ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Portfolio
+      </div>
+      <div class="glossary-definition">
+       แฟ้มสะสมผลงาน รวบรวมผลงาน ประสบการณ์ และความสำเร็จที่ผ่านมา
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Internship
+      </div>
+      <div class="glossary-definition">
+       การฝึกงาน การทำงานในองค์กรเพื่อเรียนรู้ประสบการณ์จริง
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Soft Skills
+      </div>
+      <div class="glossary-definition">
+       ทักษะชีวิต เช่น การสื่อสาร การทำงานทีม ความเป็นผู้นำ
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Hard Skills
+      </div>
+      <div class="glossary-definition">
+       ทักษะเฉพาะทาง ความรู้วิชาชีพที่สามารถวัดผลได้
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Upskill/Reskill
+      </div>
+      <div class="glossary-definition">
+       การพัฒนาทักษะใหม่ (Upskill) หรือเรียนรู้ทักษะใหม่ทั้งหมด (Reskill)
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       RIASEC
+      </div>
+      <div class="glossary-definition">
+       แบบจำแนกความสนใจ: Realistic, Investigative, Artistic, Social, Enterprising, Conventional
+      </div>
+     </div>
+     <div class="glossary-item">
+      <div class="glossary-term">
+       Digital Literacy
+      </div>
+      <div class="glossary-definition">
+       ความรู้ดิจิทัล ความสามารถในการใช้เทคโนโลยีอย่างมีประสิทธิภาพ
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="footer" role="contentinfo">
+   <div class="footer-content">
+    <p>© <span class="footer-highlight">โรงเรียนสารคามพิทยาคม</span></p>
+    <p>ครูผู้สอน: <span class="footer-highlight">นางปัญจรัศม์ แซ่ตัง</span></p>
+    <p>วันที่อัปเดต: <span class="footer-highlight" id="updateDate"></span></p>
+   </div>
+  </footer>
+  <script>
+        // Initialize Element SDK
+        const defaultConfig = {
+            lesson_title: "แนวทางการประกอบอาชีพ",
+            school_name: "โรงเรียนสารคามพิทยาคม สพม.มหาสารคาม",
+            teacher_name: "นางปัญจรัศม์ แซ่ตัง",
+            lesson_overview: "เข้าใจเส้นทางสู่อาชีพให้เหมาะกับตนเองและตลาดงาน"
+        };
+
+        async function render(config) {
+            // Update lesson title
+            const titleElement = document.getElementById('lessonTitle');
+            if (titleElement) {
+                titleElement.textContent = config.lesson_title || defaultConfig.lesson_title;
+            }
+
+            // Update school name
+            const schoolElement = document.getElementById('schoolName');
+            if (schoolElement) {
+                schoolElement.textContent = config.school_name || defaultConfig.school_name;
+            }
+
+            // Update teacher name
+            const teacherElement = document.getElementById('teacherName');
+            if (teacherElement) {
+                teacherElement.textContent = config.teacher_name || defaultConfig.teacher_name;
+            }
+
+            // Update lesson overview
+            const overviewElement = document.getElementById('lessonOverview');
+            if (overviewElement) {
+                overviewElement.textContent = config.lesson_overview || defaultConfig.lesson_overview;
+            }
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["lesson_title", config.lesson_title || defaultConfig.lesson_title],
+                ["school_name", config.school_name || defaultConfig.school_name],
+                ["teacher_name", config.teacher_name || defaultConfig.teacher_name],
+                ["lesson_overview", config.lesson_overview || defaultConfig.lesson_overview]
+            ]);
+        }
+
+        // Initialize SDK when available
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateDateElement = document.getElementById('updateDate');
+            if (updateDateElement) {
+                const currentDate = new Date().toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                updateDateElement.textContent = currentDate;
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99217897956bce4d',t:'MTc2MTA1NzIxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
